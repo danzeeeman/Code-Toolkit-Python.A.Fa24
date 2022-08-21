@@ -33,8 +33,7 @@ possibly including last minute updates.
 We will usually begin class by reviewing the previous week’s homework, showing examples of student work 
 and addressing any questions that came up. Then I will offer an interactive lecture on new coding topics.
 Approximately every other week we will spend 30-40 minutes of class time on conceptual material and 
-reading discussion. We will take a short break halfway through class. Sometimes I can forget – please 
-remind me!
+reading discussion. We will take a short break halfway through class.  We are going to write a lot of code together.  
 
 ## Final Grade Calculation
 
