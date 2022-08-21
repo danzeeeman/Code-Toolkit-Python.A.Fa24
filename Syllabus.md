@@ -1,4 +1,4 @@
-# Code Toolkit: Python, Fall 2021 – LCOD 2012 – Dan Moore
+# Code Toolkit: Python, Fall 2022 – LCOD 2012 – Dan Moore
 
 ### Code Toolkit: Python
 ### COD 2012, Fall 2022 (CRN 11855)
