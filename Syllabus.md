@@ -321,9 +321,9 @@ Final project assignment For in-class presentation and discussion on Week 15.
 ### Home Work
 * Paul Dourish, “Protocols, Packets, and Proximity: The Materiality of Internet Routing”, from Signal Traffic: Critical Studies of Media Infrastructures, Nicole Starosielski and Lisa Parks, eds.
 ## Week 12 – Network protocols
-* Networking and the web
+* Networking and the Web
 ### Home Work
-* Coding Assignment #7: Using Node.js create a bot
+* Coding Assignment #7: Scraping the Net
 * Alex Galloway and Eugene Thacker, "Protocol and Counter-Protocol", 2003
 ## Week 13 – Saving data in a database
 * Final Project Check Point - Gut Check 
