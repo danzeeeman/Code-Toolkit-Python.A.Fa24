@@ -1,11 +1,11 @@
 # Code Toolkit: Python, Fall 2021 – LCOD 2012 – Dan Moore
 
-## Code Toolkit: Python
-## COD 2012, Fall 2022 (CRN 11855)
-## Dan Moore, moored1@newschool.edu
-## Wednesday, 9:00 – 11:40am
-## 6 East 16th Street, Room: 602
-## Office hours:  By appointment — email me to schedule!
+### Code Toolkit: Python
+### COD 2012, Fall 2022 (CRN 11855)
+### Dan Moore, moored1@newschool.edu
+### Wednesday, 9:00 – 11:40am
+### 6 East 16th Street, Room: 602
+### Office hours:  By appointment — email me to schedule!
 
 ## Course Description
 This course provides a basic introduction to coding for students with no prior experience using the Python 
