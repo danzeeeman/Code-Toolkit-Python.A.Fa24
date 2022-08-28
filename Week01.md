@@ -174,7 +174,7 @@ Some syntax rules
 Parenthesis must always come in pairs, open and closed: ( )
 Processing will try to help you with text highlighting and helpful error messages. If you are confused, check the reference for relevant examples.
 Comments are also an important part of coding. They are how you communicate with others (and with yourself in the future!) about what your code does. There are two ways to add comments in Python:
-# Using a hashtag symbol creates a single line comment, like this
+```# Using a hashtag symbol creates a single line comment, like this```
 Single-line comments can also start midway through a line
 ```rect(10,10,10,10)  # like this```
 ```
