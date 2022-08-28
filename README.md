@@ -25,7 +25,7 @@ You can see my work at [Make It Do A Thing Dot Com](Makeitdoathing.com)
 
 - Discussion: What do you hope to take away?
 ## __Technology__
-The technologies we will be using in this course are [py.processing](https://py.processing.org/) a sibling of [Processing](https://processing.org) for the [Python](https://en.m.wikipedia.org/wiki/Python_(programming_language)) interpreter.  
+The technology we will be using in this course is [py.processing](https://py.processing.org/) a sibling of [Processing](https://processing.org) for the [Python](https://en.m.wikipedia.org/wiki/Python_(programming_language)) interpreter.  
 
 - [Syllabus](Syllabus.md)
 - [Schedule](Schedule.md)
