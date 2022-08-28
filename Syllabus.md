@@ -1,4 +1,4 @@
-# Code Toolkit: Python, Fall 2021 – LCOD 2012 – Dan Moore
+# Code Toolkit: Python, Fall 2022 – LCOD 2012 – Dan Moore
 
 ### Code Toolkit: Python
 ### COD 2012, Fall 2022 (CRN 11855)
@@ -33,8 +33,7 @@ possibly including last minute updates.
 We will usually begin class by reviewing the previous week’s homework, showing examples of student work 
 and addressing any questions that came up. Then I will offer an interactive lecture on new coding topics.
 Approximately every other week we will spend 30-40 minutes of class time on conceptual material and 
-reading discussion. We will take a short break halfway through class. Sometimes I can forget – please 
-remind me!
+reading discussion. We will take a short break halfway through class.  We are going to write a lot of code together.  
 
 ## Final Grade Calculation
 
@@ -322,9 +321,9 @@ Final project assignment For in-class presentation and discussion on Week 15.
 ### Home Work
 * Paul Dourish, “Protocols, Packets, and Proximity: The Materiality of Internet Routing”, from Signal Traffic: Critical Studies of Media Infrastructures, Nicole Starosielski and Lisa Parks, eds.
 ## Week 12 – Network protocols
-* Networking and the web
+* Networking and the Web
 ### Home Work
-* Coding Assignment #7: Using Node.js create a bot
+* Coding Assignment #7: Scraping the Net
 * Alex Galloway and Eugene Thacker, "Protocol and Counter-Protocol", 2003
 ## Week 13 – Saving data in a database
 * Final Project Check Point - Gut Check 
