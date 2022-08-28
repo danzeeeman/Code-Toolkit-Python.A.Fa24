@@ -1,16 +1,13 @@
-# Code Toolkit: Python, Fall 2021
-## Week 1 — Wednesday, September 1 — Class notes
+# Code Toolkit: Python, Fall 2022
+## Week 1 — Wednesday, August 31 — Class notes
 
-# __CODE TOOLKIT SPRING 2022__
-# Week One Lecture Notes
-
-## One on One
+### One on One
 I want to schedule Virtual 1:Ones with everyone in the class periodically throughout the semester.  These informal chats will help me gage progress, help with confusion, and help me get to know each of you a bit better. 
 
-## Office Hours
+### Office Hours
 Office hours will be on-demand this semester.  I'm usually available during the day except for some standing meetings I have at my day job at 1pm.  If you send me an email or slack me on our slack I will usually get back to you soon.  I basically live in front of a multiple computers so if I'm not getting back to you promptly its because I'm on a call (even then I'll reach out and tell you I'll be available soon probably) or asleep.
 
-## Slack
+### Slack
 I invited you all to our slack and to our channel.  If I have missed anyone please let me know right now!  Please sign up as it is a way to contact me directly about issues with homework or readings. 
 
 
