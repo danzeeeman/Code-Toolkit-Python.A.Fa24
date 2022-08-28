@@ -1,6 +1,6 @@
 #  ___Code Toolkit: Python - 11855 - LCOD 2012 - A – Dan Moore___
 ### _Who?_
-I'm Dan Moore, I'm an Artist, Designer, and Technologist based here in New York City.  I design and build interactive activations and applications.  
+I'm Dan Moore [he/him], I'm an Artist, Designer, and Technologist based here in New York City.  I design and build interactive activations and applications.  
 
 I leverage media frameworks, game engines, textiles, and robotic arms to create immersive environments that examine human behavior, pop-culture, and culture dichotomies. My work is inspired by the idea of HYPE and the manipulation of media to achieve it. I strive to create a fully immersive environment for the audience to not only experience but become an active participant in the work.
 
@@ -21,6 +21,9 @@ You can see my work at [Make It Do A Thing Dot Com](Makeitdoathing.com)
 ### _Where_
 - 6 East 16th Street Room: 602 and/or on Zoom depending on the pannorama? 
 ### _Why?_ 
+
+- Who you are
+
 - Discussion: Why did you take this course?
 
 - Discussion: What do you hope to take away?
