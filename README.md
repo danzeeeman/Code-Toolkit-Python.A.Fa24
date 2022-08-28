@@ -13,15 +13,15 @@ I worked at an experimentals UX design studio inside Samsung Mobile. I did a cou
 - How to read and write code
 - How to use code to do what you want
 ### _When?_
-- Tuesdays from 16:00-18:40 aka 4-6:40pm
+- Wednesday from 09:00-11:40
 ### _Where_
-- 6 East 16th Street Room: 605 and/or on Zoom depending on the pannorama? 
-- But I mean we could even do it in the ___Metaverse___
+- 6 East 16th Street Room: 602 and/or on Zoom depending on the pannorama? 
 ### _Why?_ 
 - Discussion: Why did you take this course?
+
 - Discussion: What do you hope to take away?
 ## __Technology__
-The technologies we will be using in this course are [p5js](https://p5js.org) a sibling of the [Processing framework](https://processing.org) and [Javascript](https://en.m.wikipedia.org/wiki/JavaScript).  
+The technologies we will be using in this course are [py.processing](https://py.processing.org/) a sibling of [Processing](https://processing.org) for the [Python](https://en.m.wikipedia.org/wiki/Python_(programming_language)) interpreter.  
 
 - [Syllabus](Syllabus.md)
 - [Schedule](Schedule.md)
