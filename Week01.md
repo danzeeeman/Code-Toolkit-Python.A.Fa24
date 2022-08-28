@@ -124,7 +124,7 @@ This creates a new folder for this sketch. Note the location. It is probably in 
 
 In Processing, we mainly draw using coordinates. Keep in mind a grid where the top-left corner is 0,0. The horizontal dimension is always specified first and is referred to as ```x```, and the vertical dimension is always specified second and is referred to as ```y```.
 
-![GRID](images\grid.png)
+![GRID](images/grid.png)
 
 x increases as you move to the right, and y increases as you move down.
 
