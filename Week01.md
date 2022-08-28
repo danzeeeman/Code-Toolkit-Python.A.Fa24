@@ -127,26 +127,32 @@ rect(50,50,200,200)
 You can always add a fourth argument to any color commands to specify alpha which is a common digital media term that means transparency: how see-through a digital image is.
 
 
-```size(300,300)
+```
+size(300,300)
 stroke(0,0,255)
 fill(150,150,255,50)
 rect(50,50,200,200)```
 That might not seem very different but if we add a new shape it should be more apparent:
-```size(300,300)
+```
+```
+size(300,300)
 stroke(0,0,255)
 fill(150,150,255,50)
 rect(50,50,200,200)
-ellipse(250,250,50,50)```
+ellipse(250,250,50,50)
+```
 Notice that the overlap is slightly darker.
 Drawing order is also important. Intructions are followed from top down, first things first. Lower commands are run later. This means that later drawn shapes will be drawn as if layerd on top of earlier ones. So it's like making a collage: the things that you place down later will be on top.
 Let's add a third shape and remove the transparency to see what I mean:
 
-```size(300,300)
+```
+size(300,300)
 stroke(0,0,255)
 fill(150,150,255,255) # 255 as alpha is equivalent to totally opaque
 rect(50,50,200,200)
 ellipse(250,250,50,50)
-triangle(250,250,250,300,300,250)```
+triangle(250,250,250,300,300,250)
+```
 
 Some syntax rules
 Parenthesis must always come in pairs, open and closed: ( )
@@ -177,10 +183,14 @@ A note on accessibility: I have tried to make these formatting rules as accessib
 Raster Images. You don't need to always create drawings in this way. You can also load "raster" images into your sketch, and draw them directly into the window. If you've ever done any HTML, this is similar to the way images are included in web pages.
 Go to Sketch > Add File, then browse to the image file you want to add and click "Open" . This adds the image file to your sketch directory but does not actually draw it.
 To draw it, use the following code:
-```img = loadImage("YOUR-IMAGE-FILENAME.jpg")
-image(img, 0, 0)```
+```
+img = loadImage("YOUR-IMAGE-FILENAME.jpg")
+image(img, 0, 0)
+```
 The 0, 0 specifies the x and y location of where in the window to place the image. If you want to control the size of the image, modify the 2nd line to look like this:
+
 ```image(img, 0, 0, 50, 25)```
+
 In this case, the image would be 50 pixels wide and 25 pixels tall.
 Those numbers are arbitrary and just as a demonstration. You can change them or experiment as much as you'd like. You can find more information in the reference: PImage, loadImage(), and image().
 Drawing like this seems tedious! Why would you ever want to do this?
