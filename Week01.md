@@ -122,14 +122,15 @@ This creates a new folder for this sketch. Note the location. It is probably in 
 
 *The basic commands to draw shapes are called 2D primitives*
 
-In Processing, we mainly draw using coordinates. Keep in mind a grid where the top-left corner is 0,0. The horizontal dimension is always specified first and is referred to as x, and the vertical dimension is always specified second and is referred to as y.
+In Processing, we mainly draw using coordinates. Keep in mind a grid where the top-left corner is 0,0. The horizontal dimension is always specified first and is referred to as ```x```, and the vertical dimension is always specified second and is referred to as ```y```.
 
+![GRID](images\grid.png)
 
 x increases as you move to the right, and y increases as you move down.
 
 So in the following example, what are the coordinates of this pixel?
 
-Highlight this text for an answer: x=2, y=3. Remember, we start counting from 0.
+Highlight this text for an answer: ```x=2```, ```y=3```. Remember, we start counting from 0.
 What about in this example: what are the coordinates of this pixel?
 
 Please don't actually count all those pixels! Let's just approximate. Maybe, x=30 and y=15? That seems about right.
