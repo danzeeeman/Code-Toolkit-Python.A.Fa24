@@ -29,7 +29,7 @@ Its kind of like a recipe, where the computer is the chef.
 
 A program is a file, like a text or .doc file. (What is a file?) It lives on your computer's disk, it consists of a series of instructions, and its formatted in a precise, special way so that your computer can read and execute the instructions listed in the file.
 
-So when we say for example that a program is "big", it just means it consists of more instructions, so its a larger file.
+So when we say for example that a program is "big", it just means it consists of more instructions, so its a larger file, or multiple files.
 
 What are some computer programs?
 * Microsoft Word
@@ -37,6 +37,7 @@ What are some computer programs?
 * Adobe Illustrator
 * Firefox
 * your favorite game
+* Gmail
 
 So what is computer programming?
 
@@ -71,10 +72,9 @@ Another word for this is algorithm. An algorithm is a formal process or a sequen
 
 ## __5-10 min break__
 
+# Part 2 :: Introductory Beep Boops 
 
-# Introductory Beep Boops 
-
-Let's write a simple "program":
+Let's write a simple "program"
 
 ## How to make a drawing
 
