@@ -76,19 +76,35 @@ Let's write a simple "program":
 ## How to make a drawing
 
 There were some things that many of your drawing instructions did that we will see again later:
-placeholders: things like "the first square", "the bottom line". In computer programs these are called variables
-repetition: "do this 4 times", "do this until you connect back to the first line". In computer programs these are called loops
-questions or conditions: "if the shape is not closed, keep drawing". In computer programs these are called conditionals
-groups of commands: "draw another shape like you did in steps 1-4". In computer programs these are called functions and they are a way to make a group of instructions with a name for re-use
+placeholders: things like "the first square", "the bottom line". 
+
+*In computer programs these are called variables*
+
+repetition: "do this 4 times", "do this until you connect back to the first line". 
+
+*In computer programs these are called loops*
+
+questions or conditions: "if the shape is not closed, keep drawing". 
+
+*In computer programs these are called conditionals* 
+
+groups of commands: "draw another shape like you did in steps 1-4". 
+
+*In computer programs these are called functions and they are a way to make a group of instructions with a name for re-use*
+
 Introducing the Processing Development Environment
+
 So how does all this translate to Processing?
+
 Let's get started by opening up the Processing Development Environment, or PDE, and look around:
-play button
-stop button
-File > Open
-File > Examples
-Modes: Java & Python
+* play button
+* stop button
+* File > Open
+* File > Examples
+* Modes: Java & Python
+
 In Processing, a program is called a "sketch".
+
 Let's make a very simple example:
 ```
 size(300,300)
