@@ -2,13 +2,13 @@
 ## Week 1 — Wednesday, August 31 — Class notes
 
 ### One on One
-I want to schedule Virtual 1:Ones with everyone in the class periodically throughout the semester.  These informal chats will help me gage progress, help with confusion, and help me get to know each of you a bit better. 
+I'm going to do 1:Ones with everyone in the class periodically throughout the semester.  These informal chats will help me gage progress, help with confusion, and help me get to know each of you a bit better. 
 
 ### Office Hours
-Office hours will be on-demand this semester.  I'm usually available during the day except for some standing meetings I have at my day job at 1pm.  If you send me an email or slack me on our slack I will usually get back to you soon.  I basically live in front of a multiple computers so if I'm not getting back to you promptly its because I'm on a call (even then I'll reach out and tell you I'll be available soon probably) or asleep.
+Office hours will be on-demand this semester.  I'm usually available during the day except for some standing meetings I have at my day job at 1pm/1:30pm.  If you send me an email or slack me I will usually get back to you soon.  I basically live in front of a multiple computers so if I'm not getting back to you promptly its because I'm on a call, asleep, or out on the town.
 
 ### Slack
-I invited you all to our slack and to our channel.  If I have missed anyone please let me know right now!  Please sign up as it is a way to contact me directly about issues with homework or readings. 
+I invited you all to our slack and to our channel.  If I have missed anyone please let me know right now!  Please sign up as it is a way to contact me directly about issues with homework or readings (or anything else). 
 
 
 ### Introduction
@@ -23,11 +23,14 @@ In learning how to create computer programs, you will experience the thought pro
 
 In a world that seems everywhere mediated by software, these skills are valuable in their own right. But beyond the utility or "marketable skills" of this practice, hopefully you will gain hands-on knowledge that you can bring back to other critical studies of the social, cultural, and political aspects of computer programs.
 
-So ... what is a computer program?
+So ... *what is a computer program?*
+
 Its kind of like a recipe, where the computer is the chef.
 
 A program is a file, like a text or .doc file. (What is a file?) It lives on your computer's disk, it consists of a series of instructions, and its formatted in a precise, special way so that your computer can read and execute the instructions listed in the file.
+
 So when we say for example that a program is "big", it just means it consists of more instructions, so its a larger file.
+
 What are some computer programs?
 * Microsoft Word
 * Adobe Photoshop
@@ -115,9 +118,13 @@ rect(50,50,200,200)
 ```Click File > New > Save``` 
 This creates a new folder for this sketch. Note the location. It is probably in a folder called Processing in your Document folder Give the sketch a name and click "Save".
 
-2D drawing basics (a.k.a 2D primitives)
-The basic commands to draw shapes are called 2D primitives
+## 2D drawing basics (a.k.a 2D primitives)
+
+*The basic commands to draw shapes are called 2D primitives*
+
 In Processing, we mainly draw using coordinates. Keep in mind a grid where the top-left corner is 0,0. The horizontal dimension is always specified first and is referred to as x, and the vertical dimension is always specified second and is referred to as y.
+
+
 x increases as you move to the right, and y increases as you move down.
 
 So in the following example, what are the coordinates of this pixel?
