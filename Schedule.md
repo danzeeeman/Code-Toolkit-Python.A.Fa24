@@ -41,7 +41,7 @@ Part I: Python and the Processing platform
 * Keyboard interaction
 * Motion
 ### Home Work
-* Coding Assignment #3 : A Clock
+* Coding Assignment #3 : A Clock w/ and Alarm
 * Reading Selections from Matthew Fuller, [Software Studies: A Lexicon: Introduction, "Algorithm", "Code", "Programmability", and "Source Code".](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
 * Midterm project assignment Due: Week 8
 ## Week 5 – Adding repetition
@@ -70,16 +70,17 @@ Stars"](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Le
 * Extra Credit Alex Galloway, ["Gamic Action, Four Moments", chapter 1 (pages 1-38) from Gaming: Essays on Algorithmic Culture.](pdfs/galloway_gamicaction.pdf)
 ## Week 9 – Midterm project presentations and discussion
 * Midterm project presentations
-Part II: Standalone Python – Networks and data processing
 ### Home Work
 * Final project Due: Week 15 – Final projects, Pitches due next week!
+Part II: Standalone Python – Networks and data processing
 ## Week 10 – Python outside of Processing
-* Introduction to Python outside of Processing with Atom and the command line
+* Introduction to Python outside of Processing with VSCode, the command line, maybe *Omniverse*
 * Data structures: Dictionaries
 Final project assignment For in-class presentation and discussion on Week 15.
 ## Week 11 – Data serialization: for storage and communication
 * Serialization with JSON
 * An experiment with networking
+* Scraping and Bots for fun and profit!
 ### Home Work
 * Paul Dourish, “Protocols, Packets, and Proximity: The Materiality of Internet Routing”, from Signal Traffic: Critical Studies of Media Infrastructures, Nicole Starosielski and Lisa Parks, eds.
 ## Week 12 – Network protocols
