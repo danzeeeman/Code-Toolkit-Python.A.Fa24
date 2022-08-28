@@ -21,11 +21,7 @@ You can see my work at [Make It Do A Thing Dot Com](Makeitdoathing.com)
 ### _Where_
 - 6 East 16th Street Room: 602 and/or on Zoom depending on the pannorama? 
 ### _Why?_ 
-
-- Who you are
-
 - Discussion: Why did you take this course?
-
 - Discussion: What do you hope to take away?
 ## __Technology__
 The technology we will be using in this course is [py.processing](https://py.processing.org/) a sibling of [Processing](https://processing.org) for the [Python](https://en.m.wikipedia.org/wiki/Python_(programming_language)) interpreter.  
