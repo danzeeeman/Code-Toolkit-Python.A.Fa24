@@ -141,7 +141,7 @@ asked to respect our entire community by abiding by university policies at any g
 community members who observe others not abiding by these expectations may gently remind them to 
 respect our community health.
 
-## Attendance and Meaningful Participation for an Online Course
+## Attendance and Meaningful Participation for our Course
 
 Attendance and participation are required. Failing to show up and take part may result in a lowered grade, 
 and excessive lack of engagement may result in being dropped from the course. Of course, we find 
