@@ -17,7 +17,7 @@ requirement of the Culture and Media major.
 
 ## Class Website & Email
 
-Rather than using Canvas this semester we will be using this [Git Repo](https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa22)
+Rather than using Canvas this semester we will be using this URL https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa22
 
 Please bookmark that URL and refer back to it often. All deadlines, reading materials, project tutorials, and 
 other course materials will be posted here. You will be using Google Docs, Google Drive, and other 
