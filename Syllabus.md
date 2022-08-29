@@ -312,16 +312,16 @@ Part II: Standalone Python – Networks and data processing
 * Data structures: Dictionaries
 Final project assignment For in-class presentation and discussion on Week 15.
 ### Home Work
-* Coding Assignment #6: 
 ## Week 11 – Data serialization: for storage and communication
 * Serialization with JSON
 * An experiment with networking
+* * Coding Assignment #7: Extra Credit - Dealers Choice 
 ### Home Work
 * Paul Dourish, “Protocols, Packets, and Proximity: The Materiality of Internet Routing”, from Signal Traffic: Critical Studies of Media Infrastructures, Nicole Starosielski and Lisa Parks, eds.
 ## Week 12 – Network protocols
 * Networking and the Web
 ### Home Work
-* Coding Assignment #7: Scraping the Net
+* Coding Assignment #8: Scraping the Net
 * Alex Galloway and Eugene Thacker, "Protocol and Counter-Protocol", 2003
 ## Week 13 – Saving data in a database
 * Final Project Check Point - Gut Check 
