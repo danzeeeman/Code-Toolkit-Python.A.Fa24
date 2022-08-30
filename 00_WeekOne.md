@@ -5,7 +5,7 @@
 I'm going to do 1:Ones with everyone in the class periodically throughout the semester.  These informal chats will help me gage progress, help with confusion, and help me get to know each of you a bit better. 
 
 ### Office Hours
-Office hours will be on-demand this semester.  I'm usually available during the day except for some standing meetings I have at my day job at 1pm/1:30pm.  If you send me an email or slack me I will usually get back to you soon.  I basically live in front of a multiple computers so if I'm not getting back to you promptly its because I'm on a call, asleep, or out on the town.
+Office hours will be on-demand this semester.  I'm usually available during the day except for some standing meetings I have at my day job at 12:30pm/1:30pm.  If you send me an email or slack me I will usually get back to you soon.  I basically live in front of a multiple computers so if I'm not getting back to you promptly its because I'm on a call, asleep, or out on the town.
 
 ### Slack
 I invited you all to our slack and to our channel.  If I have missed anyone please let me know right now!  Please sign up as it is a way to contact me directly about issues with homework or readings (or anything else). 
