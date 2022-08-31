@@ -141,8 +141,8 @@ Let's look at one command in the [reference](https://py.processing.org/reference
 
 ```rect(x, y, width, height)```
 ```
-fill(255, 0, 255);
-rect(0, 0, 512, 512);
+fill(255, 0, 255)
+rect(0, 0, 512, 512)
 ```
 
 The numbers in parenthesis are called ```parameters``` and their order is very important. The [reference](https://py.processing.org/reference/) will tell you what the various ```parameters``` do. In this case, the [reference](https://py.processing.org/reference/) explains that the first parameter is the "```x```-coordinate of the rectangle", the second parameter specifies the ```y``` coordinate, the third is the ```width``` of the shape, and the fourth is the ```height```
