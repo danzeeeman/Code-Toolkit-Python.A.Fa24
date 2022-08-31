@@ -1,4 +1,12 @@
 #  ___Code Toolkit: Python - 11855 - LCOD 2012 - A – Dan Moore___
+
+Code Toolkit: Python
+COD 2012, Fall 2022 (CRN 11855)
+Dan Moore, moored1@newschool.edu
+Wednesday, 9:00 – 11:40am
+6 East 16th Street, Room: 602
+Office hours: By appointment — email me to schedule!
+
 ### _Who?_
 I'm Dan Moore [he/him], I'm an Artist, Designer, and Technologist based here in New York City.  I design and build interactive activations and applications.  
 
