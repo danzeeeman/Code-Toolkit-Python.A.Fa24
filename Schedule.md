@@ -41,7 +41,7 @@ Part I: Python and the Processing platform
 * Keyboard interaction
 * Motion
 ### Home Work
-* Coding Assignment #3 : A Clock w/ and Alarm
+* Coding Assignment #3 : A Clock w/ an Alarm
 * Reading Selections from Matthew Fuller, [Software Studies: A Lexicon: Introduction, "Algorithm", "Code", "Programmability", and "Source Code".](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
 * Midterm project assignment Due: Week 8
 ## Week 5 – Adding repetition
