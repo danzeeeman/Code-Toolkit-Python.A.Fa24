@@ -165,14 +165,14 @@ Whenever text is formatted in this way, it is valid Python Processing syntax. Yo
 
 ```ellipse(x, y, width, height)```
 ```
-fill(255, 0, 255);
-ellipse(0, 0, 512, 512);
+fill(255, 0, 255)
+ellipse(0, 0, 512, 512)
 ```
 
 ```triangle(x1, y1, x2, y2, x3, y3)```
 ```
-fill(255, 0, 255);
-triangle(0, 0, 256, 512, 512, 0);
+fill(255, 0, 255)
+triangle(0, 0, 256, 512, 512, 0)
 ```
 
 Let's look at this ```fill``` function that we keep calling.  Fill sets the fill color for our shapes.
@@ -189,12 +189,12 @@ rect(50,50,200,200)
 ```fill(r, g, b)```
 
 ```
-fill(255, 0, 255);
+fill(255, 0, 255)
 ```
 
 ```stroke(r, g, b)```
 ```
-stroke(255, 255, 0);
+stroke(255, 255, 0)
 ```
 
 You can always add a fourth argument to any color commands to specify alpha which is a common digital media term that means transparency: how see-through a digital image is.
