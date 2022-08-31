@@ -17,9 +17,7 @@ requirement of the Culture and Media major.
 
 ## Class Website & Email
 
-Rather than using Canvas this semester we will be using this [website](https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa22)
-
-(Please note: this is the most up-to-date URL that reflects our web hosting changes this semester.)
+Rather than using Canvas this semester we will be using this URL https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa22
 
 Please bookmark that URL and refer back to it often. All deadlines, reading materials, project tutorials, and 
 other course materials will be posted here. You will be using Google Docs, Google Drive, and other 
@@ -141,7 +139,7 @@ asked to respect our entire community by abiding by university policies at any g
 community members who observe others not abiding by these expectations may gently remind them to 
 respect our community health.
 
-## Attendance and Meaningful Participation for an Online Course
+## Attendance and Meaningful Participation for our Course
 
 Attendance and participation are required. Failing to show up and take part may result in a lowered grade, 
 and excessive lack of engagement may result in being dropped from the course. Of course, we find 
@@ -314,16 +312,16 @@ Part II: Standalone Python – Networks and data processing
 * Data structures: Dictionaries
 Final project assignment For in-class presentation and discussion on Week 15.
 ### Home Work
-* Coding Assignment #6: 
 ## Week 11 – Data serialization: for storage and communication
 * Serialization with JSON
 * An experiment with networking
+* * Coding Assignment #7: Extra Credit - Dealers Choice 
 ### Home Work
 * Paul Dourish, “Protocols, Packets, and Proximity: The Materiality of Internet Routing”, from Signal Traffic: Critical Studies of Media Infrastructures, Nicole Starosielski and Lisa Parks, eds.
 ## Week 12 – Network protocols
 * Networking and the Web
 ### Home Work
-* Coding Assignment #7: Scraping the Net
+* Coding Assignment #8: Scraping the Net
 * Alex Galloway and Eugene Thacker, "Protocol and Counter-Protocol", 2003
 ## Week 13 – Saving data in a database
 * Final Project Check Point - Gut Check 

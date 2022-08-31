@@ -1,4 +1,4 @@
-# Course Outline
+# Course Schedule
 An outline of our course schedule for the semester will be provided on the class website, reviewed on the 
 first day, and is included below. 
 ## Week 1 – Thinking like a computer?
