@@ -14,7 +14,7 @@ _The title "The Medium Is the Massage" is a teaser—a way of getting attention.
 
 More importantly I want you to take away this:
 
-The communication channel used to communicate any message shapes the message itself.  So if you see an Banner Ad that ad was specifcally manufactured to get you to click it.  That promoted tweet was crafted to get you to pay attention to it.  That TikTok, was engineered to be captivating. Remember that the way a message is communicated influences the meaning of the message.
+The communication channel used to communicate any message shapes the message itself.  So if you see an Banner Ad that ad was specifcally manufactured to get you to click it.  That promoted tweet was crafted to get you to pay attention to it.  That TikTok, was engineered to be captivating. Remember that the way a message is communicated influences the message.
 
 ## Review of what we've done so far
 
