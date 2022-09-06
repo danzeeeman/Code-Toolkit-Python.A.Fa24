@@ -124,7 +124,7 @@ What is a variable?
   ```
 ####  _Did anyone take Calculus?_
 
-![Cover](images\changing-stuff.jpeg)
+![Cover](images/changing-stuff.jpeg)
 
 A way to introduce variation on a theme, generalization within a formal structure, or the abstraction of some parts of a process.
 
