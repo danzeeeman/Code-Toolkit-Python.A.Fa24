@@ -1,6 +1,22 @@
 # Code Toolkit: Python, Fall 2022
 ## Week 2 — Wednesday, September 7 — Class notes
-# Review of what we've done so far
+
+# Reading Discussion
+
+_So what did everyone thing of the reading?_
+
+Marshall McLuhan made some interesting statements huh?
+
+Marshall McLuhan wrote:
+```
+The title "The Medium Is the Massage" is a teaser—a way of getting attention. There's a wonderful sign hanging in a Toronto junkyard which reads, 'Help Beautify Junkyards. Throw Something Lovely Away Today.' This is a very effective way of getting people to notice a lot of things. And so the title is intended to draw attention to the fact that a medium is not something neutral—it does something to people. It takes hold of them. It rubs them off, it massages them and bumps them around, chiropractically, as it were, and the general roughing up that any new society gets from a medium, especially
+```
+
+More importantly I want you to take away this:
+
+The communication channel used to communicate any message shapes the message itself.  So if you see an Banner Ad that ad was specifcally manufactured to get you to click it.  That promoted tweet was crafted to get you to pay attention to it.  That TikTok, was engineered to be captivating. Remember that the way a message is communicated influences the meaning of the message.
+
+## Review of what we've done so far
 
 Python and Processing programs are comprised of commands, also known as statements, also known as instructions. Each exists on its own line. Statements are generally comprised of expressions and operators. Expressions are things that have a value, like the number 250, and operators are things that have effects, they do something, combining values in various ways.
 
@@ -542,4 +558,6 @@ Putting that altogether, here is how we could use random values to draw the abov
 Stop and run that a few times to see what kinds of variation we've just created.
 
 
-![Homework](images\lewitt-trapezoid.jpeg)
+# Explore the Examples
+
+![Homework](images/lewitt-trapezoid.jpeg)
