@@ -16,6 +16,9 @@ More importantly I want you to take away this:
 
 The communication channel used to communicate any message shapes the message itself.  So if you see a instagram ad that ad was specifcally manufactured to get _you_ to click it.  That promoted tweet was crafted to get you to pay attention to it.  That TikTok, was engineered to be captivating. Remember that the way a message is communicated influences the message itself.
 
+
+Continuing Eduction reading [Manufacturing Concent by Edward S. Herman and Noam Chomsky](/pdfs/Manufacturing%20Consent%20%5BThe%20Political%20Economy%20Of%20The%20Mass%20Media%5D.pdf)
+
 ## Review of what we've done so far
 
 Python and Processing programs are comprised of commands, also known as statements, also known as instructions. Each exists on its own line. Statements are generally comprised of expressions and operators. Expressions are things that have a value, like the number 250, and operators are things that have effects, they do something, combining values in various ways.
