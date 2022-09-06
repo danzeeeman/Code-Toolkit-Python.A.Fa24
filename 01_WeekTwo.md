@@ -23,7 +23,7 @@ Continuing Eduction in Media Studies read [Manufacturing Concent by Edward S. He
 
 Python and Processing programs are comprised of commands, also known as statements, also known as instructions. Each exists on its own line. Statements are generally comprised of expressions and operators. Expressions are things that have a value, like the number 250, and operators are things that have effects, they do something, combining values in various ways.
 
-##The grid system:
+## The grid system:
 
 ![Grid](/images/grid.png)
 
