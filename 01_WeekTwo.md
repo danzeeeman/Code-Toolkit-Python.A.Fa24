@@ -8,9 +8,9 @@ _So what did everyone thing of the reading?_
 Marshall McLuhan made some interesting statements huh?
 
 Marshall McLuhan wrote:
-```
-The title "The Medium Is the Massage" is a teaser—a way of getting attention. There's a wonderful sign hanging in a Toronto junkyard which reads, 'Help Beautify Junkyards. Throw Something Lovely Away Today.' This is a very effective way of getting people to notice a lot of things. And so the title is intended to draw attention to the fact that a medium is not something neutral—it does something to people. It takes hold of them. It rubs them off, it massages them and bumps them around, chiropractically, as it were, and the general roughing up that any new society gets from a medium, especially
-```
+
+_The title "The Medium Is the Massage" is a teaser—a way of getting attention. There's a wonderful sign hanging in a Toronto junkyard which reads, 'Help Beautify Junkyards. Throw Something Lovely Away Today.' This is a very effective way of getting people to notice a lot of things. And so the title is intended to draw attention to the fact that a medium is not something neutral—it does something to people. It takes hold of them. It rubs them off, it massages them and bumps them around, chiropractically, as it were, and the general roughing up that any new society gets from a medium, especially_
+
 
 More importantly I want you to take away this:
 
