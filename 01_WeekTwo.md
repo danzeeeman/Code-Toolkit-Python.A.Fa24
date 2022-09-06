@@ -17,7 +17,7 @@ More importantly I want you to take away this:
 The communication channel used to communicate any message shapes the message itself.  So if you see a instagram ad that ad was specifcally manufactured to get _you_ to click it.  That promoted tweet was crafted to get you to pay attention to it.  That TikTok, was engineered to be captivating. Remember that the way a message is communicated influences the message itself.
 
 
-Continuing Eduction reading [Manufacturing Concent by Edward S. Herman and Noam Chomsky](/pdfs/Manufacturing%20Consent%20%5BThe%20Political%20Economy%20Of%20The%20Mass%20Media%5D.pdf)
+Continuing Eduction in Media Studies read [Manufacturing Concent by Edward S. Herman and Noam Chomsky](/pdfs/Manufacturing%20Consent%20%5BThe%20Political%20Economy%20Of%20The%20Mass%20Media%5D.pdf) for a whole bunch of Extra Credit
 
 ## Review of what we've done so far
 
