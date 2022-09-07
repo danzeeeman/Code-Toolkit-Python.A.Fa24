@@ -294,7 +294,7 @@ Arithmetic is done with the following operators:
   * a *= 4 or a = a * 4
 * divide (/)
   * a = 2 / 2  = 1
-  * a = 1 / 2  = 0.6
+  * a = 1 / 2  = 0.5
   * a /= 2 or a = a / 2
 * pow (**)
   * a = 2**2 = 4 
