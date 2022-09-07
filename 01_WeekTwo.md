@@ -575,7 +575,7 @@ Stop and run that a few times to see what kinds of variation we've just created.
       - type ```brew install git``` into your terminal
     - go to cloning
   - Clone the repo: 
-    - type ```git clone https://github.com/danzeeeman/code_toolkit_S2022``` into the terminal
+    - type ```git clone https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa22``` into the terminal
 
 ```
 git clone your_repo_url
