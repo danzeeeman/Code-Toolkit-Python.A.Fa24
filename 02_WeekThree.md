@@ -375,7 +375,7 @@ def draw():
 ```
 
 Running this now leaves a trail of rectangles from all previous mouse positions. Why? Because ```background()``` only runs once, only wiping the screen at the beginning of the program, but Processing runs the ```draw()``` block many times per second, each time creating a frame, and without ```background()```, Processing draws new rectangles without erasing the previous ones. Depending on your intention, there are times when you may or may not want this effect.
-As another example, think about how this relates to random(). You used this command to set variables to random values. But now whenever you use random() you must ask yourself an important question when is the random command being called? When is that random number being chosen? Consider this example:
+As another example, think about how this relates to ```random()```. You used this command to set variables to random values. But now whenever you use ````random()``` you must ask yourself an important question when is the random command being called? When is that random number being chosen? Consider this example:
 
 ```
 def setup():
@@ -485,13 +485,15 @@ def draw():
     ellipse(200, 200, mouseX-pmouseX, mouseY-pmouseY)
 ```
 
+![Calc](images/3xksjp.jpg)
+
 _Distance_ is difference. Distance is calculated by subtracting. (What about negative values? Fortunately Processing handles that for us in this case, but ideally we should do an absolute value here to make sure we only have positive values. The need for this will be eliminated when we use dist() below.)
 
 Now let's run that and see what happens. We are using the distance as the width and height of the ellipse. Try moving the mouse horizontally, vertivally, and diagonally to see how the width and height are affected. As you can see, distance is also related to speed. The faster the mouse is moved, the more distance it covers between frames.
 
 Now what if we want to do something a little more complicated with distance? What if we wanted to set the thickness of a line based on how fast the user is moving the mouse. So, the faster the movement (the more distance between frames), the thicker the line.
 
-As many of you have already experimented with, line thickness is specified with strokeWeight(), and as you can see from the Processing reference, this takes one parameter, which corresponds to the thickness of the line in pixels. Our distance calculation above produced two values (distance in x and distance in y). How can we get just one value? Simple subtraction was enough for determining distance in x and in y separately, but to actually determine the distance between any two arbitrary points requires some more complicated geometry calculations.
+As many of you have already experimented with, line thickness is specified with ```strokeWeight()```, and as you can see from the Processing reference, this takes one parameter, which corresponds to the thickness of the line in pixels. Our distance calculation above produced two values (distance in ```x``` and distance in ```y```). How can we get just one value? Simple subtraction was enough for determining distance in ```x``` and in ```y``` separately, but to actually determine the distance between any two arbitrary points requires some more complicated geometry calculations.
 
 Anyone remember how to calculate the distance of this line? (Hint: your old friend Pythagoras ...)
 
@@ -503,9 +505,10 @@ As you can see from the reference, ```dist()``` takes four parameters: the ```x`
 
 So how would we calculate the distance between the mouse position of the previous frame and the mouse position of the current frame?
 
-```
-dist(pmouseX,pmouseY, mouseX,mouseY)
+```dist(pmouseX,pmouseY, mouseX,mouseY)```
 Putting that into a complete sketch:
+
+```
 def setup():
     size(400, 400)
     stroke(155, 155, 255, 50)
@@ -523,6 +526,8 @@ def draw():
 There are some issues with this. For one, the line gets really thick really quickly! Also, what if we wanted to create something that felt kind of like a pen or a brush, in the sense that the line got thinner as the user moved faster, and thicker as the user moved slower. Fixing these two issues leads us to the next topic ...
 
 _If you've gotten this far before the rest of the class, wait here and maybe experiment by replacing line() with different draw primitives? What if you remove background() and draw lines from pmouseX,pmouseY to mouseX,mouseY where the color is determined by the distance between points?_
+
+## Stretch Break
 
 ## Map
 
