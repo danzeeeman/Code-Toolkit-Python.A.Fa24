@@ -30,6 +30,31 @@ You can use basic arithmetic to modify it's value. For example using:
 * ```//```   - floor
 
 ```
+#create two variables
+a=100
+b=200
+
+# addition (+) operator
+print(a+b) 
+
+# subtraction (-) operator
+print(a-b) 
+
+# multiplication (*) operator
+print(a*b)
+
+# division (/) operator
+print(b/a)
+
+# modulus (%) operator
+print(a%b) # prints the remainder of a/b
+
+# exponent (**) operator
+print(a**b) #prints a^b
+```
+
+
+```
 # take two variable, assign values with assignment operators
 a=3
 b=4
@@ -67,54 +92,6 @@ print("b: "+str(b))
 a//=b
 print("a: "+str(a))
 print("b: "+str(b))
-```
-
-```
-#create two variables
-a=100
-b=200
-
-# addition (+) operator
-print(a+b) 
-
-# subtraction (-) operator
-print(a-b) 
-
-# multiplication (*) operator
-print(a*b)
-
-# division (/) operator
-print(b/a)
-
-# modulus (%) operator
-print(a%b) # prints the remainder of a/b
-
-# exponent (**) operator
-print(a**b) #prints a^b
-```
-
-```
-#create two variables
-a=100
-b=200
-
-# addition (+) operator
-print(a+b) 
-
-# subtraction (-) operator
-print(a-b) 
-
-# multiplication (*) operator
-print(a*b)
-
-# division (/) operator
-print(b/a)
-
-# modulus (%) operator
-print(a%b) # prints the remainder of a/b
-
-# exponent (**) operator
-print(a**b) #prints a^b
 ```
 
 And you can even make one variable depend on the value of others. For example:
