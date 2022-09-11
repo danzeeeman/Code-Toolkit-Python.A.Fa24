@@ -129,7 +129,9 @@ There is much precedent within digital art for thinking about these kinds of rep
 
 Let's look at a couple examples from Golan in particular:
 
-Golan Levin's project [Yellowtail](https://www.creativeapplications.net/nft/yellowtail-1998-svg-nft-version-3-2021-golan-levin/) (1998-2010) is another great example. This project was originally created before Processing existed, but then was re-written for Processing in 2007. Golan created an NFT of it using p5.js over the panorama.  So you can own it if you want.  I do.
+Golan Levin's project [Yellowtail](https://objkt.com/asset/hicetnunc/9954) (1998-2010) Yellowtail (1998-, by @Golan Levin) is an interactive system for the gestural performance of real-time abstract animation. Repeating your drawings end-over-end, it allows simultaneous specification of a line's shape and its quality of movement. This is the official SVG version.
+
+Another one is [Polygona Nervosa](https://objkt.com/asset/hicetnunc/56312) n March 1997, I conceived a gestural interaction by which a user could simultaneously specify both the form and also the quality of movement of an animated shape. This system, which is released here for the first time, is described in detail in my 2000 Masters thesis from MIT, "Painterly Interfaces for Audiovisual Performance", p.66-69 (http://flong.com/archive/storage/pdf/articles/thesis300.pdf). Edition of 12 +1AP.
 
 Bringing together these threads (interactive art, abstract expressionism) is a fun project simply called ["Jackson Pollock" by designer Miltos Manetas](jacksonpollock.org).
 
