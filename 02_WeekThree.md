@@ -165,6 +165,7 @@ _The Horse in Motion_
 ![Horse](images/The_Horse_in_Motion_high_res.jpeg)
 
 Here it is as an animated gif
+
 ![Horse Gif](images/Muybridge_race_horse_animated.gif)
 
 In Processing, this means that to achieve motion you will create code that draws a single static frame, then redraws that frame with some slight change, and does this again, over and over. These slight changes (or variations) are achieved by using variables.
