@@ -1,14 +1,21 @@
 # Code Toolkit: Python, Fall 2022
+
 ## Week 3 — Wednesday, September 14 — Class notes
+
 ## Review of last week
+
 ### Variables
+
 A variable is a placeholder for a value
 New syntax:
+
 ```
 creatureX = 50
 rect( creatureX, 100, 20, 50 )
 ```
-#### New vocabulary:
+
+#### New vocabulary
+
 You create a variable by _assigning_ it a value, as in the first line above. (Unlike in many other programming languages, in Python you do not need to _declare_ a variable before using it.)
 
 Then you can use that variable throughout your code.
@@ -19,8 +26,8 @@ You can use basic arithmetic to modify it's value. For example using:
 * ```*```   - multiplication
 * ```/```   - division
 * ```**```  - pow
-* ```%```   - mod 
-* ```//```   - floor 
+* ```%```   - mod
+* ```//```   - floor
 
 ```
 # take two variable, assign values with assignment operators
@@ -123,7 +130,7 @@ Anytime you want something in your code to change (or "vary") you need to add on
 
 We thought a bit about how many variables you would need to represent a given composition, and this can be a useful first step in project planning.
 
-_Question: If you wanted to draw 3 creatures and you want them to move around on the screen horizontally and vertically, how many variables would you need?_ 
+_Question: If you wanted to draw 3 creatures and you want them to move around on the screen horizontally and vertically, how many variables would you need?_
 
 And if you then also wanted the height of each creature to change? You would need three more.
 
@@ -145,12 +152,12 @@ There is much precedent within digital art for thinking about these kinds of rep
 
 Let's look at a couple examples from Golan in particular:
 
-Golan Levin's project [Yellowtail](https://www.creativeapplications.net/nft/yellowtail-1998-svg-nft-version-3-2021-golan-levin/) (1998-2010) is another great example. This project was originally created before Processing existed, but then was re-written for Processing in 2007. Golan created an NFT of it using p5.js over the panorama.  So you can own it if you want.  I do. 
+Golan Levin's project [Yellowtail](https://www.creativeapplications.net/nft/yellowtail-1998-svg-nft-version-3-2021-golan-levin/) (1998-2010) is another great example. This project was originally created before Processing existed, but then was re-written for Processing in 2007. Golan created an NFT of it using p5.js over the panorama.  So you can own it if you want.  I do.
 
 Bringing together these threads (interactive art, abstract expressionism) is a fun project simply called ["Jackson Pollock" by designer Miltos Manetas](jacksonpollock.org).
 
-
 ## Adding interactivity with Processing
+
 Let's get started. Last week we saw how Processing comes with certain pre-defined variables. We talked for example about width and height, which will always reference the width and height of the draw window, no matter what.
 
 Another special variable that I mentioned was mouseX which tracks the x position of the mouse.
@@ -172,6 +179,7 @@ This is using Processing's _static_ mode. That means that this code runs **once*
 In the above snippet, that code draws a rectangle at the initial value of mouseX, which happens to be 0, and then it never draws another frame. So even though I may move the mouse aorund (and the variable mouseX may be updated) the sketch never has the chance to redraw the rectangle.
 
 ### Frames
+
 In nearly all visual media, the appearance of motion is achieved by displaying a sequence of static images in rapid succession, which then to our eyes gives the impression of movement. Like drawing a bouncing ball on a pad of paper and flipping through the pages, displaying many static images in sequence looks like motion. This is the premise for cinema, video, and nearly all animation and motion graphics: a sequence of static images that gives impression of movement.
 
 _The Horse in Motion_
@@ -218,6 +226,7 @@ The term for these new code structures introduced here is a code block, or just 
 In Python, you indicate the start of a new block with a colon (:), and then you indicate all the code in that block by indenting it with the same number of spaces. The block continues on every line until you stop indenting. We will be using 4 spaces. (You are allowed to use different numbers of spaces or tabs, as long as you are consistent. Programmers love to fight over which is the best to use. This semester we will use 4 spaces for consistency and later on you can do whatever you'd like!)
 
 Let's demonstrate this with the following example:
+
 ```
 def setup():
     print("Doing this once.")  
@@ -248,12 +257,13 @@ This can be extremely useful for debugging later on when you are trying to figur
 And we can combine words and variables using the plus sign (+). When the arguments to + are strings, it does not do arithmetic, but instead does string concatenation, conjoining together the text of the string with the value of the variable. Having one operator that can be used for more than one purpose is called operator overloading, and it can be very confusing, but it can also be a convenient shortcut. We'll try not to use too many other examples of operator overloading this semester.
 
 But if you try to run this example:
+
 ```
 x = 5
 println("x is now equal to " + x)
 ```
-you will get this error:
 
+you will get this error:
 
 We don't talk about errors enough in coding education. Most coding instruction shows you how to do things and presumes they will work. So when students encounter something that doesn't work they are often unprepared for how to proceed. As a computer programmer, you should get accustomed and even comfortable reading errors. As a person creating software, you are not able to simply call tech support if something does not run as you'd expect. Error messages are a form of communication between you and the person who created the tool that you're using. They are their best effort to explain to you why something you tried do does not comply with the usage patterns that they provided.
 
@@ -280,9 +290,11 @@ def draw():
 As you can see, the frame rate is slightly changing all the time! This is because the actual frame rate (the number of times per second that Processing is able to run the draw() block) depends on things like how fast the computer's processor is, how many other programs are running, etc. As you can see there, the frame rate of that sketch is about 60 — that corresponds to the number of frames per second, or in other words, the number of times that draw() gets called per second. For reference, the frame rate of most cinema is 24 frames per second (or "fps").
 
 In Processing, you can adjust this with:
+
 ```
 frameRate(24) # 24 is now the number of frames per second
 ```
+
 Note that the parameter here indicates the maximum frame rate. Processing may not be able to acheive that frame rate (due to processor speed, etc.) but that is what it will try to do.
 
 Returning to the original example, we can merge together the code that tries to draw a rectangle using mouseX with the above setup() and draw() code:
@@ -326,34 +338,39 @@ def draw():
 
 This is called a global variable. People usually don't like global variables. They create code that can be more confusing to read. But in Processing they are required.
 Confusingly, whenever you assign a variable a value within a block, Python tries to create a new variable within that block. So for example, look what happens when you run this code:
+
 ```
 i = 0
 def setup():
     size(100,100)
-    i = 25	
+    i = 25 
 
 def draw():
     rect(i,0,50,50)
 ```
+
 You might think the rectangle would get drawn with ```x``` at 25, but it gets drawn with ```x``` at 0. Why? Because ```i = 25``` inside ```setup()``` creates a new variable limited to that scope. The solution is the global keyword.
 
 Important rule: Whenever you want to use a variable in more than one scope, you must initialize it outside of any other code block and then declare it to be global within every code block where you will use it. So modify the above code like this:
+
 ```
 i = 0
 def setup():
     size(100,100)
     global i
-    i = 25	
+    i = 25 
 
 def draw():
     rect(i,0,50,50)
 ```
+
 and now it will do the expected thing.
 To simplify: you should create your variables in global block (up top, no indentation), and then declare then as global inside each block where you want to use them.
 
 When? Now that we have introduced the concept of frames into our sketches, and our programs unfold in time, it begs an imporant question. In regards to a command or code instruction, we can now ask: When does that happen? Before today, this question didn't really matter. Over the last two weeks, the only sense of time that mattered was the order in which your instructions were run — from top to bottom, which created visual objects from back to front — but all that happened in a split second and didn't really matter in terms of "human" time. But now the sketch has a duration that we humans can perceive, and things can happen over time. So, when?
 
 The original example of this lesson draws a rectangle at the x location of the mouse:
+
 ```
 def setup():
     size(400,400)
@@ -364,7 +381,9 @@ def draw():
     fill(200,200,255)
     rect(mouseX,150,100,100)
 ```
+
 But look what happens if we move background() out of draw() and into setup():
+
 ```
 def setup():
     size(400,400)
@@ -375,8 +394,10 @@ def draw():
     fill(200,200,255)
     rect(mouseX,150,100,100)
 ```
+
 Running this now leaves a trail of rectangles from all previous mouse positions. Why? Because ```background()``` only runs once, only wiping the screen at the beginning of the program, but Processing runs the ```draw()``` block many times per second, each time creating a frame, and without ```background()```, Processing draws new rectangles without erasing the previous ones. Depending on your intention, there are times when you may or may not want this effect.
 As another example, think about how this relates to random(). You used this command to set variables to random values. But now whenever you use random() you must ask yourself an important question when is the random command being called? When is that random number being chosen? Consider this example:
+
 ```
 def setup():
     size(400,400)
@@ -389,8 +410,10 @@ def setup():
 def draw():
     rect(150,150,100,100)
 ```
+
 Each time you stop and run that sketch, the rectangle will have a different color. Three random values are chosen inside ```setup()``` and the fill color is set once at the beginning of the sketch.
 Now let's make a slight change:
+
 ```
 def setup():
     size(400,400)
@@ -403,13 +426,14 @@ def draw():
     fill(r,g,b)
     rect(150,150,100,100)
 ```
+
 We have moved the selection of random values and the setting of the fill color into ```draw()```, meaning that new random values are selected and the fill color is set each frame. This creates a very different effect.
 Again, there are different times that you may want each of these different behaviors.
 
-
-### Stretch break!
+### Stretch break
 
 ### Interaction, continued
+
 So far we've talked about the special Processing variables mouseX and mouseY. We saw that as the mouse moves, Processing automatically sets the value of these variables to the x and y position of the mouse in every frame.
 
 There are several other special variables that Processing provides us, and now I want to talk about two more:
@@ -425,6 +449,7 @@ Draws a line (a direct path between two points) to the screen.
 Syntax
 ```line(x1, y1, x2, y2)```
 Parameters:
+
 * x1 float: x-coordinate of the first point
 * y1 float: y-coordinate of the first point
 * x2 float: x-coordinate of the second point
@@ -468,6 +493,7 @@ We can think about this with an illustration:
 Simply by subtracting the previous mouse position from the current mouse position, we are calculating the distance that the mouse moved between these two frames.
 
 Writing that up in code form:
+
 ```
 def setup():
     size(400, 400)
@@ -517,10 +543,10 @@ def draw():
 
 There are some issues with this. For one, the line gets really thick really quickly! Also, what if we wanted to create something that felt kind of like a pen or a brush, in the sense that the line got thinner as the user moved faster, and thicker as the user moved slower. Fixing these two issues leads us to the next topic ...
 
-
 _If you've gotten this far before the rest of the class, wait here and maybe experiment by replacing line() with different draw primitives? What if you remove background() and draw lines from pmouseX,pmouseY to mouseX,mouseY where the color is determined by the distance between points?_
 
 ## Map
+
 To address the above questions, let's look at ```map()```. This is a simple thing that can be very useful, but it can be a little tricky to understand.
 
 ```map()``` takes a variable and translates (or "maps") it from one range of values proportionally into another range of values. It will be very useful to anyone who elects to do a data visualization for their midterm project.
@@ -555,15 +581,19 @@ map( 3, 0,4, 100,0 ) # Answer: 25
 Here are some practical examples that you can re-use in your code:
 
 If you wanted a rectangle to move up/down in the same direction as the mouse, but limit it to a region smaller than the full window, you could do this:
+
 ```
 rectY = map(mouseY, 0,height, 100,200)
 rect( 200,rectY, 50,50 )
 ```
+
 If you wanted a rectangle to move left/right in the opposite direction as the mouse, you could do this:
+
 ```
 rectX = map(mouseX, 0,width, width,0)
 rect( rectX,200, 50,50 )
 ```
+
 If you wanted to create a fill color controlled by the mouse x that was always shades of red, you could do this:
 
 ```
@@ -591,10 +621,121 @@ def draw():
     line(pmouseX, pmouseY, mouseX, mouseY)
 ```
 
+## Rotate, Scale, Translate
+
+This is important for your homework
+
+```rotate(angle)```
+
+```
+loop_frame = 500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    angle = map(frameCount % loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    rect(width/2, height/2, 386, 368)
+```
+
+_This doesn't work too well does it? It doesn't do what you expect does it?_
+
+Let's see with what happens when we add a ```translate()```?
+
+```translate(x, y)```
+
+```
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    translate(width/2, height/2)
+    angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    rect(0, 0, 386, 368)
+```
+
+```scale(x, y)```
+
+```
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    translate(width/2, height/2)
+    angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
+    scale(scale_x, scale_y)
+    rect(0, 0, 386, 368)
+```
+
+```push()```
+```pop()```
+
+```
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    translate(width/2, height/2)
+    angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
+    scale(scale_x, scale_y)
+    rect(0, 0, 386, 368)
+```
+
+```
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    push()
+    translate(width/2, height/2)
+    angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    push()
+    scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
+    scale(scale_x, scale_y)
+    push()
+    fill(255, 0, 255)
+    stroke(255, 255, 0)
+    rect(0, 0, 200, 200)
+    pop()
+    fill(255, 255, 0)
+    stroke(255, 0, 255)
+    rect(0, 0, 100, 100)
+    pop()
+    fill(255, 0, 255)
+    stroke(255, 255, 0)
+    rect(0, 0, 50, 50)
+    pop()
+    fill(255, 255, 0)
+    stroke(255, 0, 255)
+    rect(0, 0, 25, 25)
+```
+
 ### Home Work
+
 * Read [Introduction to Shape Grammars](pdfs/MIT4_540F18_qa1.pdf)
 * Coding Assignment #2a : Create a generative pattern
-  * Experiment with 2D transforms such as scaling, rotation, mirroring
+  * Experiment with 2D transforms such as scaling, rotation, translation
   * Iterate on your designs
   * Use Plenty of Variables
 * Coding Assignment #2b : Make your pattern respond to the mouse input (button click and or position)
