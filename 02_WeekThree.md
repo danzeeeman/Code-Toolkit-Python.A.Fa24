@@ -685,12 +685,6 @@ def setup():
     rectMode(CENTER)
 
 def draw():
-loop_frame = 1500
-def setup():
-    size(512, 512)
-    rectMode(CENTER)
-
-def draw():
     pushMatrix()
     translate(width/2, height/2)
     angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
