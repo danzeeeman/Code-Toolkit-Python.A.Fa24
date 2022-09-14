@@ -660,8 +660,28 @@ def draw():
     rect(0, 0, 386, 368)
 ```
 
-```push()```
-```pop()```
+```pushMatrix()```
+```popMatrix()```
+
+```
+pushMatrix()
+translate(10, 10)
+fill(255)
+rect(0, 0, 50, 50)# White rectangle
+pushMatrix()
+translate(30, 20)
+translate(10, 10)
+fill(0)
+rect(0, 0, 50, 50)# Black rectangle
+pushMatrix()
+translate(10, 10)
+fill(100)
+rect(15, 10, 50, 50)# Gray rectangle
+popMatrix()
+popMatrix()
+popMatrix()
+rect(0, 0, 10, 10)
+```
 
 ```
 loop_frame = 1500
