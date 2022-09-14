@@ -133,7 +133,7 @@ Golan Levin's project [Yellowtail](https://objkt.com/asset/hicetnunc/9954) (1998
 
 Another one is [Polygona Nervosa](https://objkt.com/asset/hicetnunc/56312) n March 1997, I conceived a gestural interaction by which a user could simultaneously specify both the form and also the quality of movement of an animated shape. This system, which is released here for the first time, is described in detail in my 2000 Masters thesis from MIT, "Painterly Interfaces for Audiovisual Performance", p.66-69 (http://flong.com/archive/storage/pdf/articles/thesis300.pdf). Edition of 12 +1AP.
 
-Bringing together these threads (interactive art, abstract expressionism) is a fun project simply called ["Jackson Pollock" by designer Miltos Manetas](jacksonpollock.org).
+Bringing together these threads (interactive art, abstract expressionism) is a fun project simply called ["Jackson Pollock" by designer Miltos Manetas](http://jacksonpollock.org).
 
 ## Adding interactivity with Processing
 
