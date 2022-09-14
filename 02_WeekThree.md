@@ -716,6 +716,38 @@ def draw():
     rect(0, 0, 25, 25)
 ```
 
+```
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    pushMatrix()
+    	translate(width/2, height/2)
+    	angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    	pushMatrix()
+    		rotate(angle)
+    		scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
+    		pushMatrix()
+			scale(scale_x, scale_y)
+    			fill(255, 0, 255)
+    			stroke(255, 255, 0)
+    			rect(0, 0, 200, 200)
+    		popMatrix()
+    		fill(255, 255, 0)
+    		stroke(255, 0, 255)
+    		rect(0, 0, 100, 100)
+    	popMatrix()
+    	fill(255, 0, 255)
+    	stroke(255, 255, 0)
+    	rect(0, 0, 50, 50)
+    popMatrix()
+    fill(255, 255, 0)
+    stroke(255, 0, 255)
+    rect(0, 0, 25, 25)
+ ```
+
 ### Home Work
 
 * Read [Introduction to Shape Grammars](pdfs/MIT4_540F18_qa1.pdf)
