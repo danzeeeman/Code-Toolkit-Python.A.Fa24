@@ -709,7 +709,7 @@ def draw():
     stroke(255, 0, 255)
     rect(0, 0, 25, 25)
 ```
-
+BELOW WILL NOT WORK IN PROCESSING IT IS JUST TO SHOW THE WAY 
 ```
 loop_frame = 1500
 def setup():
