@@ -133,7 +133,7 @@ Golan Levin's project [Yellowtail](https://objkt.com/asset/hicetnunc/9954) (1998
 
 Another one is [Polygona Nervosa](https://objkt.com/asset/hicetnunc/56312) n March 1997, I conceived a gestural interaction by which a user could simultaneously specify both the form and also the quality of movement of an animated shape. This system, which is released here for the first time, is described in detail in my 2000 Masters thesis from MIT, "Painterly Interfaces for Audiovisual Performance", p.66-69 (http://flong.com/archive/storage/pdf/articles/thesis300.pdf). Edition of 12 +1AP.
 
-Bringing together these threads (interactive art, abstract expressionism) is a fun project simply called ["Jackson Pollock" by designer Miltos Manetas](jacksonpollock.org).
+Bringing together these threads (interactive art, abstract expressionism) is a fun project simply called ["Jackson Pollock" by designer Miltos Manetas](http://jacksonpollock.org).
 
 ## Adding interactivity with Processing
 
@@ -165,6 +165,7 @@ _The Horse in Motion_
 ![Horse](images/The_Horse_in_Motion_high_res.jpeg)
 
 Here it is as an animated gif
+
 ![Horse Gif](images/Muybridge_race_horse_animated.gif)
 
 In Processing, this means that to achieve motion you will create code that draws a single static frame, then redraws that frame with some slight change, and does this again, over and over. These slight changes (or variations) are achieved by using variables.
@@ -659,8 +660,28 @@ def draw():
     rect(0, 0, 386, 368)
 ```
 
-```push()```
-```pop()```
+```pushMatrix()```
+```popMatrix()```
+
+```
+pushMatrix()
+translate(10, 10)
+fill(255)
+rect(0, 0, 50, 50)# White rectangle
+pushMatrix()
+translate(30, 20)
+translate(10, 10)
+fill(0)
+rect(0, 0, 50, 50)# Black rectangle
+pushMatrix()
+translate(10, 10)
+fill(100)
+rect(15, 10, 50, 50)# Gray rectangle
+popMatrix()
+popMatrix()
+popMatrix()
+rect(0, 0, 10, 10)
+```
 
 ```
 loop_frame = 1500
@@ -684,36 +705,62 @@ def setup():
     rectMode(CENTER)
 
 def draw():
+    pushMatrix()
+    translate(width/2, height/2)
+    angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    pushMatrix()
+    scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
+    scale(scale_x, scale_y)
+    pushMatrix()
+    fill(255, 0, 255)
+    stroke(255, 255, 0)
+    rect(0, 0, 200, 200)
+    popMatrix()
+    fill(255, 255, 0)
+    stroke(255, 0, 255)
+    rect(0, 0, 100, 100)
+    popMatrix()
+    fill(255, 0, 255)
+    stroke(255, 255, 0)
+    rect(0, 0, 50, 50)
+    popMatrix()
+    fill(255, 255, 0)
+    stroke(255, 0, 255)
+    rect(0, 0, 25, 25)
+```
+BELOW WILL NOT WORK IN PROCESSING IT IS JUST TO SHOW THE WAY 
+```
 loop_frame = 1500
 def setup():
     size(512, 512)
     rectMode(CENTER)
 
 def draw():
-    push()
-    translate(width/2, height/2)
-    angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
-    rotate(angle)
-    push()
-    scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
-    scale(scale_x, scale_y)
-    push()
-    fill(255, 0, 255)
-    stroke(255, 255, 0)
-    rect(0, 0, 200, 200)
-    pop()
-    fill(255, 255, 0)
-    stroke(255, 0, 255)
-    rect(0, 0, 100, 100)
-    pop()
-    fill(255, 0, 255)
-    stroke(255, 255, 0)
-    rect(0, 0, 50, 50)
-    pop()
+    pushMatrix()
+    	translate(width/2, height/2)
+    	angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    	pushMatrix()
+    		rotate(angle)
+    		scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
+    		pushMatrix()
+			scale(scale_x, scale_y)
+    			fill(255, 0, 255)
+    			stroke(255, 255, 0)
+    			rect(0, 0, 200, 200)
+    		popMatrix()
+    		fill(255, 255, 0)
+    		stroke(255, 0, 255)
+    		rect(0, 0, 100, 100)
+    	popMatrix()
+    	fill(255, 0, 255)
+    	stroke(255, 255, 0)
+    	rect(0, 0, 50, 50)
+    popMatrix()
     fill(255, 255, 0)
     stroke(255, 0, 255)
     rect(0, 0, 25, 25)
-```
+ ```
 
 ### Home Work
 
