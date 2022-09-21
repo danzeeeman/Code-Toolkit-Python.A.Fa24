@@ -29,8 +29,11 @@ def draw():
 NOTE: This is the pattern that you should use for working with raster images from now on.
 We also saw how to use mouse movement with built-in variables that Processing defines for us: mouseX and mouseY.
 
-We also talked about pmouseX and pmouseY, and we saw how these special, built-in variables give you the position of the mouse from the previous frame. So if you are curious about that, have a look at the class notes. For example, here is how you could use those two variables to calculate the distance the mouse pointer traveled from one frame to another:
+We also talked about pmouseX and pmouseY, and we saw how these special, built-in variables give you the position of the mouse from the previous frame. So if you are curious about that, have a look at the class notes. For example, here is how you could use those two variables to calculate the distance the 
+mouse pointer traveled from one frame to another:
+```
 distance = dist( pmouseX, pmouseY, mouseX, mouseY )
+```
 And lastly, we saw how we could use these special variables in ways that are more flexible and powerful by using the map() command. This command transltes or "maps" a value or variable proportionally from one range of numbers to another range. For example, the following code uses mouseX to position a rectangle, but limits its movement to a 100 pixel range:
 
 ```
