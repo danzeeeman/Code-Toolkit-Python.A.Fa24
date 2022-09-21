@@ -892,7 +892,34 @@ And now, believe it or not, you have all the basic pieces to implement a game li
 
 # Notes about Time:
 
-![Time](images/)
+![Time](images/c28821dba294924e38617fb9341b6e56.jpg)
+
+![Time](images/thumb_days-since-last-timezone-issue-1-days-since-last-timezone-66030538.png)
+
+```
+print(day())
+print(hour())
+print(millis())
+print(minute())
+print(month())
+print(second())
+print(year())
+```
+
+![12 Clocks](images/maeda-all.gif)
+
+![1](images/maeda-01.gif)
+![2](images/maeda-02.gif)
+![3](images/maeda-03.gif)
+![4](images/maeda-04.gif)
+![5](images/maeda-05.gif)
+![6](images/maeda-06.gif)
+![7](images/maeda-07.gif)
+![8](images/maeda-08.gif)
+![9](images/maeda-09.gif)
+![10](images/maeda-10.gif)
+![11](images/maeda-11.gif)
+![12](images/maeda-12.gif)
 
 ### Home Work
 * Coding Assignment #3 : A Clock w/ an Alarm
