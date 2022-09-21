@@ -122,9 +122,8 @@ But how do we actually use these variables?
 Conditionals are ways of asking if something is happening or not, and to allow our code to have different behavior in each case.
 Your code can now be more than one simple set of top-down instructions, and can instead have the possibility of doing different things depending on various variables, calculations, and user actions.
 
-    A note on pseudocode. (Pronounced, "SOO-doh code".) So far, all the code that I've shown you has been valid Python/Processing syntax. You could copy/paste it into the PDE and it would run. Now we will start talking about a thing called pseudocode. Pseudocode is basically plain English, but with some bits of valid code in it. There are not hard and fast rules about valid pseudocode. Rather, it is a way of writing out an algorithm in English with bits of actual code in it. It is a way to describe an algorithm and work it out, without implementing it yet.
-    (Pseudocode will always be indicated with a gray background and a thin side border. Remember, this is to help us understand, but you are not able to copy/paste it into the PDE.)
-
+A note on pseudocode. (Pronounced, "SOO-doh code".) So far, all the code that I've shown you has been valid Python/Processing syntax. You could copy/paste it into the PDE and it would run. Now we will start talking about a thing called pseudocode. Pseudocode is basically plain English, but with some bits of valid code in it. There are not hard and fast rules about valid pseudocode. Rather, it is a way of writing out an algorithm in English with bits of actual code in it. It is a way to describe an algorithm and work it out, without implementing it yet.
+    
 ```
 If the answer to some question is Yes:
     then run some commands
