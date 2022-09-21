@@ -1,6 +1,8 @@
-Code Toolkit: Python, Fall 2021
-Week 4 — Wednesday, September 21 — Class notes
-Review of last week
+# Code Toolkit: Python, Fall 2021
+
+## Week 4 — Wednesday, September 21 — Class notes
+
+## Review of last week
 Last week we learned about moving from static compositions that create a single fixed frame, to interactive compositions that can respond to mouse input to create kinetic, moving images. In Processing this is often called active mode.
 
 To achieve that we learned some new syntax, mainly, the setup() and draw() blocks:
