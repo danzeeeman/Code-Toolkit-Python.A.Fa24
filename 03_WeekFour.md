@@ -91,7 +91,7 @@ But what is if? So far, variables have only had numeric values. How can a variab
 
 These variables are of a new kind of value. We say that they are a new type, and it is called ```Boolean```
 .
-Just like with the numerical values and variables that we have been using, Boolean variables can be used whenever we want to keep track of something with only two possible values: yes or no, on or off, visible or hidden. Their value is always only either True or False. So you would 
+Just like with the numerical values and variables that we have been using, Boolean variables can be used whenever we want to keep track of something with only two possible values: yes or no, on or off, visible or hidden. Their value is always only either True or False. So you would
 
 use them like this:
 
@@ -201,6 +201,7 @@ Let's get more specific:
   If the mouse x position is less than 300
     then draw an ellipse
 And now let's translate that into real Processing code:
+```
 
 ```
 def setup():
@@ -405,6 +406,8 @@ else:
 
 The square would never get drawn. Why? What would make the first if statement False? If mouseX is greater than or equal to 400. But if this is the case, it could never be less than 200.
 
+![confusing](images/82ad1d18adb1aba033d9ee85b27e9e1ebea7f651.jpeg)
+
 If ```elif``` seems confusing to you, that's OK. It is confusing. Even expert programmers get tripped up about these kinds of logical statements all the time, and they are often the source of time-consuming and expensive bugs. Fortunately, you can write this example in a way that is more clear and readable, and that is also logically equivalent — based on the left-side pseudocode above, like this:
 
 ```
@@ -472,7 +475,7 @@ def draw():
     rect(300,300, 50,50)
     if mouseX > 275 and mouseX < 325 and mouseY > 275 and mouseY < 325:
         ellipse(300,300, 50,50)
-``
+```
 Note that you must write mouseX twice. In other words, Python does not allow you to say something like this:
 
 ```
@@ -492,8 +495,9 @@ If you'd like, if it is more clear to you, you could write it like this:
 
 which is equivalent (note the change from > to <). Personally I find this more confusing, but it may look nicer to your eye.
 
+# BREAK
 
-# Keyboard interaction
+## Keyboard interaction
 
 So far we've seen how you can use the special Processing variable keyPressed to let the user press any key to trigger a conditional action. But this only tells us if any key is being pressed or not. What if we want to get more specific and create code that responds to specific keys?
 
@@ -584,7 +588,7 @@ def draw():
 ```
 With this style, you are only checking that they key is pressed once, and if that is True, you have a series of nested if statements that then check which character was pressed.
 
-# Events
+## Events
 
 In addition to these conditionals using keyPressed and key, there is even an important third way of handling keyboard interaction. Try running the following code and make very quick key presses:
 
@@ -814,6 +818,7 @@ def draw():
 ```
 
 Great. But now it disappears off the left side. How do we fix this? Do we need a new variable? To answer that, ask yourself: is anything new is changing? No, nothing new is changing, so we don't need a new variable. But we want to change when and how that variable changes. In order to do that, there is another question that we want to ask and respond to. Let's work through the pseudocode:
+
 ```
   Draw a circle at location circleX
   Increment the value of circleX by 1
@@ -827,6 +832,7 @@ And how do we want to modify this?
   If the circleX < 0
     then change the increment to 1
 ```
+
 Looks like we need another conditional. Let's add that:
 
 ```
@@ -852,6 +858,7 @@ def draw():
 Great!
 
 Let's add one more thing. Let's allow the user to also change the circle direction by pressing some keys. Let's use 'j' for left and 'l' for right. All we need to add is the keyPressed() block and two conditionals:
+
 ```
 circleX = 300
 circleDirection = 1
@@ -882,3 +889,12 @@ def keyPressed():
 And now, believe it or not, you have all the basic pieces to implement a game like Pong. To be clear, Pong combines many of these elements in a way that may still appear complex, but you should be able to look at this code and have some understanding of what is going on. Take a look:
 
 # In Class Activity
+
+
+# Notes about Time:
+
+![Time](images/)
+
+### Home Work
+* Coding Assignment #3 : A Clock w/ an Alarm
+* Reading Selections from Matthew Fuller, [Software Studies: A Lexicon: Introduction, "Algorithm", "Code", "Programmability", and "Source Code".](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
