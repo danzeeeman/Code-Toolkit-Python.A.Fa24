@@ -513,9 +513,9 @@ Draw a Green Ellipse in the lower right hand screen when the mouse is the 4th qu
 
 ## Keyboard interaction
 
-So far we've seen how you can use the special Processing variable keyPressed to let the user press any key to trigger a conditional action. But this only tells us if any key is being pressed or not. What if we want to get more specific and create code that responds to specific keys?
+So far we've seen how you can use the special Processing variable ```keyPressed``` to let the user press any key to trigger a conditional action. But this only tells us if any key is being pressed or not. What if we want to get more specific and create code that responds to specific keys?
 
-Fortunately, Processing offers us another special variable just for this purpose: key. (Processing reference. That says "example is broken", but it actually seems to work OK for me. Maybe there is something I'm missing.)
+Fortunately, Processing offers us another special variable just for this purpose: ```key``` (Processing reference. That says "example is broken", but it actually seems to work OK for me. Maybe there is something I'm missing.)
 
 With this variable, we are now working with a variable type that I have mentioned before called a string: a bit of text surrounded in single or double quotes. For example: 'a' or "b". You can read more about strings in the Processing reference, or in the Python reference.
 
