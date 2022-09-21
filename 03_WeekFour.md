@@ -499,6 +499,16 @@ If you'd like, if it is more clear to you, you could write it like this:
 
 which is equivalent (note the change from > to <). Personally I find this more confusing, but it may look nicer to your eye.
 
+## Inclass Assignment
+
+Draw a Blue Circle in the upper left hand screen when the mouse is in the 1st quad.
+
+Draw a Red Rect in the upper right hand screen when the mouse is in the 2nd quad.
+
+Draw a Yellow Triangle in the lower left hand screen when the mouse is the 3rd quad.
+
+Draw a Green Ellipse in the lower right hand screen when the mouse is the 4th quad.
+
 # BREAK
 
 ## Keyboard interaction
