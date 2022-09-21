@@ -509,6 +509,30 @@ Draw a Yellow Triangle in the lower left hand screen when the mouse is the 3rd q
 
 Draw a Green Ellipse in the lower right hand screen when the mouse is the 4th quad.
 
+```
+def setup():
+    size(600,600)
+    rectMode(CENTER)
+ 
+def draw():
+    background(255)
+    if mouseX < width/2 and mouseY < height/2:
+        fill(0, 0, 255)
+        ellipse(width/4, height/4, 50, 50)
+    elif mouseX > width/2 and mouseY < height/2:
+        fill(255, 0, 0)
+        rect(3*width/4, height/4, 50, 50)
+    elif mouseX < width/2 and mouseY > height/2:
+        fill(255, 255, 0)
+        triangle(width/4-25, 3*height/4-25, width/4, 3*height/4, width/4+25, 3*height/4-25)
+    elif mouseX > width/2 and mouseY > height/2:
+        fill(0, 255, 0)
+        ellipse(3*width/4, 3*height/4, 50, 25)
+    else:
+        fill(255, 0, 255)
+        rect(width/2, height/2, 100, 100)
+```
+
 # BREAK
 
 ## Keyboard interaction
