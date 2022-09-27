@@ -112,7 +112,7 @@ In fact, one of the creators of Processing, Casey Reas, produced a 2004 Processi
 
 Beyond this general connection to software, this week we'll look at Sol Lewitt's work as an example of creative experimentation with formal pattern and repetition. This video documents a 2008 installion of his work at MoMA:
 
-Behind the Scenes: Wall Drawing #260
+[Behind the Scenes](https://www.youtube.com/watch?v=YvOpvam8CSM)
 
 In addition to the way that Lewitt uses language to create something like a computer program to generate a drawing, let's also pay attention to the way that he uses logic, combinatorics, and repetition, rendered here in the form of a grid of geometric shapes.
 
