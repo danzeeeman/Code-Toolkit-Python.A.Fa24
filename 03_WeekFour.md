@@ -1,6 +1,8 @@
-Code Toolkit: Python, Fall 2021
-Week 4 — Wednesday, September 21 — Class notes
-Review of last week
+# Code Toolkit: Python, Fall 2021
+
+## Week 4 — Wednesday, September 21 — Class notes
+
+## Review of last week
 Last week we learned about moving from static compositions that create a single fixed frame, to interactive compositions that can respond to mouse input to create kinetic, moving images. In Processing this is often called active mode.
 
 To achieve that we learned some new syntax, mainly, the setup() and draw() blocks:
@@ -27,8 +29,11 @@ def draw():
 NOTE: This is the pattern that you should use for working with raster images from now on.
 We also saw how to use mouse movement with built-in variables that Processing defines for us: mouseX and mouseY.
 
-We also talked about pmouseX and pmouseY, and we saw how these special, built-in variables give you the position of the mouse from the previous frame. So if you are curious about that, have a look at the class notes. For example, here is how you could use those two variables to calculate the distance the mouse pointer traveled from one frame to another:
+We also talked about pmouseX and pmouseY, and we saw how these special, built-in variables give you the position of the mouse from the previous frame. So if you are curious about that, have a look at the class notes. For example, here is how you could use those two variables to calculate the distance the 
+mouse pointer traveled from one frame to another:
+```
 distance = dist( pmouseX, pmouseY, mouseX, mouseY )
+```
 And lastly, we saw how we could use these special variables in ways that are more flexible and powerful by using the map() command. This command transltes or "maps" a value or variable proportionally from one range of numbers to another range. For example, the following code uses mouseX to position a rectangle, but limits its movement to a 100 pixel range:
 
 ```
@@ -494,13 +499,47 @@ If you'd like, if it is more clear to you, you could write it like this:
 
 which is equivalent (note the change from > to <). Personally I find this more confusing, but it may look nicer to your eye.
 
+## Inclass Assignment
+
+Draw a Blue Circle in the upper left hand screen when the mouse is in the 1st quad.
+
+Draw a Red Rect in the upper right hand screen when the mouse is in the 2nd quad.
+
+Draw a Yellow Triangle in the lower left hand screen when the mouse is the 3rd quad.
+
+Draw a Green Ellipse in the lower right hand screen when the mouse is the 4th quad.
+
+```
+def setup():
+    size(600,600)
+    rectMode(CENTER)
+ 
+def draw():
+    background(255)
+    if mouseX < width/2 and mouseY < height/2:
+        fill(0, 0, 255)
+        ellipse(width/4, height/4, 50, 50)
+    elif mouseX > width/2 and mouseY < height/2:
+        fill(255, 0, 0)
+        rect(3*width/4, height/4, 50, 50)
+    elif mouseX < width/2 and mouseY > height/2:
+        fill(255, 255, 0)
+        triangle(width/4-25, 3*height/4-25, width/4, 3*height/4, width/4+25, 3*height/4-25)
+    elif mouseX > width/2 and mouseY > height/2:
+        fill(0, 255, 0)
+        ellipse(3*width/4, 3*height/4, 50, 25)
+    else:
+        fill(255, 0, 255)
+        rect(width/2, height/2, 100, 100)
+```
+
 # BREAK
 
 ## Keyboard interaction
 
-So far we've seen how you can use the special Processing variable keyPressed to let the user press any key to trigger a conditional action. But this only tells us if any key is being pressed or not. What if we want to get more specific and create code that responds to specific keys?
+So far we've seen how you can use the special Processing variable ```keyPressed``` to let the user press any key to trigger a conditional action. But this only tells us if any key is being pressed or not. What if we want to get more specific and create code that responds to specific keys?
 
-Fortunately, Processing offers us another special variable just for this purpose: key. (Processing reference. That says "example is broken", but it actually seems to work OK for me. Maybe there is something I'm missing.)
+Fortunately, Processing offers us another special variable just for this purpose: ```key``` (Processing reference. That says "example is broken", but it actually seems to work OK for me. Maybe there is something I'm missing.)
 
 With this variable, we are now working with a variable type that I have mentioned before called a string: a bit of text surrounded in single or double quotes. For example: 'a' or "b". You can read more about strings in the Processing reference, or in the Python reference.
 
@@ -888,6 +927,65 @@ def keyPressed():
 And now, believe it or not, you have all the basic pieces to implement a game like Pong. To be clear, Pong combines many of these elements in a way that may still appear complex, but you should be able to look at this code and have some understanding of what is going on. Take a look:
 
 # In Class Activity
+
+```
+circle_x = 0
+circle_y = 0
+circle_dir_x = 1
+circle_dir_y = 1
+
+def setup():
+    size(600, 600)
+    frameRate(60)
+
+def draw():
+    global circle_x, circle_y, circle_dir_x, circle_dir_y
+    background(255)
+    ellipse(circle_x, circle_y, 100, 100)
+    circle_x = circle_x + circle_dir_x
+    circle_y = circle_y + circle_dir_y
+     
+    if circle_x > width-50:
+        circle_dir_x = -1
+    if circle_x < 50:
+        circle_dir_x = 1
+        
+    if circle_y > height-50:
+        circle_dir_y = -1
+    if circle_y < 50:
+        circle_dir_y = 1
+    
+    pass
+      
+def keyPressed():
+    global circle_dir_x, circle_dir_y
+    if key == 'a':
+        circle_dir_x = -1
+    if key == 'd':
+        circle_dir_x = 1
+    if key == 'w':
+        circle_dir_y = 1
+    if key == 's':
+        circle_dir_y = -1
+    pass
+
+def keyReleased():
+    global circle_dir_x, circle_dir_y
+    if key == 'a':
+        circle_dir_x = 0
+    if key == 'd':
+        circle_dir_x = 0
+    if key == 'w':
+        circle_dir_y = 0
+    if key == 's':
+        circle_dir_y = 0
+    pass
+    
+def mousePressed():
+    global circle_dir
+    circle_dir = circle_dir * -1
+    pass
+```
 
 
 # Notes about Time:
