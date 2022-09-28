@@ -36,17 +36,17 @@ Boolean expressions are variables that evaluate to True and False (like mousePre
 
 In Python, the boolean operators are:
 
-* and meaning both parts must be True
-* or meaning at least one part must be True
-* not meaning the thing that follows must be False
+* ```and``` meaning both parts must be True
+* ```or``` meaning at least one part must be True
+* ```not``` meaning the thing that follows must be False
 
 In addition to these boolean operators, we can also ask questions about numbers, using comparison operators:
 
-* less than (<) meaning the value on the left must be less than the value on the right
-* greater than (>) meaning the value on the left must be greater than the value on the right
-* equal to (==) meaning both values must be equal. Remember: this is different from the assignment operator, which only uses one equal sign (=). 
-* less than or equal to (<=). This is a shortcut. It is very useful, but can always be written another way. For example: x <= 10 could also be written as x < 10 or x == 10, or if you're working with whole numbers, as x < 11.
-* greater than or equal to (>=). Same as above.
+* less than ```<``` meaning the value on the left must be less than the value on the right
+* greater than ```>``` meaning the value on the left must be greater than the value on the right
+* equal to ```==``` meaning both values must be equal. Remember: this is different from the assignment operator, which only uses one equal sign (=). 
+* less than or equal to ```<=```. This is a shortcut. It is very useful, but can always be written another way. For example: x <= 10 could also be written as x < 10 or x == 10, or if you're working with whole numbers, as x < 11.
+* greater than or equal to ```>=```. Same as above.
 
 We also looked at several new special Processing variables:
 
@@ -108,7 +108,7 @@ Yoko Ono
 
 If this idea sounds a lot like computer programming to you, you wouldn't be alone. Several digital artists have drawn inspiration from Conceptual Art to draw parallels in the ways that with software and other digital media, we often create machine configurations that themselves produce cultural objects.
 
-In fact, one of the creators of Processing, Casey Reas, produced a 2004 Processing project related to Lewitt's work: {Software} Structures project at the Whitney, curated by Christiane Paul.
+In fact, one of the creators of Processing, Casey Reas, produced a 2004 Processing project related to Lewitt's work: [{Sofrware} Structures](https://artport.whitney.org/commissions/softwarestructures/text.html#structure) project at the Whitney, curated by Christiane Paul.
 
 Beyond this general connection to software, this week we'll look at Sol Lewitt's work as an example of creative experimentation with formal pattern and repetition. This video documents a 2008 installion of his work at MoMA:
 
@@ -477,7 +477,7 @@ while i <= 4:
     i = i + 1
 ```
 
-## for loops 
+## for loops
 
 All the above discussion is about while loops. There is another kind of syntax for creating loops that looks a little different but achieves the same behavior: for loops. These two different constructs are veyr similar but not precisely equivalent.
 
@@ -501,7 +501,167 @@ for i in range(10):
     rect(i,i,5,5)
 ```
 
-Both examples contain: a variable declaration and a boolean expression. But the variable increment works differently in each case. In the while loops that we have been working on in this lesson, the increment is clearly discernible on its own line. In the for loop case, the increment happens kind of implicitly, because the Python range() command generates a list of numbers, and the variable i is automatically set to each number in an iterative way.
+Both examples contain: a variable declaration and a boolean expression. But the variable increment works differently in each case. In the while loops that we have been working on in this lesson, the increment is clearly discernible on its own line. In the for loop case, the increment happens kind of implicitly, because the Python ```range()``` [command]() generates a list of numbers, and the variable i is automatically set to each number in an iterative way.
+
+you can do this and add a lower bounds to ```range(10, 100)```
+
+```
+for i in range(10, 100):
+    println("i = " + str(i))
+    rect(i,i,5,5)
+```
+
+```
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+    
+    
+def draw():
+    for i in range(0, 360):
+        pushMatrix()
+        translate(width/2, height/2)
+        rot = map((frameCount+i)%360, 0, 360, -TWO_PI, TWO_PI)
+        rotate(rot)
+        rect(0, 0, width/2, height/2)
+        popMatrix()
+```
+
+# Notes for your Homework 
+
+
+```
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+    
+    
+def draw():
+    for i in range(0, 360):
+        pushMatrix()
+        translate(width/2, height/2)
+        rot = map((frameCount+i)%360, 0, 360, -TWO_PI, TWO_PI)
+        scale_rect = sin(rot)
+        scale_rect = map(scale_rect, -1, 1, 0.5, 1)
+        rotate(rot)
+        scale(scale_rect)
+        rect(0, 0, width/2, height/2)
+        popMatrix()
+```
+
+
+## drawing a grid
+
+```
+def setup():
+    size(1024, 1024)
+    rectMode(CENTER)
+    
+def draw():
+    
+    count = 0
+    for i in range(0, num_rects):
+        for j in range(0, num_rects):
+            pushMatrix()
+            if count % 2 == 0:
+                fill(255, 0, 255)
+            else:
+                fill(255, 255, 0)
+            
+            translate(i*width/num_rects, j*height/num_rects)
+            rect(width/num_rects/2, height/num_rects/2, width/num_rects, height/num_rects)
+            popMatrix()
+            count+=1
+```
+
+# Lets talk about _Shape Grammer_
+who enjoyed the reading?
+I saw some of you were like WTF? in the dicussions
+
+## WTF is Shape Grammar? 
+### A Practical Guide
+
+
+Lets think about how shapes go together and what tools with have?
+
+```
+pushMatrix()
+```
+
+```
+popMatrix()
+```
+
+```
+translate()
+```
+
+```
+rotate()
+```
+
+```
+scale()
+```
+
+```
+num_rects = 5
+num_circles = 3
+padding = 50
+def setup():
+    size(1024, 1024)
+    rectMode(CENTER)
+    # background(255)
+    
+def draw():
+    
+    for i in range(0, num_rects):
+        for j in range(0, num_rects):
+            pushMatrix()
+            translate((i+1)*width/(num_rects+1), (j+1)*height/(num_rects+1))
+            rotate((i+1)*10)
+            rect(0, 0, width/num_rects-padding, height/num_rects-padding)
+            for k in range(0, num_circles):
+                for l in range(0, num_circles):
+                    pushMatrix()
+                    translate(k*width/num_rects/num_circles, l*height/num_rects/num_circles)
+                    ellipse(0, 0, width/num_rects/num_circles, height/num_rects/num_circles)
+                    popMatrix()
+            popMatrix()
+```
+
+```
+num_rects = 5
+num_circles = 5
+padding = 50
+def setup():
+    size(1024, 1024)
+    rectMode(CENTER)
+    # background(255)
+    
+def draw():
+    
+    for i in range(0, num_rects):
+        for j in range(0, num_rects):
+            pushMatrix()
+            translate((i+1)*width/(num_rects+1), (j+1)*height/(num_rects+1))
+            rotate((i+1)*10)
+            rect(0, 0, width/num_rects-padding, height/num_rects-padding)
+            for k in range(0, num_circles):
+              pushMatrix()
+              translate(k*width/num_rects/num_circles, 0, width/num_rects/num_circles, width/num_rects/num_circles)
+            popMatrix()
+            
+              
+            
+    for i in range(0, num_circles):
+        for j in range(0, num_circles):
+            pushMatrix()
+            translate((i+1)*width/(num_circles+1), (j+1)*height/(num_circles+1))
+            rotate((i+1)*10)
+            ellipse(50, 50, width/num_circles-padding, height/num_circles-padding)
+            popMatrix()
+```
 
 What is a list, you may ask? We'll talk about this next week.
 
@@ -509,5 +669,8 @@ I will say that one advantage of the for loop is that it's nearly impossible to 
 
 ## Home Work
 * Coding Assignment #4.a: Create a Endless animation using primitives: Circle, Square, Rectangle, Triangles
-* Coding Assignment #4.b: Create a Endless animation using found objects   
-    * MEMEs will be judged by their Dankness
+* Coding Assignment #4.b: Create a Endless animation using found objects
+    * MEMEs will be judged by their dankness by the group
+    * Due Oct 19th
+
+
