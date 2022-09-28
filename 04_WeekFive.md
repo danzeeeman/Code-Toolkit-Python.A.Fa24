@@ -120,7 +120,8 @@ There are several installations of Sol Lewitt's work throughout New York City. O
 
 ## Loops
 To add repitition in a computer program, we use loops.
-You have already seen one kind of repetition in your sketches. Remember from week 3 that all the code inside the draw() block gets repeated many times, once per frame, depending on the frame rate of your sketch:
+
+You have already seen one kind of repetition in your sketches. Remember from week 3 that all the code inside the ```draw()``` block gets repeated many times, once per frame, depending on the frame rate of your sketch:
 
 ```
 def draw():
@@ -419,6 +420,8 @@ We can use our looping variable somehow. But how do you determine if a number is
 
 Rember the ```%``` mod operator?  
 
+
+![Mod](images/modulus-is-underrated-68348281.png)
 
 ```
 size(600,600)
