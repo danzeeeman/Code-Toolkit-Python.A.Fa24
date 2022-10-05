@@ -462,4 +462,54 @@ def keyPressed():
 ```
 
 Here, I am using a variable dayEveningNight that is holding the values 1, 2, or 3. I am using an if statement in the draw() block that checks what the value of this variable is and draws something accordingly. And then, in the keyPressed() block, I am incrementing that variable based on what the user has pressed. If the variable gets larger than 3, I am reseting back to its initial value of 1.
+
+```
+button_x = 0
+button_y = 0
+button_width = 100
+button_height = 100
+button_hover = False
+button_clicked = False
+button_clicked_time = 0
+def setup():
+    size(512, 512)
+    
+def draw():
+    global button_clicked
+    current_time = millis()
+    background(0)
+    if button_clicked:
+        fill(0, 255, 255)
+        if current_time - button_clicked_time > 750:
+            button_clicked = False
+    elif button_hover:
+        fill(255, 0, 255)
+    else:
+        fill(255, 255, 0)
+    
+    rect(button_x, button_y, button_width, button_height)
+
+def mousePressed():
+    global button_clicked, button_clicked_time
+    if mouseX > button_x and mouseX < button_x+button_width:
+        if mouseY > button_y and mouseY < button_y+button_height:
+            button_clicked = True
+            button_clicked_time = millis()
+        else:
+            button_clicked = False
+    else:
+        button_clicked = False
+
+def mouseMoved():
+    global button_hover
+    if mouseX > button_x and mouseX < button_x+button_width:
+        if mouseY > button_y and mouseY < button_y+button_height:
+            button_hover = True
+        else:
+            button_hover = False
+    else:
+        button_hover = False
+```
+
+
 You can use these same principles to keep track of many kinds of state within your program. For example, if a user is entering a password, or the levels of a game.
