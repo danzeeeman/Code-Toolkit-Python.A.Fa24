@@ -561,6 +561,69 @@ You can use these same principles to keep track of many kinds of state within yo
 
 ## Homework Notes
 
+```
+def setup():
+    size(1024, 1024)
+
+def draw():
+    background(0)
+    
+    for i in range(0, 12):
+        pushMatrix()
+        translate(width/2, height/2)
+        theta = map(i, 0, 12, 0, TWO_PI) + PI
+        r = width/3
+        x = r * sin(theta)
+        y = r * cos(theta)
+        stroke(255, 255, 255)
+        fill(255, 255, 255)
+        r = 175
+        tick_offset_x = r * sin(theta)
+        tick_offset_y = r * cos(theta)
+        line(tick_offset_x, tick_offset_y, x, y)
+        popMatrix()
+        
+    for i in range(0, 60):
+        pushMatrix()
+        translate(width/2, height/2)
+        theta = map(i, 0, 60, 0, TWO_PI) 
+        r = width/3
+        x = r * sin(theta)
+        y = r * cos(theta)
+        stroke(255, 255, 255)
+        fill(255, 255, 255)
+        r = width/3-25
+        tick_offset_x = r * sin(theta)
+        tick_offset_y = r * cos(theta)
+        line(tick_offset_x, tick_offset_y, x, y)
+        popMatrix()
+        
+    
+    current_hour = hour() % 12
+    theta = map(current_hour, 0, 12, TWO_PI, 0)+PI
+    r = width/10
+    x = r * sin(theta)
+    y = r * cos(theta)
+    pushMatrix()
+    stroke(255, 255, 255)
+    fill(255, 255, 255)
+    translate(width/2, height/2)
+    line(0, 0, x, y)
+    popMatrix()
+    
+    
+    current_min = minute()
+    theta = map(current_min, 0, 60, TWO_PI, 0)+ PI
+    r = width/5
+    x = r * sin(theta)
+    y = r * cos(theta)
+    pushMatrix()
+    stroke(255, 255, 255)
+    fill(255, 255, 255)
+    translate(width/2, height/2)
+    line(0, 0, x, y)
+    popMatrix()
+```
 
 ## Home Work
 
