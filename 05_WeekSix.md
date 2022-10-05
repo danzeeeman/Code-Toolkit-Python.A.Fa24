@@ -511,5 +511,49 @@ def mouseMoved():
         button_hover = False
 ```
 
+```
+circle_x = 300
+circle_y = 300
+last_frame = 0
+start_time_x = 3000
+start_time_y = 4000
+dir_x = 1
+dir_y = 1
+def setup():
+    size(512, 512)
+    stroke(50, 50, 150)
+    fill(200, 200, 255)
+    textSize(32)
+    frameRate(10)
+
+def draw():
+    background(255)
+    global circle_x, start_time_x, start_time_y, circle_y, dir_x, dir_y
+    current_time = millis()
+    
+    if current_time > start_time_x and current_time < start_time_x + 2000:
+        circle_x += dir_x
+    
+    if circle_x > width or circle_x < 0:
+        dir_x *= -1
+        
+    if current_time > start_time_x + 4000:
+        start_time_x = current_time
+        
+    if current_time > start_time_y and current_time < start_time_y + 2000:
+        circle_y += dir_y
+    
+    if circle_y > height or circle_y < 0:
+        dir_y *= -1
+        
+    if current_time > start_time_y + 5000:
+        start_time_y = current_time
+        
+    ellipse(circle_x, circle_y, 50, 50)
+    
+# def keyPressed():
+#     global start_time
+#     start_time = millis()
+```
 
 You can use these same principles to keep track of many kinds of state within your program. For example, if a user is entering a password, or the levels of a game.
