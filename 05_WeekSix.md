@@ -557,3 +557,7 @@ def draw():
 ```
 
 You can use these same principles to keep track of many kinds of state within your program. For example, if a user is entering a password, or the levels of a game.
+
+
+## Homework Notes
+
