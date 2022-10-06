@@ -495,4 +495,171 @@ def keyPressed():
 ```
 
 Here, I am using a variable dayEveningNight that is holding the values 1, 2, or 3. I am using an if statement in the draw() block that checks what the value of this variable is and draws something accordingly. And then, in the keyPressed() block, I am incrementing that variable based on what the user has pressed. If the variable gets larger than 3, I am reseting back to its initial value of 1.
+
+```
+button_x = 0
+button_y = 0
+button_width = 100
+button_height = 100
+button_hover = False
+button_clicked = False
+button_clicked_time = 0
+def setup():
+    size(512, 512)
+    
+def draw():
+    global button_clicked
+    current_time = millis()
+    background(0)
+    if button_clicked:
+        fill(0, 255, 255)
+        if current_time - button_clicked_time > 750:
+            button_clicked = False
+    elif button_hover:
+        fill(255, 0, 255)
+    else:
+        fill(255, 255, 0)
+    
+    rect(button_x, button_y, button_width, button_height)
+
+def mousePressed():
+    global button_clicked, button_clicked_time
+    if mouseX > button_x and mouseX < button_x+button_width:
+        if mouseY > button_y and mouseY < button_y+button_height:
+            button_clicked = True
+            button_clicked_time = millis()
+        else:
+            button_clicked = False
+    else:
+        button_clicked = False
+
+def mouseMoved():
+    global button_hover
+    if mouseX > button_x and mouseX < button_x+button_width:
+        if mouseY > button_y and mouseY < button_y+button_height:
+            button_hover = True
+        else:
+            button_hover = False
+    else:
+        button_hover = False
+```
+
+```
+circle_x = 300
+circle_y = 300
+last_frame = 0
+start_time_x = 3000
+start_time_y = 4000
+dir_x = 1
+dir_y = 1
+def setup():
+    size(512, 512)
+    stroke(50, 50, 150)
+    fill(200, 200, 255)
+    textSize(32)
+    frameRate(10)
+
+def draw():
+    background(255)
+    global circle_x, start_time_x, start_time_y, circle_y, dir_x, dir_y
+    current_time = millis()
+    
+    if current_time > start_time_x and current_time < start_time_x + 2000:
+        circle_x += dir_x
+    
+    if circle_x > width or circle_x < 0:
+        dir_x *= -1
+        
+    if current_time > start_time_x + 4000:
+        start_time_x = current_time
+        
+    if current_time > start_time_y and current_time < start_time_y + 2000:
+        circle_y += dir_y
+    
+    if circle_y > height or circle_y < 0:
+        dir_y *= -1
+        
+    if current_time > start_time_y + 5000:
+        start_time_y = current_time
+        
+    ellipse(circle_x, circle_y, 50, 50)
+    
+# def keyPressed():
+#     global start_time
+#     start_time = millis()
+```
+
 You can use these same principles to keep track of many kinds of state within your program. For example, if a user is entering a password, or the levels of a game.
+
+
+## Homework Notes
+
+```
+def setup():
+    size(1024, 1024)
+
+def draw():
+    background(0)
+    
+    for i in range(0, 12):
+        pushMatrix()
+        translate(width/2, height/2)
+        theta = map(i, 0, 12, 0, TWO_PI) + PI
+        r = width/3
+        x = r * sin(theta)
+        y = r * cos(theta)
+        stroke(255, 255, 255)
+        fill(255, 255, 255)
+        r = 175
+        tick_offset_x = r * sin(theta)
+        tick_offset_y = r * cos(theta)
+        line(tick_offset_x, tick_offset_y, x, y)
+        popMatrix()
+        
+    for i in range(0, 60):
+        pushMatrix()
+        translate(width/2, height/2)
+        theta = map(i, 0, 60, 0, TWO_PI) 
+        r = width/3
+        x = r * sin(theta)
+        y = r * cos(theta)
+        stroke(255, 255, 255)
+        fill(255, 255, 255)
+        r = width/3-25
+        tick_offset_x = r * sin(theta)
+        tick_offset_y = r * cos(theta)
+        line(tick_offset_x, tick_offset_y, x, y)
+        popMatrix()
+        
+    
+    current_hour = hour() % 12
+    theta = map(current_hour, 0, 12, TWO_PI, 0)+PI
+    r = width/10
+    x = r * sin(theta)
+    y = r * cos(theta)
+    pushMatrix()
+    stroke(255, 255, 255)
+    fill(255, 255, 255)
+    translate(width/2, height/2)
+    line(0, 0, x, y)
+    popMatrix()
+    
+    
+    current_min = minute()
+    theta = map(current_min, 0, 60, TWO_PI, 0)+ PI
+    r = width/5
+    x = r * sin(theta)
+    y = r * cos(theta)
+    pushMatrix()
+    stroke(255, 255, 255)
+    fill(255, 255, 255)
+    translate(width/2, height/2)
+    line(0, 0, x, y)
+    popMatrix()
+```
+
+## Home Work
+
+* Coding Assignment #5: One Button Game
+* ["Data Visualization", from Matthew Fuller's Software Studies: A Lexicon](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
+Catherine D'Ignazio and Lauren Klein, ["Unicorns, Janitors, Ninjas, Wizards, and Rock Stars"]
