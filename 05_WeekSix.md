@@ -242,7 +242,40 @@ def draw():
 
 ## BREAK
 
+## CLOCKS???
+
 ## State: a new way to use variables
+
+Do you remember this?
+
+```
+circleX = 300
+circleDirection = 1
+def setup():
+    size(600,600)
+    stroke(50,50,150)
+    fill(200,200,255)
+
+def draw():
+    background(255)
+    ellipse( circleX,300, 50,50)
+    global circleX
+    global circleDirection
+    circleX = circleX + circleDirection
+    if circleX > width:
+        circleDirection = -1
+    if circleX < 0:
+      circleDirection = 1
+
+def keyPressed():
+    if key == 'j':
+        circleDirection = -1
+
+    if key == 'l':
+        circleDirection = 1
+```
+
+
 So far we have been using variables either for numeric things (like shape sizes, positions, or colors) or for Boolean ```True```/```False``` values. All of these things are ways of keeping track of what the program is doing in a given moment.
 
 Today we saw how we could use timing and ```millis()``` to affect how the program might change over time.
