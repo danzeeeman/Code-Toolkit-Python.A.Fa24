@@ -583,6 +583,48 @@ And go from there: set initial values, use them with the ```rect()``` command, a
 
 ## Live Code Setting Position and Color based upon a List
 
+```
+y = []
+x = []
+speed = []
+rect_color = []
+def setup():
+    global y, x
+    size(1920, 1080)
+    stroke(50, 50, 250)
+    fill(150, 150, 250)
+    rectMode(CENTER)
+    i = 0
+    while i < 10:
+        x.append(random(0, width))
+        y.append(random(0, height))
+        speed.append(random(1, 5))
+        rect_color.append([random(0, 255), random(0, 255), random(0, 255)])
+        i += 1
+
+def draw():
+    global y, x
+    background(255)
+    i = 0
+    while i < len(y):
+        fill(rect_color[i][0], rect_color[i][1], rect_color[i][2])
+        rect(x[i], y[i], 100, 100)
+        dir_x = (mouseX - float(x[i]))/width
+        dir_y = (mouseY - float(y[i]))/height
+        # print('x:{} y:{} i:{}'.format(dir_x, dir_y, i))
+        x[i] += dir_x * speed[i]
+        y[i] += dir_y * speed[i]
+        if x[i] < 0:
+            x[i] = width
+        if x[i] > width:
+            x[i] = 0
+        if y[i] < 0:
+            y[i] = height
+        if y[i] > height:
+            y[i] = 0
+        i += 1
+ ```
+
 If you wanted them to move in a way that was more sophisticated than just random, what would you do? Well each square would need its own x and y direction. More lists!
 
 ## Break
