@@ -56,14 +56,13 @@ Data structures allow you to start to think about modeling: how to organize your
 
 ![Gene Kogan](images/flocking.jpg)
 
-Gene Kogan
 Since lists are used to manage many things, they are often used to implement things like swarms, or herds of objects that behave as if they are acting independently or on their own.
 
 Daniel Shiffman, a professor at NYU in the Interactive Telecommunications Program (ITP) graduate program, uses lists and other data structures to implement swarms that are used to simulate natural phenomenon like animals, plants, clouds, flowing liquids, and others.
 
 For example, here is a [video](https://www.youtube.com/watch?v=tOv8JGA2-mM) that demonstrates a simulation of "flocking", like birds or fish moving together. (It's a very cute video.) Shiffman's book [Nature of Code](https://natureofcode.com/) offers detailed lessons in how to achieve affects like this.
 
-Another, more aesthetically developed, example is this flocking demo by Gene Kogan.
+Another, more aesthetically developed, example is this [flocking demo](https://vimeo.com/39517129) by Gene Kogan.
 
 And another great example is the project [We Feel Fine](http://www.wefeelfine.org/) by Jonathan Harris and Sep Kamvar. This project was made in 2006 using Processing and unfortuntely can be a bit difficult to run that now. (You will probably need to install Java for your browswer and OS version.) But there is documentation online, like this [video](https://www.youtube.com/watch?v=NSGpOSgnfz8) that demonstrates how the project functioned.
 
