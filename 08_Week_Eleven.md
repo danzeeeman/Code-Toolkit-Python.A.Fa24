@@ -64,8 +64,8 @@ _Graffiti Markup Language_ (GML) is an XML-based file format that stores graffit
 GML won an Open Web Award in 2011.
 
 
-[000000book](https://000000book.com)
-[F.A.T. TAG KATSU EDITION](https://apps.apple.com/us/app/fat-tag-graffiti-katsu-edition/id349044241)
+- [000000book](https://000000book.com)
+- [F.A.T. TAG KATSU EDITION](https://apps.apple.com/us/app/fat-tag-graffiti-katsu-edition/id349044241)
 
 ## Let's draw some lines Live CODE Edition!
 
