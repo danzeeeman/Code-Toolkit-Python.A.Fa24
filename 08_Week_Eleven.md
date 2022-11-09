@@ -30,8 +30,6 @@ XML is a software- and hardware-independent tool for storing and transporting da
 - XML was designed to be self-descriptive
 - XML is a W3C Recommendation
 
-
-
 ```
 # The following short XML file called "mammals.xml" is parsed
 # in the code below. It must be in the project's "data" folder.
@@ -135,3 +133,6 @@ def draw():
             pre_point = pt
         endShape()
 ```
+
+# HOMEWORK
+Data Self Portrait 
