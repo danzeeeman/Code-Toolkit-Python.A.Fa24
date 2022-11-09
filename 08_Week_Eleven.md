@@ -1,5 +1,5 @@
-# Week Eleven
-
+# Code Toolkit: Python, Fall 2021
+## Week 11 — Wednesday, November 9 — Class notes
 ![Eleven](images/eleven.webp)
 
 ## GUT CHECK
