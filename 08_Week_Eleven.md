@@ -136,3 +136,4 @@ def draw():
 
 # HOMEWORK
 Data Self Portrait 
+- [Dear Data](https://medium.com/@giorgialupi/dear-data-has-been-acquired-by-moma-but-this-isnt-what-we-are-most-excited-about-bdaa3376d9db)
