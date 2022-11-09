@@ -137,3 +137,4 @@ def draw():
 # HOMEWORK
 - [Data Self Portrait](https://www.rachaelbudd.com/data-self-portrait.html?fbclid=IwAR1sUcLhPzkcSsa6dnCaEz5kL1V4lZewptfWGp8NpwwPVHVYpH8iZ81huso)
 - [Dear Data](https://medium.com/@giorgialupi/dear-data-has-been-acquired-by-moma-but-this-isnt-what-we-are-most-excited-about-bdaa3376d9db)
+- [Giorgia Lupi](http://giorgialupi.com)
