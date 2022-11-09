@@ -2,9 +2,7 @@
 
 # Week 10 — Wednesday, November 2 — Class notes
 
-# Command line from [Sam](https://github.com/antiboredom/scrapism-fall-2022/blob/main/01-command-line/01-notes.md)
-
-    # The Command Line
+# Command line from [Sam Lavigne](https://github.com/antiboredom/scrapism-fall-2022/blob/main/01-command-line/01-notes.md)
 
 The command line is a text-based interface for interacting with your computer. From the command line you can launch programs, view files, and manipulate your file system by making, moving, and copying files and directories. You can think of it as the Finder in Mac, without the graphic interface, but much more powerful.
 

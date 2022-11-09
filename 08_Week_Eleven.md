@@ -4,6 +4,10 @@
 
 ## GUT CHECK
 
+_How you doing?_
+_Are you learning?_
+_Are you growing?_
+_What do you want to learn?_
 ## Final Projects
 - You can take your mid terms and make it better, more complex, more levels etc etc
 - You can make something totally new:
@@ -13,8 +17,6 @@
 
 
 ## Data Data Data
-
-
 ## XML
 
 _What's XML???_
@@ -83,4 +85,6 @@ GML won an Open Web Award in 2011.
                 </pt>
                 <pt>
 ```
+
+_How do we load this data?_
 

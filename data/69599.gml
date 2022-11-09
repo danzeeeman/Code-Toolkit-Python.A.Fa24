@@ -1,5 +1,4 @@
 <GML spec="0.1b">
-    
     <tag>
         
         <header>
