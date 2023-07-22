@@ -100,7 +100,8 @@ git add path_your_new_file_folder_name/*
 git commit -a -m "adding my homework folder where I will store all of my homework"
 git push origin main
 ```
-# we might run into a little issue here! Please Be Vocal if you have issues
+## we might run into a little issue here! 
+## Please Be Vocal if you have issues
 
 # Stable Diffusion
 
