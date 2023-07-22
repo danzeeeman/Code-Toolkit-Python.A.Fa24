@@ -7,7 +7,7 @@ I'm going to do 1:Ones with everyone in the class periodically throughout the se
 ### Office Hours
 Office hours will be on-demand this semester.  I'm usually available during the day except for some standing meetings I have at my day job at 12:30pm-2:00pm.  If you send me an email or discord message I will usually get back to you soon.  I basically live in front of a multiple computers so if I'm not getting back to you promptly its because I'm on a call, asleep, or out.
 
-### [Slack](https://join.slack.com/t/codeatlang/shared_invite/zt-1f3gudxli-6OvkmuO8_y8yTuuCI~8v1g)
+### [Discord](https://discord.gg/kmgRke4Q)
 I invited you all to our discord server.  If I have missed anyone please let me know right now!  Please sign up as it is a way to contact me directly about issues with homework or readings (or anything else y'all wanna chat about). 
 
 ### Introduction
