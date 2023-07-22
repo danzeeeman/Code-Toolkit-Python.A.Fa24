@@ -9,7 +9,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/2
 # pip install requests 
 # data = {}
 # for i in range(0, 17):
-#     url = f"https://courses.newschool.edu/?term%5B%5D=202210&campus%5B%5D=GV&page={i}&mode=json&_=1670198429800"
+#     url = f"https://courses.newschool.edu/?term%5B%5D=202310&campus%5B%5D=GV&page={i}&mode=json&_=1670198429800"
 #     headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/20100101 Firefox/24.0'}
 #     response = requests.get(url, headers=headers)  # send html request
 #     # print(response.text)
@@ -41,13 +41,13 @@ headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/2
 #         # print(f"{course_num_str} {course_credit_str} credits")
 #         i += 1
     
-#     with open("new_school_course_numbers_with_title_credit_fall2022_nyc.json", "w") as outfile:
+#     with open("new_school_course_numbers_with_title_credit_fall2023_nyc.json", "w") as outfile:
 #         outfile.write(json.dumps(data, indent = 4))
 
 
 # results = []
 # total = 0
-# with open("new_school_course_numbers_with_title_credit_fall2022.json", "r") as in_file:
+# with open("new_school_course_numbers_with_title_credit_fall2023.json", "r") as in_file:
 #     data = json.load(in_file)
 #     for course_id in data:
 #         print(course_id)
@@ -61,7 +61,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/2
     # count = 0
     # for course_id in data:
     #     print(course_id)
-    #     url = f"https://courses.newschool.edu/?term%5B%5D=202210&page=1&crse_id={course_id}&mode=json&_=1669857183697"
+    #     url = f"https://courses.newschool.edu/?term%5B%5D=202310&page=1&crse_id={course_id}&mode=json&_=1669857183697"
     #     response = requests.get(url, headers=headers)  # send html request
     #     # print(response.text)
     #     json_data = json.loads(response.text)
@@ -86,16 +86,16 @@ headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/2
     #             output[course_id].append(section)
     #             count += 1
 
-    #         with open("sections_with_instructor_fall2022.json", "w") as outfile:
+    #         with open("sections_with_instructor_fall2023.json", "w") as outfile:
     #             outfile.write(json.dumps(output, indent = 4))
     #     except BaseException as e:
     #         print(e)
     #     time.sleep(0.333)
 
-with open("sections_with_instructor_fall2022.json", "r") as outfile:
-    with open("new_school_course_numbers_with_title_credit_fall2022_nyc.json", "r") as titles:
+with open("sections_with_instructor_fall2023.json", "r") as outfile:
+    with open("new_school_course_numbers_with_title_credit_fall2023_nyc.json", "r") as titles:
         with open("people.csv", "r") as people_file:
-            with open("fall_2022_contact_hours_for_ptf.csv", "a") as csv_out:
+            with open("fall_2023_contact_hours_for_ptf.csv", "a") as csv_out:
                 data = json.load(outfile)
                 titles_data = json.load(titles)
                 reader = csv.DictReader(people_file)
@@ -168,7 +168,7 @@ with open("sections_with_instructor_fall2022.json", "r") as outfile:
     # print(count)
 
 # with open("contact_hours_fall.json", "r") as contact_hours:
-#     with open("fall_2022_contact_hours.csv", "a") as csv_out:
+#     with open("fall_2023_contact_hours.csv", "a") as csv_out:
 #         _data = json.load(contact_hours)
 #         csvwriter = csv.writer(csv_out, lineterminator='\n')
 #         csvwriter.writerow(["COURSE NUMBER", "DAYS PER WEEK", "START TIME", "END TIME"])

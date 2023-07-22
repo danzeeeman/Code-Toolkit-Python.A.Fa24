@@ -1,7 +1,7 @@
-# Code Toolkit: Python, Fall 2022 – LCOD 2012 – Dan Moore
+# Code Toolkit: Python, Fall 2023 – LCOD 2012 – Dan Moore
 
 ### Code Toolkit: Python
-### COD 2012, Fall 2022 (CRN 11855)
+### COD 2012, Fall 2023 (CRN 11855)
 ### Dan Moore, moored1@newschool.edu
 ### Wednesday, 9:00 – 11:40am
 ### 6 East 16th Street, Room: 602
