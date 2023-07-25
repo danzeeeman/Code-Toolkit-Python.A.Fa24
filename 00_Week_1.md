@@ -268,11 +268,11 @@ so something like:
 
 _this is when I give you my cell phone number for emergencies only_ 
 
-So if you think about a phone number here in the states, it is a set of 10 numbers, each number isn't unique to you, but using the phrases from above each part of the number is a Unique Token, the area code is unique to everyone in that area, the exchange used to mean something, and the last four digits (your extension) are you unique to you.  So that when you put those ten digits in the correct order, it create an address to your phone.  
+So if you think about a phone number here in the states, it is a set of eleven numbers, each number isn't unique to you, but using the phrases from above each part of the number is a Unique Token, the country code is unique to everyone in the States, the area code is unique to everyone in that area, the exchange used to mean something but doesn't really anymore (but it was everyone in that exchange), and the last four digits, your extension, are you unique to you.  So that when you put those ten digits in the correct order, it create an address to your phone.  
 
 For generative AI think about this tokens as the bits that make up the address of the outcome you are looking for.  It's a multi-dimensional location inside the latent space of the network.
 
-_DAN WTF IS LATENT SPACE???_
+_DAN! WTF IS LATENT SPACE???_
 
 ![latent space](images/latent_space.png)
 
@@ -286,17 +286,18 @@ Sometimes we project it down to 2D space with a dimensional reduction step to ma
 
 ![tsne](images/latent_space_tsne.jpg)
 
-_WTF is DIMENSIONAL REDUCTION??_
+_DAN! WTF is DIMENSIONAL REDUCTION??_
 
 Dimensional reduction is a technique used to reduce the number of features in a dataset while retaining as much of the important information as possible
 
-You can see here when we project this representation of latent space down to 2D some of the red dots are mixed in with the green dots, that is because they contain similar data points 
+You can see here when we project this representation of latent space down to 2D some of the red dots are mixed in with the green dots, that is because they contain similar data points and should be near each other
 
 ![laten_space_gif](images/PCA_Projection_Illustration.gif)
 
 ### Putting it all together
 
  Each type of generative AI has its own unique tokenizer that translates the natural language prompts you supply into an array of numbers that represent the _address_ of what you are looking for inside the _model_ of the generative AI.  This address is a unique identifier for a location inside the latent space of the AI model's _knowledge_ of what it has been trained on. 
+
 
 ## Part 2 :: Prompting  
 
@@ -349,20 +350,23 @@ _Make it a run on sentence that describes everything in detail_
 
 Lets try these out: (I haven't tried these prompt we're going in cold)
 
-```surreal painting of Bush and Obama kissing under the mistletoe on the white house lawn```
+```surreal painting of George Bush and Obama kissing under the mistletoe on the white house lawn```
 
-```Bush and Obama kissing on the lips under the mistletoe on the white house balcony, surreal, dali, banksy, street art```
+```surreal oil painting by Dali of George Bush and Obama kissing under the mistletoe on the white house lawn```
+
+```a paparazzi photo of George Bush and Obama caught kissing on the lips under the mistletoe on the white house balcony, TMZ```
 
 ```photo of Street art on the side of a building by the street artist banksy of Bush and Obama kissing on the lips, spray paint```
 
-```stencil art by the street artist banksy of Bush and Obama kissing on the lips, black and white```
+```stencil art by the street artist banksy of Bush and Obama kissing on the lips, black and white, street photography, street art, black and white```
 
-```a black and white photo of Bush and Obama kissing on the lips in the oval office at christmas time```
+```a black and white photo of George Bush and Obama kissing on the lips in the oval office at christmas time```
 
-```a christmas card from Obama featuring Obama kissing Bush on the lips```
+```a christmas card from Obama featuring Obama kissing George Bush on the lips```
 
+```a pile of christmas cards on a table with the top christmas card being from Obama featuring Obama kissing Bush on the lips```
 
-### Simple Rules to Follow
+### My Simple Rules to Follow
 
 ```[output] [subject] [context] [style modifiers]```
 ```[subject] [context] [style modifiers]```
