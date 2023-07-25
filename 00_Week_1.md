@@ -195,7 +195,7 @@ In the computer world everything is made of of bits and bytes. Have you heard of
 - a _bit_ is a single binary number a 0 or a 1
 - a _byte_ is made up of 8 _bits_
 
-so the difference between a megabit and a megabyte is 7 million bits. 
+The difference between a megabit and a megabyte is 7 million bits. 
 
 The way a byte level tokenizer works is that it splits up a sentence or a phrase or a paragraph by the individual bytes.  If a word is really long it takes up more bytes in memory therefore it has more tokens.  
 
@@ -213,12 +213,12 @@ Let run the word _somewhere_ through the system.  Some would assume that it woul
 
 As you can see the word is actually 3 different tokens. the letter _s_ the suffix _ome_ and the word _here_
 
-So let look at this diagram for the steps for feeding a phrase into a tokenizer and then into a model.
+Let look at this diagram for the steps for feeding a phrase into a tokenizer and then into a model.
 
 ![Tokenizer Steps](images/tokenizer_steps.png)
 
 
-the goal of tokenizers is to transform natrual language into something a computer can understand and perform operations on:
+The goal of tokenizers is to transform natural language into something a computer can understand and perform operations on:
 
 
 So these bit of code
