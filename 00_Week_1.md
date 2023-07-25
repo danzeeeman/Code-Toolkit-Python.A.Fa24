@@ -270,7 +270,7 @@ so something like:
 
 _this is when I give you my cell phone number for emergencies only_ 
 
-So if you think about a phone number here in the states, it is a set of eleven numbers, each number isn't unique to you, but using the phrases from above each part of the number is a Unique Token, the country code is unique to everyone in the States, the area code is unique to everyone in that area, the exchange used to mean something but doesn't really anymore (but it was everyone in that exchange), and the last four digits, is your extension.  So that when you put those eleven digits in the correct order, it create an address to your phone.  
+So if you think about a phone number here in the states, it is a set of eleven numbers, each number isn't unique to you, but using the phrases from above each part of the number is a Unique Token, the country code is a unique token to everyone in the States, the area code is unique token to everyone in that area, the exchange is a unique token to everyone in that exchange, and the last four digits, is your extension.  So that when you put those eleven digits in the correct order, it create a unique address to your phone.  
 
 For generative AI think about this tokens as the parts that make up the address of the output you want.  It's a multi-dimensional location inside the latent space of the network.
 
