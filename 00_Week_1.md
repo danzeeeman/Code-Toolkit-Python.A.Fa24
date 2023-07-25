@@ -370,6 +370,10 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 
 ```[subject] [context] [style modifiers]```
 
+```[constraints] [subject] [context] [style modifiers]```
+
+```[subject] [context] [style modifiers] [constraints]```
+
 ## BREAK
 
 ## How to use Stable Diffusion WebUI
