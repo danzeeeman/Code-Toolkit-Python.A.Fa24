@@ -190,8 +190,138 @@ You will use Machine Learning to create a 15 page book using the tools we just i
 
 ### Tokenizers 
 
+_what is a tokenizer?_
+
+Tokenizers break up _words_, _parts of words_ and _phrases_ into a unique token that the software can recognize.  
+
+Some tokenizers work by splitting up a sentence or phrase based of the spaces between words but some tokenizers take a more machine centered approach and split them up by bytes.
+
 ![Tokenizers](imgs/Tokenizers.jpg)
 
+In the computer world everything is made of of bits and bytes. Have you heard of the phrase Megabits and Megabytes.  Some people would want you to believe they are the same thing but they aren't. 
+
+- a _bit_ is a single binary number a 0 or a 1
+- a _byte_ is made up of 8 _bits_
+
+so the difference between a megabit and a megabyte is 7 million bits. 
+
+So the way a byte level tokenizer works is that it splits up a sentence or a phrase or a paragraph by the individual bytes.  If a word is really long it takes up more bytes in memory therefore it has more tokens.  
+
+Lets look at how a tokenizer works by looking at the openAI GPT3 tokenizer and feed it some phrases: [link](https://platform.openai.com/tokenizer)
+
+![Tokenizer](images/tokenizer.PNG)
+
+If we turn on show _token id_ we can see the unique identifier for each word in the GPT3 tokenizer.
+
+![Token ID](images/token-id.PNG)
+
+Let run the word _somewhere_ through the system.  Some would assume that it would have a single unique identifier. But it doesn't!
+
+![Somewhere](images/somewhere.PNG)
+
+As you can see the word is actually 3 different tokens. the letter _s_ the suffix _ome_ and the word _here_
+
+So let look at this diagram for the steps for feeding a phrase into a tokenizer and then into a model.
+
+![Tokenizer Steps](images/tokenizer_steps.png)
+
+
+the goal of tokenizers is to transform natrual language into something a computer can understand and perform operations on:
+
+
+So these bit of code
+
+```
+raw_inputs = [
+    "I've been waiting for this blog my whole life.",
+    "I hate this so much!",
+]
+inputs = tokenizer(raw_inputs, padding=True, truncation=True, return_tensors="tf")
+```
+
+will turn the phrases:
+
+- _"I've been waiting for this blog my whole life."_
+- _"I hate this so much!"_
+
+into this Tensor that the computer can understand
+
+```
+{
+    'input_ids': <tf.Tensor: shape=(2, 16), dtype=int32, numpy=
+        array([
+            [  101,  1045,  1005,  2310,  2042,  3403,  2005,  1037, 17662, 12172,  2607,  2026,  2878,  2166,  1012,   102],
+            [  101,  1045,  5223,  2023,  2061,  2172,   999,   102,     0,     0,     0,     0,     0,     0,     0,     0]
+        ], dtype=int32)>, 
+    'attention_mask': <tf.Tensor: shape=(2, 16), dtype=int32, numpy=
+        array([
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ], dtype=int32)>
+}
+```
+
+#### What does this all Mean?
+
+I know there is a lot to unpack in the above snippet and we won't get into that yet.  You're probably confused and wondering why I'm telling you all of this, but it will make sense shortly.
+
+(Country Code)-(Area Code)-(Exchange)-(Extension)
+
+so something like:
+
++1-917-292-****
+
+_this is when I give you my cell phone number for emergencies only_ 
+
+So if you think about a phone number here in the states, it is a set of 10 numbers, each number isn't unique to you, but using the phrases from above each part of the number is a Unique Token, the area code is unique to everyone in that area, the exchange used to mean something, and the last four digits (your extension) are you unique to you.  So that when you put those ten digits in the correct order, it create an address to your phone.  
+
+For generative AI think about this tokens as the bits that make up the address of the outcome you are looking for.  It's a multi-dimensional location inside the latent space of the network.
+
+![damn](images/hold_up.gif)
+
+_DAMN WTF IS LATENT SPACE???_
+
+![latent space](images/latent_space.png)
+
+Sometimes we project it down to 2D space with a dimensional reduction step
+
+![tsne](images/latent_space_tsne.jpg)
+
+_WTF is DIMENSIONAL REDUCTION??_
+
+_It is a technique used to reduce the number of features in a dataset while retaining as much of the important information as possible_
+
+Latent Space is the multi-dimensional space that makes up the 'knowledge' of Generative AI. 
+
+Think of it as a complex space where each unique item is nearby similar items. In the figure below we see all of the items of the same color grouped together.  But because it is more than 3 dimensions (its just represented in 3 dimensions) some of the blue dots could contain information that is similar to the pink dots and are close to them as well. 
+
+![latent space](images/latent_space.png)
+
+You can see here when we project this representation of latent space down to 2D some of the red dots are mixed in with the green dots, that is because they contain similar data points 
+
+![laten_space_gif](images/PCA_Projection_Illustration.gif)
+
+#### Putting it all together
+
+ Each type of generative AI has its own unique tokenizer that translates the natural language prompts you supply into an array of numbers that represent the _address_ of what you are looking for inside the _model_ of the generative AI.  This address is a unique identifier for a location inside the latent space of the AI model's _knowledge_ of what it has been trained on. 
+
+### Prompting  
+
+So all of these prompts will give me different results because they describe the image I want differently:
+
+```a poster of a black and white hightop sneaker, nike air jordan 1``` 
+```a black and white nike air jordan 1 poster```
+```a hightop nike air jordan 1, black and white, poster```
+
+You can see how building on top of a prompt can narrow your search to what you are looking for in the AI Mines:
+
+```a poster of a black and white nike air jordan 1 hightop sneaker```
+```a poster of a black and white nike air jordan 1 hightop sneaker, product shot, wide angle, on foot```
+```a poster of a black and white nike air jordan 1 hightop sneaker, product shot, wide angle, on foot, pink background, high res, studio lighting```
+
+Each of these prompts narrows your search inside the latent space to reveal what you are looking for. 
+
+So lets look at some rules:
 ### Key Phrases and Constraints 
 
 What is the difference between these two statements:
@@ -216,7 +346,26 @@ _Make it a run on sentence that describes everything in detail_
 
 ```surreal image of Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple, vaporwave, synthwave, blue, pink and purple background```
 
-```surreal image of Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple, vaporwave, synthwave, blue, pink and purple background, wide angle, yellow background```
+```surreal image of Bush and Obama kissing under the mistletoe at christmas in the white house dali, banksy, street art, beeple, vaporwave, synthwave, blue, pink and purple background, wide angle, yellow background```
+
+### Order and Context is Important
+
+Lets try these out: (I haven't tried these prompt we're going in cold)
+
+```surreal painting of Bush and Obama kissing under the mistletoe on the white house lawn```
+```Bush and Obama kissing on the lips under the mistletoe on the white house balcony, surreal, dali, banksy, street art```
+```photo of Street art on the side of a building by the street artist banksy of Bush and Obama kissing on the lips, spray paint```
+```stencil art by the street artist banksy of Bush and Obama kissing on the lips, black and white```
+```a black and white photo of Bush and Obama kissing on the lips in the oval office at christmas time```
+```a christmas card from Obama featuring Obama kissing Bush on the lips```
+
+
+### Simple Rules to Follow
+
+```[output] [subject] [context] [style modifiers]```
+```[subject] [context] [style modifiers]```
+
+## BREAK
 
 
 ## Home Work
