@@ -278,7 +278,7 @@ For generative AI think about this tokens as the parts that make up the address 
 
 Latent Space is the multi-dimensional space that makes up the 'knowledge' of Generative AI. 
 
-Think of it as a complex space where each unique item is nearby similar items. In the figure below we see all of the items of the same color grouped together.  But because it is more than 3 dimensions (its just represented in 3 dimensions) some of the blue dots could contain information that is similar to the pink dots and are close to them as well. 
+Think of it as a complex space where each unique item is nearby similar items. In the figure above we see all of the items of the same color grouped together.  But because it is more than 3 dimensions (its just represented in 3 dimensions) some of the blue dots could contain information that is similar to the pink dots and are close to them as well. 
 
 Sometimes we project it down to 2D space with a dimensional reduction step to make it easier to see
 
