@@ -368,6 +368,8 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 
 ## BREAK
 
+## How to use Stable Diffusion
+
 ### 1st Assignment due Week 3 w/presentation:
 
 You will use Machine Learning to create a 10 page book or zine using the tools we just installed. (bonus points if you get the printed and bound)  
