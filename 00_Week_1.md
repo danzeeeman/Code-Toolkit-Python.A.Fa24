@@ -272,25 +272,22 @@ So if you think about a phone number here in the states, it is a set of 10 numbe
 
 For generative AI think about this tokens as the bits that make up the address of the outcome you are looking for.  It's a multi-dimensional location inside the latent space of the network.
 
+_DAN WTF IS LATENT SPACE???_
 ![damn](images/hold_up.gif)
 
-_DAMN WTF IS LATENT SPACE???_
-
 ![latent space](images/latent_space.png)
-
-Sometimes we project it down to 2D space with a dimensional reduction step
-
-![tsne](images/latent_space_tsne.jpg)
-
-_WTF is DIMENSIONAL REDUCTION??_
-
-_It is a technique used to reduce the number of features in a dataset while retaining as much of the important information as possible_
 
 Latent Space is the multi-dimensional space that makes up the 'knowledge' of Generative AI. 
 
 Think of it as a complex space where each unique item is nearby similar items. In the figure below we see all of the items of the same color grouped together.  But because it is more than 3 dimensions (its just represented in 3 dimensions) some of the blue dots could contain information that is similar to the pink dots and are close to them as well. 
 
-![latent space](images/latent_space.png)
+Sometimes we project it down to 2D space with a dimensional reduction step to make it easier to see
+
+![tsne](images/latent_space_tsne.jpg)
+
+_WTF is DIMENSIONAL REDUCTION??_
+
+Dimensional reduction is a technique used to reduce the number of features in a dataset while retaining as much of the important information as possible
 
 You can see here when we project this representation of latent space down to 2D some of the red dots are mixed in with the green dots, that is because they contain similar data points 
 
