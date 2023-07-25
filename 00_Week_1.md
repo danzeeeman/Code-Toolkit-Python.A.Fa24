@@ -302,13 +302,17 @@ You can see here when we project this representation of latent space down to 2D 
 So all of these prompts will give me different results because they describe the image I want differently:
 
 ```a poster of a black and white hightop sneaker, nike air jordan 1``` 
-```a black and white nike air jordan 1 poster```
+
+```a black and white photo of an nike air jordan 1 poster```
+
 ```a hightop nike air jordan 1, black and white, poster```
 
 You can see how building on top of a prompt can narrow your search to what you are looking for in the AI Mines:
 
 ```a poster of a black and white nike air jordan 1 hightop sneaker```
+
 ```a poster of a black and white nike air jordan 1 hightop sneaker, product shot, wide angle, on foot```
+
 ```a poster of a black and white nike air jordan 1 hightop sneaker, product shot, wide angle, on foot, pink background, high res, studio lighting```
 
 Each of these prompts narrows your search inside the latent space to reveal what you are looking for. 
@@ -345,10 +349,15 @@ _Make it a run on sentence that describes everything in detail_
 Lets try these out: (I haven't tried these prompt we're going in cold)
 
 ```surreal painting of Bush and Obama kissing under the mistletoe on the white house lawn```
+
 ```Bush and Obama kissing on the lips under the mistletoe on the white house balcony, surreal, dali, banksy, street art```
+
 ```photo of Street art on the side of a building by the street artist banksy of Bush and Obama kissing on the lips, spray paint```
+
 ```stencil art by the street artist banksy of Bush and Obama kissing on the lips, black and white```
+
 ```a black and white photo of Bush and Obama kissing on the lips in the oval office at christmas time```
+
 ```a christmas card from Obama featuring Obama kissing Bush on the lips```
 
 
