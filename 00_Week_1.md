@@ -260,6 +260,8 @@ into this Tensor that the computer can understand
 
 I know there is a lot to unpack in the above snippet and we won't get into that yet.  You're probably confused and wondering why I'm telling you all of this, but it will make sense shortly.
 
+Lets look at phone numbers!
+
 (Country Code)-(Area Code)-(Exchange)-(Extension)
 
 so something like:
