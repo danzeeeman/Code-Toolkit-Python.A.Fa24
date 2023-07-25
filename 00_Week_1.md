@@ -369,6 +369,7 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 ### My Simple Rules to Follow
 
 ```[output] [subject] [context] [style modifiers]```
+
 ```[subject] [context] [style modifiers]```
 
 ## BREAK
