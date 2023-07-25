@@ -218,7 +218,7 @@ Let look at this diagram for the steps for feeding a phrase into a tokenizer and
 ![Tokenizer Steps](images/tokenizer_steps.png)
 
 
-The goal of tokenizers is to transform natural language into something a computer can understand and perform operations on:
+The goal of tokenizers is to transform natural language into something a computer can understand and perform math operations on:
 
 
 So these bit of code
