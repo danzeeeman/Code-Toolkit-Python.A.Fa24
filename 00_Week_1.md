@@ -273,9 +273,10 @@ So if you think about a phone number here in the states, it is a set of 10 numbe
 For generative AI think about this tokens as the bits that make up the address of the outcome you are looking for.  It's a multi-dimensional location inside the latent space of the network.
 
 _DAN WTF IS LATENT SPACE???_
-![damn](images/hold_up.gif)
 
 ![latent space](images/latent_space.png)
+
+![damn](images/hold_up.gif)
 
 Latent Space is the multi-dimensional space that makes up the 'knowledge' of Generative AI. 
 
