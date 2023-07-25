@@ -368,7 +368,9 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 
 ## BREAK
 
-## How to use Stable Diffusion
+## How to use Stable Diffusion WebUI
+
+## How to use Text Generation WebUI
 
 ### 1st Assignment due Week 3 w/presentation:
 
