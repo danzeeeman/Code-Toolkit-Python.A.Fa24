@@ -177,7 +177,7 @@ Discussions/Feedback here: https://github.com/AUTOMATIC1111/stable-diffusion-web
 
 # Prompt Engineering 101
 ## how to make sweet sweet prompts
-### _you can make loads of money from this_
+_you can make loads of money from this_
 
 ## Part 1 :: It's all about the tokens
 
