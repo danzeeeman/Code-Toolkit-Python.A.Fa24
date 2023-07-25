@@ -173,12 +173,7 @@ Discussions/Feedback here: https://github.com/AUTOMATIC1111/stable-diffusion-web
 [MAC INSTALLER](https://github.com/oobabooga/text-generation-webui/releases/download/installers/oobabooga_macos.zip)
 [WINDOWS](https://github.com/oobabooga/text-generation-webui/releases/download/installers/oobabooga_windows.zip)
 
-
 # BREAK
-
-## Assignment due Week 3 w/presentation:
-
-You will use Machine Learning to create a 15 page book using the tools we just installed.  You may work in groups of up to 3 but then its has to be 30 pages.  
 
 # Prompt Engineering 101
 ## how to make sweet sweet prompts
@@ -366,6 +361,12 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 ```[subject] [context] [style modifiers]```
 
 ## BREAK
+
+### 1st Assignment due Week 3 w/presentation:
+
+You will use Machine Learning to create a 10 page book or zine using the tools we just installed. (bonus points if you get the printed and bound)  
+
+You may work in groups of up to 3 but then its has to be 30 pages.  
 
 
 ## Home Work
