@@ -180,9 +180,7 @@ Discussions/Feedback here: https://github.com/AUTOMATIC1111/stable-diffusion-web
 _you can make loads of money from this_
 
 ## Part 1 :: It's all about the tokens
-
 ![How it works](imgs/works.gif)
-
 ### Tokenizers 
 
 _what is a tokenizer?_
