@@ -182,9 +182,9 @@ You will use Machine Learning to create a 15 page book using the tools we just i
 
 # Prompt Engineering 101
 ## how to make sweet sweet prompts
-### (_you can make loads of money from this_)
+### _you can make loads of money from this_
 
-## It's all about the tokens
+## Part 1 :: It's all about the tokens
 
 ![How it works](imgs/works.gif)
 
@@ -261,7 +261,7 @@ into this Tensor that the computer can understand
 }
 ```
 
-#### What does this all Mean?
+### What does this all Mean?
 
 I know there is a lot to unpack in the above snippet and we won't get into that yet.  You're probably confused and wondering why I'm telling you all of this, but it will make sense shortly.
 
@@ -301,11 +301,11 @@ You can see here when we project this representation of latent space down to 2D 
 
 ![laten_space_gif](images/PCA_Projection_Illustration.gif)
 
-#### Putting it all together
+### Putting it all together
 
  Each type of generative AI has its own unique tokenizer that translates the natural language prompts you supply into an array of numbers that represent the _address_ of what you are looking for inside the _model_ of the generative AI.  This address is a unique identifier for a location inside the latent space of the AI model's _knowledge_ of what it has been trained on. 
 
-### Prompting  
+## Part 2 :: Prompting  
 
 So all of these prompts will give me different results because they describe the image I want differently:
 
