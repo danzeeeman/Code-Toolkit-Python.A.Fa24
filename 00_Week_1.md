@@ -274,7 +274,7 @@ So if you think about a phone number here in the states, it is a set of eleven n
 
 For generative AI think about this tokens as the parts that make up the address of the output you want.  It's a multi-dimensional location inside the latent space of the network.
 
-_DAN! WTF IS LATENT SPACE???_
+### _DAN! WTF IS LATENT SPACE???_
 
 ![latent space](images/latent_space.png)
 
