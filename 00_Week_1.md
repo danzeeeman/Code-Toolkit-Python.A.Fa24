@@ -378,6 +378,8 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 
 ## How to use Stable Diffusion WebUI
 
+### Cool Addons
+
 ## How to use Text Generation WebUI
 
 ### 1st Assignment due Week 3 w/presentation:
