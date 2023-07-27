@@ -72,22 +72,19 @@ Stars"](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Le
 * Midterm project presentations
 ### Home Work
 * Final project Due: Week 15 – Final projects, Pitches due next week!
-Part II: Standalone Python – Networks and data processing
 ## Week 10 – Python outside of Processing
-* Introduction to Python outside of Processing with VSCode, the command line, maybe *Omniverse*
+* Introduction to Python outside of Processing with VSCode, the command line
 * Data structures: Dictionaries
+* XML
 Final project assignment For in-class presentation and discussion on Week 15.
-## Week 11 – Data serialization: for storage and communication
-* Serialization with JSON
-* An experiment with networking
-* Scraping and Bots for fun and profit!
+## Week 11 
+
 ### Home Work
 * Paul Dourish, “Protocols, Packets, and Proximity: The Materiality of Internet Routing”, from Signal Traffic: Critical Studies of Media Infrastructures, Nicole Starosielski and Lisa Parks, eds.
-## Week 12 – Network protocols
-* Networking and the web
+## Week 12 
 ### Home Work
 * Alex Galloway and Eugene Thacker, "Protocol and Counter-Protocol", 2003
-## Week 13 – Saving data in a database
+## Week 13 
 * Final Project Check Point - Gut Check 
 ## Week 14 – Final project work
 * Course material review & final project work
