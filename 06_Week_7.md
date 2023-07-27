@@ -1,676 +1,665 @@
-# Code Toolkit: Python, Fall 2023
+# Code Toolkit: Python, Fall 2021
 ## Week 7 — Class notes
+## Timing and state
+We've already seen how to draw shapes and make them move on their own. This motion would typically start when the program started running and continue forever. Or maybe it would be triggered or changed by user interaction in some way. Today we are going to talk about timing: how to create motion that is in some way scheduled, chorreographed, triggered with some delay, or that repeats at some interval.
 
-## Review of last week
+Time-based media are most typically thought of as sound and the moving image, although digital media like video games and motion graphics are also grouped in. Today we will see explicitly how software operates in a time-based manner, and think about how to work with the domain of time, as we have thus far mainly been working within the domain of space.
 
-Last week we learned about conditionals and the syntax of if and elsestatements, along with elif, and we used this to respnd to user-triggered events. Broadly, this could be divided into three topics:
+## History and inspiration
 
-We looked at the syntax for three kinds of blocks:
+[Oskar Fischinger](images/large_fischinger04_800.jpg)
 
-```
-if conditional:
-  # instructions here
-```
+One incredible example of early time-based media is the work of Oskar Fischinger. Fischinger was an artist in the first part of the 20th century and a pioneer in animation and motion graphics. A classic example of his work is the animated film [Studie nr 8, 1931](https://vimeo.com/35735682).
 
-```
-if conditional:
-  # instructions here
-else:
-  # instructions here
-```
+You might be inclined to think of the history of animation as preceding that of cinema, but in fact there is a historical case to be made for understanding these in the opposite order. Several modern artists and illustrators in the early 20th century were inspired by cinema to create animation, and used the principle of cinema — a continuous strip of film, divided into cells of static imagery that flicker by the viewer's eyes — to create early animation and motion graphics. In fact, many of these innovators actually worked on film strips, drawing and etching into the cells by hand.
 
-```
-if conditional:
-  # instructions here
-elif conditional:
-  # instructions here
-else:
-  # instructions here
-```
+Fischinger actually contributed to Disney's Fantasia but quit uncredited because of creative differences. In 2012, the Whitney museum showed an exhibition of his artwork called "Space Light Art". [There is great documentation for this show online and I highly recommend taking a look!](https://whitney.org/exhibitions/oskar-fischinger)
 
-The conditional is comprised of an expression that evaluaates to a Boolean value. These allow us to ask questions about the status of our program. Things like: "Is the mouse being pressed?" "Is the mouse on the right side of the screen??" "Is the size of this shape greater than 200 pixels?"
+## A numeric timeline with ```millis()```
 
-Inside the code blocks (the indented lines after a colon) go any arbitrary Python / Processing statements and commands, which get executed if the conditions are met (if they evaluate to True).
+In week 4 ("Making Things Move") we saw how you could use variables and some basic arithmetic to make things move "on their own".
 
-Boolean expressions are variables that evaluate to True and False (like mousePressed or keyPressed) together with boolean operators that allow us to combine these True and False values to make more detailed conditions.
-
-In Python, the boolean operators are:
-
-* ```and``` meaning both parts must be True
-* ```or``` meaning at least one part must be True
-* ```not``` meaning the thing that follows must be False
-
-In addition to these boolean operators, we can also ask questions about numbers, using comparison operators:
-
-* less than ```<``` meaning the value on the left must be less than the value on the right
-* greater than ```>``` meaning the value on the left must be greater than the value on the right
-* equal to ```==``` meaning both values must be equal. Remember: this is different from the assignment operator, which only uses one equal sign (=). 
-* less than or equal to ```<=```. This is a shortcut. It is very useful, but can always be written another way. For example: x <= 10 could also be written as x < 10 or x == 10, or if you're working with whole numbers, as x < 11.
-* greater than or equal to ```>=```. Same as above.
-
-We also looked at several new special Processing variables:
-
-```mousePressed```: a Boolean variable that is True whenever the mouse is being pressed
-
-```keyPressed```: a Boolean variable similar to the above that is True whenever any key is being pressed.
-
-```key```: a variable that contains a string (text in single or double quotes, 'a' or "s") of whichever character the user has most recently pressed. You can check this value by specifying a string literal with quotes and using the comparison operator for equality:
+We looked at this pattern:
 
 ```
-if key == 'a':
-```
-
-And lastly, we looked at two new kinds of blocks for event handling:
-
-```
-def mousePressed():
-    # code instructions
-```
-
-and
-
-```
-def keyPressed():
-    # code instructions
-```
-
-Unlike the special variables ```mousePressed``` and ```keyPressed```, these blocks respond to every mouse or key press. That means that each user action will trigger the code in these blocks exactly once, and it is not depending on the current frameRate of your program.
-If any of that remains confusing, please review the class notes from last week or reach out for help.
-
-## Adding repetition
-Today we will learn how to create repetition with our code. This is one of the most powerful concepts within software. So far this semester we have learned:
-
-* how to create and use variables, to create a media object that can dynamically change,
-* how to create interactive programs, that use dynamic variables to chnage in response to user input
-* how to use conditionals to check for different situations within our code and render or respond to them differently.
-
-And all of these things are essential components of software.
-But repetition is another key concept that is at the core of what software does.
-
-The kind of repetition that we are going to learn today allows you to write a program that does something hundreds, thousands, millions, or billions of times. Whenever you hear people talking about the power of software to proces "big data", or to search through billions of web pages, they are referencing the ability of software to implement some kind of repetition. It lets you write a piece code, and then repeat that an inhuman number of times.
-
-Creative inspiration
-But first, let's consider some examples of related creative work that explores these kinds of forms, which we can draw on for inspiration this week.
-
-Sol Lewitt
-
-![Sol Lewitt](images/sol-lewitt-colorful.jpeg)
-
-Conceptual Art was a movement that rose to prominence in the 1960s, made popular by artists such as Sol Lewitt and Yoko Ono. This body of work put more emphasis on the idea or the concept of the artwork, more than the technical or material implementation or rendering. In Conceptual Art, the artwork was considered to be the idea itself, with various instantiations relegated to a lower priority, or ignored altogether.
-
-As Sol Lewitt wrote in his essay "Paragraphs on Conceptual Art" (June 1967, Artforum) "When an artist uses a conceptual form of art, it means that all of the planning and decisions are made beforehand and the execution is a perfunctory affair. The idea becomes a machine that makes the art."
-
-Yoko Ono
-
-![Yoko](images/yoko-ono-kitchen.jpeg)
-
-![Yoko](images/yoko-ono-sandwich.jpeg)
-
-If this idea sounds a lot like computer programming to you, you wouldn't be alone. Several digital artists have drawn inspiration from Conceptual Art to draw parallels in the ways that with software and other digital media, we often create machine configurations that themselves produce cultural objects.
-
-In fact, one of the creators of Processing, Casey Reas, produced a 2004 Processing project related to Lewitt's work: [{Sofrware} Structures](https://artport.whitney.org/commissions/softwarestructures/text.html#structure) project at the Whitney, curated by Christiane Paul.
-
-Beyond this general connection to software, this week we'll look at Sol Lewitt's work as an example of creative experimentation with formal pattern and repetition. This video documents a 2008 installion of his work at MoMA:
-
-[Behind the Scenes](https://www.youtube.com/watch?v=YvOpvam8CSM)
-
-In addition to the way that Lewitt uses language to create something like a computer program to generate a drawing, let's also pay attention to the way that he uses logic, combinatorics, and repetition, rendered here in the form of a grid of geometric shapes.
-
-There are several installations of Sol Lewitt's work throughout New York City. One of his line drawings was recently installed in the library at Pratt University in Brooklyn, which you could make arrangements to go see. Another huge colorful piece is at the 59th Street / Columbus Circle subway station. And another is in the lobby of 55 West 13th St (at Sixth Ave), on the campus of The New School.
-
-## Loops
-To add repitition in a computer program, we use loops.
-
-You have already seen one kind of repetition in your sketches. Remember from week 3 that all the code inside the ```draw()``` block gets repeated many times, once per frame, depending on the frame rate of your sketch:
-
-```
-def draw():
-    # This block of code runs many times
-```
-
-This is definitely a kind of repetition. Remember the movie metaphor: without ```setup()``` and ```draw()``` your code creates a static image like a photograph. But with these, your code is like a film: a sequence of frames played quickly, giving the illusion of motion. Every time ```draw()``` runs, it outputs one frame.
-
-But the repetition that we are talking about today is for drawing multiples within one frame. So it is a way to go from images like the left, to images like the right:
-
- 
-So how does it work? First some pseudocode:
-
-```
-while some question is True:
-    Run some commands over and over.
-```
-
-The question is a Boolean expression, which, as we talked about last week, is one or more Boolean variables combined with boolean operatorsor comparison operators asking questions about the values of variables. And the commands in the block are any arbitrary commands.
-What this does is execute all the commands, in order, over and over again, as long as the conditional is True — i.e. "while" it is true, hence the name.
-
-The actual syntax for this new structure is the following:
-
-```
-while conditional:
-    # run some commands
-```	    
-
-That's still a little abstract, so let's work through a specific example.
-Let's start with the following code:
-```
-size(600,600)
-background(255)
-fill(100, 100, 250)
-rect(200,200, 200,20)
-```
-Now say we want to add two more rectangles. We could copy/paste and change some values like this:
-```
-size(600,600)
-background(255)
-fill(100, 100, 250)
-rect(200,100, 200,20)
-rect(200,200, 200,20)
-rect(200,300, 200,20)
-```
-That's fine in this case, but what if we now wanted to add 10 or 100 or 1000 more. And what if we then wanted to change the width for each one. This could get tedious really quickly. So let's see how we could do it with a while loop.
-
-```
-size(600,600)
-background(255)
-fill(100, 100, 250)
-i = 100
-while i <= 300:
-  rect(200,i, 200,20)
-  i = i + 100
-```
-
-Mentally step through that code and make note of each value of i. Notice that the above loop is functionally equivalent to the three separate rect() statements above.
-
-This introduces some new vocabulary.
-
-The variable assignment: i = 100. This defines what we will call the looping variable. This is the variable that will be used to control the number of repetitions of the loop.
-The boolean operator: i <= 300. This works just like an if statement, so we can call this the conditional or the check, as in "the check to continue".
-The last line (i = i + 1) modifies the looping variable, and usually increases the value, so we can call this or increment. (Or decrement, if it were being decreased.)
-
-Another term from computer science for looping is iteration, a fancy but commonly used term in computer programming that simply means repeating in this way. Looping is also referred to as iterating, and one might describe repetition like this as an iterative style of programming. (There are other styles, such as recursive, but we won't talk about those.)
-
-Some notes on this new syntax:
-
-Unlike with other variables, I highly recommend that you always create your looping variables right before your while loop, even if you are inside another block, such as draw() or an if statement. This will give the variable local scope and will make things a little easier to keep track of.
-I recommend always putting your increment as the last line in the while loop block. This will also help you keep track of things and make it easy to check that you are properly incrementing your looping variable.
-
-In the past I have said to always use informative variable names. And you can do that here, but it is common practice to simply use short, one-letter names for looping variables. Common choices are i, j, or n. So feel free to do that. Of course, if you have many loops and you want to help keep track of them, using more informative names for looping variables might help, like personNumber.
-Common errors
-
-```println()``` can be very useful here. Try putting a ```println()``` inside a loop to see how the value of the looping variable changes. This works well in static mode, because the loop will run once, but can be very hard to read in interactive mode, beacuse the loop will run every frame, many times per second.
-
-Don't forget to increment your looping variable!!!!! This happens so frequently. So I'm telling you now: do not forget!!
-
-What happens if you forget the increment? Try removing it (or commenting it out) in the above example, running your code, and seeing what happens. Probably nothing will show up on the screen, and you might even have trouble exiting the program. If you do, go to the PDE and click Stop instead of simply trying to click on the "x" to close the window. This is because your while loop never exits! It never completes, so your program hangs, running in this loop forever. This is called an infinite loop and should always be avoided (for now). Make sure that you are incrementing your looping variable, and that eventually the conditional check will be met.
-
-For example, the following code example would never terminate:
-
-```
-i = 100
-while i <= 300:
-    i = i - 50
-    rect(200,i, 200,20)
-    i = i + 50
-```
-
-Do you see why? Step through the loop a few times in your mind to think about what happens to the values of i.
-We could call this the "two steps forward, two steps back" loop. That might seem like a silly thing to do, and that infinte loop could be easily caught and fixed. But sometimes you may encounter cases that are harder to catch.
-
-Getting back to our original example. Now we have a flexible way of adding more repetitions. If we want to add more rectangles, there are several ways.
-
-```
-# This makes more rectangles because
-# they are spaced more closely together
-size(600,600)
-background(255)
-fill(100, 100, 250)
-i = 100
-while i <= 300:
-    rect(200,i, 200,20)
-    i = i + 50
-```
-
-```
-# This makes more rectangles because 
-# they extend further down in the window
-size(600,600)
-background(255)
-fill(100, 100, 250)
-i = 100
-while i <= 600:
-    rect(200,i, 200,20)
-    i = i + 100
-```
-
-Experiment with this and see what you get.
-
-So, that saves us some typing. But there are even more interesting things about loops. For example, what if you wanted to modify what you were doing inside the loop each time you did it. Let's move fill() from outside the loop block to inside, and modify its value with the looping variable:
-
-```
-size(600,600)
-background(255)
-i = 100
-while i <= 250:
-    fill(i,100,200)
-    rect(200,i, 200,20)
-    i = i + 50
-```
-
-Mentally stepping through this loop, we see that the parameter to fill() change each time the loop runs. The values will be:
-```
-100,100,200 blue
-150,100,200 more red
-200,100,200 even more red
-250,100,200 purplish
-```
-giving us a nice gradient.
-
-We can also use the looping variable to modify other things about the shapes we're drawing. For example, the width of rect():
-
-```
-size(600,600)
-background(255)
-i = 100
-while i <= 250:
-    fill(i,100,200)
-    rect(200,i, i,20)
-    i = i + 50
-```
-
-So we can use loops so that the commands we are running repeatedly can change a little each time.
-
-But we can even do more. Using loops, we can do things a dynamic number of times. For example, let's put our sketch in active mode and use a dynamic variable in the while loop conditional:
-
-```
+circleX = 300
 def setup():
     size(600,600)
+    stroke(50,50,150)
+    fill(200,200,255)
+
+def draw():
+    global circleX
+    background(255)
+    ellipse( circleX,300, 50,50)
+    circleX = circleX + 1
+```
+
+That draws a single circle, and to make the circle move horizontally, it create a variable which gets used to specify the x position of the circle. The value of this variable is then changed a little every frame, by incrementing or decrementing the variable.
+We expanded on this example using conditionals to ask questions about the position of the circle, and changed its movement based on that. For example:
+
+```
+circleX = 300
+def setup():
+    size(600,600)
+    stroke(50,50,150)
+    fill(200,200,255)
+
+def draw():
+    global circleX
+    background(255)
+    ellipse( circleX,300, 50,50)
+    circleX = circleX + 1
+    if circleX > width:
+        circleX = 0
+```
+
+Today we are going to build on this, but instead of using conditionals to ask questions about movement in space, we're going to use them to ask questions about time.
+
+Unlike other time-based digital tools — like Adobe Premiere, After Effects, Audacity, or others — Processing does not give you an explicit, visual timeline. If you want to create timed events, you have to think in terms of numbers.
+
+Processing gives us a command just for this purpose: ```millis()``` (check the reference)
+
+This command returns a number that corresponds to the number of milliseconds since the program started running. A millisecond is one thousandth of a second, so 1000 milliseconds = 1 second. ```millis()``` is like a stopwatch that starts when your program starts, and keeps running as long as the program is running.
+
+Even though this isn't a visual timeline, we can imagine a visual timeline in our thinking. millis() returns a number that represents a playhead or a marker, moving along a timeline. Thus, we can use this like a variable to ask questions about the status of our sketch, similar to mouseX and mouseY. We can also use it to "save" or remember a position of this playhead on the timeline.
+
+This one basic command is enough to implement many different types of timed events, from simple things up to more complicated ones.
+
+For example, think of this pseudocode:
+
+```
+  Do something for the first three seconds my sketch is running
+We could implement that with:
+    if millis() < 3000:
+        # Do something
+Similarly, think about this pseudocode:
+  Wait three seconds, then do something for two seconds
+Which we could implement with this:
+    if millis() > 3000 and millis() < 5000:
+        # Do something
+```
+
+What should Do something be in this case? Well let's say we want to draw a shape and only have it move according to the above timing. We could combine movement and timing like this:
+
+
+```
+circleX = 300
+def setup():
+    size(600,600)
+    stroke(50,50,150)
+    fill(200,200,255)
+
+def draw():
+    global circleX
+    background(255)
+    ellipse( circleX,300, 50,50)
+    if millis() < 3000:
+      circleX = circleX + 1
+
+    if circleX > width:
+      circleX = 0
+```
+
+Notice how now, the circle's position is being updated just like before, but only when that conditional about millis() is True. In other words, only during the interval described by the Boolean expression ```millis() < 3000```
+We can get a bit more complicated by introducing variables to use for saving time values. For example:
+
+```
+circleX = 300
+startTime = 3000
+def setup():
+    size(600,600)
+    stroke(50,50,150)
+    fill(200,200,255)
+
+def draw():
+    global circleX
+    background(255)
+    ellipse( circleX,300, 50,50)
+    if millis() > startTime and millis() < startTime + 2000:
+      circleX = circleX + 1
+
+    if circleX > width:
+      circleX = 0
+```
+
+When would this move the circle?
+This doesn't seem that interesting since I'm setting the variable startTime to a hard-coded value. But because I am using a varibale as a placeholder for that value, that means that the value could change.
+
+Building on this, we can combine it with event handling to let the user trigger the timing:
+
+```
+circleX = 300
+startTime = 3000
+def setup():
+    size(600,600)
+    stroke(50,50,150)
+    fill(200,200,255)
+
+def draw():
+    global circleX
+    background(255)
+    ellipse( circleX,300, 50,50)
+    if millis() > startTime and millis() < startTime + 2000:
+      circleX = circleX + 1
+
+    if circleX > width:
+      circleX = 0
+
+def keyPressed():
+    global startTime
+    startTime = millis()
+```
+
+Now when would this move the rectangle? Think about when the startTime variable gets set. Whenever any key is pressed, startTime gets set to the current value of millis() — or in other words, it marks where the imaginary playhead is at when the user presses a key. Then, each time ```draw()``` runs, it checks if the current value of millis() is greater than startTime, and less than startTime plus 2000, or two seconds. So, in pseudocode we could say:
+
+```
+  Every time the user presses any key,
+    move a circle to the right for two seconds.
+```
+
+Notice that the circle still starts moving at 3 seconds and moves for 2 seconds. This is because of the initial value that we are using for startTime, still carried over from the previous code snippet. What could you set the initial value of startTime to so that it would not appear like this? Think about when that conditional is True and what value would make it not True. Highlight for answer: startTime = -2000
+
+The following three examples show how to do different cases. Hopefully you can use these code snippets as patterns for how to implement these situations. Use them, combine them with other things we've worked on, and build on them.
+Wait a while, then do something forever
+In this example we wait two seconds, and then start moving the square and never stop
+
+```
+position = 0
+
+def setup():
+    size(600,600)
+    smooth()
+    stroke(50,50,150)
+    fill(200,200,255)
+
+def draw():
+    global position
+    background(255)
+
+    ellipse(position,300,100,100)
+
+    # wait two seconds, then move forever:
+    if millis() > 2000:
+        position = position + 1
+```
+
+Wait a while, then do something for a while, then stop
+In this example we wait two seconds, then start moving the square, move the square for one second, and then stop.
+
+```
+position = 0
+
+def setup():
+    size(600,600)
+    smooth()
+    stroke(50,50,150)
+    fill(200,200,255)
+
+def draw():
+    global position
+    background(255)
+
+    ellipse(position,300,100,100)
+
+    # only increase the position if millis() is greater than two seconds but
+    # less than three seconds
+    if millis() > 2000 and millis() < 3000:
+        position = position + 1
+```
+
+Do something for a little while, then stop
+Wait a little while and repeat the above
+
+This example is similar to example 2 above, but it has a variable which gets added to the timing values. Then another if statement periodically resets that variable. This causes the whole timing process to reset, doing this forever.
+
+```
+position = 0
+
+startTime = 0
+
+def setup():
+    size(600,600)
+    smooth()
+    stroke(50,50,150)
+    fill(200,200,255)
+
+def draw():
+    global position, startTime
+    background(255)
+
+    ellipse(position,300,100,100)
+
+    # move for a little while, then stop
+    if millis() > startTime and millis() < startTime + 2000:
+        position = position + 1
+
+    # wait a little while, then reset the startTime variable,
+    # so the above timing starts over:
+    if millis() > startTime + 4000:
+      startTime = millis()
+```
+
+## BREAK
+
+## CLOCKS???
+
+## State: a new way to use variables
+
+Do you remember this?
+
+```
+circleX = 300
+circleDirection = 1
+def setup():
+    size(600,600)
+    stroke(50,50,150)
+    fill(200,200,255)
 
 def draw():
     background(255)
-    i = 100
-    while i <= mouseY:
-      fill(i,100,250,100)
-      rect(200,i, 200,20)
-      i = i + 50
+    ellipse( circleX,300, 50,50)
+    global circleX
+    global circleDirection
+    circleX = circleX + circleDirection
+    if circleX > width:
+        circleDirection = -1
+    if circleX < 0:
+      circleDirection = 1
+
+def keyPressed():
+    if key == 'j':
+        circleDirection = -1
+
+    if key == 'l':
+        circleDirection = 1
 ```
 
-Try mentally stepping through this loop. When this code runs, the number of repetitions is determined dynamically, when the sketch runs, based on user input. This is exciting because so far the number of things that you've been drawing has always been fixed in advance.
-Even when you had lots of dynamism in your compositions, the number of things that you were drawing were always in a sense hard-coded. Now, the number of things themselves can vary.
 
-Well, it is true that you have already been able to allow the user to draw many shapes by dragging the mouse around the screen, but this only worked by removing background(). Now you can draw a dynamic number of things while changing the background. For example:
+So far we have been using variables either for numeric things (like shape sizes, positions, or colors) or for Boolean ```True```/```False``` values. All of these things are ways of keeping track of what the program is doing in a given moment.
+
+Today we saw how we could use timing and ```millis()``` to affect how the program might change over time.
+
+But what if we want the program to change over time in a way that is not explicitly tied to timing. For example, what if we wanted the user to be able to change what the program was doing? Or if we want the program to operate in different phases or modes, and move through those?
+
+In computer science, the term for keeping track of the status of the program is state. We might ask, what state or phase is the program in? This could be used to implement the levels of a video game for example.
+
+The way to do this is by using variables. This is not very different from anything that we have been doing so far. I just want to show a few examples that emphasize how you can use variables in some slightly different ways.
+
+Let's implement a simple light switch. When the user presses the 'n' key (for "on") the light goes on, and when the user presses the 'f' key (for "off") the light goes off.
+Let's start by simply drawing a window "with the light off" (black screen):
 
 ```
 def setup():
-    size(600,600)
+    size(800,800)
 
 def draw():
-    background( random(200,255) )
-    i = 100
-    while i <= mouseY:
-      fill(i,100,250,100)
-      rect(200,i, 200,20)
-      i = i + 50
+    background(0)
 ```
 
-This would not be possible without loops.
-Another new possibility here is to combine loops in interesting ways.
-
-Let's say that instead of simply drawing a rectangle in a loop, you wanted to draw many things. Let's go back to static mode and start with this example:
-```
-size(600,600)
-background(255)
-i = 100
-while i <= 250:
-    fill(i,100,200)
-
-    rect(200,i, 25,25)
-    rect(300,i, 25,25)
-    rect(400,i, 25,25)
-
-    i = i + 50
-```
-Now inside the loop we're drawing three squraes with each iteration. Note the highlighted values. They are changing, increasing in an incremental pattern.
-When you see values incrementing like that, think back to the original example today and think how you could write that instead.
-
-We can replace those three rect() statements with a loop — even though we are already inside a loop.
-```
-size(600,600)
-background(255)
-i = 100
-while i <= 250:
-    fill(i,100,200)
-
-    j = 200
-    while j <= 400:
-        rect(j,i, 25,25)
-        j = j + 100
-
-    i = i + 50
-```
-Mentally step through one iteration of the i loop, and see how it is equivalent to one iteration of the previous code snippet.
-
-Now, just like with the example that started off this lesson, now we can ask: what if we now wanted to add 10 or 100 or 1000 more squares? And what if we then wanted to change the width for each one?
-
-What we have here is called a nested loop and is a very powerful idea. In pseudocode, you could think of it like:
-
-  Repeat many times,
-    Each time through, repeat many times
-      Run some commands each time
-In this example, we've adding an entirely new inner loop here, with a new looping variable j, but it is inside the original loop.
-
-The outer "i loop" repeats four times (for i equal to 100, 150, 200, and 250). And each time it repeats, the inner "j loop" repeats three times (for j equal to 200, 300, and 400). So how many rectangles will there be total? 4 x 3 = 12.
-
-Nested iteration multiplies the number of repetitions. Think of this kind of repetition as working in two dimensions. Instead of repeating in a linear fashion, it can be used to create a grid.
-
-Note that each row of squares is the same color. Why? Where is the fill() statement? It is inside the "i loop" but outside of the inner "j loop". In other words, for each iteration of the outer loop, the color is changed, then the inner loop repeats three times without changing the color. (Then the outer loop repeats again.)
-
-Better loop organization
-
-Writing loops in the above way is fine, but there is a slightly different way of working out the math of loops that is in many ways more powerful and easier to keep track of. Compare the following two examples:
+How should we implement the "on" key? Well we could use the Boolean keyPressed variable, like this:
 
 ```
-size(600,600)
-background(255)
-i = 100
-while i <= 400:
-    fill(i,100,200)
-    rect(200,i, 25,25)
-    i = i + 100
+def setup():
+    size(800,800)
+
+def draw():
+    background(0)
+
+    if keyPressed and key == 'n':
+        background(255,255,200)
 ```
 
-```
-size(600,600)
-background(255)
-i = 1
-while i <= 4:
-    fill( i*100, 100,200)
-    rect(200, i*100, 25,25)
-    i = i + 1
-```
-Stepping through both examples, it should be clear that both are functionally equivalent. Both result in the following fill() commands:
-```
-fill(100,100,200)
-fill(200,100,200)
-fill(300,100,200)
-fill(400,100,200)
-```
-And corresponding rect() commands for each.
-But there are several advantages to the version on the right side.
+But that only works if the user is holding down the 'n' key. What if we want this to work not like a button that must be held down, and more like a switch that can be flipped?
 
-If I were to ask you how many times each loop repeats, you could step through the left side and do the math, but you could also quickly glance at the right side and probably figure it out much more quickly. Of course, the math inside the loop is a little more complicated, but it is more obvious and apparent how many iterations are taking place.
-
-You should feel free for now to work with whichever is more clear to you. But next week when we start to look at arrays, it will be essential to use the right side style. So it is good to start thinking about it now. And there are certain kinds of functionality that are much easier to implement with the right side style, as we'll see next.
-
-I've mentioned that you are able to put any arbitrary commands inside the while block. Let's see an example of doing something inside a loop that is a little more complicated than merely drawing squares. Let's start with some pseudocode:
+Could we improve on things by using the def keyPressed() block? That would look like this: block,
 
 ```
-  Repeat 10 times
-    Each time through,
-    Alternate the fill color between red and blue
-    Draw a square
-Wait, "alternate"?? Let's try to get more specific:
-  Repeat 10 times
-    Each time through,
-    If we're on an even numbered repetition, set the fill to red
-    If we're on an odd numbered repetition, set the fill to blue
-    Draw a square
+def setup():
+    size(800,800)
+
+def draw():
+    background(0)
+
+def keyPressed():
+    if key == 'n':
+        background(255,255,200)
 ```
-OK, we're getting into something that we can work with in Processing syntax.
-We can use our looping variable somehow. But how do you determine if a number is even or odd?
 
-Rember the ```%``` mod operator?  
+That doesn't really seem to help things. Now, whenever the user presses the 'n' key, the light flashes on for a split second. It still doesn't stay on.
 
-
-![Mod](images/modulus-is-underrated-68348281.png)
+We need a way to keep track of whether the light has been pressed or not. In other words, we need to keep track of the state of the light switch. We'll do this with a variable. Since this variable will only have two values (on, or off) we can use a Boolean variable for this purpose. Initially I will set the variable to False to signify that the light is off.
 
 ```
-size(600,600)
-background(255)
-i = 1
-while i <= 4:
-    if i % 2 == 0:
-      fill( 255,0,0 )
+switchState = False
+def setup():
+    size(800,800)
 
-    if i % 2 == 1:
-      fill( 0,0,255 )
-
-    rect(200
-    , i*100, 25,25)
-    i = i + 1
-```
-This would be a great occasion to use else, so let's re-write it that way:
-
-```
-size(600,600)
-background(255)
-i = 1
-while i <= 4:
-    if i % 2 == 0:
-      fill( 255,0,0 )
+def draw():
+    if switchState:
+        background(255,255,200)
     else:
-      fill( 0,0,255 )
-
-    rect(200, i*100, 25,25)
-    i = i + 1
+        background(0)
 ```
 
-Read this as: "If i is even, then set the fill color to red, otherwise set it to blue."
-What if we want to alternate colors in a grid? Thinking of a grid — i.e. repetition in two dimensions, horizontal and vertical — should immediately trigger thinking in terms of a nested loop: repeating, and for each iteration, repeating again.
-
-For this, we can put together everything from this lesson into the following example:
+Now, whenever the variable switchState is True, I will draw the light as on, and whenever the variable is False, I will draw the light off. But this is not doing anything yet. Why? Because I am not changing this variable anywhere! Let's try to change it.
+When the user presses the 'n' key, let's make the variable True:
 
 ```
-size(600,600)
-background(255)
-i = 1
-while i <= 4:
-    j = 1
-    while <= 4:
-        if (i + j) % 2 == 0:
-            fill( 255,0,0 )
+switchState = False
+def setup():
+    size(800,800)
+
+def draw():
+    if switchState:
+        background(255,255,200)
+    else:
+        background(0)
+
+def keyPressed():
+    global switchState
+    if key == 'n':
+        switchState = True
+```
+
+OK! This is getting is somewhere. Now when the user presses the 'n' key, switchState is set to True, and so the light will be drawn on.
+The last thing is to let the user turn it off. Have a look at this:
+
+```
+switchState = False
+def setup():
+    size(800,800)
+
+def draw():
+    if switchState:
+        background(255,255,200)
+    else:
+        background(0)
+
+def keyPressed():
+    global switchState
+    if key == 'n':
+        switchState = True
+    if key == 'f':
+        switchState = False
+```
+
+Great! So now we have a variable (switchState) that keeps track of whether the user has pressed a certain key or not. In other words, it is keeping track of the state of the program. And we can use if statements to change the value of that variable.
+Of course, we can create programs with even more states than just on / off. As a simple example, we could repeat the pattern from the above example to have several different on / off variables. Let's create a program that let's the user turn three shapes on or off:
+
+```
+rectOn = False
+ellipseOn = False
+triangleOn = False
+
+def setup():
+    size(800,800)
+    rectMode(CENTER)
+
+def draw():
+    background(255)
+    if rectOn:
+        fill(255,155,155)
+        rect(200,400,50,50)
+
+    if ellipseOn:
+        fill(155,255,155)
+        ellipse(400,400,50,50)
+
+    if triangleOn:
+        fill(155,155,255)
+        triangle(600,375, 625,425, 575,425)
+
+def keyPressed():
+    global rectOn, ellipseOn, triangleOn
+
+    if key == 'q':
+        rectOn = True
+    if key == 'a':
+        rectOn = False
+        
+    if key == 't':
+        ellipseOn = True
+    if key == 'g':
+        ellipseOn = False
+        
+    if key == 'o':
+        triangleOn = True
+    if key == 'l':
+        triangleOn = False  
+```
+
+Notice that I've named my variables using the pattern triangleOn. This creates a nice way of reading your code so that you're looking at the if statements, you can read it like If the triangle is on.
+What if we didn't want to have different keys for on and off, but instead wanted the same key to turn each shape on and off? We call this a toggle. And it looks like this:
+
+```
+rectOn = False
+ellipseOn = False
+triangleOn = False
+
+def setup():
+    size(800,800)
+    rectMode(CENTER)
+
+def draw():
+    background(255)
+    if rectOn:
+        fill(255,155,155)
+        rect(200,400,50,50)
+
+    if ellipseOn:
+        fill(155,255,155)
+        ellipse(400,400,50,50)
+
+    if triangleOn:
+        fill(155,155,255)
+        triangle(600,375, 625,425, 575,425)
+
+def keyPressed():
+    global rectOn, ellipseOn, triangleOn
+
+    if key == 'q':
+        rectOn = not rectOn
+        
+    if key == 't':
+        ellipseOn = not ellipseOn
+        
+    if key == 'o':
+        triangleOn = not triangleOn
+```
+
+Now, in those if statements, I'm setting each variable to the opposite of whatever it currently is. This creates the toggle effect.
+Lastly, we can keep track state that is more than on / off. Have a look at this code:
+
+```
+dayEveningNight = 1
+
+def setup():
+    size(800, 800)
+
+def draw():
+    if dayEveningNight == 1:
+        background(155,155,255)
+    elif dayEveningNight == 2:
+        background(25,25,75)
+    elif dayEveningNight == 3:
+        background(0)
+
+def keyPressed():
+    global dayEveningNight
+
+    if key == 'q':
+        dayEveningNight = dayEveningNight + 1
+        if dayEveningNight > 3:
+            dayEveningNight = 1
+```
+
+Here, I am using a variable dayEveningNight that is holding the values 1, 2, or 3. I am using an if statement in the draw() block that checks what the value of this variable is and draws something accordingly. And then, in the keyPressed() block, I am incrementing that variable based on what the user has pressed. If the variable gets larger than 3, I am reseting back to its initial value of 1.
+
+```
+button_x = 0
+button_y = 0
+button_width = 100
+button_height = 100
+button_hover = False
+button_clicked = False
+button_clicked_time = 0
+def setup():
+    size(512, 512)
+    
+def draw():
+    global button_clicked
+    current_time = millis()
+    background(0)
+    if button_clicked:
+        fill(0, 255, 255)
+        if current_time - button_clicked_time > 750:
+            button_clicked = False
+    elif button_hover:
+        fill(255, 0, 255)
+    else:
+        fill(255, 255, 0)
+    
+    rect(button_x, button_y, button_width, button_height)
+
+def mousePressed():
+    global button_clicked, button_clicked_time
+    if mouseX > button_x and mouseX < button_x+button_width:
+        if mouseY > button_y and mouseY < button_y+button_height:
+            button_clicked = True
+            button_clicked_time = millis()
         else:
-            fill( 0,0,255 )
+            button_clicked = False
+    else:
+        button_clicked = False
 
-      rect( j*100, i*100, 25,25)
-      j = j + 1
-
-    i = i + 1
-```
-
-## for loops
-
-All the above discussion is about while loops. There is another kind of syntax for creating loops that looks a little different but achieves the same behavior: for loops. These two different constructs are veyr similar but not precisely equivalent.
-
-In generla, programmers tend to use for loops more commonly than while loops, but I find that the syntax of while more clearly illustrates the principles of looping in a way that is more easily readable by new programmers. Feel free to use whichever loop style you like and whichever is more clear to you.
-
-The following two examples show how to translate between one and the other:
-
-```
-i = 0
-while i < 10:
-    println("i = " + str(i))
-    rect(i,i,5,5)
-    i = i + 1
-```
-
-and
-
-```
-for i in range(10):
-    println("i = " + str(i))
-    rect(i,i,5,5)
-```
-
-Both examples contain: a variable declaration and a boolean expression. But the variable increment works differently in each case. In the while loops that we have been working on in this lesson, the increment is clearly discernible on its own line. In the for loop case, the increment happens kind of implicitly, because the Python ```range()``` [command]() generates a list of numbers, and the variable i is automatically set to each number in an iterative way.
-
-you can do this and add a lower bounds to ```range(10, 100)```
-
-```
-for i in range(10, 100):
-    println("i = " + str(i))
-    rect(i,i,5,5)
+def mouseMoved():
+    global button_hover
+    if mouseX > button_x and mouseX < button_x+button_width:
+        if mouseY > button_y and mouseY < button_y+button_height:
+            button_hover = True
+        else:
+            button_hover = False
+    else:
+        button_hover = False
 ```
 
 ```
+circle_x = 300
+circle_y = 300
+last_frame = 0
+start_time_x = 3000
+start_time_y = 4000
+dir_x = 1
+dir_y = 1
 def setup():
     size(512, 512)
-    rectMode(CENTER)
-    
-    
+    stroke(50, 50, 150)
+    fill(200, 200, 255)
+    textSize(32)
+    frameRate(10)
+
 def draw():
-    for i in range(0, 360):
+    background(255)
+    global circle_x, start_time_x, start_time_y, circle_y, dir_x, dir_y
+    current_time = millis()
+    
+    if current_time > start_time_x and current_time < start_time_x + 2000:
+        circle_x += dir_x
+    
+    if circle_x > width or circle_x < 0:
+        dir_x *= -1
+        
+    if current_time > start_time_x + 4000:
+        start_time_x = current_time
+        
+    if current_time > start_time_y and current_time < start_time_y + 2000:
+        circle_y += dir_y
+    
+    if circle_y > height or circle_y < 0:
+        dir_y *= -1
+        
+    if current_time > start_time_y + 5000:
+        start_time_y = current_time
+        
+    ellipse(circle_x, circle_y, 50, 50)
+    
+# def keyPressed():
+#     global start_time
+#     start_time = millis()
+```
+
+You can use these same principles to keep track of many kinds of state within your program. For example, if a user is entering a password, or the levels of a game.
+
+
+## Homework Notes
+
+```
+def setup():
+    size(1024, 1024)
+
+def draw():
+    background(0)
+    
+    for i in range(0, 12):
         pushMatrix()
         translate(width/2, height/2)
-        rot = map((frameCount+i)%360, 0, 360, -TWO_PI, TWO_PI)
-        rotate(rot)
-        rect(0, 0, width/2, height/2)
+        theta = map(i, 0, 12, 0, TWO_PI) + PI
+        r = width/3
+        x = r * sin(theta)
+        y = r * cos(theta)
+        stroke(255, 255, 255)
+        fill(255, 255, 255)
+        r = 175
+        tick_offset_x = r * sin(theta)
+        tick_offset_y = r * cos(theta)
+        line(tick_offset_x, tick_offset_y, x, y)
         popMatrix()
-```
-
-# Notes for your Homework 
-
-
-```
-def setup():
-    size(512, 512)
-    rectMode(CENTER)
-    
-    
-def draw():
-    for i in range(0, 360):
+        
+    for i in range(0, 60):
         pushMatrix()
         translate(width/2, height/2)
-        rot = map((frameCount+i)%360, 0, 360, -TWO_PI, TWO_PI)
-        scale_rect = sin(rot)
-        scale_rect = map(scale_rect, -1, 1, 0.5, 1)
-        rotate(rot)
-        scale(scale_rect)
-        rect(0, 0, width/2, height/2)
+        theta = map(i, 0, 60, 0, TWO_PI) 
+        r = width/3
+        x = r * sin(theta)
+        y = r * cos(theta)
+        stroke(255, 255, 255)
+        fill(255, 255, 255)
+        r = width/3-25
+        tick_offset_x = r * sin(theta)
+        tick_offset_y = r * cos(theta)
+        line(tick_offset_x, tick_offset_y, x, y)
         popMatrix()
-```
-
-
-## drawing a grid
-
-```
-def setup():
-    size(1024, 1024)
-    rectMode(CENTER)
+        
     
-def draw():
+    current_hour = hour() % 12
+    theta = map(current_hour, 0, 12, TWO_PI, 0)+PI
+    r = width/10
+    x = r * sin(theta)
+    y = r * cos(theta)
+    pushMatrix()
+    stroke(255, 255, 255)
+    fill(255, 255, 255)
+    translate(width/2, height/2)
+    line(0, 0, x, y)
+    popMatrix()
     
-    count = 0
-    for i in range(0, num_rects):
-        for j in range(0, num_rects):
-            pushMatrix()
-            if count % 2 == 0:
-                fill(255, 0, 255)
-            else:
-                fill(255, 255, 0)
-            
-            translate(i*width/num_rects, j*height/num_rects)
-            rect(width/num_rects/2, height/num_rects/2, width/num_rects, height/num_rects)
-            popMatrix()
-            count+=1
-```
-
-# Lets talk about _Shape Grammer_
-who enjoyed the reading?
-I saw some of you were like WTF? in the dicussions
-
-## WTF is Shape Grammar? 
-### A Practical Guide
-
-
-Lets think about how shapes go together and what tools with have?
-
-```
-pushMatrix()
-```
-
-```
-popMatrix()
-```
-
-```
-translate()
-```
-
-```
-rotate()
-```
-
-```
-scale()
-```
-
-```
-num_rects = 5
-num_circles = 3
-padding = 50
-def setup():
-    size(1024, 1024)
-    rectMode(CENTER)
-    # background(255)
     
-def draw():
-    
-    for i in range(0, num_rects):
-        for j in range(0, num_rects):
-            pushMatrix()
-            translate((i+1)*width/(num_rects+1), (j+1)*height/(num_rects+1))
-            rotate((i+1)*10)
-            rect(0, 0, width/num_rects-padding, height/num_rects-padding)
-            for k in range(0, num_circles):
-                for l in range(0, num_circles):
-                    pushMatrix()
-                    translate(k*width/num_rects/num_circles, l*height/num_rects/num_circles)
-                    ellipse(0, 0, width/num_rects/num_circles, height/num_rects/num_circles)
-                    popMatrix()
-            popMatrix()
+    current_min = minute()
+    theta = map(current_min, 0, 60, TWO_PI, 0)+ PI
+    r = width/5
+    x = r * sin(theta)
+    y = r * cos(theta)
+    pushMatrix()
+    stroke(255, 255, 255)
+    fill(255, 255, 255)
+    translate(width/2, height/2)
+    line(0, 0, x, y)
+    popMatrix()
 ```
-
-```
-num_rects = 5
-num_circles = 5
-padding = 50
-def setup():
-    size(1024, 1024)
-    rectMode(CENTER)
-    # background(255)
-    
-def draw():
-    
-    for i in range(0, num_rects):
-        for j in range(0, num_rects):
-            pushMatrix()
-            translate((i+1)*width/(num_rects+1), (j+1)*height/(num_rects+1))
-            rotate((i+1)*10)
-            rect(0, 0, width/num_rects-padding, height/num_rects-padding)
-            for k in range(0, num_circles):
-              pushMatrix()
-              translate(k*width/num_rects/num_circles, 0, width/num_rects/num_circles, width/num_rects/num_circles)
-            popMatrix()
-            
-              
-            
-    for i in range(0, num_circles):
-        for j in range(0, num_circles):
-            pushMatrix()
-            translate((i+1)*width/(num_circles+1), (j+1)*height/(num_circles+1))
-            rotate((i+1)*10)
-            ellipse(50, 50, width/num_circles-padding, height/num_circles-padding)
-            popMatrix()
-```
-
-What is a list, you may ask? We'll talk about this next week.
-
-I will say that one advantage of the for loop is that it's nearly impossible to forget to include your variable increment, making it less likely to accidentally produce an infinite loop.
 
 ## Home Work
-* Coding Assignment #4.a: Create a Endless animation using primitives: Circle, Square, Rectangle, Triangles
-* Coding Assignment #4.b: Create a Endless animation using found objects
-    * MEMEs will be judged by their dankness by the group
-    * Due Oct 19th
 
-
+* Coding Assignment #5: One Button Game
+* ["Data Visualization", from Matthew Fuller's Software Studies: A Lexicon](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
+Catherine D'Ignazio and Lauren Klein, ["Unicorns, Janitors, Ninjas, Wizards, and Rock Stars"]

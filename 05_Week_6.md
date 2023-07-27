@@ -1,1024 +1,676 @@
-# Code Toolkit: Python, Fall 2021
-
+# Code Toolkit: Python, Fall 2023
 ## Week 6 — Class notes
 
 ## Review of last week
-Last week we learned about moving from static compositions that create a single fixed frame, to interactive compositions that can respond to mouse input to create kinetic, moving images. In Processing this is often called active mode.
 
-To achieve that we learned some new syntax, mainly, the setup() and draw() blocks:
+Last week we learned about conditionals and the syntax of if and elsestatements, along with elif, and we used this to respnd to user-triggered events. Broadly, this could be divided into three topics:
+
+We looked at the syntax for three kinds of blocks:
+
+```
+if conditional:
+  # instructions here
+```
+
+```
+if conditional:
+  # instructions here
+else:
+  # instructions here
+```
+
+```
+if conditional:
+  # instructions here
+elif conditional:
+  # instructions here
+else:
+  # instructions here
+```
+
+The conditional is comprised of an expression that evaluaates to a Boolean value. These allow us to ask questions about the status of our program. Things like: "Is the mouse being pressed?" "Is the mouse on the right side of the screen??" "Is the size of this shape greater than 200 pixels?"
+
+Inside the code blocks (the indented lines after a colon) go any arbitrary Python / Processing statements and commands, which get executed if the conditions are met (if they evaluate to True).
+
+Boolean expressions are variables that evaluate to True and False (like mousePressed or keyPressed) together with boolean operators that allow us to combine these True and False values to make more detailed conditions.
+
+In Python, the boolean operators are:
+
+* ```and``` meaning both parts must be True
+* ```or``` meaning at least one part must be True
+* ```not``` meaning the thing that follows must be False
+
+In addition to these boolean operators, we can also ask questions about numbers, using comparison operators:
+
+* less than ```<``` meaning the value on the left must be less than the value on the right
+* greater than ```>``` meaning the value on the left must be greater than the value on the right
+* equal to ```==``` meaning both values must be equal. Remember: this is different from the assignment operator, which only uses one equal sign (=). 
+* less than or equal to ```<=```. This is a shortcut. It is very useful, but can always be written another way. For example: x <= 10 could also be written as x < 10 or x == 10, or if you're working with whole numbers, as x < 11.
+* greater than or equal to ```>=```. Same as above.
+
+We also looked at several new special Processing variables:
+
+```mousePressed```: a Boolean variable that is True whenever the mouse is being pressed
+
+```keyPressed```: a Boolean variable similar to the above that is True whenever any key is being pressed.
+
+```key```: a variable that contains a string (text in single or double quotes, 'a' or "s") of whichever character the user has most recently pressed. You can check this value by specifying a string literal with quotes and using the comparison operator for equality:
+
+```
+if key == 'a':
+```
+
+And lastly, we looked at two new kinds of blocks for event handling:
+
+```
+def mousePressed():
+    # code instructions
+```
+
+and
+
+```
+def keyPressed():
+    # code instructions
+```
+
+Unlike the special variables ```mousePressed``` and ```keyPressed```, these blocks respond to every mouse or key press. That means that each user action will trigger the code in these blocks exactly once, and it is not depending on the current frameRate of your program.
+If any of that remains confusing, please review the class notes from last week or reach out for help.
+
+## Adding repetition
+Today we will learn how to create repetition with our code. This is one of the most powerful concepts within software. So far this semester we have learned:
+
+* how to create and use variables, to create a media object that can dynamically change,
+* how to create interactive programs, that use dynamic variables to chnage in response to user input
+* how to use conditionals to check for different situations within our code and render or respond to them differently.
+
+And all of these things are essential components of software.
+But repetition is another key concept that is at the core of what software does.
+
+The kind of repetition that we are going to learn today allows you to write a program that does something hundreds, thousands, millions, or billions of times. Whenever you hear people talking about the power of software to proces "big data", or to search through billions of web pages, they are referencing the ability of software to implement some kind of repetition. It lets you write a piece code, and then repeat that an inhuman number of times.
+
+Creative inspiration
+But first, let's consider some examples of related creative work that explores these kinds of forms, which we can draw on for inspiration this week.
+
+Sol Lewitt
+
+![Sol Lewitt](images/sol-lewitt-colorful.jpeg)
+
+Conceptual Art was a movement that rose to prominence in the 1960s, made popular by artists such as Sol Lewitt and Yoko Ono. This body of work put more emphasis on the idea or the concept of the artwork, more than the technical or material implementation or rendering. In Conceptual Art, the artwork was considered to be the idea itself, with various instantiations relegated to a lower priority, or ignored altogether.
+
+As Sol Lewitt wrote in his essay "Paragraphs on Conceptual Art" (June 1967, Artforum) "When an artist uses a conceptual form of art, it means that all of the planning and decisions are made beforehand and the execution is a perfunctory affair. The idea becomes a machine that makes the art."
+
+Yoko Ono
+
+![Yoko](images/yoko-ono-kitchen.jpeg)
+
+![Yoko](images/yoko-ono-sandwich.jpeg)
+
+If this idea sounds a lot like computer programming to you, you wouldn't be alone. Several digital artists have drawn inspiration from Conceptual Art to draw parallels in the ways that with software and other digital media, we often create machine configurations that themselves produce cultural objects.
+
+In fact, one of the creators of Processing, Casey Reas, produced a 2004 Processing project related to Lewitt's work: [{Sofrware} Structures](https://artport.whitney.org/commissions/softwarestructures/text.html#structure) project at the Whitney, curated by Christiane Paul.
+
+Beyond this general connection to software, this week we'll look at Sol Lewitt's work as an example of creative experimentation with formal pattern and repetition. This video documents a 2008 installion of his work at MoMA:
+
+[Behind the Scenes](https://www.youtube.com/watch?v=YvOpvam8CSM)
+
+In addition to the way that Lewitt uses language to create something like a computer program to generate a drawing, let's also pay attention to the way that he uses logic, combinatorics, and repetition, rendered here in the form of a grid of geometric shapes.
+
+There are several installations of Sol Lewitt's work throughout New York City. One of his line drawings was recently installed in the library at Pratt University in Brooklyn, which you could make arrangements to go see. Another huge colorful piece is at the 59th Street / Columbus Circle subway station. And another is in the lobby of 55 West 13th St (at Sixth Ave), on the campus of The New School.
+
+## Loops
+To add repitition in a computer program, we use loops.
+
+You have already seen one kind of repetition in your sketches. Remember from week 3 that all the code inside the ```draw()``` block gets repeated many times, once per frame, depending on the frame rate of your sketch:
+
+```
+def draw():
+    # This block of code runs many times
+```
+
+This is definitely a kind of repetition. Remember the movie metaphor: without ```setup()``` and ```draw()``` your code creates a static image like a photograph. But with these, your code is like a film: a sequence of frames played quickly, giving the illusion of motion. Every time ```draw()``` runs, it outputs one frame.
+
+But the repetition that we are talking about today is for drawing multiples within one frame. So it is a way to go from images like the left, to images like the right:
+
+ 
+So how does it work? First some pseudocode:
+
+```
+while some question is True:
+    Run some commands over and over.
+```
+
+The question is a Boolean expression, which, as we talked about last week, is one or more Boolean variables combined with boolean operatorsor comparison operators asking questions about the values of variables. And the commands in the block are any arbitrary commands.
+What this does is execute all the commands, in order, over and over again, as long as the conditional is True — i.e. "while" it is true, hence the name.
+
+The actual syntax for this new structure is the following:
+
+```
+while conditional:
+    # run some commands
+```	    
+
+That's still a little abstract, so let's work through a specific example.
+Let's start with the following code:
+```
+size(600,600)
+background(255)
+fill(100, 100, 250)
+rect(200,200, 200,20)
+```
+Now say we want to add two more rectangles. We could copy/paste and change some values like this:
+```
+size(600,600)
+background(255)
+fill(100, 100, 250)
+rect(200,100, 200,20)
+rect(200,200, 200,20)
+rect(200,300, 200,20)
+```
+That's fine in this case, but what if we now wanted to add 10 or 100 or 1000 more. And what if we then wanted to change the width for each one. This could get tedious really quickly. So let's see how we could do it with a while loop.
+
+```
+size(600,600)
+background(255)
+fill(100, 100, 250)
+i = 100
+while i <= 300:
+  rect(200,i, 200,20)
+  i = i + 100
+```
+
+Mentally step through that code and make note of each value of i. Notice that the above loop is functionally equivalent to the three separate rect() statements above.
+
+This introduces some new vocabulary.
+
+The variable assignment: i = 100. This defines what we will call the looping variable. This is the variable that will be used to control the number of repetitions of the loop.
+The boolean operator: i <= 300. This works just like an if statement, so we can call this the conditional or the check, as in "the check to continue".
+The last line (i = i + 1) modifies the looping variable, and usually increases the value, so we can call this or increment. (Or decrement, if it were being decreased.)
+
+Another term from computer science for looping is iteration, a fancy but commonly used term in computer programming that simply means repeating in this way. Looping is also referred to as iterating, and one might describe repetition like this as an iterative style of programming. (There are other styles, such as recursive, but we won't talk about those.)
+
+Some notes on this new syntax:
+
+Unlike with other variables, I highly recommend that you always create your looping variables right before your while loop, even if you are inside another block, such as draw() or an if statement. This will give the variable local scope and will make things a little easier to keep track of.
+I recommend always putting your increment as the last line in the while loop block. This will also help you keep track of things and make it easy to check that you are properly incrementing your looping variable.
+
+In the past I have said to always use informative variable names. And you can do that here, but it is common practice to simply use short, one-letter names for looping variables. Common choices are i, j, or n. So feel free to do that. Of course, if you have many loops and you want to help keep track of them, using more informative names for looping variables might help, like personNumber.
+Common errors
+
+```println()``` can be very useful here. Try putting a ```println()``` inside a loop to see how the value of the looping variable changes. This works well in static mode, because the loop will run once, but can be very hard to read in interactive mode, beacuse the loop will run every frame, many times per second.
+
+Don't forget to increment your looping variable!!!!! This happens so frequently. So I'm telling you now: do not forget!!
+
+What happens if you forget the increment? Try removing it (or commenting it out) in the above example, running your code, and seeing what happens. Probably nothing will show up on the screen, and you might even have trouble exiting the program. If you do, go to the PDE and click Stop instead of simply trying to click on the "x" to close the window. This is because your while loop never exits! It never completes, so your program hangs, running in this loop forever. This is called an infinite loop and should always be avoided (for now). Make sure that you are incrementing your looping variable, and that eventually the conditional check will be met.
+
+For example, the following code example would never terminate:
+
+```
+i = 100
+while i <= 300:
+    i = i - 50
+    rect(200,i, 200,20)
+    i = i + 50
+```
+
+Do you see why? Step through the loop a few times in your mind to think about what happens to the values of i.
+We could call this the "two steps forward, two steps back" loop. That might seem like a silly thing to do, and that infinte loop could be easily caught and fixed. But sometimes you may encounter cases that are harder to catch.
+
+Getting back to our original example. Now we have a flexible way of adding more repetitions. If we want to add more rectangles, there are several ways.
+
+```
+# This makes more rectangles because
+# they are spaced more closely together
+size(600,600)
+background(255)
+fill(100, 100, 250)
+i = 100
+while i <= 300:
+    rect(200,i, 200,20)
+    i = i + 50
+```
+
+```
+# This makes more rectangles because 
+# they extend further down in the window
+size(600,600)
+background(255)
+fill(100, 100, 250)
+i = 100
+while i <= 600:
+    rect(200,i, 200,20)
+    i = i + 100
+```
+
+Experiment with this and see what you get.
+
+So, that saves us some typing. But there are even more interesting things about loops. For example, what if you wanted to modify what you were doing inside the loop each time you did it. Let's move fill() from outside the loop block to inside, and modify its value with the looping variable:
+
+```
+size(600,600)
+background(255)
+i = 100
+while i <= 250:
+    fill(i,100,200)
+    rect(200,i, 200,20)
+    i = i + 50
+```
+
+Mentally stepping through this loop, we see that the parameter to fill() change each time the loop runs. The values will be:
+```
+100,100,200 blue
+150,100,200 more red
+200,100,200 even more red
+250,100,200 purplish
+```
+giving us a nice gradient.
+
+We can also use the looping variable to modify other things about the shapes we're drawing. For example, the width of rect():
+
+```
+size(600,600)
+background(255)
+i = 100
+while i <= 250:
+    fill(i,100,200)
+    rect(200,i, i,20)
+    i = i + 50
+```
+
+So we can use loops so that the commands we are running repeatedly can change a little each time.
+
+But we can even do more. Using loops, we can do things a dynamic number of times. For example, let's put our sketch in active mode and use a dynamic variable in the while loop conditional:
 
 ```
 def setup():
-    # Things here run once, at the start of your program
+    size(600,600)
 
 def draw():
-    # Things here run many times, once per frame
+    background(255)
+    i = 100
+    while i <= mouseY:
+      fill(i,100,250,100)
+      rect(200,i, 200,20)
+      i = i + 50
 ```
 
-In static mode, your sketches ran once in a split second, and then stopped, frozen forever, but now, in active mode, your sketches unfold in human time. Because of this, you need to ask yourself when commands will be executed: once at the beginning of your sketch, or once per frame? With raster images for example, you want to load them once, at the beginning of your sketch, but you will probably want to draw them every frame. You would do that using the code blocks that you just learned about like this:
+Try mentally stepping through this loop. When this code runs, the number of repetitions is determined dynamically, when the sketch runs, based on user input. This is exciting because so far the number of things that you've been drawing has always been fixed in advance.
+Even when you had lots of dynamism in your compositions, the number of things that you were drawing were always in a sense hard-coded. Now, the number of things themselves can vary.
+
+Well, it is true that you have already been able to allow the user to draw many shapes by dragging the mouse around the screen, but this only worked by removing background(). Now you can draw a dynamic number of things while changing the background. For example:
 
 ```
 def setup():
-    global img
-    img = loadImage("some-image.jpg")
+    size(600,600)
 
 def draw():
-    global img
-    image(img,0,0)
-```
-NOTE: This is the pattern that you should use for working with raster images from now on.
-We also saw how to use mouse movement with built-in variables that Processing defines for us: mouseX and mouseY.
-
-We also talked about pmouseX and pmouseY, and we saw how these special, built-in variables give you the position of the mouse from the previous frame. So if you are curious about that, have a look at the class notes. For example, here is how you could use those two variables to calculate the distance the 
-mouse pointer traveled from one frame to another:
-```
-distance = dist( pmouseX, pmouseY, mouseX, mouseY )
-```
-And lastly, we saw how we could use these special variables in ways that are more flexible and powerful by using the map() command. This command transltes or "maps" a value or variable proportionally from one range of numbers to another range. For example, the following code uses mouseX to position a rectangle, but limits its movement to a 100 pixel range:
-
-```
-rectangleX = map(mouseX, 0,width, 300,400)
-rect( rectangleX,300, 50,50 )
+    background( random(200,255) )
+    i = 100
+    while i <= mouseY:
+      fill(i,100,250,100)
+      rect(200,i, 200,20)
+      i = i + 50
 ```
 
-The lecture notes from last week show several other examples of this command that you can hopefully use as patterns or templates that you can apply to your own work.
+This would not be possible without loops.
+Another new possibility here is to combine loops in interesting ways.
 
-
-Remember to please include a comment at the top of your code with your name, date, and exercise number. For example:
+Let's say that instead of simply drawing a rectangle in a loop, you wanted to draw many things. Let's go back to static mode and start with this example:
 ```
-"""
-    Your name
-    Course title & semester
-    Date
-    Week number    
-"""
+size(600,600)
+background(255)
+i = 100
+while i <= 250:
+    fill(i,100,200)
+
+    rect(200,i, 25,25)
+    rect(300,i, 25,25)
+    rect(400,i, 25,25)
+
+    i = i + 50
 ```
+Now inside the loop we're drawing three squraes with each iteration. Note the highlighted values. They are changing, increasing in an incremental pattern.
+When you see values incrementing like that, think back to the original example today and think how you could write that instead.
 
-# Making things move and conditionals
-This week we will build on last week in two ways.
+We can replace those three rect() statements with a loop — even though we are already inside a loop.
+```
+size(600,600)
+background(255)
+i = 100
+while i <= 250:
+    fill(i,100,200)
 
-First, we will learn how to use conditionals so that instead of the continuous change of mouse movement, you can create movement that is discrete and discontinuous.
+    j = 200
+    while j <= 400:
+        rect(j,i, 25,25)
+        j = j + 100
 
-Second, we will build on our use of variables and Processing's interactive mode to create things that move on their own, not only as directly controlled by the mouse.
+    i = i + 50
+```
+Mentally step through one iteration of the i loop, and see how it is equivalent to one iteration of the previous code snippet.
 
-![KNOCKING](images/week04%20-%20bounce%20FP6lzK.gif)S
+Now, just like with the example that started off this lesson, now we can ask: what if we now wanted to add 10 or 100 or 1000 more squares? And what if we then wanted to change the width for each one?
 
-## Background
-Last week we saw how to make interactive compositions, but they were always moving in continuous, connected ways. Colors that changed as smooth gradients, shapes that moved along with the mouse, or that left smooth trails.
+What we have here is called a nested loop and is a very powerful idea. In pseudocode, you could think of it like:
 
-Today we will see how to work with one of the fundamental principles of digital media with is how to work with discontinuity, or on/off relationships. This kind of behavior is often described as discrete. (Not to be confused with "discreet"!)
+  Repeat many times,
+    Each time through, repeat many times
+      Run some commands each time
+In this example, we've adding an entirely new inner loop here, with a new looping variable j, but it is inside the original loop.
 
-![DISCRETE](images/define-discrete.png)
+The outer "i loop" repeats four times (for i equal to 100, 150, 200, and 250). And each time it repeats, the inner "j loop" repeats three times (for j equal to 200, 300, and 400). So how many rectangles will there be total? 4 x 3 = 12.
 
-In 1997, the net artist John Simon created a project called [Every Icon](http://www.numeral.com/everyicon/). This conceptul work enacts a play of combinatorics by starting with the first (top, left) pixel of a 32 by 32 grid, and advances in sequence, creating every possible combination of pixels, or in other works, every possible icon.
+Nested iteration multiplies the number of repetitions. Think of this kind of repetition as working in two dimensions. Instead of repeating in a linear fashion, it can be used to create a grid.
 
-![Every Icon](images/simon-1.gif)
+Note that each row of squares is the same color. Why? Where is the fill() statement? It is inside the "i loop" but outside of the inner "j loop". In other words, for each iteration of the outer loop, the color is changed, then the inner loop repeats three times without changing the color. (Then the outer loop repeats again.)
 
-This work emphasizes the way that all digital images are created not as smooth strokes, continuous marks, or smooth lines, but rather always as grids of pixels, always turned either on or off.
+Better loop organization
 
-To similar ends but in a more poetic and ironic way, the artist Hito Steyerl, in her documentary [How Not to be Seen: A Fucking Didactic Educational .MOV File](https://www.artforum.com/video/hito-steyerl-how-not-to-be-seen-a-fucking-didactic-educational-mov-file-2013-51651), explores (and blurs) the boundary between the analog and digital, between the physical world and the world of digital representations, or in other words, between the smooth and the discrete.
-
-![Steyerl](images/steyerl.png)
-
-Let's keep all of this in the back of our minds as we explore the logic of discrete on/off structures today and dive in to binary logic.
-
-```mousePressed``` and ```keyPressed```
-
-In addition to mouseX and mouseY, Processing gives us some other built-in variables that we can use to create user interaction:
-
-```mousePressed``` tells us if the mouse is currently being pressed
-
-and 
-
-```keyPressed``` tells us if the any key is currently being pressed
-
-But what is if? So far, variables have only had numeric values. How can a variable tell us "if" something?
-
-These variables are of a new kind of value. We say that they are a new type, and it is called ```Boolean```
-.
-Just like with the numerical values and variables that we have been using, Boolean variables can be used whenever we want to keep track of something with only two possible values: yes or no, on or off, visible or hidden. Their value is always only either True or False. So you would
-
-use them like this:
+Writing loops in the above way is fine, but there is a slightly different way of working out the math of loops that is in many ways more powerful and easier to keep track of. Compare the following two examples:
 
 ```
-isDrawing = False
+size(600,600)
+background(255)
+i = 100
+while i <= 400:
+    fill(i,100,200)
+    rect(200,i, 25,25)
+    i = i + 100
 ```
 
-or like this:
+```
+size(600,600)
+background(255)
+i = 1
+while i <= 4:
+    fill( i*100, 100,200)
+    rect(200, i*100, 25,25)
+    i = i + 1
+```
+Stepping through both examples, it should be clear that both are functionally equivalent. Both result in the following fill() commands:
+```
+fill(100,100,200)
+fill(200,100,200)
+fill(300,100,200)
+fill(400,100,200)
+```
+And corresponding rect() commands for each.
+But there are several advantages to the version on the right side.
+
+If I were to ask you how many times each loop repeats, you could step through the left side and do the math, but you could also quickly glance at the right side and probably figure it out much more quickly. Of course, the math inside the loop is a little more complicated, but it is more obvious and apparent how many iterations are taking place.
+
+You should feel free for now to work with whichever is more clear to you. But next week when we start to look at arrays, it will be essential to use the right side style. So it is good to start thinking about it now. And there are certain kinds of functionality that are much easier to implement with the right side style, as we'll see next.
+
+I've mentioned that you are able to put any arbitrary commands inside the while block. Let's see an example of doing something inside a loop that is a little more complicated than merely drawing squares. Let's start with some pseudocode:
 
 ```
-isDrawing = True
+  Repeat 10 times
+    Each time through,
+    Alternate the fill color between red and blue
+    Draw a square
+Wait, "alternate"?? Let's try to get more specific:
+  Repeat 10 times
+    Each time through,
+    If we're on an even numbered repetition, set the fill to red
+    If we're on an odd numbered repetition, set the fill to blue
+    Draw a square
+```
+OK, we're getting into something that we can work with in Processing syntax.
+We can use our looping variable somehow. But how do you determine if a number is even or odd?
+
+Rember the ```%``` mod operator?  
+
+
+![Mod](images/modulus-is-underrated-68348281.png)
+
+```
+size(600,600)
+background(255)
+i = 1
+while i <= 4:
+    if i % 2 == 0:
+      fill( 255,0,0 )
+
+    if i % 2 == 1:
+      fill( 0,0,255 )
+
+    rect(200
+    , i*100, 25,25)
+    i = i + 1
+```
+This would be a great occasion to use else, so let's re-write it that way:
+
+```
+size(600,600)
+background(255)
+i = 1
+while i <= 4:
+    if i % 2 == 0:
+      fill( 255,0,0 )
+    else:
+      fill( 0,0,255 )
+
+    rect(200, i*100, 25,25)
+    i = i + 1
 ```
 
-Notice that I'm writing ```True``` and ```False``` as valid Python code. That is because they are actual values that you can use in your code just like numbers, which in technical jargon we call literals. So far we have seen numerical literals like 0, 1, 2, 10, 300, etc, and string literals like "hello". Now we have the Boolean literals ```True``` and ```False```. You can see this if you use print() to display the value of mousePressed:
+Read this as: "If i is even, then set the fill color to red, otherwise set it to blue."
+What if we want to alternate colors in a grid? Thinking of a grid — i.e. repetition in two dimensions, horizontal and vertical — should immediately trigger thinking in terms of a nested loop: repeating, and for each iteration, repeating again.
+
+For this, we can put together everything from this lesson into the following example:
+
+```
+size(600,600)
+background(255)
+i = 1
+while i <= 4:
+    j = 1
+    while <= 4:
+        if (i + j) % 2 == 0:
+            fill( 255,0,0 )
+        else:
+            fill( 0,0,255 )
+
+      rect( j*100, i*100, 25,25)
+      j = j + 1
+
+    i = i + 1
+```
+
+## for loops
+
+All the above discussion is about while loops. There is another kind of syntax for creating loops that looks a little different but achieves the same behavior: for loops. These two different constructs are veyr similar but not precisely equivalent.
+
+In generla, programmers tend to use for loops more commonly than while loops, but I find that the syntax of while more clearly illustrates the principles of looping in a way that is more easily readable by new programmers. Feel free to use whichever loop style you like and whichever is more clear to you.
+
+The following two examples show how to translate between one and the other:
+
+```
+i = 0
+while i < 10:
+    println("i = " + str(i))
+    rect(i,i,5,5)
+    i = i + 1
+```
+
+and
+
+```
+for i in range(10):
+    println("i = " + str(i))
+    rect(i,i,5,5)
+```
+
+Both examples contain: a variable declaration and a boolean expression. But the variable increment works differently in each case. In the while loops that we have been working on in this lesson, the increment is clearly discernible on its own line. In the for loop case, the increment happens kind of implicitly, because the Python ```range()``` [command]() generates a list of numbers, and the variable i is automatically set to each number in an iterative way.
+
+you can do this and add a lower bounds to ```range(10, 100)```
+
+```
+for i in range(10, 100):
+    println("i = " + str(i))
+    rect(i,i,5,5)
+```
 
 ```
 def setup():
     size(512, 512)
-
-def draw():
-    print(mous
-```
-
-But how do we actually use these variables?
-
-## Conditionals
-
-Conditionals are ways of asking if something is happening or not, and to allow our code to have different behavior in each case.
-Your code can now be more than one simple set of top-down instructions, and can instead have the possibility of doing different things depending on various variables, calculations, and user actions.
-
-A note on pseudocode. (Pronounced, "SOO-doh code".) So far, all the code that I've shown you has been valid Python/Processing syntax. You could copy/paste it into the PDE and it would run. Now we will start talking about a thing called pseudocode. Pseudocode is basically plain English, but with some bits of valid code in it. There are not hard and fast rules about valid pseudocode. Rather, it is a way of writing out an algorithm in English with bits of actual code in it. It is a way to describe an algorithm and work it out, without implementing it yet.
+    rectMode(CENTER)
     
-```
-If the answer to some question is Yes:
-    then run some commands
-```
-
-As an example, let's start with this code that draws a circle in the middle of the window:
-
-```
-def setup():
-    size(600,600)
-
-def draw():
-    background(255)
-    ellipse(300,300, 50,50)
-```
-
-Now, let's draw this circle only if the user is pressing the mouse by adding this new syntax for conditionals:
-
-```
-def setup():
-    size(600,600)
-
-def draw():
-    background(255)
-    if mousePressed:
-        ellipse(300,300, 50,50)
-```
-
-Some new syntax rules:
-
-You write if followed by a Boolean variable (or an expression that evaluates to ```True``` or ```False``` — we'll look at these below).
-You do not need to put your Boolean expression in parentheses, but they are optional. Later on when working with more complicated logic, you will see examples in which you will need or want parentheses here.
-
-Notice the indentation. The if statement introduces a new code block, so after your Boolean expression, you add a colon, and the next line must be indented. The block continues until you stop indenting. The block can contain any arbitrary Python / Processing statements that you wish, and we say that all of the statements of this block are inside this if statement.
-
-Most importantly: The code inside the if statement only gets run if the Boolean expression evaluates to True.
-Think of this as allowing you to ask questions, like, "Is the mouse being pressed?" I recommend reading the above code in pseudocode in the following way:
-
-```
-If the mouse is being pressed,
-    then draw an ellipse.
-```
-
-You can combine questions together using boolean operators.
-
-```and```, both parts must be True
-```or```, only one part must be True (either or both is fine)
-```not```, the expression that follows must be False
-Here are some examples:
-
-```
-if mousePressed and keyPressed:
-    ellipse(300,300, 50,50)
-If the mouse is being pressed and
-  any key is being pressed,
-    then draw an ellipse.
-if mousePressed or keyPressed:
-    ellipse(300,300, 50,50)
-If either the mouse is being pressed or
-  any key is being pressed,
-    then draw an ellipse.
-if not mousePressed:
-    ellipse(300,300, 50,50)
-  If the mouse is not being pressed
-    then draw an ellipse.
-```
-
-In addition to the special Boolean variables mousePressed and keyPressed, you can also ask questions about numbers that you are using in your sketch. Consider the following pseudocode:
-
-```
-If the mouse is on the left half of the screen
-    then draw an ellipse
-Let's get more specific:
-  If the mouse x position is less than 300
-    then draw an ellipse
-And now let's translate that into real Processing code:
-```
-
-```
-def setup():
-    size(600,600)
-
-def draw():
-    background(255)
-    if mouseX < 300:
-      ellipse(300,300, 50,50)
-```
-
-The full set of yes/no questions that you can ask about numbers are:
-
-* ```<``` less than
-* ```>``` greater than
-* ```==``` equal to
-* ```<=``` less than or equal
-* ```>=``` greater than or equal
-* ```!=``` not equal to (This is equivalent to using == and preceding the entire expression with not)
-
-And just as with mousePressed and keyPressed, you can combine these together with boolean operators to ask more complicated questions. Let's start with some basic pseudocode:
-
-```
-  If the mouse is being pressed in the left half of the window
-    then draw an ellipse
-```
-
-Get more specific:
-
-```
-  If the mouse x position is less than 300 and
-    the mouse is being pressed
-    then draw an ellipse
-```
-
-And finally translate that into valid Processing syntax:
-
-```
-def setup():
-  size(600,600)
-
-def draw():
-    background(255)
-    if ( mouseX < 300 and mousePressed ):
-        ellipse(300,300, 50,50)
-```
-
-Try moving the mouse to both sides of the window with and without clicking to see exactly what's happening.
-In the above examples, if the Boolean expression is False, nothing happens. In other words, if the mouse is not being pressed (to take one example from above) then the code has done nothing. Well let's add another shape:
-
-```
-def setup():
-    size(600,600)
-    # Note that I'm adding the following two lines
-    # so that we can see both shapes together,
-    # and to draw both shapes at the same x,y
-    noFill()
-    rectMode(CENTER)
-
-def draw():
-    background(255)
-    if mousePressed:
-        ellipse(300,300, 50,50)
-
-    rect(300,300, 50,50)
-```
-
-Note the indendation. The ```rect()``` command is not inside the if statement, so it gets run always. The blank line is not required and I added it only for clarity. As you can see, the if statement applies only to the cirlce, and the square is being drawn always. What if we only want the square to be drawn instead of the circle, in an "either / or" fashion. Well you could use the logical not operator and write two conditionals like this:
-
-```
-def setup():
-    size(600,600)
-    noFill()
-    rectMode(CENTER)
-
-def draw():
-    background(255)
-    if mousePressed:
-        ellipse(300,300, 50,50)
-
-    if not mousePressed:
-        rect(300,300, 50,50)
-```
-But, it turns out that this is such a common thing to do in programming that there is a special syntax for it: else
-
-You write this in Python like this:
-
-```
-def setup():
-    size(600,600)
-    noFill()
-    rectMode(CENTER)
-
-def draw():
-    background(255)
-    if mousePressed:
-        ellipse(300,300, 50,50)
-    else:
-        rect(300,300, 50,50)
-```
-
-I recommend reading that in pseudocode like this:
-```
-  If the mouse is being pressed
-    then draw an ellipse
-  Otherwise, if is not being pressed,
-    then draw a rectangle
-```
-else is kind of like saying "otherwise" in English. It is the thing that happens if none of the conditions are met.
-A note on syntax:
-
-if starts a new conditional block. And any time you see if, it is not related to past conditionals. So the above example could have looked like this:
-
-```
-if mousePressed:
-    ellipse(300,300, 50,50)
-
-# lots of other commands here ...
-
-if not mousePressed:
-    rect(300,300, 50,50)
-```
-
-and still been valid.
-
-However, else must come immediately after an if block, and it is logically connected to that if statement. So this is invalid:
-
-```
-if mousePressed:
-    ellipse(300,300, 50,50)
-
-# lots of other commands here ...
-
-else: # INVALID!
-    rect(300,300, 50,50)
-```
-
-And instead must be written like this:
-
-```
-if mousePressed:
-    ellipse(300,300, 50,50)
-else:
-    rect(300,300, 50,50)
-```
-
-in which case the logic of the else must be understood in terms of the preceding if. In other words, it means "do something if the mouse is not being pressed."
-Let's work on another example starting with the following pseudocode:
-```
-  If the mouse is on the left of the screen
-    then draw a circle
-  Otherwise, if it is in the middle of the screen
-    then draw a square
-  Otherwise, if it is on the right of the screen
-    then draw a triangle
-In this case, to get more specific, we could say this in two different ways that are both logically equivalent:
-  If mouseX < 200
-    then draw a circle
-  If mouseX >= 200 and mouseX < 400
-    then draw a square
-  If mouseX >= 400
-    then draw a triangle
-  If mouseX < 200
-    then draw a circle
-  Otherwise, if mouseX < 400
-    then draw a square
-  Otherwise
-    draw a triangle
-```
-
-Here on the left, we are being explicit about each logical case. While on the right side, we are using this "otherwise" idea to say: "if mouseX is less than 200, then draw a circle, otherwise (if it is not less than 200) if it is less than 400, then draw a square."
-This idea of "otherwise if" has its own syntax, and that is elif. We would write the above right-side example in the following way:
-
-```
-def setup():
-    size(600,600)
-    noFill()
-    rectMode(CENTER)
- 
-def draw():
-    background(255)
-    if mouseX < 200:
-      ellipse(300,300, 50,50)
-    elif mouseX < 400:
-      rect(300,300, 50,50)
-    else:
-      triangle( 300,275, 325,325, 275,325)
-```
-
-This new syntax ```elif``` uses the fact that the first part of the conditional ```(mouseX < 200)``` is ```False```, and then adds another question. So it's like saying "Otherwise, since mouseX is greater than 200, if it is less than 400, then draw a square." And in this example, the final else now says "Otherwise, since mouseX is greater than 400, then draw triangle."
-
-Note that the order is important here. For example, think about what would happen if we switched the order of the first two conditionals. If you wrote the following:
-
-```
-if mouseX < 400:
-    ellipse(300,300, 50,50)
-elif mouseX < 200:
-    rect(300,300, 50,50)
-else:
-    triangle( 300,275, 325,325, 275,325)
-```
-
-The square would never get drawn. Why? What would make the first if statement False? If mouseX is greater than or equal to 400. But if this is the case, it could never be less than 200.
-
-![confusing](images/82ad1d18adb1aba033d9ee85b27e9e1ebea7f651.jpeg)
-
-If ```elif``` seems confusing to you, that's OK. It is confusing. Even expert programmers get tripped up about these kinds of logical statements all the time, and they are often the source of time-consuming and expensive bugs. Fortunately, you can write this example in a way that is more clear and readable, and that is also logically equivalent — based on the left-side pseudocode above, like this:
-
-```
-def setup():
-    size(600,600)
-    noFill()
-    rectMode(CENTER)
- 
-def draw():
-    background(255)
-    if mouseX < 200:
-      ellipse(300,300, 50,50)
-
-    if mouseX >= 200 and mouseX < 400:
-      rect(300,300, 50,50)
-
-    if mouseX >= 400:
-      triangle( 300,275, 325,325, 275,325)
-```
-
-This example is totally clear and explicit about each quesiton that you are asking, and is probably the easiest and most understandable way to implement this.
-
-As a final example, let's stitch together several Boolean variables to ask a slightly more complicated question.
-
-Let's start again with some pseudocode:
-```
-Draw a small square
-If the mouse is inside this square
-    then draw a circle
-```
-Start with the basics:
-
-```
-def setup():
-    size(600,600)
-    noFill()
-    rectMode(CENTER)
- 
-def draw():
-    background(255)
-    rect(300,300, 50,50)
-```
-Now before we try to implement the conditional, let's diagram what's going on here:
-
-
-With these coordinates in mind, let's refine our pseudocode:
-```
-  Draw a small square
-  If mouseX is greater than 275 and less than 325, and
-     mouseY is greater than 275 and less than 325,
-    then draw a circle
-```
-If that's not totally clear, pause for a second and think through the logic of those comparisons to see how that pseudocode describes a check that the mouse is inside the above box.
-
-Moving forward from there, we can now implement a conditional for this description:
-
-```
-def setup():
-    size(600,600)
-    noFill()
-    rectMode(CENTER)
- 
-def draw():
-    background(255)
-    rect(300,300, 50,50)
-    if mouseX > 275 and mouseX < 325 and mouseY > 275 and mouseY < 325:
-        ellipse(300,300, 50,50)
-```
-Note that you must write mouseX twice. In other words, Python does not allow you to say something like this:
-
-```
-  275 < mouseX < 325 # INVALID! Sorry :(
-```
-
-You must write it out as:
-
-```
-  mouseX > 275 and mouseX < 325
-```
-
-In other words, our Boolean comparison operators are binary operators, meaning that they only take two arguments.
-If you'd like, if it is more clear to you, you could write it like this:
-
-  ```275 < mouseX && mouseX < 325```
-
-which is equivalent (note the change from > to <). Personally I find this more confusing, but it may look nicer to your eye.
-
-## Inclass Assignment
-
-Draw a Blue Circle in the upper left hand screen when the mouse is in the 1st quad.
-
-Draw a Red Rect in the upper right hand screen when the mouse is in the 2nd quad.
-
-Draw a Yellow Triangle in the lower left hand screen when the mouse is the 3rd quad.
-
-Draw a Green Ellipse in the lower right hand screen when the mouse is the 4th quad.
-
-```
-def setup():
-    size(600,600)
-    rectMode(CENTER)
- 
-def draw():
-    background(255)
-    if mouseX < width/2 and mouseY < height/2:
-        fill(0, 0, 255)
-        ellipse(width/4, height/4, 50, 50)
-    elif mouseX > width/2 and mouseY < height/2:
-        fill(255, 0, 0)
-        rect(3*width/4, height/4, 50, 50)
-    elif mouseX < width/2 and mouseY > height/2:
-        fill(255, 255, 0)
-        triangle(width/4-25, 3*height/4-25, width/4, 3*height/4, width/4+25, 3*height/4-25)
-    elif mouseX > width/2 and mouseY > height/2:
-        fill(0, 255, 0)
-        ellipse(3*width/4, 3*height/4, 50, 25)
-    else:
-        fill(255, 0, 255)
-        rect(width/2, height/2, 100, 100)
-```
-
-# BREAK
-
-## Keyboard interaction
-
-So far we've seen how you can use the special Processing variable ```keyPressed``` to let the user press any key to trigger a conditional action. But this only tells us if any key is being pressed or not. What if we want to get more specific and create code that responds to specific keys?
-
-Fortunately, Processing offers us another special variable just for this purpose: ```key``` (Processing reference. That says "example is broken", but it actually seems to work OK for me. Maybe there is something I'm missing.)
-
-With this variable, we are now working with a variable type that I have mentioned before called a string: a bit of text surrounded in single or double quotes. For example: 'a' or "b". You can read more about strings in the Processing reference, or in the Python reference.
-
-Like everything in Python and Processing, strings are case-sensitive, so:
-```
-print('a' == 'a') # would print True, but
-
-print('A' == 'a') # would print false.
-```
-Let's add to our example above:
-```
-def setup():
-    size(600,600)
-
-def draw():
-    background(255)
-    if keyPressed:
-        if key == 'e':
-            ellipse(300,300, 50,50)
-```
-Note that I have added a new if statement inside the previous if statement. Programmers call this a nested if statement, because one is inside the block of another. It might look complicated, but hopefully if you think carefully about the logic, it is really simple. Let's think about it with pseudocode:
-```
-  If any key is being pressed,
-    if that key is a lowercase 'e'
-      then draw an ellipse.
-```
-Now where this gets tricky is that there are multiple ways to write this same logic. These ways are all valid, and you can use whichever is more clear and readable for you.
-
-In reading that pseudocode, you might have gotten the impression that I could also have written it like this:
-```
-  If any key is being pressed,
-    and that key is a lowercase 'e'
-      then draw an ellipse.
-```
-
-and that would make perfect sense. They are logically equivalent. In fact, I could implement that pseudocode in Processing syntax, and it would 
-
-also work perfectly well:
-
-```
-def setup():
-    size(600,600)
-
-def draw():
-    background(255)
-    if keyPressed and key == 'e':
-        ellipse(300,300, 50,50)
-```
-
-Use whichever form makes more sense to you and is easier for you to translate back-and-forth from your natural langauge to Processing syntax. The important thing to understand is that nesting if statements is kind of like and in that both conditional parts must be True.
-
-Now let's expand on that example and see if you prefer one method or the other. What if we want to add a second key command to draw a square?
-
-```
-def setup():
-    size(600,600)
-    rectMode(CENTER) # Adding this back for clarity
-
-def draw():
-    background(255)
-    if keyPressed and key == 'e':
-      ellipse(300,300, 50,50)
-
-    if keyPressed and key == 'r':
-      rect(300,300, 50,50)
-```
-
-Adding more key commands would simply repeat that pattern. And maybe now you can see here why writing it this way for many key commands might be a little bit annoying. You have to add that keyPressed and check every time. Programmers usually hate redundancy like this and prefer to write things only once if possible, as it makes code less prone to errors.
-
-Let's change it back to the previous style. Making a change like this is called refactoring. This is a fancy word that programmers like to use that just means re-writing code in a way that is equivalent and usually clearer or more efficient. So let's refactor this example:
-```
-def setup():
-    size(600,600)
-    rectMode(CENTER)
-
-def draw():
-    background(255)
-    if keyPressed:
-      if key == 'e':
-        ellipse(300,300, 50,50)
-
-      if key == 'r':
-        rect(300,300, 50,50)
-```
-With this style, you are only checking that they key is pressed once, and if that is True, you have a series of nested if statements that then check which character was pressed.
-
-## Events
-
-In addition to these conditionals using keyPressed and key, there is even an important third way of handling keyboard interaction. Try running the following code and make very quick key presses:
-
-```
-def setup():
-    size(600, 600)
-    frameRate(60)
-
-def draw():
-    if keyPressed:
-      ellipse( random(0,width),random(0,height), 50,50 )
-```
-
-My goal was to draw a single circle at a random location each time a key is pressed. But one key press will likely draw many circles. That's because the code is responding to a single key press more than once. Because the frame rate is going fast relative to human reflexes, it appears that the user has pressed the key on multiple frame renderings, or in other words, during multiple executions of the draw() block.
-Another problematic example would be if you slow down the framerate:
-
-```
-def setup():
-    size(600, 600)
-    frameRate(1)
-
-def draw():
-    background(255)
-    if keyPressed:
-      ellipse(300, 300, 50, 50)
-```
-
-This is an exagerated example, but it shows that when you are only checking for key presses inside the draw() block, it is possible that you may not respond to all of them. By pressing keys more quickly than the frame rate refreshes, you are causing Processing to "miss" your action. When the frame is being rendered, you are not pressing the key, you are essentially pressing the key between frames.
-
-These may be behaviors that you want. But if not, there is another option.
-
-A new code block:
-
-```
-def keyPressed():
-    # commands in here
-```
-
-This special block is triggered exactly once, every single time a key is pressed. That means that you don't have to worry about it not being called, and you don't have to worry about it being called more than once.
-
-Also, inside this new block (which must always be global, outside all other blocks), you do not need to check if keyPressed is True. You know that your code is responding to one single key press.
-
-This style of interactive programming is called event handling because your code is handling, or responding to, an event that the user triggers. This is an important part of any game development or user interface coding.
-
-Let's look at our previous example implemented in this way:
-
-```
-def setup():
-    size(600,600)
-    rectMode(CENTER)
-
-def draw():
-    background(255)
-
-def keyPressed():
-    if key == 'e':
-        ellipse(300,300, 50,50)
-
-    if key == 'r':
-        rect(300,300, 50,50)
-```
-
-Sidenote: There is a similar pattern here for the mouse. The ```mousePressed()``` block is also valid syntax and would be used in a similar way:
-
-```
-def setup():
-    size(600,600)
-    rectMode(CENTER)
-
-def draw():
-    background(255)
-
-def mousePressed():
-    ellipse( 300,300, 50,50 )
-```
-
-# BREAK
-
-## Making things move
-Changing topics, let's look at how we can make things move on their own, instead of only moving in response to mouseX and mouseY, as well as mouse and key presses.
-
-This is not a complicated topic and only brings together several things we've already seen, namely: variables, arithmetic, and frameRate.
-
-Let's begin with the simple example that we've been starting with:
-```
-def setup():
-    size(600,600)
-    stroke(50,50,150)
-    fill(200,200,255)
-
-def draw():
-    background(255)
-    ellipse( 300,300, 50,50)
-```
-
-Now if we want that circle to move side to side, what do we need to add? We want it's position to change and to "vary" ... so we'll add a variable:
-
-```
-circleX = 300
-def setup():
-    size(600,600)
-    stroke(50,50,150)
-    fill(200,200,255)
-
-def draw():
-    background(255)
-    ellipse( circleX,300, 50,50)
-```
-
-Just by itself, this change isn't going to make the circle move. How could we do that? What we've seen so far would be to use something like mouseX. So we could maybe try to modify draw() like this:
-
-```
-def draw():
-    background(255)
-    global circleX
-    circleX = mouseX
-    ellipse( circleX,300, 50,50)
-```
-
-But what if we want the position of the circle to change "on its own"?
-
-Using pieces that you've already seen, all we'd need to do is modify the value of the variable inside draw() so that it changes a little bit each frame. Like this:
-
-```
-circleX = 300
-def setup():
-    size(600,600)
-    stroke(50,50,150)
-    fill(200,200,255)
-
-def draw():
-    background(255)
-    ellipse( circleX,300, 50,50)
-    global circleX
-    circleX = circleX + 1
-```
-
-If that new line is confusing for you to understand, try writing it this way, which is equivalent, and maybe a little more clear:
-
-```
-def draw():
-    background(255)
-    ellipse( circleX,300, 50,50)
-    temp = circleX + 1
-    circleX = temp
-```
-
-That might clarify what may to you look like circular logic of assigning that variable to itself.
-But! The circle disappears! How can we make it come back? Let's make it so that if the circle moves off to the right, we have it re-appear at the left. To do this, let's think through some pseudocode:
-```
-  Draw a circle at location circleX
-  Increment the value of circleX by 1
-  If the circle goes off the window to the right
-    then redraw the circle on the left.
-```
-
-Or, getting more specific:
-
-```
-  Draw a circle at location circleX
-  Increment the value of circleX by 1
-  If the circleX > width
-    then circleX = 0
-```
-
-Now it should be pretty easy to translate this into valid Processing syntax:
-
-```
-circleX = 300
-def setup():
-    size(600,600)
-    stroke(50,50,150)
-    fill(200,200,255)
-
-def draw():
-    background(255)
-    ellipse( circleX,300, 50,50)
-    global circleX
-    circleX = circleX + 1
-    if circleX > width:
-      circleX = 0
-```
-
-Nice! I'm sure with a little adjusting, you can modify that so that we let the circle completely disappear, and then re-appear smoothly. (Hint: you can set circleX to a negative value.)
-
-Let's get a little more complicated. What if we don't want the circle to re-appear on the other side, but rather to "bounce" off the wall of the window? Now, instead of only moving to the right, sometimes we'll want the shape to move to the left. In other words, we want the direction of the circle to change. And when we want something to change, what do we need?
-
-A variable.
-
-So let's add a new variable for the direction of the circle:
-
-```
-circleX = 300
-circleDirection = 1
-def setup():
-    size(600,600)
-    stroke(50,50,150)
-    fill(200,200,255)
-
-def draw():
-    background(255)
-    ellipse( circleX,300, 50,50)
-    global circleX
-    circleX = circleX + circleDirection
-    if circleX > width:
-      circleX = 0
-```
-
-So far nothing has changed. I've merely swapped in a variable for a hard-coded value. But now, instead of changing the position of the circle when it hits the wall, I want to change the direction. Like this:
-
-```
-circleX = 300
-circleDirection = 1
-def setup():
-    size(600,600)
-    stroke(50,50,150)
-    fill(200,200,255)
-
-def draw():
-    background(255)
-    ellipse( circleX,300, 50,50)
-    global circleX
-    global circleDirection
-    circleX = circleX + circleDirection
-    if circleX > width:
-      circleDirection = -1
-```
-
-Great. But now it disappears off the left side. How do we fix this? Do we need a new variable? To answer that, ask yourself: is anything new is changing? No, nothing new is changing, so we don't need a new variable. But we want to change when and how that variable changes. In order to do that, there is another question that we want to ask and respond to. Let's work through the pseudocode:
-
-```
-  Draw a circle at location circleX
-  Increment the value of circleX by 1
-  If the circleX > width
-    then change the increment to -1
-And how do we want to modify this?
-  Draw a circle at location circleX
-  Increment the value of circleX by 1
-  If the circleX > width
-    then change the increment to -1
-  If the circleX < 0
-    then change the increment to 1
-```
-
-Looks like we need another conditional. Let's add that:
-
-```
-circleX = 300
-circleDirection = 1
-def setup():
-    size(600,600)
-    stroke(50,50,150)
-    fill(200,200,255)
-
-def draw():
-    background(255)
-    ellipse( circleX,300, 50,50)
-    global circleX
-    global circleDirection
-    circleX = circleX + circleDirection
-    if circleX > width:
-        circleDirection = -1
-    if circleX < 0:
-      circleDirection = 1
-```
-
-Great!
-
-Let's add one more thing. Let's allow the user to also change the circle direction by pressing some keys. Let's use 'j' for left and 'l' for right. All we need to add is the keyPressed() block and two conditionals:
-
-```
-circleX = 300
-circleDirection = 1
-def setup():
-    size(600,600)
-    stroke(50,50,150)
-    fill(200,200,255)
-
-def draw():
-    background(255)
-    ellipse( circleX,300, 50,50)
-    global circleX
-    global circleDirection
-    circleX = circleX + circleDirection
-    if circleX > width:
-        circleDirection = -1
-    if circleX < 0:
-      circleDirection = 1
-
-def keyPressed():
-    if key == 'j':
-        circleDirection = -1
-
-    if key == 'l':
-        circleDirection = 1
-```
-
-And now, believe it or not, you have all the basic pieces to implement a game like Pong. To be clear, Pong combines many of these elements in a way that may still appear complex, but you should be able to look at this code and have some understanding of what is going on. Take a look:
-
-# In Class Activity
-
-```
-circle_x = 0
-circle_y = 0
-circle_dir_x = 1
-circle_dir_y = 1
-
-def setup():
-    size(600, 600)
-    frameRate(60)
-
-def draw():
-    global circle_x, circle_y, circle_dir_x, circle_dir_y
-    background(255)
-    ellipse(circle_x, circle_y, 100, 100)
-    circle_x = circle_x + circle_dir_x
-    circle_y = circle_y + circle_dir_y
-     
-    if circle_x > width-50:
-        circle_dir_x = -1
-    if circle_x < 50:
-        circle_dir_x = 1
-        
-    if circle_y > height-50:
-        circle_dir_y = -1
-    if circle_y < 50:
-        circle_dir_y = 1
     
-    pass
-      
-def keyPressed():
-    global circle_dir_x, circle_dir_y
-    if key == 'a':
-        circle_dir_x = -1
-    if key == 'd':
-        circle_dir_x = 1
-    if key == 'w':
-        circle_dir_y = 1
-    if key == 's':
-        circle_dir_y = -1
-    pass
+def draw():
+    for i in range(0, 360):
+        pushMatrix()
+        translate(width/2, height/2)
+        rot = map((frameCount+i)%360, 0, 360, -TWO_PI, TWO_PI)
+        rotate(rot)
+        rect(0, 0, width/2, height/2)
+        popMatrix()
+```
 
-def keyReleased():
-    global circle_dir_x, circle_dir_y
-    if key == 'a':
-        circle_dir_x = 0
-    if key == 'd':
-        circle_dir_x = 0
-    if key == 'w':
-        circle_dir_y = 0
-    if key == 's':
-        circle_dir_y = 0
-    pass
+# Notes for your Homework 
+
+
+```
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
     
-def mousePressed():
-    global circle_dir
-    circle_dir = circle_dir * -1
-    pass
+    
+def draw():
+    for i in range(0, 360):
+        pushMatrix()
+        translate(width/2, height/2)
+        rot = map((frameCount+i)%360, 0, 360, -TWO_PI, TWO_PI)
+        scale_rect = sin(rot)
+        scale_rect = map(scale_rect, -1, 1, 0.5, 1)
+        rotate(rot)
+        scale(scale_rect)
+        rect(0, 0, width/2, height/2)
+        popMatrix()
 ```
 
 
-# Notes about Time:
-
-![Time](images/c28821dba294924e38617fb9341b6e56.jpg)
-
-![Time](images/thumb_days-since-last-timezone-issue-1-days-since-last-timezone-66030538.png)
+## drawing a grid
 
 ```
-print(day())
-print(hour())
-print(millis())
-print(minute())
-print(month())
-print(second())
-print(year())
+def setup():
+    size(1024, 1024)
+    rectMode(CENTER)
+    
+def draw():
+    
+    count = 0
+    for i in range(0, num_rects):
+        for j in range(0, num_rects):
+            pushMatrix()
+            if count % 2 == 0:
+                fill(255, 0, 255)
+            else:
+                fill(255, 255, 0)
+            
+            translate(i*width/num_rects, j*height/num_rects)
+            rect(width/num_rects/2, height/num_rects/2, width/num_rects, height/num_rects)
+            popMatrix()
+            count+=1
 ```
 
-![12 Clocks](images/maeda-all.gif)
+# Lets talk about _Shape Grammer_
+who enjoyed the reading?
+I saw some of you were like WTF? in the dicussions
 
-![1](images/maeda-01.gif)
-![2](images/maeda-02.gif)
-![3](images/maeda-03.gif)
-![4](images/maeda-04.gif)
-![5](images/maeda-05.gif)
-![6](images/maeda-06.gif)
-![7](images/maeda-07.gif)
-![8](images/maeda-08.gif)
-![9](images/maeda-09.gif)
-![10](images/maeda-10.gif)
-![11](images/maeda-11.gif)
-![12](images/maeda-12.gif)
+## WTF is Shape Grammar? 
+### A Practical Guide
 
-### Home Work
-* Coding Assignment #3 : A Clock w/ an Alarm
-* Reading Selections from Matthew Fuller, [Software Studies: A Lexicon: Introduction, "Algorithm", "Code", "Programmability", and "Source Code".](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
+
+Lets think about how shapes go together and what tools with have?
+
+```
+pushMatrix()
+```
+
+```
+popMatrix()
+```
+
+```
+translate()
+```
+
+```
+rotate()
+```
+
+```
+scale()
+```
+
+```
+num_rects = 5
+num_circles = 3
+padding = 50
+def setup():
+    size(1024, 1024)
+    rectMode(CENTER)
+    # background(255)
+    
+def draw():
+    
+    for i in range(0, num_rects):
+        for j in range(0, num_rects):
+            pushMatrix()
+            translate((i+1)*width/(num_rects+1), (j+1)*height/(num_rects+1))
+            rotate((i+1)*10)
+            rect(0, 0, width/num_rects-padding, height/num_rects-padding)
+            for k in range(0, num_circles):
+                for l in range(0, num_circles):
+                    pushMatrix()
+                    translate(k*width/num_rects/num_circles, l*height/num_rects/num_circles)
+                    ellipse(0, 0, width/num_rects/num_circles, height/num_rects/num_circles)
+                    popMatrix()
+            popMatrix()
+```
+
+```
+num_rects = 5
+num_circles = 5
+padding = 50
+def setup():
+    size(1024, 1024)
+    rectMode(CENTER)
+    # background(255)
+    
+def draw():
+    
+    for i in range(0, num_rects):
+        for j in range(0, num_rects):
+            pushMatrix()
+            translate((i+1)*width/(num_rects+1), (j+1)*height/(num_rects+1))
+            rotate((i+1)*10)
+            rect(0, 0, width/num_rects-padding, height/num_rects-padding)
+            for k in range(0, num_circles):
+              pushMatrix()
+              translate(k*width/num_rects/num_circles, 0, width/num_rects/num_circles, width/num_rects/num_circles)
+            popMatrix()
+            
+              
+            
+    for i in range(0, num_circles):
+        for j in range(0, num_circles):
+            pushMatrix()
+            translate((i+1)*width/(num_circles+1), (j+1)*height/(num_circles+1))
+            rotate((i+1)*10)
+            ellipse(50, 50, width/num_circles-padding, height/num_circles-padding)
+            popMatrix()
+```
+
+What is a list, you may ask? We'll talk about this next week.
+
+I will say that one advantage of the for loop is that it's nearly impossible to forget to include your variable increment, making it less likely to accidentally produce an infinite loop.
+
+## Home Work
+* Coding Assignment #4.a: Create a Endless animation using primitives: Circle, Square, Rectangle, Triangles
+* Coding Assignment #4.b: Create a Endless animation using found objects
+    * MEMEs will be judged by their dankness by the group
+    * Due Oct 19th
+
+

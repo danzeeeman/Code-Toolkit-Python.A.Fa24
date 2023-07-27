@@ -3,101 +3,83 @@
 
 # Part 1 :: Your Books
 
-
 ## BREAK
 
+# Part 2
+## Review of what we've done so far
 
-# Part 2 :: Introductory Beep Boops 
+Python and Processing programs are comprised of commands, also known as statements, also known as instructions. Each exists on its own line. Statements are generally comprised of expressions and operators. Expressions are things that have a value, like the number 250, and operators are things that have effects, they do something, combining values in various ways.
 
-Let's write a simple "program"
+## The grid system:
 
-## How to make a drawing
+![Grid](/images/grid.png)
 
-There were some things that many of your drawing instructions did that we will see again later:
-placeholders: things like "the first square", "the bottom line". 
+Processing is a programming platform designed for coding education around creative applications. Given that, it is very visual by default. Most (but not all) of our work this semester will have a visual output. In Processing that is primarily arranged around a draw window. The draw window is a grid of pixels. Each one like a little lightbulb that you can turn on or off and control the color of.
 
-*In computer programs these are called variables*
+The draw grid starts at the top-left corner of the window at 0,0. The numbers that specify an individual pixel are called coordinates. We almost always refer to coordinates with x first, then y. x increases to right and y increases down.
 
-repetition: "do this 4 times", "do this until you connect back to the first line". 
+On Mac you can use the screencapture utility to measure pixel values. On my computer the shortcut is ⌘-SHIFT-4, then click and drag, then press ESCAPE or else you'll end up with a bunch of funny screenshot fragments!
 
-*In computer programs these are called loops*
+You can do this on Windows with Snippet Tool, but no global keyboard shortcut unless you make one.
 
-questions or conditions: "if the shape is not closed, keep drawing". 
+### Color
+Color is specified by default with three numbers which signify components red, green, and blue, or, RGB. Color specifications can also include a fourth number for transparency (alpha). Color can also be specified as HSB (hue, saturation, and brightness). 
 
-*In computer programs these are called conditionals* 
+Processing offers a color selector tool to help you with this. From the menu, specify Tools > Color Selector. You can find the color you want, and then copy/paste its value into your sketch. You can use either the three RGB numbers, or just copy/paste the hex value.
 
-groups of commands: "draw another shape like you did in steps 1-4". 
-
-*In computer programs these are called functions and they are a way to make a group of instructions with a name for re-use*
-
-Introducing the Processing Development Environment
-
-So how does all this translate to Processing?
-
-Let's get started by opening up the Processing Development Environment, or PDE, and look around:
-* play button
-* stop button
-* File > Open
-* File > Examples
-* Modes: Java & Python
-
-In Processing, a program is called a "sketch".
-
-Let's make a very simple example:
+### Some syntax rules:
+All text is case sensitive
+Whitespace means spaces, line breaks, tabs, etc., and Processing mostly ignores this. So these are all equivalent:
 ```
-size(300,300)
-stroke(0,0,255)
-fill(0,255,0)
-rect(50,50,200,200)
+rect(10,10,50,50)
+rect( 10,10, 50,50 )
+rect   (        10, 10,    50, 50 )
 ```
-```Click File > New > Save``` 
-This creates a new folder for this sketch. Note the location. It is probably in a folder called Processing in your Document folder Give the sketch a name and click "Save".
+And you can use this to help make your code more readable. Personally, I find the first line above to be the easiest to read.
+The exception to this rule is that spaces at the beginning of the line (called indentation) are very important and we'll talk more about this next week.
 
-## 2D drawing basics (a.k.a 2D primitives)
+Commands use parentheses to specify parameters, also referred to as arguments. For example, in your homework you used commands like: ```rect(10,10,50,50)```. The parameters here are the four numbers.
 
-*The basic commands to draw shapes are called 2D primitives*
+Make sure your parentheses always come in pairs, open ( and close ).
 
-In Processing, we mainly draw using coordinates. Keep in mind a grid where the top-left corner is 0,0. The horizontal dimension is always specified first and is referred to as ```x```, and the vertical dimension is always specified second and is referred to as ```y```.
+Comments are bits of text that you can put in your code as notes to yourself, to me, or to anyone who might be looking at your code. They are like documentation. They are very useful and you should use them often.
 
-![GRID](images/grid.png)
+Comments are specified two ways:
 
-```x``` increases as you move to the right, and ```y``` increases as you move down.
+```
+# With a hashtag symbol, which go to the end of the line
+rect(10,10,50,50) # Single line comments can also start at the end of a line
+```
+or
+```
+"""
+    Or with three quotation marks like this. This marks off a block of
+    text and is useful for entering longer explanations, like
+    describing what the program does for example.  At the top of all
+    of your homeworks, please add a comment like this and include your
+    name, date, assignment number, and any other comments. I would
+    also like you to submit your reading notes this way
+"""
+```
+### Class note style
 
-So in the following example, what are the coordinates of this pixel?
+In class notes I will indicate Processing code by highlighting :
+  
+  ```rect(250,250,100,50)```
 
-Highlight this text for an answer: ```x=2```, ```y=3```. Remember, we start counting from 0.
-What about in this example: what are the coordinates of this pixel?
+Whenever text is formatted in this way, it is valid Python / Processing syntax.
 
-Please don't actually count all those pixels! Let's just approximate. Maybe, ```x=30``` and ```y=15```? That seems about right.
-Computers require us to be precise. But we can comply with that precision while also being loose and approximate in achieving the goals that we're working toward. We can leave space to play, experiment, estimate, and work by trial-and-error.
+Use the Processing PDE "Auto Format" command frequently, and always use the command before sharing your code when asking for help. In the menu: Edit > Auto Format (or ⌘T on Mac). This helps keep your code nicely lined up. For now this doesn't matter that much, but soon, as we learn new types of syntax, this will actually help you debug your code and help you see the structure of your programs.
 
+Have you memorized the URL for the Python Processing reference yet Processing reference yet?!? Highlight the brackets to reveal: http://py.processing.org/reference
 
-Let's look at one command in the [reference](https://py.processing.org/reference/): ```rect()```
-
+### Drawing Shapes
 
 ```rect(x, y, width, height)```
 ```
 fill(255, 0, 255)
-rect(0, 0, 512, 512)
-```
-
-The numbers in parenthesis are called ```parameters``` and their order is very important. The [reference](https://py.processing.org/reference/) will tell you what the various ```parameters``` do. In this case, the [reference](https://py.processing.org/reference/) explains that the first parameter is the "```x```-coordinate of the rectangle", the second parameter specifies the ```y``` coordinate, the third is the ```width``` of the shape, and the fourth is the ```height```
-
-
-*Some comments on lecture note format & style*
-
-Throughout all my lecture notes this semester, I will indicate Processing code by highlighting like so:
-
-```rect(250,250,100,50)```
-
-or
-
-```
 rect(250,250,100,50)
 ```
-
-Whenever text is formatted in this way, it is valid Python Processing syntax. You should be able to copy/paste it into your PDE. I will try my best to also use this formatting when specifying code in my emails, but I can't promise total consistency there as that can get quite tedious.
-
 
 ```ellipse(x, y, width, height)```
 ```
@@ -111,50 +93,7 @@ fill(255, 0, 255)
 triangle(0, 0, 256, 512, 512, 0)
 ```
 
-Let's look at this ```fill``` function that we keep calling.  Fill sets the fill color for our shapes.
-
-Color is specified using red, green and blue components, called ```RGB``` color. ```Tools > Color Selector``` gives you a helpful tool for selecting colors.  You can also use hue, saturation and brightness, called ```HSB``` color, if you specify that with the ```colorMode()``` command. Let's modify the above example:
-
-```
-size(300,300)
-stroke(0,0,255)
-fill(150,150,255)
-rect(50,50,200,200)
-```
-
-```fill(r, g, b)```
-
-```
-fill(255, 0, 255)
-```
-
-```stroke(r, g, b)```
-```
-stroke(255, 255, 0)
-```
-
-You can always add a fourth argument to any color commands to specify alpha which is a common digital media term that means transparency: how see-through a digital image is.
-
-```
-size(300,300)
-stroke(0,0,255)
-fill(150,150,255,50)
-rect(50,50,200,200)```
-That might not seem very different but if we add a new shape it should be more apparent:
-```
-```
-size(300,300)
-stroke(0,0,255)
-fill(150,150,255,50)
-rect(50,50,200,200)
-ellipse(250,250,50,50)
-```
-Notice that the overlap is slightly darker.
-
-## Draw Order
-
-Drawing order is also important. Intructions are followed from top down, first things first. Lower commands are run later. This means that later drawn shapes will be drawn as if layerd on top of earlier ones. So it's like making a collage: the things that you place down later will be on top.
-Let's add a third shape and remove the transparency to see what I mean:
+### Draw Order is important
 
 ```
 size(300,300)
@@ -165,70 +104,480 @@ ellipse(250,250,50,50)
 triangle(250,250,250,300,300,250)
 ```
 
-### Some syntax rules
-Parenthesis must always come in pairs, open and closed: ```( )```
-
-Processing will try to help you with text highlighting and helpful error messages. If you are confused, check the [reference](https://py.processing.org/reference/) for relevant examples.
-Comments are also an important part of coding. They are how you communicate with others (and with yourself in the future!) about what your code does. There are two ways to add comments in Python:
-
-```
-# Using a hashtag symbol creates a single line comment, like this
-```
-Single-line comments can also start midway through a line
-
-```
-rect(10,10,10,10)  # like this
-```
-
-```
-"""
-  Using three quotation marks, you can create a comment for a block of
-  text, like this. Use this at the top of your files to include your
-  name, date, and what this code is for (such as homework week number
-  or project)
-"""
-```
-
-
 ### Raster images
-Raster Images. You don't need to always create drawings in this way. You can also load "raster" images into your sketch, and draw them directly into the window. If you've ever done any HTML, this is similar to the way images are included in web pages.
-Go to Sketch > Add File, then browse to the image file you want to add and click "Open" . This adds the image file to your sketch directory but does not actually draw it.
-To draw it, use the following code:
 
 ```
 img = loadImage("YOUR-IMAGE-FILENAME.jpg")
 image(img, 0, 0)
 ```
 
-The 0, 0 specifies the x and y location of where in the window to place the image. If you want to control the size of the image, modify the 2nd line to look like this:
+## Variables
+What is a variable?
 
-```image(img, 0, 0, 50, 25)```
+#### _Who remembers algebra?_
+  ```
+  y = m * x + b aka the formula for a line
+  ```
 
-In this case, the image would be 50 pixels wide and 25 pixels tall.
-Those numbers are arbitrary and just as a demonstration. You can change them or experiment as much as you'd like. You can find more information in the [reference](https://py.processing.org/reference/): 
+```Y``` is equal to the variable ```M``` times the variable ```X``` plus the variable ```B``` this gives us the forumla of a line where ```M``` defines the slope of the line and ```B``` define the point that the line crosses the ```Y``` axis, when ```x = 0```.
 
-* PImage
-* loadImage()
-* image()
+  ```
+  a**2 + b**2 = c**2 aka Pythagorean Theorem
+  ```
+#### _Did anyone take Physics?_
+  ```
+  force = mass * acceleration 
+  ```
+####  _Did anyone take Calculus?_
 
-Drawing like this seems tedious! Why would you ever want to do this?
+![Cover](images/changing-stuff.jpeg)
 
-When you want to create something interactive, ie, something that responds to user input. Or when you want to create something with an inhuman amount of repetition. Or maybe when you want to process a large amount of data.
+A way to introduce variation on a theme, generalization within a formal structure, or the abstraction of some parts of a process.
 
-Really, any time you want to create something dynamic ... 
+The word comes from vary (dictionary.com) like variety and variance, and means a thing that is able to change.
 
-Tools like Photoshop, Illustrator, and Final Cut are fantastic, but they create fixed, closed works. With programming you can produce a creation and imbue it with life.
+![Bernd and Hilla Becher](/images/becher-khan.jpg)
 
-Maybe instead of drawing an illustration, you define rules to create that illustration, and you write a computer program to draw it. Then you can introduce variance or randomness into the system and instead of 1 drawing, now you have an entire world of drawings that are all similar but also different.
-Some programs are fun or helpful to use, some are tools that allow you to create things. When you are creating the program, you can create tools that allow other people to be creative.
-  
-# Gut Check 
-How are those books coming?
+The image on the left above is by the artist photographer couple Bernd and Hilla Becher. Examples of the Bechers' work like this one identify a kind of concept, and then stretch that concept by showing us all acceptable variations within that structure. A round gas water tank may have between 6 and 16 support beams, it may be on flat tiles or an elevated platform, it may have a diagonal staircase, it may be covered in a variable number of vertical streaks or it may be blotchy. This is not some objective, Platonic ideal, but rather it somehow portrays a truer representation of that concept because it shows us simultaneously all possible differences, all the ways that the structure can exist in the world.
+
+The image on the right is by the artist Idris Khan. Khan takes collections of the Becher images (and other images), adds transparency, and layers them. In this way, it's like he is creating one image that shows us a fuzzy portrait that depicts the range of all possible items in a collection. One image of a gas tank that somehow portrays all possible gas tanks. We'll start with the Becher approach today and in your homework you will end with Khan's.
+
+![Idris Khan](/images/idris%20khan%202%20-%20spherical%20gas.jpg)
+
+(More examples of both bodies of work are available here.)
+
+A variable is a placeholder. A placeholder for a value. Instead of using a specific value (like a number), you create a name, and then use that name in your code. When looking at your code, you don't know exactly what the value of that variable is. You can set it to a specific value, or change that value later. This means that one bit of code is now able to do different things.
+
+This creates a kind of abstraction. Think of other examples of abstraction that you're aware of. Like maybe Cubism, for example. There is an aspect to this of being "not specific", somehow general in some sense. Thinking back to the recipe metaphor from week 1, think of a recipe that might say something like "now add your sweetener" or "now add your protein". Often recipes can also be halved, doubled, or tripled. The person following the recipe may modify the amount of something or swap out an equivalent item. But still the recipe would just say "now add the spices" — the recipe specifies the amount and kind of spices, but that amount may have changed, but still, the recipe can proceed without knowning the exact amount. This is what a variable allows.
+Variables allow algorithms to have generality. So the google search algorithm works approximately the same whether the user is searching for "apples", "bananas", or "carrots". When you write code that uses variables, you don't know exactly what your code will do in advance.
+
+A little more specifically:
+- First you create a variable and give it a value
+- Then you can use and re-use that variable in one or more places
+- You can also change that value, and future uses will use this new value.
+ 
+### How this works in Python Processing:
+```  
+  treeHeight = 50
+  rect( 100, 100, 20, treeHeight )
+```
+
+Let's break that down and introduce some new vocabulary:
+
+The first line creates the variable. In some programming languages, you have to _declare_ variables before you can use them. In Python, you don't have to do that. You simply create a variable by _using_ it: by using the placeholder name in your code.
+
+![Matrix](/images/matrix_var_names.jpg)
+
+![Graph](/images/var_meme.jpg)
+
+_My advice is_ 
+
+```
+camelCase
+makeItEasyToRead = 1
+
+snake_case
+make_it_easy_to_read = 1
+
+camelCase
+makeItMeanSomethingUnique = 1
+
+snake_case
+make_it_mean_something_unique = 1
+```
+
+An important rule is that you have to give the variable a _value_ before you can use it. Usually you do this as I did above, with an equal sign (=). This is called variable assignment, and the equal sign is sometimes called the _assignment operator_.
 
 
-## Home Work
-* Read Marshall McCluhan's [The Medium is the Message](pdfs/mcluhan.mediummessage.pdf)
-* _Extra Credit_
-  * The Critical Engineering Working Group's [THE CRITICAL ENGINEERING MANIFESTO](https://criticalengineering.org) [pdf](https://criticalengineering.org/ce.pdf)
-  * Watch Zach Lieberman's talk at EYE0 2012 * https://vimeo.com/47203759?t=38m22s
-  * Read Casey Reas et al. [{Sofrware} Structures](https://artport.whitney.org/commissions/softwarestructures/text.html#structure)
+Read that equal sign almost like an arrow pointing from right to left. Variable assignment is a declaration. You are telling Python: "This placeholder that I'm calling ```treeHeight``` now contains the value ```50```." (Later we will use equal signs to ask Python what the value of a variable is, but for now, we are telling.)
+
+```treeHeight``` is a name I made up. Your variables can be any name as long as they are not already special Python Processing words, like size() or rect(). (Some additional rules about variable names are below.) But you should use things that will be useful to you and others later when reading your code.
+Please use good, informative variable names that describe what the variable will be used for.
+
+
+The next line above is using the variable. After assigning it a value, you can use it over and over. You can also use it with arithmetic, and you can modify the value.
+So if the above ```rect()``` draws a tree trunk, and I wanted to draw another tree with the same height to the right of it, I could say:
+
+```
+  # draw a second tree
+  rect( 150, 100, 20, treeHeight)
+```
+And now I could change the value of the variable once and both tree heights would change.
+Valid variable names:
+* must start with a letter or the underscore character
+* cannot start with a number
+* can only contain alpha-numeric characters and underscores (A-Z, a-z, 0-9, and _)
+* are case-sensitive (treeheight, TREEHEIGHT, TreeHeight, and treeHeight are all different variables)
+
+Variables can be used for all sorts of values. This week we will primarily be working with variables that store numerical values. For example:
+```
+armLength = 100
+curveAngle = PI/2
+legToArmRatio = 1.5
+```
+
+Later in the semester we will be working with other values. For example:
+
+```True``` / ```False``` values called booleans: ```isOn = False``` (This funny word is acutally a very common term in computer science that comes from George Boole, a 19th century mathematician who invented a formal system of logic, like an entire arithmetic that operates only on the values true and false instead of numbers. Booleans use keywords True and False to specify values.)
+strings: ```name = "Dan Moore"```
+characters: ```stopKey = 's'```
+You can also use variables to store colors. So you could specify a color like this:
+```
+r = 255
+g = 150
+b = 150
+fill(r,g,b)
+```
+
+Or, you could also specify a color with the color() command, which creates a color variable, like this:
+
+```
+c = color(255,150,150)
+fill(c)
+```
+
+You can even use variables to store images, like this:
+```
+img = loadImage("clouds.jpg")
+```
+
+These different kinds of values are called types and we will be talking more throughout the semester about this idea of different kinds of placeholders.
+
+Later in the semester you will even be able to create your own custom variable types.
+
+Going back to the recipe metaphor, you can kind of imagine your variables as the ingredients list. Most recipes list all ingredients at the beginning so you know what to expect, and specify all the values, but later on only reference the item and not the quantity.
+Processing comes with special some built-in variables. 
+
+For example:
+
+* ```width``` — the width of the draw window
+* ```height``` — the height of the draw window
+
+And some others we'll talk about next week:
+
+* ```mouseX``` — the horizontal part of the mouse position
+* ```mouseY``` — the vertical part of the mouse position
+* ```pmouseX```
+* ```pmouseY```
+
+and others
+
+## Arithmetic
+
+![basic_math](images/1zp2du.jpg)
+
+Arithmetic is done with the following operators:
+
+### basic math and some __funky__ _shit_
+* add (+)
+  * a = 1 + 1
+  * a += 2 or a = a + 2
+* subtract (-)
+  * a = 1 - 1 = 0
+  * a -= 1 or a = a - 1
+* multiply (*)
+  * a = 2 * 2 = 4
+  * a = 4 * 4 = 16
+  * a *= 4 or a = a * 4
+* divide (/)
+  * a = 2 / 2  = 1
+  * a = 1 / 2  = 0.5
+  * a /= 2 or a = a / 2
+* pow (**)
+  * a = 2**2 = 4 
+  * a = 4**2 = 16
+  * a**=2 or a = a ** 2
+* modulus (%) 
+  ![wft](images/1y62g6.jpg) 
+  *  a = 1 % 4 = 1
+  *  a = 2 % 4 = 2
+  *  a = 3 % 4 = 3
+  *  a = 4 % 4 = 0
+  *  a = 5 % 4 = 1
+  *  a = 6 % 4 = 2
+  * a %= 4 or a = a % 4
+
+#### PURE PYTHON
+```
+# take two variable, assign values with assignment operators
+a=3
+b=4
+
+print("a: "+str(a))
+print("b: "+str(b))
+
+# it is equivalent to a=a+b
+a+=b
+
+print("a: "+str(a))
+print("b: "+str(b))
+
+# it is equivalent to a=a*b
+a*=b
+print("a: "+str(a))
+print("b: "+str(b))
+
+# it is equivalent to a=a/b
+a/=b
+print("a: "+str(a))
+print("b: "+str(b))
+
+# it is equivalent to a=a%b
+a%=b
+print("a: "+str(a))
+print("b: "+str(b))
+
+# it is equivalent to a=a**b ( exponent operator)
+a**=b
+print("a: "+str(a))
+print("b: "+str(b))
+
+# it is equivalent to a=a//b ( floor division)
+a//=b
+print("a: "+str(a))
+print("b: "+str(b))
+```
+
+```
+#create two variables
+a=100
+b=200
+
+# addition (+) operator
+print(a+b) 
+
+# subtraction (-) operator
+print(a-b) 
+
+# multiplication (*) operator
+print(a*b)
+
+# division (/) operator
+print(b/a)
+
+# modulus (%) operator
+print(a%b) # prints the remainder of a/b
+
+# exponent (**) operator
+print(a**b) #prints a^b
+```
+
+Question: So how would you draw a shape in the center of the window, and make sure it was in the center no matter what the window size was? (Highlight below to see the answer.)
+```
+  ellipse( width/2, height/2, 50,50 )
+```
+
+### Example
+Let's work through an example. Start with this code:
+
+```
+  size(600,600)
+  background(255)
+  stroke(100,100,100)
+
+  fill(255,100,100,100)
+  rect(250,100,100,100)
+
+  fill(255,255,100,100)
+  rect(250,200,100,100)
+
+  fill(100,100,255,100)
+  rect(250,300,100,100)
+```
+
+What if we want to make the first square wider? What should we change? Check the Processing reference:
+
+
+So we need to change the third parameter of the rect() command. And since we want the square to be wider, we'll make that number bigger.
+
+```
+  size(600,600)
+  background(255)
+  stroke(100,100,100)
+
+  fill(255,100,100,100)
+  rect(250,100,200,100)
+
+  fill(255,255,100,100)
+  rect(250,200,100,100)
+
+  fill(100,100,255,100)
+  rect(250,300,100,100)
+```
+
+OK great. And if we want the other two squares to also be the same width, we could change them too:
+
+```
+  size(600,600)
+  background(255)
+  stroke(100,100,100)
+
+  fill(255,100,100,100)
+  rect(250,100,200,100)
+
+  fill(255,255,100,100)
+  rect(250,200,200,100)
+
+  fill(100,100,255,100)
+  rect(250,300,200,100)
+```
+
+But now what if we wanted to play with this width a bit, make some adjustments. We'd have to keep changing all three rect() commands each time. Since we want them all to have the same width, we can use a variable as a placeholder for this value. Here's how:
+
+``` 
+  squareWidth = 200 # variable assignment (creates the variable)
+
+  size(600,600)
+  background(255)
+  stroke(100,100,100)
+
+  fill(255,100,100,100)
+  rect(250,100,squareWidth,100)
+
+  fill(255,255,100,100)
+  rect(250,200,squareWidth,100)
+
+  fill(100,100,255,100)
+  rect(250,300,squareWidth,100)
+```
+
+Now to make tweaks, I can simply change the value (200) in the variable assignment, and all my squares will be drawn using this value. (Note: my variable name, squareWidth is arbitrary and can be anything I want. I could have called it spaghetti and I just chose a name that would be informative to the purpose for which I was using it.)
+
+Let's keep going. What if we wanted to make the first square taller? Let's change it's height and see what happens.
+
+```
+  squareWidth = 200 # variable assignment (creates the variable)
+
+  size(600, 600)
+  background(255)
+  stroke(100, 100, 100)
+
+  fill(255, 100, 100, 100)
+  rect(250, 100, squareWidth, 120)
+
+  fill(255, 255, 100, 100)
+  rect(250, 200, squareWidth, 100)
+
+  fill(100, 100, 255, 100)
+  rect(250, 300, squareWidth, 100)
+```
+
+If you run that, you'll see that the first square is taller, but now there is an overlap between the first and second square. What if we want the other two squares to automatically adjust their position?
+
+Let's add a variable for the first square's height, and use that to position the second square. Like this:
+
+```
+  squareWidth = 200 # variable assignment (creates the variable)
+  firstSquareHeight = 120
+
+  size(600, 600)
+  background(255)
+  stroke(100, 100, 100)
+
+  fill(255, 100, 100, 100)
+  rect(250, 100, squareWidth, firstSquareHeight)
+
+  fill(255, 255, 100, 100)
+  rect(250, 100 + firstSquareHeight, squareWidth, 100)
+
+  fill(100, 100, 255, 100)
+  rect(250, 300, squareWidth, 100)
+```
+
+OK, looks good. So now we can adjust just the value of the variable firstSquareHeight and it's height will change, and the second square will move accordingly.
+
+But now we have the same problem with the third square! So we have to repeat the pattern. The vertical postiion (y) of the third square should be the top point of the first square, plus the height of the first square, plus the height of the second square. So we can write that out, like an equation.
+
+```
+  squareWidth = 200 # variable assignment (creates the variable)
+  firstSquareHeight = 300
+
+  size(600, 600)
+  background(255)
+  stroke(100, 100, 100)
+
+  fill(255, 100, 100, 100)
+  rect(250, 100, squareWidth, firstSquareHeight)
+
+  fill(255, 255, 100, 100)
+  rect(250, 100 + firstSquareHeight, squareWidth, 100)
+
+  fill(100, 100, 255, 100)
+  rect(250, 100 + firstSquareHeight + 100, squareWidth, 100)
+```
+
+Note that if firstSquareHeight is 100 (it's original value above), then this equation works out to 300, which was its original value above as well.
+Great. So now we can change only the variables squareWidth and firstSquareHeight and the composition will adjust accordingly.
+
+To keep going, can you add a variable for the x position of the squares, and have that adjust the position of all three squares? What if you add two more squares to make a small cross ("+" sign) and want the composition to adjust accordingly?
+
+So, how much "variance" can you achieve with 1 variable? with 2?
+
+How many variables would you need to draw a shape that varied its height, and also its horizontal and vertical position?
+Let's say you were trying to implement Pong for your midterm project. (A totally feasible project by the way!) How may variables would you need? What is moving or changing in this game?
+
+
+## Randomness
+One thing that works really nicely with variables is creating randomized variation of those variable values. You will need this for your homework this week.
+In Processing, this is done with the command random(). For a detailed explanation, check the Processing reference for random().
+```random()``` returns a floating point (a number with a decimal point).
+Like this:
+```
+	  firstSquareHeight = random(10,300)
+```
+The parameters to random() are minimum and maximum values. They define a range from which random() chooses a number. Like asking a person to "pick a number between 10 and 300".
+Putting that altogether, here is how we could use random values to draw the above composition:
+```
+  squareWidth = random(10,300) # variable assignment (creates the variable)
+  firstSquareHeight = random(10,300)
+
+  size(600, 600)
+  background(255)
+  stroke(100, 100, 100)
+
+  fill(255, 100, 100, 100)
+  rect(250, 100, squareWidth, firstSquareHeight)
+
+  fill(255, 255, 100, 100)
+  rect(250, 100 + firstSquareHeight, squareWidth, 100)
+
+  fill(100, 100, 255, 100)
+  rect(250, 100 + firstSquareHeight + 100, squareWidth, 100)
+```
+
+Stop and run that a few times to see what kinds of variation we've just created.
+
+
+# _A crash course to git_
+- Create a [Github](https://github.com) profile 
+- Install Git
+  - On Windows 
+    - Install [git](https://git-scm.com)
+    - open git-cmd [see screen shot] ![terminal](images/terminal.PNG)
+    - go to cloning
+  - on Mac 
+    - install [brew](https://brew.sh)
+    - open terminal ![terminal](images/CloneMac.png)
+    - install git
+      - type ```brew install git``` into your terminal
+    - go to cloning
+  - Clone the repo: 
+    - type ```git clone https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa22``` into the terminal
+
+```
+git clone your_repo_url
+```
+![terminal](images/CloneMac.png)
+Cloning a repository of code is basically making a copy but with 
+- Copy the _template_ folder and rename it to your chosen name
+```
+git add path_your_new_file_folder_name/*
+git commit -a -m "adding my homework folder where I will store all of my homework"
+git push origin main
+```
+### we might run into a little issue here!
+
+
+# Explore the Examples
+
+![Homework](images/lewitt-trapezoid.jpeg)

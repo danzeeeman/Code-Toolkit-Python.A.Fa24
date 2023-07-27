@@ -17,7 +17,7 @@ requirement of the Culture and Media major.
 
 ## Class Website & Email
 
-Rather than using Canvas this semester we will be using this URL https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa22
+Rather than using Canvas this semester we will be using this URL https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa23
 
 Please bookmark that URL and refer back to it often. All deadlines, reading materials, project tutorials, and 
 other course materials will be posted here. You will be using Google Docs, Google Drive, and other 
@@ -41,7 +41,7 @@ reading discussion. We will take a short break halfway through class.  We are go
 - Final project 20%
 - Participation 15%
 
-All assignments will be completed individually. Your participation grade is based on class discussions, 
+Your participation grade is based on class discussions, 
 contributions to student work sharing, and questions via office hours and email.
 
 ## Course Requirements & Assignments
@@ -238,6 +238,8 @@ first day, and is included below.
 * Introductions
 * About the course
 * What is a program?
+* 
+## Week 2 – Processing?
 * The Processing Development Environment ("PDE")
 * Drawing with numbers
 * The window as a grid of pixels
@@ -248,7 +250,7 @@ Part I: Python and the Processing platform
   * The Critical Engineering Working Group's [THE CRITICAL ENGINEERING MANIFESTO](https://criticalengineering.org) [pdf](https://criticalengineering.org/ce.pdf)
   * Watch Zach Lieberman's talk at EYE0 2012 * https://vimeo.com/47203759?t=38m22s
   * Read Casey Reas et al. [{Sofrware} Structures](https://artport.whitney.org/commissions/softwarestructures/text.html#structure)
-## Week 2 – Adding variance
+## Week 3 – Adding variance
 * Variables
 * Arithmetic (+, -, *, /)
 * Introduction to random()
@@ -256,7 +258,7 @@ Part I: Python and the Processing platform
 * Coding Assignment #1 __Solve LeWitt's Trapezoid__ 
 ![Trapezoid](images/lewitt-trapezoid.jpeg)
 * Read Lev Manovich's [The Language of New Media, Cambridge, MA: MIT Press, 2002. Chapter 1 (pages 18-55)](https://dss-edit.com/plu/Manovich-Lev_The_Language_of_the_New_Media.pdf)
-## Week 3 – Adding interactivity
+## Week 4 – Adding interactivity
 * Code blocks and frames (setup() and draw())
 * Debugging (with println())
 * Mouse interaction (mouseX and mouseY, pmouseX and pmouseY)
@@ -269,7 +271,7 @@ Part I: Python and the Processing platform
   * Iterate on your designs
   * Use Plenty of Variables
 * Coding Assignment #2b : Make your pattern respond to the mouse input (button click and or position)
-## Week 4 – Making things move
+## Week 5 – Making things move
 * Conditionals if and else
 * Keyboard interaction
 * Motion
@@ -277,14 +279,14 @@ Part I: Python and the Processing platform
 * Coding Assignment #3 : A Clock
 * Reading Selections from Matthew Fuller, [Software Studies: A Lexicon: Introduction, "Algorithm", "Code", "Programmability", and "Source Code".](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
 * Midterm project assignment Due: Week 8
-## Week 5 – Adding repetition
+## Week 6 – Adding repetition
 * Loops
 ### Home Work
 * Coding Assignment #4.a: Create a Endless animation using primitives: Circle, Square, Rectangle, Triangles
 * Coding Assignment #4.b: Create a Endless animation using found objects   
     * MEMEs will be judged by their Dankness
 
-## Week 6 – Timing and state
+## Week 7 – Timing and state
 * Timing
 * State: a new way to use variables
 ### Home Work
@@ -292,40 +294,38 @@ Part I: Python and the Processing platform
 * "Data Visualization", from Matthew Fuller's Software Studies: A Lexicon
 * Catherine D'Ignazio and Lauren Klein, ["Unicorns, Janitors, Ninjas, Wizards, and Rock
 Stars"](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
-## Week 7 – Working with many things (lists), and modularity (functions)
+## Week 8 – Working with many things (lists), and modularity (functions)
 * Data structures: Lists
 * Functions: for project planning, reusability and modularity
 ### Home Work
 * Coding Assignment #6: Data Self-Portrait 
-## Week 8 – Midterm project work and review as needed
+## Week 9 – Midterm project work and review as needed
 * Review & midterm project work
 ### Home Work
 * Claus Pias, [“The Game Player’s Duty: The User as the Gestalt of the Ports”, from Media Archaeology: Approaches, Applications, Implications, Jussi Parikka and Erkki Huhtamo, eds.](pdfs/huhtamo-parikka-media_arch.pdf)
 * Extra Credit Alex Galloway, ["Gamic Action, Four Moments", chapter 1 (pages 1-38) from Gaming: Essays on Algorithmic Culture.](pdfs/galloway_gamicaction.pdf)
-## Week 9 – Midterm project presentations and discussion
+## Week 10 – Midterm project presentations and discussion
 * Midterm project presentations
 Part II: Standalone Python – Networks and data processing
 ### Home Work
 * Final project Due: Week 15 – Final projects, Pitches due next week!
-## Week 10 – Python outside of Processing
+## Week 11 – Python outside of Processing
 * Introduction to Python outside of Processing with Atom and the command line
 * Data structures: Dictionaries
 Final project assignment For in-class presentation and discussion on Week 15.
 ### Home Work
-## Week 11 – Data serialization: for storage and communication
+## Week 12 – Data serialization: for storage and communication
 * Serialization with JSON
 * An experiment with networking
 * * Coding Assignment #7: Extra Credit - Dealers Choice 
 ### Home Work
 * Paul Dourish, “Protocols, Packets, and Proximity: The Materiality of Internet Routing”, from Signal Traffic: Critical Studies of Media Infrastructures, Nicole Starosielski and Lisa Parks, eds.
-## Week 12 – Network protocols
+## Week 13 – Network protocols
 * Networking and the Web
 ### Home Work
 * Coding Assignment #8: Scraping the Net
 * Alex Galloway and Eugene Thacker, "Protocol and Counter-Protocol", 2003
-## Week 13 – Saving data in a database
-* Final Project Check Point - Gut Check 
-## Week 14 – Final project work
-* Course material review & midterm project work
+## Week 14 – Final project Work Session
+* Final project Gut Check
 ## Week 15 – Final projects
 * Final project presentations and discussion

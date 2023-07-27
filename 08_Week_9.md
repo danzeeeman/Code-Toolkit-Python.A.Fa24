@@ -1,830 +1,421 @@
 # Code Toolkit: Python, Fall 2021
-### Week 9 — Class notes
-## Review
-Last week we covered two topics:
 
-Timing. Unlike other digital design and production tools, Processing does not give us a visual representation of the timline to work with for scheduling events. Instead, as is the common pattern with computer programming (and hence with Processing, the goal of which is to teach coding fundamentals) we get a numeric representation of time which we can use to schedule events. We access this in the form of the millis() command (documentation).
+# Week 9 — Class notes
 
-Using ```millis()``` and if statements, we're able to ask all kinds of complicated questions related to timing and the scheduling of events. For example, refresh your memory (or refer back to last week's class notes) about what this conditional would do:
+# Command line from [Sam Lavigne](https://github.com/antiboredom/scrapism-fall-2023/blob/main/01-command-line/01-notes.md)
 
-```
-if millis() > eventTime and millis() < eventTime + 1000:
-    ellipse(400,400,50,50)
-
-if millis() > eventTime + 5000:
-    eventTime = millis()
-```
+The command line is a text-based interface for interacting with your computer. From the command line you can launch programs, view files, and manipulate your file system by making, moving, and copying files and directories. You can think of it as the Finder in Mac, without the graphic interface, but much more powerful.
 
-State. We also talked about a new way to use variables. So far we've used variables to keep track of numbers, Boolean values, and text. Numbers can be used for anything related to drawing: the position, size, or color of shapres, for example. Boolean values can be used to keep track of yes / no questions, especially as applied to conditionals in if statements or while loops.
+## Setup
 
-But with state, we can use variables to keep track of what our programs are doing. For example, maybe you are drawing two scenes, day and night, and you want the user to switch between them with a key press. Your code might look something like this:
 
-# global variable:
+On a Mac you can access the command line by opening up the `Terminal` application, located in `/Applications/Utilities/Terminal`
 
-```
-isNight = False
+To get started on Windows you will need to set up the Windows Subsystem for Linux, which allows you to run Ubuntu (a Linux distribution) from within your current Windows 10 installation.  [Follow this guide to do so](https://tutorials.ubuntu.com/tutorial/tutorial-ubuntu-on-windows). Alternatively, you can install [Git for Windows](https://gitforwindows.org/) which includes many of the commands I'll be covering below.
 
-def draw():
-    if isNight:
-        # include commands to draw the night scene
-    else:
-        # include commands to draw the day scene
 
-def keyPressed():
-    isNight = not isNight
-```
+---
 
-That else could also say if not isNight if you wanted to be explicit.
-Make sure you understand the last line. That is toggling the Boolean value of the variable. If the variable was True, after a key press it will be False (i.e., not True). Invsersely, if the variable was False, after a key press it will be set to not False, or in other words, it will be True. So by pressing any key the user is flip-flopping the Boolean variable back-and-forth, which will affect what the if statement does inside the draw() block.
 
-Working with may things
-Today we will learn about working with many things. So far if you wanted to move many things, you would hard code new variables for each one. In week 5 we learned how to draw many items using loops, but you couldn't move each item around individually. Today we will learn how to do that using a thing called lists.
+## The Prompt
 
-In Python, a list is like a collection of variables.
+When you open up your terminal application you'll see something like this:
 
-In a certain way, this topic is like a mashup of variables and loops:
+```bash
+dan@danscomputer ~ % 
+```
 
-With loops, instead of drawing many things line-by-line, you can create a loop which draws many things at once, even a dynamic number of things.
+This is called the "prompt". By default (on a Mac) it shows your username, an `@` symbol, the name of your computer, the directory that you are currently in, and then a `%` sign.
 
-With lists, instead of declaring each variable line-by-line, you can create one list that declares many variables at once, and can even allow you to work with a dynamic number of variables.
+The basic use of the command line is: 1) you type a command, 2) you hit return, and 3) some output of the command is printed to the screen.
 
-This introduces us to one of the most interesting aspects of computer science: data structures. The term data structure refers to a way of organizing many variables together for efficient and convenient use. The type of variable organization that you'll need to use in a given situation (i.e., the type of data structure) depends on the problem that you are trying to solve. In addition to lists, Python provides many other data structures, such as: sets, tuples, and dictionaries, among others. And beyond these data structures that come with Python, in computer science there are many other more complex kinds of data structures that go by names like: stacks, queues, linked lists, and trees. But in one sense, lists are the most fundamental data structure, and in a certain way it makes sense to think of them as underlying all these others.
+Whatever you type will start appearing after the end of the prompt line.
 
-Data structures allow you to start to think about modeling: how to organize your variables and other code in a way that matches the thing that you're trying to do. A good data structure could make your program much easier to implement and to read, while an inappropriately chosen data structure could make the thing that you're trying to do very hard and potentially less efficient in terms of computing resources.
+---
 
-# Background
+## Basic Navigation & File Operations
 
-![Gene Kogan](images/flocking.jpg)
+*Please note I use the word "directory" and "folder" interchangeably.*
 
-Since lists are used to manage many things, they are often used to implement things like swarms, or herds of objects that behave as if they are acting independently or on their own.
+When you open a new terminal window, you are placed inside your home folder. On a Mac this is `/Users/myusername` and on Linux, `/home/myusername`.
 
-Daniel Shiffman, a professor at NYU in the Interactive Telecommunications Program (ITP) graduate program, uses lists and other data structures to implement swarms that are used to simulate natural phenomenon like animals, plants, clouds, flowing liquids, and others.
+To see the folder you are currently in, type: `pwd` and hit return. `pwd` stands for "print working directory", or in other words, "show me the directory I am currently working from".
 
-For example, here is a [video](https://www.youtube.com/watch?v=tOv8JGA2-mM) that demonstrates a simulation of "flocking", like birds or fish moving together. (It's a very cute video.) Shiffman's book [Nature of Code](https://natureofcode.com/) offers detailed lessons in how to achieve affects like this.
+### Getting around, making, deleting and copying files and folders.
 
-Another, more aesthetically developed, example is this [flocking demo](https://vimeo.com/39517129) by Gene Kogan.
 
-And another great example is the project [We Feel Fine](http://www.wefeelfine.org/) by Jonathan Harris and Sep Kamvar. This project was made in 2006 using Processing and unfortuntely can be a bit difficult to run that now. (You will probably need to install Java for your browswer and OS version.) But there is documentation online, like this [video](https://www.youtube.com/watch?v=NSGpOSgnfz8) that demonstrates how the project functioned.
+**`pwd`** stands for "print working directory". It prints out where you are:
 
-# Lists
-When we first looked at variables, we saw how you could use them to add "variance" or "change" into your composition. You replace a hard-coded number with a placeholder like x, and then you could change the value of that placeholder, modifying your sketch. And each variable stores one value.
+```bash
+pwd
+```
 
+**`ls`** stands for "list". It lists the contents of current directory.
 
+```bash
+ls
 ```
-circle_x = 0
-circle_y = 0
-circle_dir_x = 1
-circle_dir_y = 1
 
-def setup():
-    size(600, 600)
-    frameRate(60)
+**`cd`** stands for "change directory". Type `cd` and then the directory you want to go to. For example, change to the Desktop from your home folder:
 
-def draw():
-    global circle_x, circle_y, circle_dir_x, circle_dir_y
-    background(255)
-    ellipse(circle_x, circle_y, 100, 100)
-    circle_x = circle_x + circle_dir_x
-    circle_y = circle_y + circle_dir_y
-     
-    if circle_x > width-50:
-        circle_dir_x = -1
-    if circle_x < 50:
-        circle_dir_x = 1
-        
-    if circle_y > height-50:
-        circle_dir_y = -1
-    if circle_y < 50:
-        circle_dir_y = 1
-    
-    pass
-      
-def keyPressed():
-    global circle_dir_x, circle_dir_y
-    if key == 'a':
-        circle_dir_x = -1
-    if key == 'd':
-        circle_dir_x = 1
-    if key == 'w':
-        circle_dir_y = 1
-    if key == 's':
-        circle_dir_y = -1
-    pass
-
-def keyReleased():
-    global circle_dir_x, circle_dir_y
-    if key == 'a':
-        circle_dir_x = 0
-    if key == 'd':
-        circle_dir_x = 0
-    if key == 'w':
-        circle_dir_y = 0
-    if key == 's':
-        circle_dir_y = 0
-    pass
-    
-def mousePressed():
-    global circle_dir
-    circle_dir = circle_dir * -1
-    pass
-```
-
-Have a look at this example if you'd like, but don't be intimidated. There's a lot going in there, and we'll work through it today bit-by-bit.
-
-Let's start with a simple example that just draws 4 squares:
-
-```
-def setup():
-    size(500, 500)
-    fill(150, 150, 250)
-    rectMode(CENTER)
-
-def draw():
-   background(255)
-   rect(100, 250, 100, 100)
-   rect(200, 250, 100, 100)
-   rect(300, 250, 100, 100)
-   rect(400, 250, 100, 100)
+```bash
+cd Desktop
 ```
 
-Now what if we want each one of these squares to move up and down randomly? Well to start, let's just add a variable for each one:
+To go into the parent folder, up one level in the file structure, type `..` or `../` instead of a folder name, like so:
 
+```bash
+cd ..
 ```
-a = 200
-b = 200
-c = 200
-d = 200
-
-def setup():
-    size(500, 500)
-    stroke(50, 50, 250)
-    fill(150, 150, 250)
-    rectMode(CENTER)
 
-def draw():
-    background(255)
+If you type `cd` without a folder name after, it takes you back to your home folder.
 
-    rect(100, a, 100, 100)
-    rect(200, b, 100, 100)
-    rect(300, c, 100, 100)
-    rect(400, d, 100, 100)
-```
 
-Nothing new yet, I've just swapped out a hard-coded number for a variable placeholder. Note that I don't need to add global inside the draw() block yet because while I am using these global variables, I am not assigning or modifying them.
-Now to make each square move, we could change the value of each variable in draw(). Let's change it by a random amount, so they just kind of shake there.
+**`mkdir`** stands for "make directory". Type `mkdir` and then a name to make a folder. For example, make a folder called "cool_project":
 
+```bash
+mkdir cool_project
 ```
-a = 200
-b = 200
-c = 200
-d = 200
-
-def setup():
-    size(500, 500)
-    stroke(50, 50, 250)
-    fill(150, 150, 250)
-    rectMode(CENTER)
 
-def draw():
-    global a, b, c, d
-    background(255)
+**`mv`** stands for "move". It lets you move files and folders and also rename them. To rename a file:
 
-    rect(100, a, 100, 100)
-    rect(200, b, 100, 100)
-    rect(300, c, 100, 100)
-    rect(400, d, 100, 100)
-    
-    a = a + random(-5,5)
-    b = b + random(-5,5)
-    c = c + random(-5,5)
-    d = d + random(-5,5)
+```bash
+mv oldname.txt newname.txt
 ```
 
-Note that now I am modifying the variables inside the draw() block, so now I do have to add global because otherwise Python would think that my assignment statements were creating new local variables. Hopefully this global is getting clearer for you, but I agree that it can be confusing.
+**`cp`** stands for "copy". It lets you duplicate files:
 
-Looking at that code, notice that I'm doing the same thing several times: drawing a rect(). And the paramters to each one follow a simple and direct pattern. Hopefully that makes you want to replace those four lines with something else. What is it? Think back to week 5 ... What if we wanted to have 8 or 100 or 1000 squares?
+```bash
+cp draft.txt draft_copy.txt
+```
 
-So hopefully you realized that we could replace those four rect() commands with one while loop that draws all four:
+**`rm`** stands for "remove". It lets you delete files:
 
+```bash
+rm bad_selfie.jpg
 ```
-a = 200
-b = 200
-c = 200
-d = 200
 
-def setup():
-    size(500, 500)
-    stroke(50, 50, 250)
-    fill(150, 150, 250)
-    rectMode(CENTER)
+Please note, `rm` will **not** ask for confirmation, and it will not move files to the trash. It'll just delete them immediately, so be careful.
 
-def draw():
-    global a, b, c, d
-    background(255)
 
-    i = 100
-    while i <= 400:
-        rect( i, a, 100, 100)
-        i = i + 100
+**`file`** provides basic info about a file:
 
-    a = a + random(-5, 5)
-    b = b + random(-5, 5)
-    c = c + random(-5, 5)
-    d = d + random(-5, 5)
+```bash
+file mysterfile.what
 ```
-
-If you step through that loop, you'll see that it is replicating the four rect() statements from the previous snippet.
-BUT WAIT — what about the variables b, c, and d?! As you can see from running that, the vertical position of each square is now being controlled by a. Changing the value of a changes the position of each square in the same way. But we can't use a, b, c, and d independently because we are in a loop.
-
-This is precisely why we need lists. To keep track of many things in a situation like a loop.
-
-And we might even have a dynamic number of things. Think for example what would happen if I used mouseX in my while conditional.
 
-So what we're about to do is: replace those four variables with one variable, a list, and that one list variable will hold all four values within it and will let us reference them inside a loop.
+## The Structure of the Filesystem
 
-New syntax:
-```x = []``` These square brackets create a new kind of variable, which is a list. It does not have any values yet, but we've just told Python that this one variable can hold many values. I suggest reading this code like: "Create a variable called x and set it to an empty list".
-Now to actually add values to this new list variable, we use a command called append(). Like this:
+Everything on your computer is either a file or a folder, and these files and folders are organized hierarchically, like a tree. At the very bottom of the tree is the "root folder", indicated by a single forward slash, like so `/`. Here's a basic example of directory structure:
 
+```bash
+/
+	Users/
+  		dan/
+   			Desktop/
+	  			trotsky.jpg
+	  			the_man_without_qualities.txt
+	 		Documents/
+	 		Downloads/
+		Guest/
+	Applications/
+	Volumes/
 ```
-x.append(5)
-x.append("Hello")
-x.append(True)
-```
 
-As you see, a list can contain any of the other values that we've been working with so far: numbers, text strings, and Boolean values. You can view the contents of a list with print():
+Each file and folder has a unique location on the filesystem. This location is called a "path". You can reference files and folders either by their **relative** path, or by their **absolute** or **full** path. In the previous examples I have been using the relative path - that is, I have been referencing files relative to where I currently am. **A path is absolute if it begins with a `/`**
 
-```
-print(x)
-# This would print to the console:
-# [5, 'Hello', True]
-```
-But the really new, weird, and exciting thing is how we actually reference, or in other words, how we use those values.
+For example the absolute path to `the_man_without_qualities.txt` in the above filesystem is `/Users/dan/Desktop/the_man_without_qualities.txt`. I can look inside the contents of this file, from any working directory, with this command:
 
-Lists are ordered. The values they hold are stored in order. And you reference those values by number, using a new syntax, square brackets:
+```bash
+more /Users/dan/Desktop/the_man_without_qualities.txt
 ```
-print( x[0] )
-# This would print to the console
-# 5
-```
-This is called the list index. The word index (like the index in a book or your index finger) has etymology related to pointing. So you can think of the 0 here as pointing to a specific value, the first value. (In other parts of computer science, this is actually called a pointer, but pointers are a slightly different and more complicated topic common in C and C++ programming.)
-You can use an indexed list anywhere that you would use a regular variable, so any of the following would be valid:
 
-```
-rect( x[0], 5, 100, 100)
-fill( 155, 155, x[0] )
-if x[5] < 10:
-    # do something
-```
+There are a few shortcuts for dealing paths as well.
 
-(Obviously this snippet wouldn't make any sense altogether.)
-You also use the assignment operator = to set values in a list like this:
+`.` (single dot) or `'./'` (single dot with slash) means the current folder that I am in.
 
-```
-x[0] = 5
+`..` (two dots) or `../` (two dots with slash) means the parent folder. For example, if am in my Desktop folder and I want to list the contents of my Downloads folder I could type:
+
+```bash
+ls ../Downloads/
 ```
 
-But you cannot use the assignment operator to add new values to the list, or in other words to make the list longer. For example, this will get an error:
+Finally, the `~` symbol refers to your home folder.
 
-```
-y = [] # Make a new empty list
-y[0] = 5 # Try to set a value into the list
+---
 
-# Displays an error in the console saying:
-# IndexError: list assignment index out of range
+## Tips
 
-# But this would work:
-y.append(5)
-# And then you could change the value later like this:
-y[0] = 6
-```
+It can take a while to get used to the command line, but there are a few tips and trick that make it much easier to use.
 
-The exciting thing is that now we have a list of values, and they are referenced or indexed using a number. That allows us to do things like reference those values in a loop or have a dynamic number of values.
+* Use the up and down arrows to view a history of the commands you have entered.
+* Hit the tab key to autocomplete commands and file paths
+* Type `open` and then a filename to open the file in its default program
+* Type `open .` to open the current folder in the Finder
+* Drag a folder or file onto the terminal to fill in its absolute path
+* Type `ctrl-a` to move your cursor to the beginning of the line, and `ctrl-e` to the end
 
-Important note. You may have noticed something a little weird: lists are always indexed starting with 0. So the first item of this list would be x[0], and if a list had ten items, the last would be indexed as x[9].
+---
 
-You can ask Python for the length of a list like this: len(x). This is a very important and extremely common thing to do.
+## Reading and manipulating text files (basics)
 
-So we can say that the index of a list called x ranges from 0 to len(x)-1
-Let's put this to use in our example, but start by first by going back to the version without a while loop:
+**`cat`** stands for "concatenate" and it shows you the contents of a file and also allows you to join two files together. For example, to print out the entirety of the Communist Manifesto:
 
+```bash
+cat manifesto.txt
 ```
-y = []
-y.append(200)
-y.append(200)
-y.append(200)
-y.append(200)
-
-def setup():
-    size(500, 500)
-    stroke(50, 50, 250)
-    fill(150, 150, 250)
-    rectMode(CENTER)
 
-def draw():
-    background(255)
+**`more`** is like `cat` but will paginate the output if it is larger than the size of your terminal window:
 
-    rect(100, y[0], 100, 100)
-    rect(200, y[1], 100, 100)
-    rect(300, y[2], 100, 100)
-    rect(400, y[3], 100, 100)
-    
-    y[0] = y[0] + random(-5,5)
-    y[1] = y[1] + random(-5,5)
-    y[2] = y[2] + random(-5,5)
-    y[3] = y[3] + random(-5,5)
+```bash
+more manifesto.txt
 ```
+(now use the up and down arrows to go up or down by a line, the space to go down by a page and `q` to exit if needed)
 
-We're using a list! Notice that instead of creating four independent variables, a, b, c, and d, I am now creating one list called y, and appending the value 200 to it four times. And then I reference those values using the square bracket index notation, as items 0, 1, 2, and 3. So instead of saying a, I'm saying y[0].
-This doesn't have any apparent advantage yet, but let's keep going ...
 
-Remember that my goal was to use a loop to draw and move my squares, so that I could have a dynamic number. Here's where it gets exciting and a little tricky.
+**`sort`** sorts a file alphabetically by line and prints the output to the screen
 
-Since we use numbers to index lists, we can also use a variable for the list index. In other words, we can use a variable to specify which item in the list we are referring to. For example:
-
+```bash
+sort names.txt
 ```
-n = []
-n.append(350)
-i = 0
-print( n[i] )
-# Prints to the console:
-# 350
-Pause and make sure you can wrap your head around that. What is the value of i?
-Step through this example:
+
+**`grep`** searches each line of a file for some input, and prints those lines to the screen. For example, the following searches for all lines in the Communist Manifesto containing the word "Communist".
 
-clouds = []
-clouds[0] = 700
-clouds[1] = 800
-clouds[2] = 900
-i = 0
-print( clouds[i] ) # What would this print? 700 (Highlight to see.)
-i = i + 1
-print( clouds[i] ) # What would this print? 800
+```bash
+grep Communist manifesto.txt
 ```
+---
 
-Now that we can use variables to index our list, we're almost there. Let's go back to our loop, but we have to change one thing first.
 
-Remember how last week we talked about different ways of specifying our looping varible in a while loop? Compare the below two examples to see how they are equivalent:
+## Command Line Options and Getting Help
 
-```
-i = 100
-while i <= 400:
-    rect(i, a, 100, 100)
-    i = i + 100
-i = 0
-while i <= 3:
-    rect(100 + i*100, a, 100, 100)
-    i = i + 1
-```
+Most commands have extra options that you can input when you run the command.  They are usually preceded by either one or two dashes (`-` or `--`).
 
-We can finally put everything together:
+The structure of a typical command looks like this:
 
+```bash
+command_name [options] arguments
 ```
-y = []
-y.append(200)
-y.append(200)
-y.append(200)
-y.append(200)
 
-def setup():
-    size(500, 500)
-    stroke(50, 50, 250)
-    fill(150, 150, 250)
-    rectMode(CENTER)
+("arguments" refers to the file or files your are running the command with)
 
-def draw():
-    background(255)
+For example, the `sort` command outputs in ascending order by default, but you can have it use reverse order with the `-r` option, like so:
 
-    i = 0
-    while i <= 3:
-        rect(100 + i*100, y[i], 100, 100)
-        i = i + 1
-    
-    y[0] = y[0] + random(-5,5)
-    y[1] = y[1] + random(-5,5)
-    y[2] = y[2] + random(-5,5)
-    y[3] = y[3] + random(-5,5)
+```bash
+sort -r manifesto.txt
 ```
 
-We can also move the code that changes the y values into the same loop:
+You can also tell `sort` to only output unique lines (ie, to remove any duplicate lines) with the `-u` option:
 
+```bash
+sort -u manifesto.txt
 ```
-y = []
-y.append(200)
-y.append(200)
-y.append(200)
-y.append(200)
 
-def setup():
-    size(500, 500)
-    stroke(50, 50, 250)
-    fill(150, 150, 250)
-    rectMode(CENTER)
+Finally you can combine options:
 
-def draw():
-    background(255)
-
-    i = 0
-    while i <= 3:
-        rect(100 + i*100, y[i], 100, 100)
-        y[i] = y[i] + random(-5,5)
-        i = i + 1
+```bash
+sort -u -r manifesto.txt
 ```
-And we can also make a loop that initializes the list values. Note that I've moved this into the setup() block:
 
+Another fun example is the `say` command, which outputs text as computer speech.
+
+```bash
+say "a specter is haunting this computer"
 ```
-def setup():
-    size(500, 500)
-    stroke(50, 50, 250)
-    fill(150, 150, 250)
-    rectMode(CENTER)
 
-    global y
-    y = []
-    i = 0
-    while i <= 3:
-        y.append(200)
-        i = i + 1
+Sometimes options have parameters. For example, the `say` command allows you to change its voice with the `-v` option, followed by the name of a computer voice.
 
-def draw():
-    background(255)
 
-    i = 0
-    while i <= 3:
-        rect(100 + i*100, y[i], 100, 100)
-        y[i] = y[i] + random(-5,5)
-        i = i + 1
+```bash
+say -v Amelie "the specter of communism"
 ```
 
-Note that since I am creating y inside the setup() block (by saying y = # something) I need to declare it global so that it can be accessed inside the draw() block.
-Now we have a loop that uses repetition to create many things and and one list that holds many values, one for each of those things.
+You can change the rate at which words are spoken using `-r NUM` where `NUM` is a number.
 
-This means that now we could relatively easily modify this so that instead of 4 squares, we had 8, 100, or 1000. Change the 3 to 4 to see how easy it is to add one more:
 
+```bash
+say -v Amelie "the specter of communism" -r 100
 ```
-def setup():
-    size(500, 500)
-    stroke(50, 50, 250)
-    fill(150, 150, 250)
-    rectMode(CENTER)
-
-    global y
-    y = []
-    i = 0
-    while i <= 4:
-        y.append(200)
-        i = i + 1
 
-def draw():
-    background(255)
+To see all the options and view a manual for any command, use the `man` tool (short for "manual")
 
-    i = 0
-    while i <= 4:
-        rect(100 + i*100, y[i], 100, 100)
-        y[i] = y[i] + random(-5,5)
-        i = i + 1
+```bash
+man say
 ```
 
-Or change it to 10 (for this, I'll make each one less wide):
+When viewing a manual page, use the arrow keys to navigate, and `q` to exit.
 
-```
-def setup():
-    size(500, 500)
-    stroke(50, 50, 250)
-    fill(150, 150, 250)
-    rectMode(CENTER)
+And of course, if you can't remember a command or option, just google it! Sometimes it's much easier than searching through the man pages...
 
-    global y
-    y = []
-    i = 0
-    while i <= 10:
-        y.append(200)
-        i = i + 1
+---
 
-def draw():
-    background(255)
+## Piping and Directing Output
 
-    i = 0
-    while i <= 10:
-        rect(100 + i*25, y[i], 25, 100)
-        y[i] = y[i] + random(-5,5)
-        i = i + 1
-```
+Most commands will produce output on the screen. However we can also automatically save that output to the file system using the `>` character followed by a filename.
 
-What if we only wanted to move the even-numbered rectangles? We could add an if statement inside that last loop:
+Sort a file called "names.txt", and save the output to a new file called "sorted_names.txt":
 
+```bash
+sort names.txt > sorted_names.txt
 ```
-i = 0
-while i <= 3:
-    rect(100+i*100, y[i], 100, 100)
-    if i == 0 or i == 2:
-        y[i] = y[i] + random(-5,5)
-    i = i + 1
+
+`>` will create a file if it does not already exist, or overwrite one if it does. You can use `>>` instead to append to a file.
+
+Unix also has a very powerful concept called "pipes" which allow us to chain commands together, effectively feeding the output of one command into the input of another. To do so, we use the `|` symbol.
+
+Extract all lines of the Communist Manifesto containing "Communist", then sort them.
+
+```bash
+grep Communist manifesto.txt | sort -u
 ```
 
-But then if we wanted to change our list size, we'd have to keep adding additional checks into that if statement. So to do this more concisely, we could use a thing called the modulo which is like division, but only returns the remainder.
-Here are some examples that help demonstrate how modulo works:
+The `|` here means "take the output of the grep command and send it to sort -u". You can use as many pipes as you desire, and combine this technique with the output redirection.
 
+Extract all lines of the Communist Manifesto containing "Communist", then sort them, then save to a new file called "sorted_communists.txt"
+
+```bash
+grep Communist manifesto.txt | sort -u > sorted_communists.txt
 ```
-# Regular division:
-print( 10 / 2 ) # Prints 5
 
-# The remainder when dividing 10 by 2:
-print( 10 % 2 ) # Prints 0
+---
 
-# Python ignores the decimal when you're using whole numbers:
-print( 10 / 3 ) # Prints 3 
+## Intermediate text manipulation
 
-# Using the decimal tells Python not to ignore it:
-print( 10.0 / 3 ) # Prints 3.3333
+Here are a few slightly more advanced techniques for manipulating text on the command line.
 
-# The remainder when dividing 10 by 3:
-print( 10 % 3 ) # Prints 1
+### Breaking lines into words or other segments
 
-# 10 goes in to 11 once, with remainder 1:
-print( 11 % 10 ) # Prints 1
+**`cut`** cuts out a portion of each line and splits it out according to a delimiter. If you use a space `" "` as a delimiter, it breaks a line up into words:
 
-# So this expression would print True whenever x was an even number:
-print( x % 2 == 0 )
+```bash
+cut -d " " manifesto.txt
 ```
 
-And here's how you could use that in the above loop:
+The `-f` option allows you to specify a particular item to grab. `-f 1` grabs just the first word.
 
-```
-i = 0
-while i <= 3:
-    rect(100+i*100, y[i], 100, 100)
-    if i % 2 == 0: # if dividing by 2 gives remainder 0, it's even
-        y[i] = y[i] + random(-5,5)
-    i = i + 1
+```bash
+cut -d " " -f 1 manifesto.txt
 ```
 
-That conditional inside the while loop can also be interactive based on mouse input:
+Try combining this with other commands, like `sort` or `grep`.
 
+```bash
+cut -d " " -f 2 manifesto.txt | sort -u -R
 ```
-i = 0
-while i <= 3:
-    rect(100+i*100, y[i], 100, 100)
-    if mouseX > i*100-50 and mouseX < i*100+50:
-        y[i] = y[i] + random(-5,5)
-    i = i + 1
-```
 
-(If you're working through the math on that remember that I'm using ```rectMode(CENTER)``` in these examples.)
-To conclude, what should we do if we want these squares to move around in space, like in the flocking examples? In other words, to move horizontally as well as vertically?
+### Finding and replacing
 
-We would need an x value for each square. So? Add a new list!
+**`sed`** is a somewhat complex tool that allows you to find and replace things in text files. It takes an argument with a command using it's own special syntax, like so `s/FIND/REPLACE/g`.
 
-```
-x = [] # in setup
+For example, replace all instances of "you" with "me":
+
+```bash
+sed 's/you/me/g' sometext.txt
 ```
+
+By default, `sed` is case sensitive. To make it case insensitive, add an `i` at the end:
 
-And go from there: set initial values, use them with the ```rect()``` command, and change the values in some way.
+```bash
+sed 's/you/me/gi' sometext.txt
+```
 
-## Live Code Setting Position and Color based upon a List
+Sometimes, I'll just find something online that seems useful without really understanding how it works. You should definitely give this a shot. For example, here's how you use `sed` to split a text into sentences: 
 
+```bash
+sed 's/[.!?]  */&\n/g' manifesto.txt
 ```
-y = []
-x = []
-speed = []
-rect_color = []
-def setup():
-    global y, x
-    size(1920, 1080)
-    stroke(50, 50, 250)
-    fill(150, 150, 250)
-    rectMode(CENTER)
-    i = 0
-    while i < 10:
-        x.append(random(0, width))
-        y.append(random(0, height))
-        speed.append(random(1, 5))
-        rect_color.append([random(0, 255), random(0, 255), random(0, 255)])
-        i += 1
 
-def draw():
-    global y, x
-    background(255)
-    i = 0
-    while i < len(y):
-        fill(rect_color[i][0], rect_color[i][1], rect_color[i][2])
-        rect(x[i], y[i], 100, 100)
-        dir_x = (mouseX - float(x[i]))/width
-        dir_y = (mouseY - float(y[i]))/height
-        # print('x:{} y:{} i:{}'.format(dir_x, dir_y, i))
-        x[i] += dir_x * speed[i]
-        y[i] += dir_y * speed[i]
-        if x[i] < 0:
-            x[i] = width
-        if x[i] > width:
-            x[i] = 0
-        if y[i] < 0:
-            y[i] = height
-        if y[i] > height:
-            y[i] = 0
-        i += 1
- ```
+You can do a ton of other stuff with `sed`. If you want to learn more, take a look at this [tutorial](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
 
-If you wanted them to move in a way that was more sophisticated than just random, what would you do? Well each square would need its own x and y direction. More lists!
 
-## Break
+---
 
-# Functions: project planning, reusability and modularity
+## Downloading stuff
 
-Functions are a way to organize your code.
+There are two very useful commands for downloading stuff from the internet.
 
-Now that you've started thinking about the midterm project, you will be working on a computer program that is a little bit longer and a little bit more complicated. You need a way to keep this organized and manageable. Functions give you a technique for how to do that.
 
-(Another strategy for code organization involves a technique called object-oriented programming, which uses things called classes and objects. We might talk about this later in the semester if there is time and interest.)
+### cURL
 
-## Functions
-A function takes any sequence of commands, groups them together into a block, and gives that block a name. Then, just by using that name, you can automatically run all those commands.
+**`curl`** makes a http request, and prints the output to the terminal. For example, this grabs the html source of NPR's text only news page:
 
-New syntax. Let's say I have this sketch I'm working on:
+```bash
+curl https://text.npr.org
 ```
-def setup():
-    size(600,600)
 
-def draw():
-    # Pretend that in here
-    # I have many many commands
-    # to draw a landscape.
-```
+This is a bit hard to read because it's full of html. But there are a bunch of little websites that are specifically designed to be "curled".
 
-To use a function, I must first define it. I pick any name that I'd like (as long as it's not a special Processing reserved word) and then I create a new block like this:
+To get the weather:
 
+```bash
+curl wttr.in
 ```
-def drawLandscape():
-    # Pretend that in here
-    # I have many many commands
-    # to draw a landscape.
-```
 
-The term ```drawLandscape()``` is arbitrary. I could have called it ```spaghetti()```, but like with variables, I recommend that you use informative function names that describe what the function does and that will help you remember and understand later what the function is doing.
-This syntax is called the function definition or implementation, and this bit of code is described as defining or implementing a function.
+Stats about covid:
 
-Now you would use this new function simply by specifying its name like this:
-```
-drawLandscape()
+```bash
+curl https://corona-stats.online
 ```
 
-This is referred to as calling or invoking the function. Now, just specifying this function name is equivalent to invoking all the commands contained within the function definition.
-If calling a function looks familiar to you, that is because nearly everything that you've been doing all semester has been calling functions. We just weren't refering to it that way. I've been referring to them as commands. All the commands that you have been using thus far are actually functions that Processing has already defined for you in advance.
+Generate QR codes:
 
-```rect()```, ```background()```, ```map()```: these are all functions that Processing has defined for you, that you are able to use simply by calling. The ```len()``` command is a function that Python defines for you. The ```setup()``` and ```draw()``` blocks are also functions, but they are special functions that Processing requires you to define. When you run a sketch, the Processing system starts by first calling your ```setup()``` function, then calling your ```draw()``` function many times, as we talked about in week 3.
+```bash
+curl "qrenco.de/but why"
+```
 
-Putting all these pieces together, my initial sketch would now look like this:
+Many more [here](https://github.com/chubin/awesome-console-services)!
 
-```
-def setup():
-    size(600,600)
+### wget
 
-def draw():
-    drawLandscape()
+**`wget`** allows you to easily download files:
 
-def drawLandscape():
-    # Pretend that in here
-    # I have many many commands
-    # to draw a landscape.
+```bash
+wget "https://www.gutenberg.org/cache/epub/61/pg61.txt"
 ```
 
-Here you can see the definition and the invocation of this new function called drawLandscape().
-Some notes on this new syntax:
+You can also specify a name to save the file as with the `-O` option.
 
-You may be curious about why I am calling the function before (or above) where I am defining it. The order does not matter. When you run your sketch, Processing (and Python) looks through your entire program for all function definitions and stores them in memory, ready and waiting to be invoked. Only after all functions are defined does it then automatically invoke the setup() function for you, starting your sketch running. In other words, functions can be defined in any order.
+```bash
+wget "https://www.gutenberg.org/cache/epub/61/pg61.txt" -O manifesto.txt
+```
 
-But, make sure that all your functions are defined in global space. Functions cannot be defined inside other functions. (They actually can, but that is a more advanced topic that we will not touch on this semester. Javascript programmers might be familiar with this technique, as it is more common in that language.)
+---
 
-If you really want to keep your code organized and manageable, consider putting some functions in different tabs. You can make tabs with helpful and informative names, and then put different function definitions in them. Perhaps you have a tab called "User input" and a tab called "Draw code". Experiment with whatever works for you.
+## Aliases
 
-IMPORTANT UPDATE: Initially, I neglected to mention that if you want to use multiple tabs, and include other code in your tabs like function definitions, you need to use the import command in your main tab to be able to access those functions. Examples of how to use this is below.
+(to come)
 
-This usage of functions is what is called modularity: breaking down a big task into smaller modules, that are themselves each more manageable. Remember that we read about modularity in the Lev Manovich chapter. You could imagine that I might continue expanding the above example with additional functions, and my draw() block might look like this:
 
-```
-def draw():
-    drawLandscape()
-    drawClouds()
-    drawCar()
-    moveClouds()
-    moveCar()
-  }
-```
+## Scripts
 
-Looking at this code, we don't know what each of those functions does, but we can start to get an abstract, high level understanding of what is going on in this sketch.
-Functions can work really well with the topic of state variables from last week. For example, if you were doing the game option for the midterm, you could implement your different levels like this: NOTE: Please pay attention to how I'm using the import command in the main tab to import the function definitions from the other two tabs.
+(to come)
 
-```
-# First, main tab
-from level_1 import *
-from level_2 import *
 
-level = 1
+## Wildcards
 
-def setup():
-    size(800,800)
+It's possible to reference multiple files using the `*` character in combination with other characters. This can be really useful in a lot of situations.
 
-def draw():
+For example, can list all files that begin with the word "the" like so:
 
-    # ... other code here ...
+```bash
+ls the*
+```
 
-    if level == 1:
-        drawLevel1()
-    elif level == 2:
-        drawLevel2()
+List all jpg images:
 
-    # ... more code down here ...
+```bash
+ls *.jpg
 ```
 
-```	  
-# Tab: level_1.py
-def drawLevel1():
-    # draw code goes here ...
-```
+Make a folder called `images` and move all jpeg images into it:
 
+```bash
+mkdir images
+mv *.jpg images/
 ```
-# Tab: level_2.py
-def drawLevel2():
-    # draw code goes here ...
-```
-
-Keep this in mind as you work on the midterm!
 
-## Drag and Drop Coding Exercise
+Combine all text files in a folder:
 
-```
-x = []
-y = []
-rect_width = []
-rect_height = []
-mouse_pressed = False
-def setup():
-    size(1024, 1024)
-    rectMode(CENTER)
-    for i in range(0, 10):
-        x.append(width/10 + width/10*i)
-        y.append(height/10 + height/10*i)
-        rect_width.append(150)
-        rect_height.append(150)
-    
-def draw():
-    global x, y
-    background(255)
-    for i in range(0, len(x)):
-        rect(x[i], y[i], rect_width[i], rect_height[i])
-        x[i], y[i] = checkBounds(x[i], y[i], rect_width[i], rect_height[i])
-    
-def checkBounds(x, y, rect_w, rect_h):
-    if mouse_pressed:
-        if mouseX > x - rect_w/2 and mouseX < x + rect_w/2:
-            if mouseY > y - rect_h/2 and mouseY < y + rect_h/2:
-                x += mouseX - pmouseX
-                y += mouseY - pmouseY
-    return x, y
-            
-def mousePressed():
-    global mouse_pressed
-    mouse_pressed = True
-    
-def mouseReleased():
-    global mouse_pressed
-    mouse_pressed = False
-```
 ```
-x = []
-y = []
-rect_width = []
-rect_height = []
-mouse_pressed = False
-def setup():
-    size(1024, 1024)
-    rectMode(CENTER)
-    for i in range(0, 10):
-        x.append(width/10 + width/10*i)
-        y.append(height/10 + height/10*i)
-        rect_width.append(150)
-        rect_height.append(150)
-    
-def draw():
-    global x, y
-    background(255)
-    for i in range(0, len(x)):
-        rect(x[i], y[i], rect_width[i], rect_height[i])
-        x[i], y[i] = checkBounds(x[i], y[i], rect_width[i], rect_height[i])
-    
-def checkBounds(x, y, rect_w, rect_h):
-    if mouse_pressed:
-        if mouseX > x - rect_w/2 and mouseX < x + rect_w/2:
-            if mouseY > y - rect_h/2 and mouseY < y + rect_h/2:
-                x = mouseX
-                y = mouseY 
-    return x, y
-            
-def mousePressed():
-    global mouse_pressed
-    mouse_pressed = True
-    
-def mouseReleased():
-    global mouse_pressed
-    mouse_pressed = False
+cat *.txt > everything.txt
 ```

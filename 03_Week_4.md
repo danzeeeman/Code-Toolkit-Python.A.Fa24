@@ -1,298 +1,59 @@
 # Code Toolkit: Python, Fall 2023
+
 ## Week 4 — Class notes
 
-## Review of what we've done so far
+## Review of last week
 
-Python and Processing programs are comprised of commands, also known as statements, also known as instructions. Each exists on its own line. Statements are generally comprised of expressions and operators. Expressions are things that have a value, like the number 250, and operators are things that have effects, they do something, combining values in various ways.
+### Variables
 
-## The grid system:
-
-![Grid](/images/grid.png)
-
-Processing is a programming platform designed for coding education around creative applications. Given that, it is very visual by default. Most (but not all) of our work this semester will have a visual output. In Processing that is primarily arranged around a draw window. The draw window is a grid of pixels. Each one like a little lightbulb that you can turn on or off and control the color of.
-
-The draw grid starts at the top-left corner of the window at 0,0. The numbers that specify an individual pixel are called coordinates. We almost always refer to coordinates with x first, then y. x increases to right and y increases down.
-
-On Mac you can use the screencapture utility to measure pixel values. On my computer the shortcut is ⌘-SHIFT-4, then click and drag, then press ESCAPE or else you'll end up with a bunch of funny screenshot fragments!
-
-You can do this on Windows with Snippet Tool, but no global keyboard shortcut unless you make one.
-
-### Color
-Color is specified by default with three numbers which signify components red, green, and blue, or, RGB. Color specifications can also include a fourth number for transparency (alpha). Color can also be specified as HSB (hue, saturation, and brightness). 
-
-Processing offers a color selector tool to help you with this. From the menu, specify Tools > Color Selector. You can find the color you want, and then copy/paste its value into your sketch. You can use either the three RGB numbers, or just copy/paste the hex value.
-
-### Some syntax rules:
-All text is case sensitive
-Whitespace means spaces, line breaks, tabs, etc., and Processing mostly ignores this. So these are all equivalent:
-```
-rect(10,10,50,50)
-rect( 10,10, 50,50 )
-rect   (        10, 10,    50, 50 )
-```
-And you can use this to help make your code more readable. Personally, I find the first line above to be the easiest to read.
-The exception to this rule is that spaces at the beginning of the line (called indentation) are very important and we'll talk more about this next week.
-
-Commands use parentheses to specify parameters, also referred to as arguments. For example, in your homework you used commands like: ```rect(10,10,50,50)```. The parameters here are the four numbers.
-
-Make sure your parentheses always come in pairs, open ( and close ).
-
-Comments are bits of text that you can put in your code as notes to yourself, to me, or to anyone who might be looking at your code. They are like documentation. They are very useful and you should use them often.
-
-Comments are specified two ways:
+A variable is a placeholder for a value
+New syntax:
 
 ```
-# With a hashtag symbol, which go to the end of the line
-rect(10,10,50,50) # Single line comments can also start at the end of a line
-```
-or
-```
-"""
-    Or with three quotation marks like this. This marks off a block of
-    text and is useful for entering longer explanations, like
-    describing what the program does for example.  At the top of all
-    of your homeworks, please add a comment like this and include your
-    name, date, assignment number, and any other comments. I would
-    also like you to submit your reading notes this way
-"""
-```
-### Class note style
-
-In class notes I will indicate Processing code by highlighting :
-  
-  ```rect(250,250,100,50)```
-
-Whenever text is formatted in this way, it is valid Python / Processing syntax.
-
-Use the Processing PDE "Auto Format" command frequently, and always use the command before sharing your code when asking for help. In the menu: Edit > Auto Format (or ⌘T on Mac). This helps keep your code nicely lined up. For now this doesn't matter that much, but soon, as we learn new types of syntax, this will actually help you debug your code and help you see the structure of your programs.
-
-Have you memorized the URL for the Python Processing reference yet Processing reference yet?!? Highlight the brackets to reveal: http://py.processing.org/reference
-
-### Drawing Shapes
-
-```rect(x, y, width, height)```
-```
-fill(255, 0, 255)
-rect(250,250,100,50)
+creatureX = 50
+rect( creatureX, 100, 20, 50 )
 ```
 
-```ellipse(x, y, width, height)```
-```
-fill(255, 0, 255)
-ellipse(0, 0, 512, 512)
-```
+#### New vocabulary
 
-```triangle(x1, y1, x2, y2, x3, y3)```
-```
-fill(255, 0, 255)
-triangle(0, 0, 256, 512, 512, 0)
-```
+You create a variable by _assigning_ it a value, as in the first line above. (Unlike in many other programming languages, in Python you do not need to _declare_ a variable before using it.)
 
-### Draw Order is important
+Then you can use that variable throughout your code.
+You can use basic arithmetic to modify it's value. For example using:
 
-```
-size(300,300)
-stroke(0,0,255)
-fill(150,150,255,255) # 255 as alpha is equivalent to totally opaque
-rect(50,50,200,200)
-ellipse(250,250,50,50)
-triangle(250,250,250,300,300,250)
-```
-
-### Raster images
+* ```+```   - addition
+* ```-```   - subtraction
+* ```*```   - multiplication
+* ```/```   - division
+* ```**```  - pow
+* ```%```   - mod
+* ```//```   - floor
 
 ```
-img = loadImage("YOUR-IMAGE-FILENAME.jpg")
-image(img, 0, 0)
+#create two variables
+a=100
+b=200
+
+# addition (+) operator
+print(a+b) 
+
+# subtraction (-) operator
+print(a-b) 
+
+# multiplication (*) operator
+print(a*b)
+
+# division (/) operator
+print(b/a)
+
+# modulus (%) operator
+print(a%b) # prints the remainder of a/b
+
+# exponent (**) operator
+print(a**b) #prints a^b
 ```
 
-## Variables
-What is a variable?
 
-#### _Who remembers algebra?_
-  ```
-  y = m * x + b aka the formula for a line
-  ```
-
-```Y``` is equal to the variable ```M``` times the variable ```X``` plus the variable ```B``` this gives us the forumla of a line where ```M``` defines the slope of the line and ```B``` define the point that the line crosses the ```Y``` axis, when ```x = 0```.
-
-  ```
-  a**2 + b**2 = c**2 aka Pythagorean Theorem
-  ```
-#### _Did anyone take Physics?_
-  ```
-  force = mass * acceleration 
-  ```
-####  _Did anyone take Calculus?_
-
-![Cover](images/changing-stuff.jpeg)
-
-A way to introduce variation on a theme, generalization within a formal structure, or the abstraction of some parts of a process.
-
-The word comes from vary (dictionary.com) like variety and variance, and means a thing that is able to change.
-
-![Bernd and Hilla Becher](/images/becher-khan.jpg)
-
-The image on the left above is by the artist photographer couple Bernd and Hilla Becher. Examples of the Bechers' work like this one identify a kind of concept, and then stretch that concept by showing us all acceptable variations within that structure. A round gas water tank may have between 6 and 16 support beams, it may be on flat tiles or an elevated platform, it may have a diagonal staircase, it may be covered in a variable number of vertical streaks or it may be blotchy. This is not some objective, Platonic ideal, but rather it somehow portrays a truer representation of that concept because it shows us simultaneously all possible differences, all the ways that the structure can exist in the world.
-
-The image on the right is by the artist Idris Khan. Khan takes collections of the Becher images (and other images), adds transparency, and layers them. In this way, it's like he is creating one image that shows us a fuzzy portrait that depicts the range of all possible items in a collection. One image of a gas tank that somehow portrays all possible gas tanks. We'll start with the Becher approach today and in your homework you will end with Khan's.
-
-![Idris Khan](/images/idris%20khan%202%20-%20spherical%20gas.jpg)
-
-(More examples of both bodies of work are available here.)
-
-A variable is a placeholder. A placeholder for a value. Instead of using a specific value (like a number), you create a name, and then use that name in your code. When looking at your code, you don't know exactly what the value of that variable is. You can set it to a specific value, or change that value later. This means that one bit of code is now able to do different things.
-
-This creates a kind of abstraction. Think of other examples of abstraction that you're aware of. Like maybe Cubism, for example. There is an aspect to this of being "not specific", somehow general in some sense. Thinking back to the recipe metaphor from week 1, think of a recipe that might say something like "now add your sweetener" or "now add your protein". Often recipes can also be halved, doubled, or tripled. The person following the recipe may modify the amount of something or swap out an equivalent item. But still the recipe would just say "now add the spices" — the recipe specifies the amount and kind of spices, but that amount may have changed, but still, the recipe can proceed without knowning the exact amount. This is what a variable allows.
-Variables allow algorithms to have generality. So the google search algorithm works approximately the same whether the user is searching for "apples", "bananas", or "carrots". When you write code that uses variables, you don't know exactly what your code will do in advance.
-
-A little more specifically:
-- First you create a variable and give it a value
-- Then you can use and re-use that variable in one or more places
-- You can also change that value, and future uses will use this new value.
- 
-### How this works in Python Processing:
-```  
-  treeHeight = 50
-  rect( 100, 100, 20, treeHeight )
-```
-
-Let's break that down and introduce some new vocabulary:
-
-The first line creates the variable. In some programming languages, you have to _declare_ variables before you can use them. In Python, you don't have to do that. You simply create a variable by _using_ it: by using the placeholder name in your code.
-
-![Matrix](/images/matrix_var_names.jpg)
-
-![Graph](/images/var_meme.jpg)
-
-_My advice is_ 
-
-```
-camelCase
-makeItEasyToRead = 1
-
-snake_case
-make_it_easy_to_read = 1
-
-camelCase
-makeItMeanSomethingUnique = 1
-
-snake_case
-make_it_mean_something_unique = 1
-```
-
-An important rule is that you have to give the variable a _value_ before you can use it. Usually you do this as I did above, with an equal sign (=). This is called variable assignment, and the equal sign is sometimes called the _assignment operator_.
-
-
-Read that equal sign almost like an arrow pointing from right to left. Variable assignment is a declaration. You are telling Python: "This placeholder that I'm calling ```treeHeight``` now contains the value ```50```." (Later we will use equal signs to ask Python what the value of a variable is, but for now, we are telling.)
-
-```treeHeight``` is a name I made up. Your variables can be any name as long as they are not already special Python Processing words, like size() or rect(). (Some additional rules about variable names are below.) But you should use things that will be useful to you and others later when reading your code.
-Please use good, informative variable names that describe what the variable will be used for.
-
-
-The next line above is using the variable. After assigning it a value, you can use it over and over. You can also use it with arithmetic, and you can modify the value.
-So if the above ```rect()``` draws a tree trunk, and I wanted to draw another tree with the same height to the right of it, I could say:
-
-```
-  # draw a second tree
-  rect( 150, 100, 20, treeHeight)
-```
-And now I could change the value of the variable once and both tree heights would change.
-Valid variable names:
-* must start with a letter or the underscore character
-* cannot start with a number
-* can only contain alpha-numeric characters and underscores (A-Z, a-z, 0-9, and _)
-* are case-sensitive (treeheight, TREEHEIGHT, TreeHeight, and treeHeight are all different variables)
-
-Variables can be used for all sorts of values. This week we will primarily be working with variables that store numerical values. For example:
-```
-armLength = 100
-curveAngle = PI/2
-legToArmRatio = 1.5
-```
-
-Later in the semester we will be working with other values. For example:
-
-```True``` / ```False``` values called booleans: ```isOn = False``` (This funny word is acutally a very common term in computer science that comes from George Boole, a 19th century mathematician who invented a formal system of logic, like an entire arithmetic that operates only on the values true and false instead of numbers. Booleans use keywords True and False to specify values.)
-strings: ```name = "Dan Moore"```
-characters: ```stopKey = 's'```
-You can also use variables to store colors. So you could specify a color like this:
-```
-r = 255
-g = 150
-b = 150
-fill(r,g,b)
-```
-
-Or, you could also specify a color with the color() command, which creates a color variable, like this:
-
-```
-c = color(255,150,150)
-fill(c)
-```
-
-You can even use variables to store images, like this:
-```
-img = loadImage("clouds.jpg")
-```
-
-These different kinds of values are called types and we will be talking more throughout the semester about this idea of different kinds of placeholders.
-
-Later in the semester you will even be able to create your own custom variable types.
-
-Going back to the recipe metaphor, you can kind of imagine your variables as the ingredients list. Most recipes list all ingredients at the beginning so you know what to expect, and specify all the values, but later on only reference the item and not the quantity.
-Processing comes with special some built-in variables. 
-
-For example:
-
-* ```width``` — the width of the draw window
-* ```height``` — the height of the draw window
-
-And some others we'll talk about next week:
-
-* ```mouseX``` — the horizontal part of the mouse position
-* ```mouseY``` — the vertical part of the mouse position
-* ```pmouseX```
-* ```pmouseY```
-
-and others
-
-## Arithmetic
-
-![basic_math](images/1zp2du.jpg)
-
-Arithmetic is done with the following operators:
-
-### basic math and some __funky__ _shit_
-* add (+)
-  * a = 1 + 1
-  * a += 2 or a = a + 2
-* subtract (-)
-  * a = 1 - 1 = 0
-  * a -= 1 or a = a - 1
-* multiply (*)
-  * a = 2 * 2 = 4
-  * a = 4 * 4 = 16
-  * a *= 4 or a = a * 4
-* divide (/)
-  * a = 2 / 2  = 1
-  * a = 1 / 2  = 0.5
-  * a /= 2 or a = a / 2
-* pow (**)
-  * a = 2**2 = 4 
-  * a = 4**2 = 16
-  * a**=2 or a = a ** 2
-* modulus (%) 
-  ![wft](images/1y62g6.jpg) 
-  *  a = 1 % 4 = 1
-  *  a = 2 % 4 = 2
-  *  a = 3 % 4 = 3
-  *  a = 4 % 4 = 0
-  *  a = 5 % 4 = 1
-  *  a = 6 % 4 = 2
-  * a %= 4 or a = a % 4
-
-#### PURE PYTHON
 ```
 # take two variable, assign values with assignment operators
 a=3
@@ -333,246 +94,679 @@ print("a: "+str(a))
 print("b: "+str(b))
 ```
 
-```
-#create two variables
-a=100
-b=200
-
-# addition (+) operator
-print(a+b) 
-
-# subtraction (-) operator
-print(a-b) 
-
-# multiplication (*) operator
-print(a*b)
-
-# division (/) operator
-print(b/a)
-
-# modulus (%) operator
-print(a%b) # prints the remainder of a/b
-
-# exponent (**) operator
-print(a**b) #prints a^b
-```
-
-Question: So how would you draw a shape in the center of the window, and make sure it was in the center no matter what the window size was? (Highlight below to see the answer.)
-```
-  ellipse( width/2, height/2, 50,50 )
-```
-
-### Example
-Let's work through an example. Start with this code:
+And you can even make one variable depend on the value of others. For example:
 
 ```
-  size(600,600)
-  background(255)
-  stroke(100,100,100)
-
-  fill(255,100,100,100)
-  rect(250,100,100,100)
-
-  fill(255,255,100,100)
-  rect(250,200,100,100)
-
-  fill(100,100,255,100)
-  rect(250,300,100,100)
+creature1X = 100
+creature2X = 500
+midpoint = ( creature1X + creature2X ) / 2
+# What would the value of midpoint be now?
 ```
 
-What if we want to make the first square wider? What should we change? Check the Processing reference:
+Anytime you want something in your code to change (or "vary") you need to add one ore more variables.
 
+We thought a bit about how many variables you would need to represent a given composition, and this can be a useful first step in project planning.
 
-So we need to change the third parameter of the rect() command. And since we want the square to be wider, we'll make that number bigger.
+_Question: If you wanted to draw 3 creatures and you want them to move around on the screen horizontally and vertically, how many variables would you need?_
 
-```
-  size(600,600)
-  background(255)
-  stroke(100,100,100)
+And if you then also wanted the height of each creature to change? You would need three more.
 
-  fill(255,100,100,100)
-  rect(250,100,200,100)
+## Homework checkin, How's everyone doing? Is anyone stressing out about it?
 
-  fill(255,255,100,100)
-  rect(250,200,100,100)
+# Interaction
 
-  fill(100,100,255,100)
-  rect(250,300,100,100)
-```
+So far we have been working with Processing in what is known as _static_ mode. We've been creating sketches that draw some shapes and then end.
 
-OK great. And if we want the other two squares to also be the same width, we could change them too:
+Today we are going to introduce dynamic movement and respond to user input in what Processing refers to as interactive mode.
 
-```
-  size(600,600)
-  background(255)
-  stroke(100,100,100)
+Let's think about ways of representing movement, motion, and gestures.
 
-  fill(255,100,100,100)
-  rect(250,100,200,100)
+After World War II in the US, artists such as Jackson Pollock, Willem de Kooning, and others began making work in a style that came to be known as abstract expressionism. This group of work, mostly in painting, was understood to be using color and shape to create visual compositions that were often wholly abstract, not representations of any actual objects in the world, and were often interpretted as being highly expressive, depicting only feelings, energy, mood, or affect. Jackson Pollock in particular would often stand over his canvas and perform rhythmic or frenetic movements, of which his paintings were then a kind of record.
 
-  fill(255,255,100,100)
-  rect(250,200,200,100)
+For this week, as we begin to learn about using code to respond to user input, let's keep in mind this idea of creating compositions that capture or represent movement and motion, and do so in a way that aim to be expressive of mood, affect, or feeling of the person creating them.
 
-  fill(100,100,255,100)
-  rect(250,300,200,100)
-```
+There is much precedent within digital art for thinking about these kinds of representations. Artists like Camille Utterback, Golan Levin, Zach Lieberman, and others, have created work in a genre often referred to as interactive art. These are works for which user input, in the form of movement, gesture, or play, is often necessary to enact or complete the piece.
 
-But now what if we wanted to play with this width a bit, make some adjustments. We'd have to keep changing all three rect() commands each time. Since we want them all to have the same width, we can use a variable as a placeholder for this value. Here's how:
+Let's look at a couple examples from Golan in particular:
 
-``` 
-  squareWidth = 200 # variable assignment (creates the variable)
+Golan Levin's project [Yellowtail](https://objkt.com/asset/hicetnunc/9954) (1998-2010) Yellowtail (1998-, by @Golan Levin) is an interactive system for the gestural performance of real-time abstract animation. Repeating your drawings end-over-end, it allows simultaneous specification of a line's shape and its quality of movement. This is the official SVG version.
 
-  size(600,600)
-  background(255)
-  stroke(100,100,100)
+Another one is [Polygona Nervosa](https://objkt.com/asset/hicetnunc/56312) n March 1997, I conceived a gestural interaction by which a user could simultaneously specify both the form and also the quality of movement of an animated shape. This system, which is released here for the first time, is described in detail in my 2000 Masters thesis from MIT, "Painterly Interfaces for Audiovisual Performance", p.66-69 (http://flong.com/archive/storage/pdf/articles/thesis300.pdf). Edition of 12 +1AP.
 
-  fill(255,100,100,100)
-  rect(250,100,squareWidth,100)
+Bringing together these threads (interactive art, abstract expressionism) is a fun project simply called ["Jackson Pollock" by designer Miltos Manetas](http://jacksonpollock.org).
 
-  fill(255,255,100,100)
-  rect(250,200,squareWidth,100)
+## Adding interactivity with Processing
 
-  fill(100,100,255,100)
-  rect(250,300,squareWidth,100)
-```
+Let's get started. Last week we saw how Processing comes with certain pre-defined variables. We talked for example about width and height, which will always reference the width and height of the draw window, no matter what.
 
-Now to make tweaks, I can simply change the value (200) in the variable assignment, and all my squares will be drawn using this value. (Note: my variable name, squareWidth is arbitrary and can be anything I want. I could have called it spaghetti and I just chose a name that would be informative to the purpose for which I was using it.)
+Another special variable that I mentioned was mouseX which tracks the x position of the mouse.
 
-Let's keep going. What if we wanted to make the first square taller? Let's change it's height and see what happens.
+Let's try to create a sketch that draws a rectangle whose x position is determined by the position of the mouse. Our initial attempt might be something like this:
 
 ```
-  squareWidth = 200 # variable assignment (creates the variable)
-
-  size(600, 600)
-  background(255)
-  stroke(100, 100, 100)
-
-  fill(255, 100, 100, 100)
-  rect(250, 100, squareWidth, 120)
-
-  fill(255, 255, 100, 100)
-  rect(250, 200, squareWidth, 100)
-
-  fill(100, 100, 255, 100)
-  rect(250, 300, squareWidth, 100)
+size(400,400)
+background(255)
+stroke(50,50,255)
+fill(200,200,255)
+rect(mouseX,150,100,100)
 ```
 
-If you run that, you'll see that the first square is taller, but now there is an overlap between the first and second square. What if we want the other two squares to automatically adjust their position?
+But that doesn't work. _Why not?_
 
-Let's add a variable for the first square's height, and use that to position the second square. Like this:
+This is using Processing's _static_ mode. That means that this code runs **once** and then _stops_. In the language of digital media, we can say that it creates one single frame. It creates that frame as a single image that is frozen and un-moving. But we want to create movement.
 
-```
-  squareWidth = 200 # variable assignment (creates the variable)
-  firstSquareHeight = 120
+In the above snippet, that code draws a rectangle at the initial value of mouseX, which happens to be 0, and then it never draws another frame. So even though I may move the mouse aorund (and the variable mouseX may be updated) the sketch never has the chance to redraw the rectangle.
 
-  size(600, 600)
-  background(255)
-  stroke(100, 100, 100)
+### Frames
 
-  fill(255, 100, 100, 100)
-  rect(250, 100, squareWidth, firstSquareHeight)
+In nearly all visual media, the appearance of motion is achieved by displaying a sequence of static images in rapid succession, which then to our eyes gives the impression of movement. Like drawing a bouncing ball on a pad of paper and flipping through the pages, displaying many static images in sequence looks like motion. This is the premise for cinema, video, and nearly all animation and motion graphics: a sequence of static images that gives impression of movement.
 
-  fill(255, 255, 100, 100)
-  rect(250, 100 + firstSquareHeight, squareWidth, 100)
+_The Horse in Motion_
+![Horse](images/The_Horse_in_Motion_high_res.jpeg)
 
-  fill(100, 100, 255, 100)
-  rect(250, 300, squareWidth, 100)
-```
+Here it is as an animated gif
 
-OK, looks good. So now we can adjust just the value of the variable firstSquareHeight and it's height will change, and the second square will move accordingly.
+![Horse Gif](images/Muybridge_race_horse_animated.gif)
 
-But now we have the same problem with the third square! So we have to repeat the pattern. The vertical postiion (y) of the third square should be the top point of the first square, plus the height of the first square, plus the height of the second square. So we can write that out, like an equation.
+In Processing, this means that to achieve motion you will create code that draws a single static frame, then redraws that frame with some slight change, and does this again, over and over. These slight changes (or variations) are achieved by using variables.
+
+So in other words, it's almost like the sketch creates a photograph, but we want to create a movie: multiple photographs that flash by in sequence.
+
+In Processing, we do this with some new syntax:
 
 ```
-  squareWidth = 200 # variable assignment (creates the variable)
-  firstSquareHeight = 300
+def setup():
+    # This block of code runs once
+    pass
 
-  size(600, 600)
-  background(255)
-  stroke(100, 100, 100)
-
-  fill(255, 100, 100, 100)
-  rect(250, 100, squareWidth, firstSquareHeight)
-
-  fill(255, 255, 100, 100)
-  rect(250, 100 + firstSquareHeight, squareWidth, 100)
-
-  fill(100, 100, 255, 100)
-  rect(250, 100 + firstSquareHeight + 100, squareWidth, 100)
+def draw():
+    # This block of code runs many times
+    pass
 ```
 
-Note that if firstSquareHeight is 100 (it's original value above), then this equation works out to 300, which was its original value above as well.
-Great. So now we can change only the variables squareWidth and firstSquareHeight and the composition will adjust accordingly.
-
-To keep going, can you add a variable for the x position of the squares, and have that adjust the position of all three squares? What if you add two more squares to make a small cross ("+" sign) and want the composition to adjust accordingly?
-
-So, how much "variance" can you achieve with 1 variable? with 2?
-
-How many variables would you need to draw a shape that varied its height, and also its horizontal and vertical position?
-Let's say you were trying to implement Pong for your midterm project. (A totally feasible project by the way!) How may variables would you need? What is moving or changing in this game?
-
-
-## Randomness
-One thing that works really nicely with variables is creating randomized variation of those variable values. You will need this for your homework this week.
-In Processing, this is done with the command random(). For a detailed explanation, check the Processing reference for random().
-```random()``` returns a floating point (a number with a decimal point).
-Like this:
-```
-	  firstSquareHeight = random(10,300)
-```
-The parameters to random() are minimum and maximum values. They define a range from which random() chooses a number. Like asking a person to "pick a number between 10 and 300".
-Putting that altogether, here is how we could use random values to draw the above composition:
-```
-  squareWidth = random(10,300) # variable assignment (creates the variable)
-  firstSquareHeight = random(10,300)
-
-  size(600, 600)
-  background(255)
-  stroke(100, 100, 100)
-
-  fill(255, 100, 100, 100)
-  rect(250, 100, squareWidth, firstSquareHeight)
-
-  fill(255, 255, 100, 100)
-  rect(250, 100 + firstSquareHeight, squareWidth, 100)
-
-  fill(100, 100, 255, 100)
-  rect(250, 100 + firstSquareHeight + 100, squareWidth, 100)
-```
-
-Stop and run that a few times to see what kinds of variation we've just created.
-
-
-# _A crash course to git_
-- Create a [Github](https://github.com) profile 
-- Install Git
-  - On Windows 
-    - Install [git](https://git-scm.com)
-    - open git-cmd [see screen shot] ![terminal](images/terminal.PNG)
-    - go to cloning
-  - on Mac 
-    - install [brew](https://brew.sh)
-    - open terminal ![terminal](images/CloneMac.png)
-    - install git
-      - type ```brew install git``` into your terminal
-    - go to cloning
-  - Clone the repo: 
-    - type ```git clone https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa22``` into the terminal
+You use this in Processing in the following way:
 
 ```
-git clone your_repo_url
-```
-![terminal](images/CloneMac.png)
-Cloning a repository of code is basically making a copy but with 
-- Copy the _template_ folder and rename it to your chosen name
-```
-git add path_your_new_file_folder_name/*
-git commit -a -m "adding my homework folder where I will store all of my homework"
-git push origin main
-```
-### we might run into a little issue here!
+# Create your variables here
 
+def setup(): 
+    # Initializing code that you want to run once goes here 
+    pass
+def draw():
+    # All drawing code goes here
+    pass
+```
 
-# Explore the Examples
+This code snippet is like a pattern, or a template. A flexible code snippet that you can use and modify as necessary. For the next few weeks, the pattern of this code snippet will be the template that you will use as the starting point for all your work. So get used to typing it! (You don't need to type my comments obviously. You will replace those with your own code.)
 
-![Homework](images/lewitt-trapezoid.jpeg)
+Now you have to pay close attention to indentation: the amount of spaces at the start of each line. Last week I told you that Python and Processing don't care about whitespace (spaces, newlines, tabs) and this is mostly true. But one situation in which Python requires you to be very precise about whitespace is with indentation.
+
+The term for these new code structures introduced here is a code block, or just a block. A block is a chunk of code that gets run together in some way. We will look at several other types of code blocks in the coming weeks, but right now we're only looking at the setup() and draw() blocks.
+
+In Python, you indicate the start of a new block with a colon (:), and then you indicate all the code in that block by indenting it with the same number of spaces. The block continues on every line until you stop indenting. We will be using 4 spaces. (You are allowed to use different numbers of spaces or tabs, as long as you are consistent. Programmers love to fight over which is the best to use. This semester we will use 4 spaces for consistency and later on you can do whatever you'd like!)
+
+Let's demonstrate this with the following example:
+
+```
+def setup():
+    print("Doing this once.")  
+
+def draw():
+    println("Doing this many times.")
+```
+
+If you run this code and look in the Processing Console, you will see some interesting output. Press the Stop button (so that you are able to scroll back), scroll back to the top of the Console, and you should see this:
+
+Notice that the code inside setup() does happen only once, and the code inside draw() happens many times.
+
+This code introduces a new command: println(). Usually pronounced as "print line", this command prints arbitrary text in the debugging window at the bottom of the PDE. You write this text as characters in double quotes “ ”, which are called strings. The most famous example of this in introductory programming is the well known "Hello, world!" example:
+
+```
+println("Hello, world!")
+```
+
+In addition to strings, we can also print variables:
+
+```
+x = 5
+println(x)
+```
+
+This can be extremely useful for debugging later on when you are trying to figure out what the value of a variable is.
+
+And we can combine words and variables using the plus sign (+). When the arguments to + are strings, it does not do arithmetic, but instead does string concatenation, conjoining together the text of the string with the value of the variable. Having one operator that can be used for more than one purpose is called operator overloading, and it can be very confusing, but it can also be a convenient shortcut. We'll try not to use too many other examples of operator overloading this semester.
+
+But if you try to run this example:
+
+```
+x = 5
+println("x is now equal to " + x)
+```
+
+you will get this error:
+
+We don't talk about errors enough in coding education. Most coding instruction shows you how to do things and presumes they will work. So when students encounter something that doesn't work they are often unprepared for how to proceed. As a computer programmer, you should get accustomed and even comfortable reading errors. As a person creating software, you are not able to simply call tech support if something does not run as you'd expect. Error messages are a form of communication between you and the person who created the tool that you're using. They are their best effort to explain to you why something you tried do does not comply with the usage patterns that they provided.
+
+In this case, this is actually a very helpful and informative error message. Processing is showing you exactly where the problem is, and displaying for you an error message that Python generated. This code is trying to concatenate (conjoin) a string (the stuff in quotes) and an integer (the variable with a numeric value). A solution in this case is to convert the integer to a string. Python knows how to concatenate strings, but not mixed types. You do this by using the str() command from Python, like so:
+
+```
+x = 5
+println("x is now equal to " + str(x))
+```
+
+which produces this result:
+
+### Framerate
+
+This idea of doing things many times introduces a new concept called a framerate.
+
+We've talked about how your code now can create a sequence of static frames in succession. How many times per second does it run? Processing provides a special variable to tell you this called frameRate. You can use println() to examine the value of this variable:
+
+```
+def draw():
+    println(frameRate)
+```
+
+As you can see, the frame rate is slightly changing all the time! This is because the actual frame rate (the number of times per second that Processing is able to run the draw() block) depends on things like how fast the computer's processor is, how many other programs are running, etc. As you can see there, the frame rate of that sketch is about 60 — that corresponds to the number of frames per second, or in other words, the number of times that draw() gets called per second. For reference, the frame rate of most cinema is 24 frames per second (or "fps").
+
+In Processing, you can adjust this with:
+
+```
+frameRate(24) # 24 is now the number of frames per second
+```
+
+Note that the parameter here indicates the maximum frame rate. Processing may not be able to acheive that frame rate (due to processor speed, etc.) but that is what it will try to do.
+
+Returning to the original example, we can merge together the code that tries to draw a rectangle using mouseX with the above setup() and draw() code:
+
+```
+def setup():
+    size(400,400)
+
+def draw():
+    background(255)
+    stroke(50,50,255)
+    fill(200,200,255)
+    rect(mouseX,150,100,100)
+```
+
+We should always put ```size()``` inside ```setup()``` because we only need to do that once, and we put all the other draw code inside ```draw()``` so that it will happen many times per second. Now each time that Processing runs the ```draw()```, the special variable ```mouseX``` will contain the current location of the mouse and the rectangle will be drawn there.
+Scope. Using the ```setup()``` and ```draw()``` _code blocks_ like this introduces a new concept called _scope_. This important term describes the parts of your sketch in which different variables are accessible. The following code gives an error message:
+
+```
+def setup():
+    i = 0
+
+def draw():
+    rect(i,0,50,50)
+```
+
+Why? Because the scope of i is limited to ```setup()```, or in other words, the variable can only be used inside ```setup()```, meaning within the chunk of code that is indented together after the colon following ```setup()```. In the above example, i is being used inside ```draw()```, but the variable is not accessible there.
+
+So another way of describing this would be: since the variable ```i``` is defined inside the ```setup()``` block, its scope is limited to that block and it is not accessible from within the ```draw()``` block.
+
+To fix this error, you can move your declaration of i into global scope, in other words, outside of all indented code blocks. In that way, your variable will be accessible in all blocks. Like this:
+
+```
+i = 25
+def setup():
+    size(100,100)
+
+def draw():
+    rect(i,0,50,50)
+```
+
+This is called a global variable. People usually don't like global variables. They create code that can be more confusing to read. But in Processing they are required.
+Confusingly, whenever you assign a variable a value within a block, Python tries to create a new variable within that block. So for example, look what happens when you run this code:
+
+```
+i = 0
+def setup():
+    size(100,100)
+    i = 25 
+
+def draw():
+    rect(i,0,50,50)
+```
+
+You might think the rectangle would get drawn with ```x``` at 25, but it gets drawn with ```x``` at 0. Why? Because ```i = 25``` inside ```setup()``` creates a new variable limited to that scope. The solution is the global keyword.
+
+Important rule: Whenever you want to use a variable in more than one scope, you must initialize it outside of any other code block and then declare it to be global within every code block where you will use it. So modify the above code like this:
+
+```
+i = 0
+def setup():
+    size(100,100)
+    global i
+    i = 25 
+
+def draw():
+    rect(i,0,50,50)
+```
+
+and now it will do the expected thing.
+To simplify: you should create your variables in global block (up top, no indentation), and then declare then as global inside each block where you want to use them.
+
+When? Now that we have introduced the concept of frames into our sketches, and our programs unfold in time, it begs an imporant question. In regards to a command or code instruction, we can now ask: When does that happen? Before today, this question didn't really matter. Over the last two weeks, the only sense of time that mattered was the order in which your instructions were run — from top to bottom, which created visual objects from back to front — but all that happened in a split second and didn't really matter in terms of "human" time. But now the sketch has a duration that we humans can perceive, and things can happen over time. So, when?
+
+The original example of this lesson draws a rectangle at the x location of the mouse:
+
+```
+def setup():
+    size(400,400)
+
+def draw():
+    background(255)
+    stroke(50,50,255)
+    fill(200,200,255)
+    rect(mouseX,150,100,100)
+```
+
+But look what happens if we move background() out of draw() and into setup():
+
+```
+def setup():
+    size(400,400)
+    background(255)
+
+def draw():
+    stroke(50,50,255)
+    fill(200,200,255)
+    rect(mouseX,150,100,100)
+```
+
+Running this now leaves a trail of rectangles from all previous mouse positions. Why? Because ```background()``` only runs once, only wiping the screen at the beginning of the program, but Processing runs the ```draw()``` block many times per second, each time creating a frame, and without ```background()```, Processing draws new rectangles without erasing the previous ones. Depending on your intention, there are times when you may or may not want this effect.
+As another example, think about how this relates to ```random()```. You used this command to set variables to random values. But now whenever you use ````random()``` you must ask yourself an important question when is the random command being called? When is that random number being chosen? Consider this example:
+
+```
+def setup():
+    size(400,400)
+    background(255)
+    r = random(0,255)
+    g = random(0,255)
+    b = random(0,255)
+    fill(r,g,b)
+
+def draw():
+    rect(150,150,100,100)
+```
+
+Each time you stop and run that sketch, the rectangle will have a different color. Three random values are chosen inside ```setup()``` and the fill color is set once at the beginning of the sketch.
+Now let's make a slight change:
+
+```
+def setup():
+    size(400,400)
+    background(255)
+
+def draw():
+    r = random(0,255)
+    g = random(0,255)
+    b = random(0,255)
+    fill(r,g,b)
+    rect(150,150,100,100)
+```
+
+We have moved the selection of random values and the setting of the fill color into ```draw()```, meaning that new random values are selected and the fill color is set each frame. This creates a very different effect.
+Again, there are different times that you may want each of these different behaviors.
+
+### Stretch break
+
+### Interaction, continued
+
+So far we've talked about the special Processing variables mouseX and mouseY. We saw that as the mouse moves, Processing automatically sets the value of these variables to the x and y position of the mouse in every frame.
+
+There are several other special variables that Processing provides us, and now I want to talk about two more:
+
+```pmouseX``` and ```pmouseY```
+
+Every frame, Processing sets the values of these variables to the x and y position that the mouse was at on the previous frame. This can be very useful for achieving some interesting effects.
+
+Let's look at the ```line()``` command. From the reference:
+
+Draws a line (a direct path between two points) to the screen.
+
+Syntax
+```line(x1, y1, x2, y2)```
+Parameters:
+
+* x1 float: x-coordinate of the first point
+* y1 float: y-coordinate of the first point
+* x2 float: x-coordinate of the second point
+* y2 float: y-coordinate of the second point
+
+Putting these two things together, let's try to draw a line from the location of the mouse in the previous frame to the location of the mouse in the current frame:
+
+```
+def setup():
+    size(400, 400)
+    strokeWeight(10)
+    stroke(155,155,255,50)
+
+def draw():
+    background(255)
+    line(pmouseX, pmouseY, mouseX, mouseY)
+```
+
+You might see a little something there, but not much. Why? Because the frame rate is so fast that as the user moves the mouse, even quickly, there is still only a small distance between the location of the mouse on the previous frame and the location of the mouse on the current frame. Let's lower the frame rate to make this a little easier to see:
+
+```
+def setup():
+    size(400, 400)
+    strokeWeight(10)
+    stroke(155,155,255,50)
+    frameRate(4)
+
+def draw():
+    background(255)
+    line(pmouseX, pmouseY, mouseX, mouseY)
+```
+
+Now that there are only four frames per second, we can move the mouse quickly and better see the relationship between the location of the mouse in the previous frame and the location of the mouse in the current frame.
+
+There is a lot that can be done with this principle. Let's use the distance between the previous and current mouse positions to do something besides draw a line, like specify the width and height of a shape.
+
+We can think about this with an illustration:
+
+![illustration](images/distance-1-python.png)
+
+Simply by subtracting the previous mouse position from the current mouse position, we are calculating the distance that the mouse moved between these two frames.
+
+Writing that up in code form:
+
+```
+def setup():
+    size(400, 400)
+    noStroke()
+    fill(155, 155, 255, 50)
+    frameRate(4)
+
+def draw():
+    background(255)
+    ellipse(200, 200, mouseX-pmouseX, mouseY-pmouseY)
+```
+
+![Calc](images/3xksjp.jpg)
+
+_Distance_ is difference. Distance is calculated by subtracting. (What about negative values? Fortunately Processing handles that for us in this case, but ideally we should do an absolute value here to make sure we only have positive values. The need for this will be eliminated when we use dist() below.)
+
+Now let's run that and see what happens. We are using the distance as the width and height of the ellipse. Try moving the mouse horizontally, vertivally, and diagonally to see how the width and height are affected. As you can see, distance is also related to speed. The faster the mouse is moved, the more distance it covers between frames.
+
+Now what if we want to do something a little more complicated with distance? What if we wanted to set the thickness of a line based on how fast the user is moving the mouse. So, the faster the movement (the more distance between frames), the thicker the line.
+
+As many of you have already experimented with, line thickness is specified with ```strokeWeight()```, and as you can see from the Processing reference, this takes one parameter, which corresponds to the thickness of the line in pixels. Our distance calculation above produced two values (distance in ```x``` and distance in ```y```). How can we get just one value? Simple subtraction was enough for determining distance in ```x``` and in ```y``` separately, but to actually determine the distance between any two arbitrary points requires some more complicated geometry calculations.
+
+Anyone remember how to calculate the distance of this line? (Hint: your old friend Pythagoras ...)
+
+![dist](images/distance-2-python.png)
+
+Fortunately, we don't have to worry about that because Processing offers us a shortcut for doing this calculation: ```dist()```.
+
+As you can see from the reference, ```dist()``` takes four parameters: the ```x``` and ```y``` values of one point, and the ```x``` and ```y``` values of another. And it automatically calculates the distance (in pixels) between them.
+
+So how would we calculate the distance between the mouse position of the previous frame and the mouse position of the current frame?
+
+```dist(pmouseX,pmouseY, mouseX,mouseY)```
+Putting that into a complete sketch:
+
+```
+def setup():
+    size(400, 400)
+    stroke(155, 155, 255, 50)
+    frameRate(4)
+
+def draw():
+    background(255)
+    
+    d = dist(pmouseX,pmouseY, mouseX,mouseY)
+    strokeWeight(d)
+    
+    line(pmouseX,pmouseY, mouseX,mouseY)
+```
+
+There are some issues with this. For one, the line gets really thick really quickly! Also, what if we wanted to create something that felt kind of like a pen or a brush, in the sense that the line got thinner as the user moved faster, and thicker as the user moved slower. Fixing these two issues leads us to the next topic ...
+
+_If you've gotten this far before the rest of the class, wait here and maybe experiment by replacing line() with different draw primitives? What if you remove background() and draw lines from pmouseX,pmouseY to mouseX,mouseY where the color is determined by the distance between points?_
+
+## Stretch Break
+
+## Map
+
+To address the above questions, let's look at ```map()```. This is a simple thing that can be very useful, but it can be a little tricky to understand.
+
+```map()``` takes a variable and translates (or "maps") it from one range of values proportionally into another range of values. It will be very useful to anyone who elects to do a data visualization for their midterm project.
+
+```map()``` takes a number, in some range, and translates ("maps") that proportionally into some other range.
+
+As the reference explains, it takes four parameters:
+
+```
+map(value, low1, high1, low2, high2)
+```
+
+It assumes that value is between low1 and high1, and then it translates that into the range of low2 and high2.
+It might be best to start by illustrating this with some examples (highlight the line for the answer):
+
+```
+map( 5, 0,10, 0,100 ) # Answer: 50
+
+map( 5, 0,10, 50,100 ) # Answer: 75
+
+map( 5, 0,10, 60,70 ) # Answer: 65
+
+map( 3, 0,4, 0,100 ) # Answer: 75
+```
+
+You can also go from high to low, instead of low to high:
+
+```
+map( 3, 0,4, 100,0 ) # Answer: 25
+```
+
+Here are some practical examples that you can re-use in your code:
+
+If you wanted a rectangle to move up/down in the same direction as the mouse, but limit it to a region smaller than the full window, you could do this:
+
+```
+rectY = map(mouseY, 0,height, 100,200)
+rect( 200,rectY, 50,50 )
+```
+
+If you wanted a rectangle to move left/right in the opposite direction as the mouse, you could do this:
+
+```
+rectX = map(mouseX, 0,width, width,0)
+rect( rectX,200, 50,50 )
+```
+
+If you wanted to create a fill color controlled by the mouse x that was always shades of red, you could do this:
+
+```
+r = map(mouseX, 0,width, 0,255)
+fill(r,0,0)
+```
+
+The following sketch illustrates some things that you can do with this command:
+
+We can use ```pmouseX``` and ```pmouseY``` along with ```map()```:
+
+```
+def setup():
+     size(600, 600)
+     stroke(155, 155, 255, 50)
+     background(255)
+
+def draw():
+     
+    distance = dist(pmouseX, pmouseY, mouseX, mouseY)
+
+    mappedDistance = map(distance, 0,200, 40,1)
+    strokeWeight( max(mappedDistance,2) ) # using max() to set a maximum value here
+
+    line(pmouseX, pmouseY, mouseX, mouseY)
+```
+
+## Rotate, Scale, Translate
+
+This is important for your homework
+
+```rotate(angle)```
+
+```
+loop_frame = 500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    angle = map(frameCount % loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    rect(width/2, height/2, 386, 368)
+```
+
+_This doesn't work too well does it? It doesn't do what you expect does it?_
+
+Let's see with what happens when we add a ```translate()```?
+
+```translate(x, y)```
+
+```
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    translate(width/2, height/2)
+    angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    rect(0, 0, 386, 368)
+```
+
+```scale(x, y)```
+
+```
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    translate(width/2, height/2)
+    angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
+    scale(scale_x, scale_y)
+    rect(0, 0, 386, 368)
+```
+
+```pushMatrix()```
+```popMatrix()```
+
+```
+pushMatrix()
+translate(10, 10)
+fill(255)
+rect(0, 0, 50, 50)# White rectangle
+pushMatrix()
+translate(30, 20)
+translate(10, 10)
+fill(0)
+rect(0, 0, 50, 50)# Black rectangle
+pushMatrix()
+translate(10, 10)
+fill(100)
+rect(15, 10, 50, 50)# Gray rectangle
+popMatrix()
+popMatrix()
+popMatrix()
+rect(0, 0, 10, 10)
+```
+
+```
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    translate(width/2, height/2)
+    angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
+    scale(scale_x, scale_y)
+    rect(0, 0, 386, 368)
+```
+
+```
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    pushMatrix()
+    translate(width/2, height/2)
+    angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    rotate(angle)
+    pushMatrix()
+    scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
+    scale(scale_x, scale_y)
+    pushMatrix()
+    fill(255, 0, 255)
+    stroke(255, 255, 0)
+    rect(0, 0, 200, 200)
+    popMatrix()
+    fill(255, 255, 0)
+    stroke(255, 0, 255)
+    rect(0, 0, 100, 100)
+    popMatrix()
+    fill(255, 0, 255)
+    stroke(255, 255, 0)
+    rect(0, 0, 50, 50)
+    popMatrix()
+    fill(255, 255, 0)
+    stroke(255, 0, 255)
+    rect(0, 0, 25, 25)
+```
+BELOW WILL NOT WORK IN PROCESSING IT IS JUST TO SHOW THE WAY 
+```
+loop_frame = 1500
+def setup():
+    size(512, 512)
+    rectMode(CENTER)
+
+def draw():
+    pushMatrix()
+    	translate(width/2, height/2)
+    	angle = map(frameCount%loop_frame, 0, loop_frame, 0, TWO_PI)
+    	pushMatrix()
+    		rotate(angle)
+    		scale_y = scale_x = map(frameCount%loop_frame, 0, loop_frame, 0.1, 2)
+    		pushMatrix()
+			scale(scale_x, scale_y)
+    			fill(255, 0, 255)
+    			stroke(255, 255, 0)
+    			rect(0, 0, 200, 200)
+    		popMatrix()
+    		fill(255, 255, 0)
+    		stroke(255, 0, 255)
+    		rect(0, 0, 100, 100)
+    	popMatrix()
+    	fill(255, 0, 255)
+    	stroke(255, 255, 0)
+    	rect(0, 0, 50, 50)
+    popMatrix()
+    fill(255, 255, 0)
+    stroke(255, 0, 255)
+    rect(0, 0, 25, 25)
+ ```
+
+### Home Work
+
+* Read [Introduction to Shape Grammars](pdfs/MIT4_540F18_qa1.pdf)
+* Coding Assignment #2a : Create a generative pattern
+  * Experiment with 2D transforms such as scaling, rotation, translation
+  * Iterate on your designs
+  * Use Plenty of Variables
+* Coding Assignment #2b : Make your pattern respond to the mouse input (button click and or position)
