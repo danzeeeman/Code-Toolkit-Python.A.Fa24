@@ -1,5 +1,5 @@
 # Code Toolkit: Python, Fall 2021
-### Week 8 — Class notes
+## Week 8 — Class notes
 ## Review
 Last week we covered two topics:
 
