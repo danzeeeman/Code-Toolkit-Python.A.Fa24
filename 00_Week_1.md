@@ -302,29 +302,29 @@ So all of these prompts will give me different results because they describe the
 
 ```a poster of a black and white hightop sneaker, nike air jordan 1```
 
-[PHOTO](images/sd/00156-2275035574.png)
+![PHOTO](images/sd/00156-2275035574.png)
 
 ```a black and white photo of an nike air jordan 1 poster```
 
-[PHOTO](images/sd/00157-2275035574.png)
+![PHOTO](images/sd/00157-2275035574.png)
 
 ```a hightop nike air jordan 1, black and white, poster```
 
-[PHOTO](images/sd/00158-2275035574.png)
+![PHOTO](images/sd/00158-2275035574.png)
 
 You can see how building on top of a prompt can narrow your search to what you are looking for in the AI Mines:
 
 ```a poster of a black and white nike air jordan 1 hightop sneaker```
 
-[PHOTO](images/sd/00159-2275035574.png)
+![PHOTO](images/sd/00159-2275035574.png)
 
 ```a poster of a black and white nike air jordan 1 hightop sneaker, product shot, wide angle, on foot```
 
-[PHOTO](images/sd/00160-2275035574.png)
+![PHOTO](images/sd/00160-2275035574.png)
 
 ```a poster of a black and white nike air jordan 1 hightop sneaker, product shot, wide angle, on foot, pink background, high res, studio lighting```
 
-[PHOTO](images/sd/00161-2275035574.png)
+![PHOTO](images/sd/00161-2275035574.png)
 
 Each of these prompts narrows your search inside the latent space to reveal what you are looking for. 
 
@@ -347,23 +347,23 @@ _Make it a run on sentence that describes everything in detail_
 
 ```surreal image of George Bush and Obama kissing under the mistletoe dali, banksy, street art``` 
 
-[PHOTO](images/sd/00162-2275035574.png)
+![PHOTO](images/sd/00162-2275035574.png)
 
 ```surreal image of George Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple```
 
-[PHOTO](images/sd/00163-2275035574.png)
+![PHOTO](images/sd/00163-2275035574.png)
 
 ```surreal image of George Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple, vaporwave, synthwave, pink and purple background```
 
-[PHOTO](images/sd/00164-2275035574.png)
+![PHOTO](images/sd/00164-2275035574.png)
 
 ```surreal image of George Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple, vaporwave, synthwave, blue, pink and purple background```
 
-[PHOTO](images/sd/00165-2275035574.png)
+![PHOTO](images/sd/00165-2275035574.png)
 
 ```surreal image of George Bush and Obama kissing under the mistletoe at christmas in the white house dali, banksy, street art, beeple, vaporwave, synthwave, blue, pink and purple background, wide angle, yellow background```
 
-[PHOTO](images/sd/00166-2275035574.png)
+![PHOTO](images/sd/00166-2275035574.png)
 
 ### Order and Context is Important
 
@@ -371,35 +371,35 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 
 ```surreal painting of George Bush and Obama kissing under the mistletoe on the white house lawn```
 
-[PHOTO](images/sd/00167-2275035574.png)
+![PHOTO](images/sd/00167-2275035574.png)
 
 ```surreal oil painting by Dali of George Bush and Obama kissing under the mistletoe on the white house lawn```
 
-[PHOTO](images/sd/00168-2275035574.png)
+![PHOTO](images/sd/00168-2275035574.png)
 
 ```a paparazzi photo of George Bush and Obama caught kissing on the lips under the mistletoe on the white house balcony, TMZ```
 
-[PHOTO](images/sd/00169-2275035574.png)
+![PHOTO](images/sd/00169-2275035574.png)
 
 ```photo of Street art on the side of a building by the street artist banksy of Bush and Obama kissing on the lips, spray paint```
 
-[PHOTO](images/sd/00170-2275035574.png)
+![PHOTO](images/sd/00170-2275035574.png)
 
 ```stencil art by the street artist banksy of George Bush and Obama kissing on the lips, black and white, street photography, street art, black and white```
 
-[PHOTO](images/sd/00171-2275035574.png)
+![PHOTO](images/sd/00171-2275035574.png)
 
 ```a black and white photo of George Bush and Obama kissing on the lips in the oval office at christmas time```
 
-[PHOTO](images/sd/00172-2275035574.png)
+![PHOTO](images/sd/00172-2275035574.png)
 
 ```a christmas card from Obama featuring Obama kissing George Bush on the lips```
 
-[PHOTO](images/sd/00173-2275035574.png)
+![PHOTO](images/sd/00173-2275035574.png)
 
 ```a pile of christmas cards on a table with the top christmas card being from Obama featuring Obama kissing Bush on the lips```
 
-[PHOTO](images/sd/00174-2275035574.png)
+![PHOTO](images/sd/00174-2275035574.png)
 
 ### My Simple Rules to Follow
 
