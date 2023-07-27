@@ -1,6 +1,6 @@
 # Code Toolkit: Python, Fall 2021
 
-# Week 9 — Class notes
+## Week 9 — Class notes
 
 # Command line from [Sam Lavigne](https://github.com/antiboredom/scrapism-fall-2023/blob/main/01-command-line/01-notes.md)
 
