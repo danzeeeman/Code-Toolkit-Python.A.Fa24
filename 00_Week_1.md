@@ -50,28 +50,27 @@ Another word for this is algorithm. An algorithm is a formal process or a sequen
 
 
 ## ___Technology as a Medium___
-- SAAS, Software as a Service
-- Bank Software aka B2B
-- Advertising and _how they track you_ 
-- Bots, Botnets, and Hacking for Fun and Profit
-- Interactivity & Arting, with a Computer
+- SAAS, Software as a Service (this Squarespace or GMail or Slack)
+- Bank Software aka B2B (Salesforce, WeWork, Stripe)
+- Advertising and _how they track you_ (Google Analytics)
+- Bots, Botnets, and Hacking for Fun and Profit 
+- Interactivity & Arting with a Computer
 ## Computing, Outside of ___Computer Science___
-### _Poetic Computing_
 * Madeline Gannon, [*Mimus*](https://atonaton.com/mimus/)
+* Lauren McCarthy [*Vibe Check*](https://lauren-mccarthy.com/Vibe-Check), [*Social Turkers*](https://lauren-mccarthy.com/Social-Turkers)
 * Design I/O, [*Mimic*](https://www.design-io.com/projects/mimic) & [*Connected Worlds*](https://www.design-io.com/projects/connectedworlds)
-* Golan Levin, [*Ghost Pole Propagator I*](http://flong.com/archive/projects/gpp/index.html) & [*Ghost Pole Propagator II*](http://flong.com/archive/projects/gpp-ii/index.html)
+* Golan Levin, [*Ghost Pole Propagator I*](http://flong.com/archive/projects/gpp/index.html) & [*Eyeshine*](http://flong.com/archive/projects/eyeshine/index.html)
 * Kyle McDonald and Jonas Jongejan, [*Light Leaks*](https://vimeo.com/66167082)
-* Acne-studios-x-Robbie-Barrat, [Fall/Winter 2020](https://xrgoespop.com/home/acne-studios-x-robbie-barrat)
-### _Social Justice, Protests, Hacktivism, Jouralism, and Critical Hot Takes but also art_
+* Acne Studios & Robbie Barrat, [Fall/Winter 2020](https://xrgoespop.com/home/acne-studios-x-robbie-barrat)
+* Memo Akten [*FIGHT!*](https://memoakten.medium.com/fight-virtual-reality-binocular-rivalry-89a0a91c2274)
+## _Social Justice, Protests, Hacktivism, Jouralism, and Critical Hot Takes but also art_
 * Sam Lavigne, [Database of ICE employee LinkedIn accounts](https://www.theverge.com/2018/6/19/17480912/github-ice-linkedin-scraping-employees)
 * The Markup, [COVID in Amazon Warehouses](https://github.com/the-markup/investigation-amazon-covid)
 * Kyle McDonald, [Ethereum Emissions: A Bottom-up Estimate](https://kylemcdonald.github.io/ethereum-emissions/)
 * Adam Harvey [CV Dazzle](https://cvdazzle.com)  
 * The Critical Engineering Working Group [The Deep Sweep](https://criticalengineering.org/projects/deep-sweep/)
-* Julian Oliver [Stealth Cell Tower](https://julianoliver.com/output/stealth-cell-tower.html)
 
-## __5-10 min break__
-
+## BREAK
 # _A crash course to git_
 ## _how to get the classnotes_
 - Create a [Github](https://github.com) profile
@@ -103,7 +102,7 @@ git push origin main
 ## we might run into a little issue here! 
 ## Please Be Vocal if you have issues
 
-# Stable Diffusion
+# Stable Diffusion Mac Install Guide
 
 Mac users: Please provide feedback on if these instructions do or don't work for you, and if anything is unclear or you are otherwise still having problems with your install that are not currently [mentioned here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/5461).
 
@@ -301,19 +300,31 @@ You can see here when we project this representation of latent space down to 2D 
 
 So all of these prompts will give me different results because they describe the image I want differently:
 
-```a poster of a black and white hightop sneaker, nike air jordan 1``` 
+```a poster of a black and white hightop sneaker, nike air jordan 1```
+
+[PHOTO](images/sd/00156-2275035574.png)
 
 ```a black and white photo of an nike air jordan 1 poster```
 
+[PHOTO](images/sd/00157-2275035574.png)
+
 ```a hightop nike air jordan 1, black and white, poster```
+
+[PHOTO](images/sd/00158-2275035574.png)
 
 You can see how building on top of a prompt can narrow your search to what you are looking for in the AI Mines:
 
 ```a poster of a black and white nike air jordan 1 hightop sneaker```
 
+[PHOTO](images/sd/00159-2275035574.png)
+
 ```a poster of a black and white nike air jordan 1 hightop sneaker, product shot, wide angle, on foot```
 
+[PHOTO](images/sd/00160-2275035574.png)
+
 ```a poster of a black and white nike air jordan 1 hightop sneaker, product shot, wide angle, on foot, pink background, high res, studio lighting```
+
+[PHOTO](images/sd/00161-2275035574.png)
 
 Each of these prompts narrows your search inside the latent space to reveal what you are looking for. 
 
@@ -334,15 +345,25 @@ _Make it a run on sentence that describes everything in detail_
 
 ```write a short story about the time my friend jack and I went over the hill and through the woods to find a rocket in a secret cave that was a government army base that was 13 stories deep but jack fell at the opening of the cave I had to save him and We escaped with the Alien```
 
-```surreal image of Bush and Obama kissing under the mistletoe dali, banksy, street art``` 
+```surreal image of George Bush and Obama kissing under the mistletoe dali, banksy, street art``` 
 
-```surreal image of Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple```
+[PHOTO](images/sd/00162-2275035574.png)
 
-```surreal image of Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple, vaporwave, synthwave, pink and purple background```
+```surreal image of George Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple```
 
-```surreal image of Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple, vaporwave, synthwave, blue, pink and purple background```
+[PHOTO](images/sd/00163-2275035574.png)
 
-```surreal image of Bush and Obama kissing under the mistletoe at christmas in the white house dali, banksy, street art, beeple, vaporwave, synthwave, blue, pink and purple background, wide angle, yellow background```
+```surreal image of George Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple, vaporwave, synthwave, pink and purple background```
+
+[PHOTO](images/sd/00164-2275035574.png)
+
+```surreal image of George Bush and Obama kissing under the mistletoe dali, banksy, street art, beeple, vaporwave, synthwave, blue, pink and purple background```
+
+[PHOTO](images/sd/00165-2275035574.png)
+
+```surreal image of George Bush and Obama kissing under the mistletoe at christmas in the white house dali, banksy, street art, beeple, vaporwave, synthwave, blue, pink and purple background, wide angle, yellow background```
+
+[PHOTO](images/sd/00166-2275035574.png)
 
 ### Order and Context is Important
 
@@ -350,19 +371,35 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 
 ```surreal painting of George Bush and Obama kissing under the mistletoe on the white house lawn```
 
+[PHOTO](images/sd/00167-2275035574.png)
+
 ```surreal oil painting by Dali of George Bush and Obama kissing under the mistletoe on the white house lawn```
+
+[PHOTO](images/sd/00168-2275035574.png)
 
 ```a paparazzi photo of George Bush and Obama caught kissing on the lips under the mistletoe on the white house balcony, TMZ```
 
+[PHOTO](images/sd/00169-2275035574.png)
+
 ```photo of Street art on the side of a building by the street artist banksy of Bush and Obama kissing on the lips, spray paint```
 
-```stencil art by the street artist banksy of Bush and Obama kissing on the lips, black and white, street photography, street art, black and white```
+[PHOTO](images/sd/00170-2275035574.png)
+
+```stencil art by the street artist banksy of George Bush and Obama kissing on the lips, black and white, street photography, street art, black and white```
+
+[PHOTO](images/sd/00171-2275035574.png)
 
 ```a black and white photo of George Bush and Obama kissing on the lips in the oval office at christmas time```
 
+[PHOTO](images/sd/00172-2275035574.png)
+
 ```a christmas card from Obama featuring Obama kissing George Bush on the lips```
 
+[PHOTO](images/sd/00173-2275035574.png)
+
 ```a pile of christmas cards on a table with the top christmas card being from Obama featuring Obama kissing Bush on the lips```
+
+[PHOTO](images/sd/00174-2275035574.png)
 
 ### My Simple Rules to Follow
 
