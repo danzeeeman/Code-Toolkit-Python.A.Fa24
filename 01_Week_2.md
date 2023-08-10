@@ -24,6 +24,10 @@ Continuing Education in Media Studies read [Manufacturing Consent by Edward S. H
 
 Let's write a simple "program"
 
+```
+print('Hello World')
+```
+
 ## How to make a drawing
 
 There were some things that many of your drawing instructions did that we will see again later:
