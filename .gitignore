@@ -131,3 +131,5 @@ notebooks/models/powerball/config.json
 config.json
 *.bin
 *.pt
+*.pth 
+trainer_state.json
