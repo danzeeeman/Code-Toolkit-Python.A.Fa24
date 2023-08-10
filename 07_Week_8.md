@@ -712,6 +712,7 @@ def draw():
 ```
 
 Looking at this code, we don't know what each of those functions does, but we can start to get an abstract, high level understanding of what is going on in this sketch.
+
 Functions can work really well with the topic of state variables from last week. For example, if you were doing the game option for the midterm, you could implement your different levels like this: NOTE: Please pay attention to how I'm using the import command in the main tab to import the function definitions from the other two tabs.
 
 ```
@@ -751,6 +752,7 @@ def drawLevel2():
 Keep this in mind as you work on the midterm!
 
 ## Drag and Drop Coding Exercise
+lets debug this problem what's wrong with it?
 
 ```
 x = []
