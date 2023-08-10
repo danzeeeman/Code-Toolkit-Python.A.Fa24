@@ -10,20 +10,18 @@
 ## Course Description
 This course provides a basic introduction to coding for students with no prior experience using the Python 
 computer language. It will introduce the use of computing and algorithms to web design, data analysis and 
-visualization, and game design. Students will complete integrative projects within each of these areas, and 
-leave the class with a strong foundation in the use of Python across a range of applications. Access to a 
-working laptop will be expected throughout the semester. This course fulfills the Integrative Course 
+visualization, and game design. Students will complete integrative projects within each of these areas, and leave the class with a strong foundation in the use of Python across a range of applications. Access to a working laptop will be expected throughout the semester. This course fulfills the Integrative Course 
 requirement of the Culture and Media major.
 
 ## Class Website & Email
 
 Rather than using Canvas this semester we will be using this URL https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa23
 
-Please bookmark that URL and refer back to it often. All deadlines, reading materials, project tutorials, and 
-other course materials will be posted here. You will be using Google Docs, Google Drive, and other 
+Please bookmark that URL and refer back to it often. All deadlines, reading materials, project tutorials, and other course materials will be posted here. You will be using Google Docs, Google Drive, and other 
 platforms such as GitHub to submit your project work and reading responses. The website will include links 
 to these resources and instructions on how to submit work.
-Please check this site as well as your @newschool.edu email regularly for any course announcements, 
+
+Please check the [site](https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa23) as well as your @newschool.edu email regularly for any course announcements, 
 possibly including last minute updates.
 
 ## Course Structure
@@ -44,6 +42,8 @@ reading discussion. We will take a short break halfway through class.  We are go
 Your participation grade is based on class discussions, 
 contributions to student work sharing, and questions via office hours and email.
 
+If you challenge yourself and turn in the homeworks you will get an A.   
+
 ## Course Requirements & Assignments
 
 ### Weekly homework exercises
@@ -55,44 +55,32 @@ weekly on whether your code runs perfectly or has bugs, but rather on whether yo
 made progress. Occasionally I may give a fraction of a point (e.g. .85) to indicate that the level of 
 completeness is not quite enough. Late submissions will be marked down, but submitting something is 
 always better than submitting nothing, even if late. I will try my best to keep on posting homework grades 
-throughout the semester, but if I fall behind, at the time of the midterm and final I will get caught up so you 
-know where you stand. If at any time you would like more feedback - about one piece of work specifically 
-or about your standing in the class overall - please do not hesitate to ask.
+throughout the semester, but if I fall behind, at the time of the midterm and final I will get caught up so you know where you stand. If at any time you would like more feedback - about one piece of work specifically or about your standing in the class overall - please do not hesitate to ask.
 
 Even though the weekly homework is mainly graded pass/fail, notice from the Final Grade Calculation 
-above that it represents the largest fraction of your final grade. The best way to do well in terms of grading 
-will be to keep up with the weekly homework, and if you don’t keep up with the homework it will be difficult 
-to end up with a high grade. The reason I’ve structured things this way is because I have found that the 
-best way for you to do well in terms of learning is also to keep up with the weekly homework. Our semester 
-will proceed through small steps, but we’ll take those steps fairly quickly, and the topics will be like 
-incremental blocks that build on each other, so make sure you understand the concept each week in order 
-to be sure next week will make sense.
+above that it represents the largest fraction of your final grade. The best way to do well in terms of grading will be to keep up with the weekly homework, and if you don’t keep up with the homework it will be difficult to end up with a high grade. The reason I’ve structured things this way is because I have found that the best way for you to do well in terms of learning is also to keep up with the weekly homework. Our semester will proceed through small steps, but we’ll take those steps fairly quickly, and the topics will be like incremental blocks that build on each other, so make sure you understand the concept each week in order to be sure next week will make sense.
 
 ### Weekly readings and reading responses
 
-We also have readings about every two weeks. These are indicated in the course schedule below and will 
-be posted to the class website. You will be asked to submit a short reading response of about 150 words 
+We also have readings. These are indicated in the course schedule below and will 
+be posted to the class github. You will be asked to submit a short reading response of about 150 words 
 that mainly consists of quotes from the text that you wish to highlight and some questions or comments 
-based on those passages. These will be submitted in a shared Google Doc. I will also pose questions in 
-the Google Doc to serve as a prompt to guide your reading and responses. Like the weekly programming
-exercises, these will also be due at 8pm the evening before class and will also be graded pass/fail.
+based on those passages. These will be submitted in a shared Google Doc that you will create right now and send to me. 
+
+I will also pose questions in the Google Doc to serve as a prompt to guide your reading and responses. Like the weekly programming exercises, these will also be due at 8pm the evening before class and will also be graded pass/fail.
 
 ### Projects
 
-There will be two projects to complete: a midterm due around week 10, and a final due at the end of the 
-semester. Each project will begin with a 1 page planning document, and will conclude with an 
+There will be three projects to complete: a book, a midterm due around week 10, and a final due at the end of the semester. Each project will begin with a 1 page planning document, and will conclude with an 
 accompanying 1-2 page report explaining your work, your intentions, challenges you faced, diagrams and 
 planning material, and explanations of your code. The midterm project will offer you a choice between an 
-interactive non-linear narrative, and a data visualization. The final project will use web protocols (but not 
-HTML pages) to create a networked interactive interface. More specific details about the project 
-assignments will be provided later in the semester.
+interactive non-linear narrative, and a data visualization. The final project will be open.
 
 Projects will be graded based on how well they fulfill the formal requirements stated in the project 
 assignment, and the degree to which they engage with theoretical concepts from readings and discussion. 
 In other words, while the reading discussions are a way to process, digest, and comprehend the readings, 
 the projects are a way to demonstrate an understanding of those readings, and will be graded as such. We 
-won’t have any essays or written assignments in this class, in place of this, I would like your project work 
-and write-ups to be a product of your engagement with course concepts both technical and theoretical.
+won’t have any essays or written assignments in this class, in place of this, I would like your project work and write-ups to be a product of your engagement with course concepts both technical and theoretical.
 
 ## Learning Outcomes
 
@@ -118,8 +106,7 @@ research methods, data investigation and visualization, and algorithmic analysis
 
 ## Course readings & materials
 
-Lecture notes: I will post weekly lecture notes that give you a recap of all that we talk about in class that 
-week, usually including code examples. These are meant to be very helpful when working on the 
+Lecture notes: I will post weekly lecture notes that give you a recap of all that we talk about in class that week, usually including code examples. These are meant to be very helpful when working on the 
 homework for that week, as homework exercises will directly build on topics discussed in the lesson.
 
 All readings will be provided via the course website. There are no required textbooks to purchase for this 
@@ -134,8 +121,7 @@ hardship for you please let me know and I can connect you with resources on camp
 ## General Mask Statement
 
 The New School has implemented policies and guidance intended to support the health and safety of the 
-university community. Mask wearing protects others, not just the wearer. All students, faculty and staff are 
-asked to respect our entire community by abiding by university policies at any given time. New School 
+university community. Mask wearing protects others, not just the wearer. All students, faculty and staff are asked to respect our entire community by abiding by university policies at any given time. New School 
 community members who observe others not abiding by these expectations may gently remind them to 
 respect our community health.
 
@@ -144,15 +130,11 @@ respect our community health.
 Attendance and participation are required. Failing to show up and take part may result in a lowered grade, 
 and excessive lack of engagement may result in being dropped from the course. Of course, we find 
 ourselves in strange and challenging times! Safety protocols this semester dictate that we all must get 
-tested frequently and positive test results of ourselves or our personal contacts may result in quarantine or 
-isolation. 
+tested frequently and positive test results of ourselves or our personal contacts may result in quarantine or isolation. 
 
-If students or I are unable to attend class, we may need to use Zoom either to record classes for others to 
-watch later (asynchronously), or to conduct class discussions or lessons together (synchronously). It may 
-happen that some us may be live in person, while others are connecting over the internet. Please be flexible, 
-compassionate, generous, and kind as we navigate these difficult arrangements. 
-Please keep in mind that you are responsible for any assignment deadlines even in the event of an absence. 
-Please check with your peers, the class website, and me regarding anything you miss due to absence.
+If students or I are unable to attend class, we may need to use Zoom either to record classes for others to watch later (asynchronously), or to conduct class discussions or lessons together (synchronously). It may happen that some us may be live in person, while others are connecting over the internet. Please be flexible, compassionate, generous, and kind as we navigate these difficult arrangements. 
+
+Please keep in mind that you are responsible for any assignment deadlines even in the event of an absence. Please check with your peers, the class website, and me regarding anything you miss due to absence.
 
 I warmly recognize that not everyone feels as comfortable vocally participating in class situations – and 
 masks will likely make speaking even more difficult than usual. I implore you to keep in mind that your 
@@ -238,6 +220,9 @@ first day, and is included below.
 * Introductions
 * About the course
 * What is a program?
+* _A crash course to git_
+* Installing some software
+* Prompt Engineering 101
 ### Home Work
 * Read Marshall McCluhan's [The Medium is the Message](pdfs/mcluhan.mediummessage.pdf)
 * _Extra Credit_
@@ -254,7 +239,9 @@ Part I: Python and the Processing platform
 * Coding Assignment #1 __Solve LeWitt's Trapezoid__ 
 ![Trapezoid](images/lewitt-trapezoid.jpeg)
 * Read Lev Manovich's [The Language of New Media, Cambridge, MA: MIT Press, 2002. Chapter 1 (pages 18-55)](https://dss-edit.com/plu/Manovich-Lev_The_Language_of_the_New_Media.pdf)
+
 ## Week 3 – Adding variance
+* Books
 * Variables
 * Arithmetic (+, -, *, /)
 * Introduction to random()
@@ -300,36 +287,37 @@ Stars"](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Le
 ## Week 8 – Working with many things (lists), and modularity (functions)
 * Data structures: Lists
 * Functions: for project planning, reusability and modularity
-
 ### Home Work
 * Claus Pias, [“The Game Player’s Duty: The User as the Gestalt of the Ports”, from Media Archaeology: Approaches, Applications, Implications, Jussi Parikka and Erkki Huhtamo, eds.](pdfs/huhtamo-parikka-media_arch.pdf)
 * Extra Credit Alex Galloway, ["Gamic Action, Four Moments", chapter 1 (pages 1-38) from Gaming: Essays on Algorithmic Culture.](pdfs/galloway_gamicaction.pdf)
-### Home Work
 * Coding Assignment #6: Data Self-Portrait 
 ## Week 9 – Midterm project work and review as needed
 * Review & midterm project work
-
 ## Week 10 – Midterm project presentations and discussion
-Part II: Standalone Python – Networks and data processing
+* Last Min Bug Fixes w/Dan on the big screen
+* Mid Term Presentations
 ### Home Work
-* Final project Due: Week 15 – Final projects, Pitches due next week!
+Final project Due: Week 15 – Final projects, Pitches due next week!
 ## Week 11 – Python outside of Processing
-* Introduction to Python outside of Processing with Atom and the command line
+* Pitches
+* Introduction to Python outside of Processing with VSCode and the command line
+* Google Colab and Notebooks
 * Data structures: Dictionaries
-Final project assignment For in-class presentation and discussion on Week 15.
-### Home Work
-## Week 12 – Data serialization: for storage and communication
+## Week 12 – Data serialization, JSON, and Transformers 
 * Serialization with JSON
-* An experiment with networking
-* * Coding Assignment #7: Extra Credit - Dealers Choice 
-### Home Work
-* Paul Dourish, “Protocols, Packets, and Proximity: The Materiality of Internet Routing”, from Signal Traffic: Critical Studies of Media Infrastructures, Nicole Starosielski and Lisa Parks, eds.
-## Week 13 – Network protocols
-* Networking and the Web
+* Large Language Models
+* Small Language Models
+### Homework
+* Coding Assignment #7: Turn raw data into a dataset that can train an SLM.
+## Week 13 – Web protocols
+* Scraping and Data with Python
+* REST Api
 ### Home Work
 * Coding Assignment #8: Scraping the Net
 * Alex Galloway and Eugene Thacker, "Protocol and Counter-Protocol", 2003
-## Week 14 – Final project Work Session
-* Final project Gut Check
+* Paul Dourish, “Protocols, Packets, and Proximity: The Materiality of Internet Routing”, from Signal Traffic: Critical Studies of Media Infrastructures, Nicole Starosielski and Lisa Parks, eds.
+## Week 14 – Work Day
+* Gut Check - Final Project Work
 ## Week 15 – Final projects
+* Last Min Bug Fixes w/Dan on the big screen
 * Final project presentations and discussion
