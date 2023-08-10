@@ -1,0 +1,1 @@
+!python finetune.py --base_model 'PATH TO huggyllama/llama-7b download' --data_path 'PATH TO PROMPS' --output_dir ./lotto --batch_size 128 --micro_batch_size 1 --num_epochs 3 --learning_rate 1e-5 --cutoff_len 256 --val_set_size 200 --lora_r 8 --lora_alpha 16 --lora_dropout 0.05 --lora_target_modules ['q_proj','v_proj'] --train_on_inputs --group_by_length
