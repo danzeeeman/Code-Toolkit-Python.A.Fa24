@@ -269,18 +269,19 @@ Part I: Python and the Processing platform
 * Motion
 
 ### Home Work
-* Coding Assignment #4.a: Create a Endless animation using primitives: Circle, Square, Rectangle, Triangles
-* Coding Assignment #4.b: Create a Endless animation using found objects   
-    * MEMEs will be judged by their Dankness
+* Coding Assignment #4 One Button Game
+* "Data Visualization", from Matthew Fuller's Software Studies: A Lexicon
+* Catherine D'Ignazio and Lauren Klein, ["Unicorns, Janitors, Ninjas, Wizards, and Rock
+Stars"](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
 
 ## Week 6 – Adding repetition
 * Loops
 
 ### Home Work
-* Coding Assignment #5: One Button Game
-* "Data Visualization", from Matthew Fuller's Software Studies: A Lexicon
-* Catherine D'Ignazio and Lauren Klein, ["Unicorns, Janitors, Ninjas, Wizards, and Rock
-Stars"](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
+* Coding Assignment #5.a: Create a Endless animation using primitives: Circle, Square, Rectangle, Triangles
+* Coding Assignment #5.b: Create a Endless animation using found objects   
+    * MEMEs will be judged by their Dankness
+
 ## Week 7 – Timing and state
 * Timing
 * State: a new way to use variables
