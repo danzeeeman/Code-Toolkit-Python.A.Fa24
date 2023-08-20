@@ -346,8 +346,9 @@ _Make it a run on sentence that describes everything in detail_
 ```write a short story about the time my friend jack and I went over the hill and through the woods to find a rocket in a secret cave that was a government army base that was 13 stories deep but jack fell at the opening of the cave I had to save him and We escaped with the Alien```
 
 _Over the Hill and Through the Woods: A Journey to the Secret Cave_
-```
-Once upon a time, in a small town nestled between rolling hills and dense woods, lived two adventurous friends, Jack and the storyteller. Their curious hearts were always seeking excitement and thrill, and one sunny morning, they stumbled upon a mysterious map tucked away in the attic of an old abandoned house. The map revealed the location of a secret cave, rumored to hold a hidden rocket and the entrance to a government army base buried 13 stories deep underground.
+---
+
+_Once upon a time, in a small town nestled between rolling hills and dense woods, lived two adventurous friends, Jack and the storyteller. Their curious hearts were always seeking excitement and thrill, and one sunny morning, they stumbled upon a mysterious map tucked away in the attic of an old abandoned house. The map revealed the location of a secret cave, rumored to hold a hidden rocket and the entrance to a government army base buried 13 stories deep underground.
 
 Eyes wide with wonder, Jack and the storyteller decided to embark on an unforgettable journey to uncover the secrets of the cave. With the map clutched tightly in their hands, they set off over the hill and through the woods, the beauty of nature surrounding them.
 
@@ -371,8 +372,7 @@ With the alien now by their side, they returned to their small town, determined 
 
 From that day forward, Jack and the storyteller became local legends. Their friendship and bravery were admired, and their tale of the alien in the secret cave sparked debates and discussions across the world. But they remained humble, knowing that the real heroes were the ones who dared to seek the unknown and stand up for what they believed in.
 
-And so, their adventure left an indelible mark on their hearts and minds, reminding them that the most extraordinary things often lie just over the hill and through the woods.
-```
+And so, their adventure left an indelible mark on their hearts and minds, reminding them that the most extraordinary things often lie just over the hill and through the woods._
 
 ```surreal image of George Bush and Obama kissing under the mistletoe dali, banksy, street art``` 
 
