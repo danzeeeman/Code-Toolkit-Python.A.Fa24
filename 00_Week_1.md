@@ -452,7 +452,7 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 
 You will use Machine Learning to create a 10 page book or zine using the tools we just installed. (bonus points if you get the printed and bound)  
 
-You may work in groups of up to 3 but then its has to be 30 pages.  
+You may work in groups of up to 3 but then its has to be 20 pages.  
 
 
 ## Home Work
