@@ -14,10 +14,10 @@ _The title "The Medium Is the Massage" is a teaser—a way of getting attention.
 
 More importantly I want you to take away this:
 
-The communication channel used to communicate any message shapes the message itself.  So if you see a instagram ad that ad was manufactured to get _you_ to click it.  That promoted tweet was crafted to get you to pay attention to it.  That TikTok, was engineered to be captivating. Remember that the way a message is communicated influences the design of the message itself.
+The communication channel used to communicate any message shapes the message itself.  So if you see a instagram ad that ad was manufactured to get _you_ to click it.  That promoted 288 Character xheet was crafted to get you to pay attention to it.  That TikTok, was engineered to be captivating for the first 7 seconds. Remember that the way a message is communicated influences the design and execution of the message itself.
 
 
-Continuing Education in Media Studies read [Manufacturing Consent by Edward S. Herman and Noam Chomsky](/pdfs/Manufacturing%20Consent%20%5BThe%20Political%20Economy%20Of%20The%20Mass%20Media%5D.pdf) and write a short essay on the _Propaganda Model_ (this will replace 2 missed coding homeworks)
+Continuing Education in Media Studies read [Manufacturing Consent by Edward S. Herman and Noam Chomsky](/pdfs/Manufacturing%20Consent%20%5BThe%20Political%20Economy%20Of%20The%20Mass%20Media%5D.pdf) and write a short (2-6 pages double-spaced ~2500-5000 words) essay on the _Propaganda Model_ (this will replace 2 missed coding homeworks if you are struggling with homeworks)
 
 
 # Part 2 :: Introductory Beep Boops 
