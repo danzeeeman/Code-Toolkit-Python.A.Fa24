@@ -18,7 +18,7 @@ I've worked at an experimentals UX design studio inside Samsung Mobile. I led a 
 
 You can see my work at [Make It Do A Thing Dot Com](http://Makeitdoathing.com)
 
-[Twitter](https://twitter.com/thedantheman)
+[Twitter](https://twitter.com/danzeeeeman)
 
 [Instagram](http://instagram.com/danzeeeman)
 
