@@ -104,7 +104,7 @@ git push origin main
 
 
 # [Stable Diffusion Mac Install Guide](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon)
-# [WINDOW INSTALLATION] (https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-on-windows-1011-with-nvidia-gpus-using-release-package)
+# [WINDOW INSTALLATION](https://github.com/AUTOMATIC1111/stable-diffusion-webui#installation-on-windows-1011-with-nvidia-gpus-using-release-package)
 
 Mac users: Please provide feedback on if these instructions do or don't work for you, and if anything is unclear or you are otherwise still having problems with your install that are not currently [mentioned here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/5461).
 
