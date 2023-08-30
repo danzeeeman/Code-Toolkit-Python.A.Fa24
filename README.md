@@ -10,7 +10,7 @@
 ### _Who?_
 I'm Dan Moore [he/him], I'm an Artist, Designer, and Technologist based here in New York City.  I design and build interactive activations and applications.  
 
-I leverage media frameworks, game engines, textiles, and robotic arms to create immersive environments that examine human behavior, pop-culture, and culture dichotomies. My work is inspired by the idea of HYPE and the manipulation of media to achieve it. I strive to create a fully immersive environment for the audience to not only experience but become an active participant in the work.
+I leverage media frameworks, game engines, textiles, and robotic arms to create immersive environments that examine human behavior, pop-culture, and culture dichotomies.  I strive to create a fully immersive environment for the audience to not only experience but become an active participant in the work.
 
 Recently, I've been creating sneakers with machine learning and calling them [*airegan](www.aire-gan.com)
 
@@ -18,7 +18,7 @@ I've worked at an experimentals UX design studio inside Samsung Mobile. I led a 
 
 You can see my work at [Make It Do A Thing Dot Com](http://Makeitdoathing.com)
 
-[Twitter](https://twitter.com/thedantheman)
+[Twitter](https://twitter.com/danzeeeeman)
 
 [Instagram](http://instagram.com/danzeeeman)
 

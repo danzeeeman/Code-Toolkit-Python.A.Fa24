@@ -7,6 +7,8 @@
 ### 6 East 16th Street, Room: 602
 ### Office hours:  By appointment — email me to schedule!
 
+[DISCORD INVITE](https://discord.gg/USWhVSQdeE)
+
 ## Course Description
 This course provides a basic introduction to coding for students with no prior experience using the Python 
 computer language. It will introduce the use of computing and algorithms to web design, data analysis and 
