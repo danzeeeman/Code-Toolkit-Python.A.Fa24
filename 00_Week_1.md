@@ -293,7 +293,7 @@ You can see here when we project this representation of latent space down to 2D 
 
 ### Putting it all together
 
- Each type of generative AI has its own unique tokenizer that translates the natural language prompts you supply into an array of numbers that represent the _address_ of what you are looking for inside the _model_ of the generative AI.  This address is a unique identifier for a location inside the latent space of the AI model's _knowledge_ of what it has been trained on. 
+ Each type of generative AI has its own unique tokenizer (or well a lot of them use the same one lol) that translates the natural language prompts you supply into an array of numbers that represent the _address_ of what you are looking for inside the _model_ of the generative AI.  This address is a unique identifier for a location inside the latent space of the AI model's _knowledge_ of what it has been trained on. 
 
 
 ## Part 2 :: Prompting  
