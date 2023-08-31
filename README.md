@@ -1,4 +1,4 @@
-#  ___Code Toolkit: Python - 11855 - LCOD 2012 - A – Dan Moore___
+#  ___Code Toolkit: Python - 11855 - LCOD 2012 - A___
 
 ### Code Toolkit: Python
 ### COD 2012, Fall 2023 (CRN 11855)
