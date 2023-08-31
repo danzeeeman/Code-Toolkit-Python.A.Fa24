@@ -277,6 +277,8 @@ Some programs are fun or helpful to use, some are tools that allow you to create
 # Gut Check 
 How are those books coming?
 
+# One on Ones
+
 
 # Home Work
 ## Explore the Processing Python Examples
