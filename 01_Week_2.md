@@ -4,6 +4,7 @@
 # Reading Discussion
 
 _So what did everyone thing of the reading?_
+_Did you do the reading?_
 
 Marshall McLuhan made some interesting statements huh?
 
@@ -16,9 +17,43 @@ More importantly I want you to take away this:
 
 The communication channel used to communicate any message shapes the message itself.  So if you see a instagram ad that ad was manufactured to get _you_ to click it.  That promoted 288 Character xheet was crafted to get you to pay attention to it.  That TikTok, was engineered to be captivating for the first 7 seconds. Remember that the way a message is communicated influences the design and execution of the message itself.
 
+Discussion Question: 
 
-Continuing Education in Media Studies read [Manufacturing Consent by Edward S. Herman and Noam Chomsky](/pdfs/Manufacturing%20Consent%20%5BThe%20Political%20Economy%20Of%20The%20Mass%20Media%5D.pdf) and write a short (2-6 pages double-spaced ~2500-5000 words) essay on the _Propaganda Model_ (this will replace 2 missed coding homeworks if you are struggling with homeworks)
+_how does writing code to communicate shape your message?_
+_what do you want to talk about? and how are you using code to tell that story?_
+_what can you do when the communication channel is interactive and response?_
 
+Continuing Education in Media Studies read [Manufacturing Consent by Edward S. Herman and Noam Chomsky](/pdfs/Manufacturing%20Consent%20%5BThe%20Political%20Economy%20Of%20The%20Mass%20Media%5D.pdf) and write a short (2-6 pages double-spaced ~800-1500 or 5000 words) essay on the _Propaganda Model_ (this will replace 2 missed coding homeworks if you are struggling)
+
+
+# _A crash course to git_
+## _how to get the classnotes_
+- Create a [Github](https://github.com) profile
+- Install Git
+  - On Windows 
+    - Install [git](https://git-scm.com)
+    - open git-cmd [see screen shot] ![terminal](images/terminal.PNG)
+    - go to cloning
+  - on Mac 
+    - install [brew](https://brew.sh)
+    - open terminal ![terminal](images/CloneMac.png)
+    - install git
+      - type ```brew install git``` into your terminal
+    - go to cloning
+  - Clone the repo: 
+    - type ```git clone https://github.com/danzeeeman/Code-Toolkit-Python.A.Fa23``` into the terminal
+
+```
+git clone your_repo_url
+```
+![terminal](images/CloneMac.png)
+Cloning a repository of code is basically making a copy but with 
+- Copy the _template_ folder and rename it to your chosen name
+```
+git add path_your_new_file_folder_name/*
+git commit -a -m "adding my homework folder where I will store all of my homework"
+git push origin main
+```
 
 # Part 2 :: Introductory Beep Boops 
 
