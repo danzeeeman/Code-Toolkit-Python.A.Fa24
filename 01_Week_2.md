@@ -1,12 +1,14 @@
 # Code Toolkit: Python, Fall 2023
 ## Week 2 — Class notes
-
 # Reading Discussion
 
 _So what did everyone thing of the reading?_
 _Did you do the reading?_
 
 Marshall McLuhan made some interesting statements huh?
+
+_With any piece of art or design, there is an explanation behind the medium through which we choose to share our work. Whether it relates to the context, adds to the message, or is the easiest way to gather a wider audience._
+
 
 Marshall McLuhan wrote:
 
@@ -55,6 +57,17 @@ git commit -a -m "adding my homework folder where I will store all of my homewor
 git push origin main
 ```
 
+## Install the PDE:
+Download the version of Processing that fits your computer:
+
+- [Processing Windows](https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-windows-x64.zip)
+- [Processing Intel Mac](https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-macos-x64.zip)
+- [Processing Apple Silicon](https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-macos-aarch64.zip)
+
+### Install Python
+
+
+
 # Part 2 :: Introductory Beep Boops 
 
 Let's write a simple "program"
@@ -62,6 +75,29 @@ Let's write a simple "program"
 ```
 print('Hello World')
 ```
+
+This is the most written program in the world. It is an example in every language.  It comes form _The C Programming Language_ sometimes referred to as _K&R_ for the Authors', Brian Kernighan and Dennis Ritchie, initials. 
+
+```
+main( ) {
+        printf("hello, world");
+}
+```
+
+But the first instance of it being used is from K's 1972 _A Tutorial Introduction to the Language B_ (B came before C)
+
+```
+main( ) {
+    extern a, b, c;
+    putchar(a); putchar(b); putchar(c); putchar('!*n');
+}
+ 
+a 'hell';
+b 'o, w';
+c 'orld';
+```
+
+If you want to get really low-level you can learn C by looking how to write [arduino](https://www.arduino.cc/) programs. 
 
 ## How to make a drawing
 
@@ -82,9 +118,9 @@ groups of commands: "draw another shape like you did in steps 1-4".
 
 *In computer programs these are called functions and they are a way to make a group of instructions with a name for re-use*
 
-Introducing the Processing Development Environment
-
 So how does all this translate to Processing?
+
+## Introducing the Processing Development Environment
 
 Let's get started by opening up the Processing Development Environment, or PDE, and look around:
 * play button
