@@ -1,4 +1,4 @@
-#  ___Code Toolkit: Python - 11855 - LCOD 2012 - A – Dan Moore___
+#  ___Code Toolkit: Python - 11855 - LCOD 2012 - A___
 
 ### Code Toolkit: Python
 ### COD 2012, Fall 2023 (CRN 11855)
@@ -10,7 +10,7 @@
 ### _Who?_
 I'm Dan Moore [he/him], I'm an Artist, Designer, and Technologist based here in New York City.  I design and build interactive activations and applications.  
 
-I leverage media frameworks, game engines, textiles, and robotic arms to create immersive environments that examine human behavior, pop-culture, and culture dichotomies.  I strive to create a fully immersive environment for the audience to not only experience but become an active participant in the work.
+I currently work with Artificial Intelligence to investigate pop culture. I have most recently exhibited at the Vancouver Art Gallery during THE IMITATION GAME: VISUAL CULTURE IN THE AGE OF ARTIFICIAL INTELLIGENCE.  I hold a Masters of Tangible Interaction Design from Carnegie Mellon’s College of Fine Art, where I studied and worked in the Frank-Ratchye STUDIO for Creative Inquiry.  I was a virtual research fellow in the Free Art and Technology, F.A.T., Lab. I'm an adjunct professor at The New School.
 
 Recently, I've been creating sneakers with machine learning and calling them [*airegan](www.aire-gan.com)
 
