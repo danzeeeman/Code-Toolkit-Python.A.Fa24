@@ -1,8 +1,6 @@
 # Code Toolkit: Python, Fall 2023
 ## Week 3 — Class notes
 
-# Part 1 :: Your Books
-
 ## BREAK
 
 # Part 2
