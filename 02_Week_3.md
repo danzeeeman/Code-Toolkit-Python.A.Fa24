@@ -1,9 +1,7 @@
 # Code Toolkit: Python, Fall 2023
 ## Week 3 — Class notes
 
-## BREAK
-
-# Part 2
+# Part 1
 ## Review of what we've done so far
 
 Python and Processing programs are comprised of commands, also known as statements, also known as instructions. Each exists on its own line. Statements are generally comprised of expressions and operators. Expressions are things that have a value, like the number 250, and operators are things that have effects, they do something, combining values in various ways.
