@@ -9,6 +9,7 @@
 ### Variables
 
 A variable is a placeholder for a value
+
 New syntax:
 
 ```
