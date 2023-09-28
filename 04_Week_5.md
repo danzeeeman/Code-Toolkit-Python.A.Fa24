@@ -249,7 +249,7 @@ def setup():
 
 def draw():
     background(255)
-    if ( mouseX < 300 and mousePressed ):
+    if mouseX < 300 and mousePressed:
         ellipse(300,300, 50,50)
 ```
 
