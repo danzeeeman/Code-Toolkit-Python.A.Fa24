@@ -3,7 +3,7 @@
 
 ## Review of last week
 
-Last week we learned about conditionals and the syntax of if and elsestatements, along with elif, and we used this to respnd to user-triggered events. Broadly, this could be divided into three topics:
+Last week we learned about conditionals and the syntax of if and else statements, along with elif, and we used this to respnd to user-triggered events. Broadly, this could be divided into three topics:
 
 We looked at the syntax for three kinds of blocks:
 
