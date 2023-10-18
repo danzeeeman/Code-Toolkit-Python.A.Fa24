@@ -7,7 +7,7 @@ Time-based media are most typically thought of as sound and the moving image, al
 
 ## History and inspiration
 
-[Oskar Fischinger](images/large_fischinger04_800.jpg)
+![Oskar Fischinger](images/large_fischinger04_800.jpg)
 
 One incredible example of early time-based media is the work of Oskar Fischinger. Fischinger was an artist in the first part of the 20th century and a pioneer in animation and motion graphics. A classic example of his work is the animated film [Studie nr 8, 1931](https://vimeo.com/35735682).
 
