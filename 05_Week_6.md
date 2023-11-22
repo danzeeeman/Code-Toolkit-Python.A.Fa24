@@ -3,7 +3,7 @@
 
 ## Review of last week
 
-Last week we learned about conditionals and the syntax of if and elsestatements, along with elif, and we used this to respnd to user-triggered events. Broadly, this could be divided into three topics:
+Last week we learned about conditionals and the syntax of if and else statements, along with elif, and we used this to respnd to user-triggered events. Broadly, this could be divided into three topics:
 
 We looked at the syntax for three kinds of blocks:
 
@@ -81,7 +81,7 @@ If any of that remains confusing, please review the class notes from last week o
 Today we will learn how to create repetition with our code. This is one of the most powerful concepts within software. So far this semester we have learned:
 
 * how to create and use variables, to create a media object that can dynamically change,
-* how to create interactive programs, that use dynamic variables to chnage in response to user input
+* how to create interactive programs, that use dynamic variables to change in response to user input
 * how to use conditionals to check for different situations within our code and render or respond to them differently.
 
 And all of these things are essential components of software.

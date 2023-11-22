@@ -1,13 +1,13 @@
 # Code Toolkit: Python, Fall 2021
 ## Week 7 — Class notes
-## Timing and state
+## Timing and State
 We've already seen how to draw shapes and make them move on their own. This motion would typically start when the program started running and continue forever. Or maybe it would be triggered or changed by user interaction in some way. Today we are going to talk about timing: how to create motion that is in some way scheduled, chorreographed, triggered with some delay, or that repeats at some interval.
 
 Time-based media are most typically thought of as sound and the moving image, although digital media like video games and motion graphics are also grouped in. Today we will see explicitly how software operates in a time-based manner, and think about how to work with the domain of time, as we have thus far mainly been working within the domain of space.
 
 ## History and inspiration
 
-[Oskar Fischinger](images/large_fischinger04_800.jpg)
+![Oskar Fischinger](images/large_fischinger04_800.jpg)
 
 One incredible example of early time-based media is the work of Oskar Fischinger. Fischinger was an artist in the first part of the 20th century and a pioneer in animation and motion graphics. A classic example of his work is the animated film [Studie nr 8, 1931](https://vimeo.com/35735682).
 

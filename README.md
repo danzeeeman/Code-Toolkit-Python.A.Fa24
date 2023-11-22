@@ -7,6 +7,8 @@
 ### 6 East 16th Street, Room: 602
 ### Office hours: By appointment — email me to schedule!
 
+#### [Discord Link] (https://discord.gg/USWhVSQdeE)
+
 ### _Who?_
 I'm Dan Moore [he/him], I'm an Artist, Designer, and Technologist based here in New York City.  I design and build interactive activations and applications.  
 
