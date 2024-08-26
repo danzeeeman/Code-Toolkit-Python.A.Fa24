@@ -1,5 +1,7 @@
 #  ___Code Toolkit: Python - 11855 - LCOD 2012 - A___
 
+![QR CODE](./img/github.png)
+
 ### Code Toolkit: Python
 ### COD 2012, Fall 2024 (CRN 11855)
 ### Dan Moore, moored1@newschool.edu
