@@ -17,7 +17,7 @@ I invited you all to our discord server.  If I have missed anyone please let me 
 ## __Technology__
 The technology we will be using in this course is [py.processing](https://py.processing.org/) a sibling of [Processing](https://processing.org) for the [Python](https://en.m.wikipedia.org/wiki/Python_(programming_language)) interpreter.  
 
-- [Syllabus](Syllabus.pdf)
+- [Syllabus](Syllabus FALL 2024.pdf)
 - [Schedule](Schedule.md)
 - [Week 1](00_Week_1.md)
 - [Week 2](01_Week_2.md)
