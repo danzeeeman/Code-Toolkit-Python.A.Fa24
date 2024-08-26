@@ -1,4 +1,7 @@
 # Code Toolkit: Python, Fall 2023
+
+![QR CODE](./img/github.png)
+
 ## Week 1 — Class notes
 
 ### One on One
@@ -7,9 +10,10 @@ I'm going to do 1:Ones with everyone in the class periodically throughout the se
 ### Office Hours
 Office hours will be on-demand this semester.  I'm usually available during the day except for some standing meetings I have at my day job at 12:30pm-2:00pm.  If you send me an email or discord message I will usually get back to you soon.  I basically live in front of a multiple computers so if I'm not getting back to you promptly its because I'm on a call, asleep, or out.
 
-### [Discord](https://discord.gg/kmgRke4Q)
+### [Discord](https://discord.gg/X6zWtZZ9)
 I invited you all to our discord server.  If I have missed anyone please let me know right now!  Please sign up as it is a way to contact me directly about issues with homework or readings (or anything else y'all wanna chat about). 
 
+![QR CODE](./img/discord.png)
 
 ### _Why?_ 
 - Discussion: Why did you take this course?
