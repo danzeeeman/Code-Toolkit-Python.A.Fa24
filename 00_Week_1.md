@@ -1,6 +1,6 @@
 # Code Toolkit: Python, Fall 2023
 
-![QR CODE](./img/github.png)
+![QR CODE](img/github.png)
 
 ## Week 1 — Class notes
 
@@ -13,7 +13,7 @@ Office hours will be on-demand this semester.  I'm usually available during the 
 ### [Discord](https://discord.gg/X6zWtZZ9)
 I invited you all to our discord server.  If I have missed anyone please let me know right now!  Please sign up as it is a way to contact me directly about issues with homework or readings (or anything else y'all wanna chat about). 
 
-![QR CODE](./img/discord.png)
+![QR CODE](img/discord.png)
 
 ### _Why?_ 
 - Discussion: Why did you take this course?
