@@ -108,13 +108,15 @@ Another word for this is algorithm. An algorithm is a formal process or a sequen
 
 ### Group Miro
 
-https://miro.com/app/board/uXjVKmKDkns=/?share_link_id=178889906992
-
+![miro](img/miro.png)
+[miro](https://miro.com/app/board/uXjVKmKDkns=/?share_link_id=178889906992)
 
 
 # Prompt Engineering 101
 ## how to make sweet sweet prompts
 _you can make loads of money from this_
+
+### [GenAI](https://docs.google.com/presentation/d/1D01HoIjYfMAHlvm7K1AYGUrO3RZ700kc6NYrUMAiMjI/edit?usp=sharing)
 
 ## Part 1 :: It's all about the tokens
 ### Tokenizers 
@@ -380,12 +382,8 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 
 ## BREAK
 
-## How to use Stable Diffusion WebUI
+## Miro Jam Sessions
 
-### Cool Addons
-
-## How to use Text Generation WebUI
-## How to use ChatGPT
 # 1st Assignment due Week 4 w/presentation:
 
 You will use Machine Learning to create a 10 page book or zine using the tools we just installed. (bonus points if you get the printed and bound)  
