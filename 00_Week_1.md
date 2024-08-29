@@ -21,7 +21,7 @@ I invited you all to our discord server.  If I have missed anyone please let me 
 ## __Technology__
 The technology we will be using in this course is [py.processing](https://py.processing.org/) a sibling of [Processing](https://processing.org) for the [Python](https://en.m.wikipedia.org/wiki/Python_(programming_language)) interpreter.  
 
-- [Syllabus](Syllabus FALL 2024.pdf)
+- [Syllabus](Syllabus_FALL_2024.pdf)
 - [Schedule](Schedule.md)
 - [Week 1](00_Week_1.md)
 - [Week 2](01_Week_2.md)
@@ -105,11 +105,6 @@ Another word for this is algorithm. An algorithm is a formal process or a sequen
 ## Please Be Vocal if you have issues
 
 
-
-### Group Miro
-
-![miro](img/miro.png)
-[miro](https://miro.com/app/board/uXjVKmKDkns=/?share_link_id=178889906992)
 
 
 # Prompt Engineering 101
@@ -382,13 +377,22 @@ Lets try these out: (I haven't tried these prompt we're going in cold)
 
 ## BREAK
 
+## Glif Jam Sessions
+
+### [GLIF](https://glif.app/glifs)
+
 ## Miro Jam Sessions
+
+### Group Miro
+
+![miro](img/miro.png)
+[miro](https://miro.com/app/board/uXjVKmKDkns=/?share_link_id=178889906992)
 
 # 1st Assignment due Week 4 w/presentation:
 
-You will use Machine Learning to create a 10 page book or zine using the tools we just installed. (bonus points if you get the printed and bound)  
+You will use Machine Learning to create a 15 page book or zine using the tools we just installed. (bonus points if you get the printed and bound)  
 
-You may work in groups of up to 3 but then its has to be 20 pages.  
+You may work in groups of up to 3 but then its has to be 30 pages.  
 
 ## Home Work
 * Read Marshall McCluhan's [The Medium is the Message](pdfs/mcluhan.mediummessage.pdf)
