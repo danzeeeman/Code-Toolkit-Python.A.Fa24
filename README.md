@@ -9,7 +9,7 @@
 ### 63 Fifth Ave, Room L106
 ### Office hours: By appointment — email me to schedule!
 
-#### [Discord Link] (https://discord.gg/USWhVSQdeE)
+#### [Discord Link](https://discord.gg/X6zWtZZ9)
 
 ### _Who?_
 I'm Dan Moore [he/him], I'm an Artist, Designer, and Technologist based here in New York City. I design and build interactive activations and applications.
