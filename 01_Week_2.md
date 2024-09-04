@@ -1,7 +1,7 @@
 # Code Toolkit: Python, Fall 2023
 ## Week 2 — Class notes
 # Reading Discussion
-
+### This is a change
 _So what did everyone think of the reading?_
 _Did you do the reading?_
 
