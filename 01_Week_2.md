@@ -2,7 +2,7 @@
 ## Week 2 — Class notes
 # Reading Discussion
 
-_So what did everyone thing of the reading?_
+_So what did everyone think of the reading?_
 _Did you do the reading?_
 
 Marshall McLuhan made some interesting statements huh?
