@@ -277,39 +277,6 @@ rect(10,10,10,10)  # like this
   or project)
 """
 ```
-
-
-### Raster images
-Raster Images. You don't need to always create drawings in this way. You can also load "raster" images into your sketch, and draw them directly into the window. If you've ever done any HTML, this is similar to the way images are included in web pages.
-Go to Sketch > Add File, then browse to the image file you want to add and click "Open" . This adds the image file to your sketch directory but does not actually draw it.
-To draw it, use the following code:
-
-```
-img = loadImage("YOUR-IMAGE-FILENAME.jpg")
-image(img, 0, 0)
-```
-
-The 0, 0 specifies the x and y location of where in the window to place the image. If you want to control the size of the image, modify the 2nd line to look like this:
-
-```image(img, 0, 0, 50, 25)```
-
-In this case, the image would be 50 pixels wide and 25 pixels tall.
-Those numbers are arbitrary and just as a demonstration. You can change them or experiment as much as you'd like. You can find more information in the [reference](https://py.processing.org/reference/): 
-
-* PImage
-* loadImage()
-* image()
-
-Drawing like this seems tedious! Why would you ever want to do this?
-
-When you want to create something interactive, ie, something that responds to user input. Or when you want to create something with an inhuman amount of repetition. Or maybe when you want to process a large amount of data.
-
-Really, any time you want to create something dynamic ... 
-
-Tools like Photoshop, Illustrator, and Final Cut are fantastic, but they create fixed, closed works. With programming you can produce a creation and imbue it with life.
-
-Maybe instead of drawing an illustration, you define rules to create that illustration, and you write a computer program to draw it. Then you can introduce variance or randomness into the system and instead of 1 drawing, now you have an entire world of drawings that are all similar but also different.
-Some programs are fun or helpful to use, some are tools that allow you to create things. When you are creating the program, you can create tools that allow other people to be creative.
   
 # Gut Check 
 How are those books coming?
