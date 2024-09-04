@@ -20,7 +20,8 @@ More importantly I want you to take away this:
 The communication channel used to communicate any message shapes the message itself.  So if you see a instagram ad that ad was manufactured to get _you_ to click it.  That promoted 288 Character xheet was crafted to get you to pay attention to it.  That TikTok, was engineered to be captivating for the first 7 seconds. Remember that the way a message is communicated influences the design and execution of the message itself.
 
 Discussion Question: 
-
+[miro](https://miro.com/app/board/uXjVKmKDkns=/)
+_what are some of the theme is the reading?_
 _how does writing code to communicate shape your message?_
 _what do you want to talk about? and how are you using code to tell that story?_
 _what can you do when the communication channel is interactive and response?_
