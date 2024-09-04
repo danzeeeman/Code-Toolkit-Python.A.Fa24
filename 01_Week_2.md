@@ -21,10 +21,10 @@ The communication channel used to communicate any message shapes the message its
 
 ### Discussion Question: 
 [miro](https://miro.com/app/board/uXjVKmKDkns=/)
-_what are some of the theme is the reading?_
-_how does writing code to communicate shape your message?_
-_what do you want to talk about? and how are you using code to tell that story?_
-_what can you do when the communication channel is interactive and response?_
+- _what are some of the theme is the reading?_
+- _how does writing code to communicate shape your message?_
+- _what do you want to talk about? and how are you using code to tell that story?_
+- _what can you do when the communication channel is interactive and response?_
 
 Continuing Education in Media Studies read [Manufacturing Consent by Edward S. Herman and Noam Chomsky](/pdfs/Manufacturing%20Consent%20%5BThe%20Political%20Economy%20Of%20The%20Mass%20Media%5D.pdf) and write a short (2-6 pages double-spaced ~800-1500 or 5000 words) essay on the _Propaganda Model_ (this will replace 2 missed coding homeworks if you are struggling)
 
