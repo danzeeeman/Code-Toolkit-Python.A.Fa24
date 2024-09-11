@@ -104,8 +104,6 @@ Another word for this is algorithm. An algorithm is a formal process or a sequen
 ## we might run into a little issue here! 
 ## Please Be Vocal if you have issues
 
-
-
 ### Group Miro
 
 ![miro](img/miro.png)
