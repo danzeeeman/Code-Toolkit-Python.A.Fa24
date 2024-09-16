@@ -1,4 +1,4 @@
-# Code Toolkit: Python, Fall 2023
+# Code Toolkit: Python, Fall 2024
 ## Week 6 — Class notes
 
 ## Review of last week
@@ -667,10 +667,9 @@ What is a list, you may ask? We'll talk about this next week.
 
 I will say that one advantage of the for loop is that it's nearly impossible to forget to include your variable increment, making it less likely to accidentally produce an infinite loop.
 
-## Home Work
+## Home Work DUE WEEK 8
 * Coding Assignment #4.a: Create a Endless animation using primitives: Circle, Square, Rectangle, Triangles
 * Coding Assignment #4.b: Create a Endless animation using found objects
     * MEMEs will be judged by their dankness by the group
-    * Due Oct 19th
 
 

@@ -1,4 +1,4 @@
-# Code Toolkit: Python, Fall 2021
+# Code Toolkit: Python, Fall 2024
 ## Week 8 — Class notes
 ## Review
 Last week we covered two topics:
@@ -708,7 +708,6 @@ def draw():
     drawCar()
     moveClouds()
     moveCar()
-  }
 ```
 
 Looking at this code, we don't know what each of those functions does, but we can start to get an abstract, high level understanding of what is going on in this sketch.

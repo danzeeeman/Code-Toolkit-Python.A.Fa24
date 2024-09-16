@@ -1,4 +1,4 @@
-# Code Toolkit: Python, Fall 2021
+# Code Toolkit: Python, Fall 2024
 
 ## Week 5 — Class notes
 
@@ -1019,6 +1019,6 @@ print(year())
 ![11](images/maeda-11.gif)
 ![12](images/maeda-12.gif)
 
-### Home Work
+### Home Work DUE WEEK 7
 * Coding Assignment #3 : A Clock w/ an Alarm
 * Reading Selections from Matthew Fuller, [Software Studies: A Lexicon: Introduction, "Algorithm", "Code", "Programmability", and "Source Code".](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)

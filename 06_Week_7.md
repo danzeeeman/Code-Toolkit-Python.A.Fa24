@@ -1,4 +1,4 @@
-# Code Toolkit: Python, Fall 2021
+# Code Toolkit: Python, Fall 2024
 ## Week 7 — Class notes
 ## Timing and State
 We've already seen how to draw shapes and make them move on their own. This motion would typically start when the program started running and continue forever. Or maybe it would be triggered or changed by user interaction in some way. Today we are going to talk about timing: how to create motion that is in some way scheduled, chorreographed, triggered with some delay, or that repeats at some interval.
@@ -658,7 +658,7 @@ def draw():
     popMatrix()
 ```
 
-## Home Work
+## Home Work DUE WEEK 9
 
 * Coding Assignment #5: One Button Game
 * ["Data Visualization", from Matthew Fuller's Software Studies: A Lexicon](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)

@@ -1,4 +1,4 @@
-# Code Toolkit: Python, Fall 2023
+# Code Toolkit: Python, Fall 2024
 
 ![github](img/github.png)
 

@@ -1,4 +1,4 @@
-# Code Toolkit: Python, Fall 2023
+# Code Toolkit: Python, Fall 2024
 ## Week 3 — Class notes
 
 # Part 1

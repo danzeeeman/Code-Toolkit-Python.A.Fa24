@@ -1,4 +1,4 @@
-# Code Toolkit: Python, Fall 2023
+# Code Toolkit: Python, Fall 2024
 
 ## Week 4 — Class notes
 
@@ -765,7 +765,7 @@ def draw():
     rect(0, 0, 25, 25)
  ```
 
-### Home Work
+### Home Work DUE WEEK 6
 
 * Read [Introduction to Shape Grammars](pdfs/MIT4_540F18_qa1.pdf)
 * Coding Assignment #2a : Create a generative pattern
