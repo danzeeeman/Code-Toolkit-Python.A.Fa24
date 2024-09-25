@@ -1029,14 +1029,6 @@ print(year())
 ### Fonts
 
 '''
-"""
- * Letters. 
- * 
- * Draws letters to the screen. This requires loading a font, 
- * setting the font, and then drawing the letters.
- """
-
-
 def setup():
     size(640, 360)
     background(0)
