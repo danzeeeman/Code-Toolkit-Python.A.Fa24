@@ -929,8 +929,8 @@ And now, believe it or not, you have all the basic pieces to implement a game li
 # In Class Activity
 
 ```
-circle_x = 0
-circle_y = 0
+circle_x = 300
+circle_y = 300
 circle_dir_x = 1
 circle_dir_y = 1
 
@@ -982,8 +982,10 @@ def keyReleased():
     pass
     
 def mousePressed():
-    global circle_dir
-    circle_dir = circle_dir * -1
+    global circle_dir_x
+    circle_dir_x = circle_dir_x * -1
+    global circle_dir_y
+    circle_dir_y = circle_dir_y * -1
     pass
 ```
 
