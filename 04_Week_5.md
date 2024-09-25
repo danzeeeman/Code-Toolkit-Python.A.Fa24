@@ -1028,7 +1028,8 @@ print(year())
 
 ### Fonts
 
-'''
+```
+
 def setup():
     size(640, 360)
     background(0)
@@ -1058,4 +1059,4 @@ def draw():
             text(letter, x, y)
             # Increment the counter
             counter += 1
-'''
+```
