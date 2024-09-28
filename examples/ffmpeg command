@@ -1,0 +1,1 @@
+f"ffmpeg -f image2 -framerate 15 -i {image_sequence}.png -c:v prores_ks -profile:v 3 {output}.mov"
