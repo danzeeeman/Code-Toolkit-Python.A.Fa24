@@ -929,8 +929,8 @@ And now, believe it or not, you have all the basic pieces to implement a game li
 # In Class Activity
 
 ```
-circle_x = 0
-circle_y = 0
+circle_x = 300
+circle_y = 300
 circle_dir_x = 1
 circle_dir_y = 1
 
@@ -982,8 +982,10 @@ def keyReleased():
     pass
     
 def mousePressed():
-    global circle_dir
-    circle_dir = circle_dir * -1
+    global circle_dir_x
+    circle_dir_x = circle_dir_x * -1
+    global circle_dir_y
+    circle_dir_y = circle_dir_y * -1
     pass
 ```
 
@@ -1022,3 +1024,39 @@ print(year())
 ### Home Work DUE WEEK 7
 * Coding Assignment #3 : A Clock w/ an Alarm
 * Reading Selections from Matthew Fuller, [Software Studies: A Lexicon: Introduction, "Algorithm", "Code", "Programmability", and "Source Code".](https://monoskop.org/images/a/a1/Fuller_Matthew_ed_Software_Studies_A_Lexicon.pdf)
+
+
+### Fonts
+
+```
+
+def setup():
+    size(640, 360)
+    background(0)
+    # Create the font
+    printArray(PFont.list())
+    f = createFont("Thonburi-Light", 24)
+    textFont(f)
+    textAlign(CENTER, CENTER)
+
+
+def draw():
+    background(0)
+    # Set the left and top margin
+    margin = 10
+    translate(margin * 4, margin * 4)
+    gap = 46
+    counter = 35
+
+    for y in range(0, height - gap, gap):
+        for x in range(0, width - gap, gap):
+            letter = chr(counter)
+            if letter in 'AEIOU':
+                fill(255, 204, 0)
+            else:
+                fill(255)
+            # Draw the letter to the screen
+            text(letter, x, y)
+            # Increment the counter
+            counter += 1
+```
