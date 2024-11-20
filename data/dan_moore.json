@@ -1,4 +1,24 @@
 {
     "first_name": "Dan",
-    "last_name": "Moore"
+    "last_name": "Moore",
+    "pets":[
+        {
+            "name": "Voxel",
+            "age": 2.5,
+            "dob": "04/06/2021",
+            "type": "Dog",
+            "breed": "Micro-Mini Golden Doodle",
+            "color": "Sable",
+            "isAlive": true
+        },
+        {
+            "name": "Tux",
+            "age": 14,
+            "dob": null,
+            "type": "Cat",
+            "breed": "House",
+            "color": "Black and White",
+            "isAlive": false
+        }
+    ]
 }
