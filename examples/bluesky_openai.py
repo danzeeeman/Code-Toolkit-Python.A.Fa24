@@ -28,7 +28,7 @@ with open("creds_danzeeeman.json", "r") as f:
                 "title":article['title'],
                 "abstract":article['abstract']
             })
-            print(article['title'])
+            print(f"title {article['title']}")
             
         return data
         
@@ -41,7 +41,7 @@ with open("creds_danzeeeman.json", "r") as f:
         message=[
                 {
                     "role":"system",
-                    "content":f"you are a twitter bot writing haikus about the current state of the world using headlines from the NYT\nheadline:{headline} ",
+                    "content":f"you are a twitter bot writing haikus about the current state of the world using headlines from the New York Time\nheadline:{headline} ",
                 },
                 {
                     "role":"user",
@@ -58,9 +58,8 @@ with open("creds_danzeeeman.json", "r") as f:
         )
         message = None
         if isinstance(completion, ChatCompletion):    
-            for choice2 in completion.choices:                
-                message = choice2.message.content 
-                print(message)
+            for choice in completion.choices:                
+                message = choice.message.content 
         return message
     
     def write_haiku_from_article(headline, abstract):
@@ -96,6 +95,7 @@ with open("creds_danzeeeman.json", "r") as f:
     def post_poem(poem):
         print("post_poem")
         post = client.create_post(poem)
+        print("post made")
         print(post)
     
     
@@ -105,12 +105,13 @@ with open("creds_danzeeeman.json", "r") as f:
         poems = []
         for article in articles:
             poems.append(write_haiku_from_headline(article['title']))
-            time.sleep(5)
+            print(poems[-1])
+            time.sleep(15)
             
         for poem in poems:
             print(poem)
             post_poem(poem)
-            time.sleep(600)
+            time.sleep(300)
             
     main()
-            
+
