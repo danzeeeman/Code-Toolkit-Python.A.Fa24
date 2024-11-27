@@ -1,9 +1,10 @@
-from atproto import Client, client_utils
 from openai import OpenAI
 from openai.types.chat.chat_completion import ChatCompletion
 from pynytimes import NYTAPI
 import time
 import json
+from elevenlabs import play, save
+from elevenlabs.client import ElevenLabs, VoiceSettings
 
 # pip install openai
 # pip install atproto
@@ -13,9 +14,11 @@ import json
 
 with open("creds_danzeeeman.json", "r") as f:
     creds = json.load(f)
-    client = Client()
-    handle = 'danzeeeman.bsky.social'
-    client.login(handle, creds['bluesky'])
+
+    client = ElevenLabs(
+        api_key=creds['11'], # Defaults to ELEVEN_API_KEY
+        )
+
     nyt = NYTAPI(creds["nyt"], parse_dates=True)
     oai_client = OpenAI(api_key = creds['openai'])
     
@@ -24,7 +27,7 @@ with open("creds_danzeeeman.json", "r") as f:
         top_stories = nyt.top_stories()
         for article in top_stories:
             articles[article['uri']] = {
-                "title":article['title'],
+                "title":article['title'].lower(),
                 "link":article['url'],
                 "byline":article['byline'],
                 "abstract":article['abstract']
@@ -93,48 +96,41 @@ with open("creds_danzeeeman.json", "r") as f:
                 message = choice2.message.content 
         return message
     
-    
-    def post_poem(poem):
-        print("post_poem")
-        text_builder = client_utils.TextBuilder()
-        text_builder.text(f"From the New York Time:\n")
-        text_builder.link(f"{poem['title']} ", poem['link'])
-        text_builder.text(f"{poem['byline']}\n\n")
-        text_builder.text(f"{poem['poem']}")
-        post = client.send_post(text_builder)
-        print("post made")
-        print(post)
-    
-    
     def main():
         articles = {}
         posted_articles = []
         while True:
             articles = get_articles(articles)
             
-            poems = []
             for key in articles:
                 if key not in posted_articles:
                     print("create poem")
-                    poem_text = write_haiku_from_headline(articles[key]['title'])
+                    poem_text = write_haiku_from_article(articles[key]['title'], articles[key]['abstract'])
                     if poem_text is not None:
-                        poems.append({
+                        poem = {
                             "title":articles[key]['title'],
                             "byline":articles[key]['byline'],
                             "link":articles[key]['link'],
                             "poem":poem_text
-                            })
+                            }
                         print("poem object:")
-                        print(poems[-1])
+                        print(poem)
+                        print("poem generate audio:")
+                        audio = client.generate(
+                            text=f"{poem['title']}\n\n{poem['byline']} \n\n {poem['poem']}",
+                            voice="Oliver Haddington",
+                            model="eleven_multilingual_v2",
+                            voice_settings=VoiceSettings(
+                                stability=0.51, similarity_boost=0.6, style=0.3, use_speaker_boost=True
+                            ),
+                        )
+                        save(audio, f"{poem['title']}\n\n{poem['byline']}.wav")
+                        print("poem generate audio save:")
                         posted_articles.append(key)
-                    time.sleep(5)
-                
-            for poem in poems:
-                print(poem)
-                post_poem(poem)
-                time.sleep(300)
-            
-            time.sleep(300)
+                        time.sleep(60)
+                    time.sleep(15)
+            time.sleep(120)    
+
             
     main()
 
